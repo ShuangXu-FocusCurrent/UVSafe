@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.e.uvsafeaustralia.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/alarmPageFragment"
+        android:name="com.e.uvsafeaustralia.fragment.AlarmPageFragment"
+        android:label="fragment_alarm_page"
+        tools:layout="@layout/fragment_alarm_page" />
+    <fragment
+        android:id="@+id/sunEduFragment"
+        android:name="com.e.uvsafeaustralia.fragment.SunEduFragment"
+        android:label="fragment_sun_edu"
+        tools:layout="@layout/fragment_sun_edu" />
+    <fragment
+        android:id="@+id/quizPageFragment"
+        android:name="com.e.uvsafeaustralia.fragment.QuizPageFragment"
+        android:label="fragment_quiz_page"
+        tools:layout="@layout/fragment_quiz_page" />
+</navigation>

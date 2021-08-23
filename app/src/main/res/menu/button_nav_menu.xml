@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/homePageFragment"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:title="Alarm"
+        android:id="@+id/alarmPageFragment"
+        android:icon="@drawable/ic_alarm"/>
+
+    <item android:title="Sun Edu"
+        android:id="@+id/sunEduFragment"
+        android:icon="@drawable/ic_edu"/>
+
+    <item android:title="Quiz"
+        android:id="@+id/quizPageFragment"
+        android:icon="@drawable/ic_quiz"/>
+</menu>
