@@ -6,4 +6,5 @@
     <string name="play_outside" translatable="false">Let\'s play outside safely.</string>
     <string name="ask_location" translatable="false">Add a location so we can check the weather conditions in this area.</string>
     <string name="logo" translatable="false">LOGO</string>
+    <string name="sample">Melbourne, Victoria</string>
 </resources>
