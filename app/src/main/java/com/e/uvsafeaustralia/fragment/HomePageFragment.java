@@ -80,12 +80,13 @@ public class HomePageFragment extends Fragment {
                     binding.temperature.setText(temperature);
                     binding.uvIndex.setText(String.valueOf(uvi));
 
+                    //change protection measures according to uv index
+                    if (uvi>3){
+                        binding.protectionMeasures.setImageResource(R.drawable.highuvmeasures);
+                    }else{
+                        binding.protectionMeasures.setImageResource(R.drawable.lowuvmeasures);
 
-
-
-
-
-
+                    }
 
 
 

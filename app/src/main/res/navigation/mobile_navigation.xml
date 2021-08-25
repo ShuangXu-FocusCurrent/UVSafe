@@ -8,21 +8,21 @@
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.e.uvsafeaustralia.fragment.HomePageFragment"
-        android:label="fragment_home_page"
+        android:label="Home"
         tools:layout="@layout/fragment_home_page" />
     <fragment
         android:id="@+id/alarmPageFragment"
         android:name="com.e.uvsafeaustralia.fragment.AlarmPageFragment"
-        android:label="fragment_alarm_page"
+        android:label="Alarm"
         tools:layout="@layout/fragment_alarm_page" />
     <fragment
         android:id="@+id/sunEduFragment"
         android:name="com.e.uvsafeaustralia.fragment.SunEduFragment"
-        android:label="fragment_sun_edu"
+        android:label="Sun Education"
         tools:layout="@layout/fragment_sun_edu" />
     <fragment
         android:id="@+id/quizPageFragment"
         android:name="com.e.uvsafeaustralia.fragment.QuizPageFragment"
-        android:label="fragment_quiz_page"
+        android:label="Quiz"
         tools:layout="@layout/fragment_quiz_page" />
 </navigation>
