@@ -1,14 +1,20 @@
 package com.e.uvsafeaustralia.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -17,7 +23,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.e.uvsafeaustralia.LocationActivity;
+import com.e.uvsafeaustralia.LocationAdapter;
+import com.e.uvsafeaustralia.LocationModel;
 import com.e.uvsafeaustralia.R;
+import com.e.uvsafeaustralia.SharedViewModel;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 
 import org.json.JSONArray;
@@ -32,6 +42,10 @@ public class HomePageFragment extends Fragment {
     private final String url = "https://api.openweathermap.org/data/2.5/onecall";
     private final String appid = "03bbeee1e357560e71cdde42465aad22";
     DecimalFormat tempdf = new DecimalFormat("#.##");
+    private SharedViewModel sharedViewModel;
+    private LocationAdapter locationACAdapter;
+    //private String lat ;
+   // private String lon;
 
 
     @Override
@@ -40,21 +54,74 @@ public class HomePageFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentHomePageBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        getWeatherInfor(view);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getLocation().observe(getViewLifecycleOwner(), new Observer<LocationModel>() {
+            @Override
+            public void onChanged(LocationModel locationModel) {
+                String suburb = locationModel.getSuburb();
+                String lat = locationModel.getLatitude();
+                String lon = locationModel.getLongitude();
+                if(lat==null || lat == ""||lon==null || lon == ""){
+                    lat="33.44";
+                    lon="-94.04";
+
+                }
+                binding.address.setText(suburb);
+                getWeatherInfor(view,lat,lon);
+            }
+        });
+
+        binding.address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.address.setText("Plesase click search");
+            }
+        });
+
+        binding.searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String locationText = binding.address.getText().toString();
+//                binding.address.onEditorAction(EditorInfo.IME_ACTION_DONE);
+//
+//                //locationrv = findViewById(R.id.rvLocations);
+//                binding.rvLocations.setHasFixedSize(true);
+//
+//                linearLayoutManager = new LinearLayoutManager(requireContext());
+//                binding.rvLocations.setLayoutManager(linearLayoutManager);
+//
+//                locationACAdapter = new LocationAdapter(locationList, LocationActivity.this);
+//                binding.rvLocations.setAdapter(locationACAdapter);
+
+
+
+                Intent intent = new Intent(getActivity(), LocationActivity.class);
+                startActivity(intent );
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+
+            }
+        });
+
+
+        //getWeatherInfor(view);
         return view;
+
+
     }
 
-    public void getWeatherInfor(View view){
+    public void getWeatherInfor(View view,String lat,String lon){
         String tempUrl = "";
         //lat=33.44&lon=-94.04
-        String lat = "33.44";
-        String lon = "-94.04";
+//        String lat = "33.44";
+//        String lon = "-94.04";
         tempUrl=url+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+appid;
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Log.e("response",response);
+
+//                Log.e("response",response);
+
 
                 try{
                     JSONObject jsonResponse = new JSONObject(response);

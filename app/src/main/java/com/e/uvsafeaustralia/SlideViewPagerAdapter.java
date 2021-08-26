@@ -71,7 +71,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
 
         switch(position){
             case 0:
-                introInfo1.setImageResource(R.drawable.introinfo1);
+                introInfo1.setImageResource(R.drawable.slide1);
                 sliderRadio1.setImageResource(R.drawable.ic_slider_selected);
                 sliderRadio2.setImageResource(R.drawable.ic_slider_not_selected);
                 sliderRadio3.setImageResource(R.drawable.ic_slider_not_selected);
@@ -80,7 +80,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 break;
 
             case 1:
-                introInfo1.setImageResource(R.drawable.introinfo2);
+                introInfo1.setImageResource(R.drawable.slide2);
                 sliderRadio1.setImageResource(R.drawable.ic_slider_not_selected);
                 sliderRadio2.setImageResource(R.drawable.ic_slider_selected);
                 sliderRadio3.setImageResource(R.drawable.ic_slider_not_selected);
@@ -89,7 +89,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 break;
 
             case 2:
-                introInfo1.setImageResource(R.drawable.introinfo3);
+                introInfo1.setImageResource(R.drawable.slide3);
                 sliderRadio1.setImageResource(R.drawable.ic_slider_not_selected);
                 sliderRadio2.setImageResource(R.drawable.ic_slider_not_selected);
                 sliderRadio3.setImageResource(R.drawable.ic_slider_selected);

@@ -13,7 +13,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -44,7 +44,7 @@
             android:text="search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
+            app:layout_constraintStart_toEndOf="@+id/address"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -58,13 +58,13 @@
             android:layout_marginEnd="339dp"
             android:layout_marginRight="339dp"
             android:layout_marginBottom="537dp"
-            android:src="@drawable/ic_sun"
+            app:srcCompat="@drawable/ic_sun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.142"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-            app:layout_constraintVertical_bias="0.295" />
+            app:layout_constraintTop_toBottomOf="@+id/address"
+            app:layout_constraintVertical_bias="0.431" />
 
         <TextView
             android:id="@+id/temperature"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/address"
             app:layout_constraintVertical_bias="0.261" />
 
         <TextView
@@ -101,7 +101,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.206"
             app:layout_constraintStart_toEndOf="@+id/temperature"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/address"
             app:layout_constraintVertical_bias="0.363" />
 
         <TextView
@@ -129,10 +129,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginLeft="64dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="129dp"
             android:layout_marginRight="129dp"
-            android:layout_marginBottom="459dp"
+            android:layout_marginBottom="470dp"
             android:text="10"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +146,7 @@
             android:id="@+id/protectionMeasures"
             android:layout_width="wrap_content"
             android:layout_height="280dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="50dp"
             android:src="@drawable/highuvmeasures"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -168,6 +168,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/UVlabel" />
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvLocations"-->
+<!--            android:layout_width="365dp"-->
+<!--            android:layout_height="406dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/protectionMeasures" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">UVSafeAustralia</string>
+    <string name="set_location" translatable="false">Set location</string>
     <string name="location_hint" translatable="false">e.g. Melbourne, VIC</string>
     <string name="hello_there" translatable="false">Hello there....!</string>
     <string name="play_outside" translatable="false">Want to play outside safely?</string>
     <string name="ask_location" translatable="false">Add a location so we can check the weather conditions in this area.</string>
     <string name="logo" translatable="false">LOGO</string>
     <string name="sample">Melbourne, Victoria</string>
+    <string name="location_data">Location Data</string>
+    <string name="db_content">DB Content</string>
+    <string name="search_location">Search the suburb here</string>
+    <string name="star_here">Start here</string>
+    <string name="check_weather">Let\'s check the weather</string>
+    <string name="search_btn">Search</string>
 
 </resources>

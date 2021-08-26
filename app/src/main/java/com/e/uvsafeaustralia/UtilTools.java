@@ -2,6 +2,7 @@ package com.e.uvsafeaustralia;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.SQLException;
 
 public class UtilTools {
     static Context context;
