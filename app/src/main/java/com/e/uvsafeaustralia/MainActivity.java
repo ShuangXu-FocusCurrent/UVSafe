@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         startAppBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent introIntent = new Intent( MainActivity.this , SlideActivity.class);
+                Intent introIntent = new Intent( MainActivity.this , MainFunction.class);
                 startActivity(introIntent);
 
             }
