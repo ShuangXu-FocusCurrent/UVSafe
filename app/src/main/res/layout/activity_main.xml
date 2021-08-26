@@ -7,33 +7,22 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewHello"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="Test weather!"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMission" />
-
-    <TextView
         android:id="@+id/textViewPlayOutside"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/play_outside"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/startAppBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHello" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/locationBtn"
+        android:id="@+id/startAppBtn"
         android:layout_width="277dp"
         android:layout_height="50dp"
         android:layout_marginBottom="52dp"
-        android:text="@string/set_location"
+        android:text="Start here"
         android:textColor="#000000"
         android:textSize="24sp"
         app:backgroundTint="#FFEB00"
@@ -41,47 +30,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/location_hint"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/locationBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewAskLocation"
-        android:layout_width="288dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_horizontal"
-        android:text="@string/ask_location"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewFeedbackToast"
-        android:layout_width="216dp"
-        android:layout_height="16dp"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextLocation" />
-
     <ImageView
         android:id="@+id/imageViewMission"
-        android:layout_width="313dp"
-        android:layout_height="338dp"
+        android:layout_width="385dp"
+        android:layout_height="370dp"
+        android:layout_marginTop="128dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mission" />
@@ -94,7 +49,9 @@
         android:layout_marginLeft="18dp"
         android:layout_marginRight="204dp"
         android:layout_marginStart="18dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintEnd_toEndOf="@+id/imageViewMission"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_transparent" />
