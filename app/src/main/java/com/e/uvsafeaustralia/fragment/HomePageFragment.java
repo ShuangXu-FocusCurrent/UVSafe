@@ -119,10 +119,7 @@ public class HomePageFragment extends Fragment {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-//                Log.e("response",response);
-
-
+              // Log.e("response",response);
                 try{
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONObject jsonCurrent = jsonResponse.getJSONObject("current");

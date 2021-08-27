@@ -17,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
         startAppBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent homeIntent = new Intent( MainActivity.this , DatabaseActivity.class);
                 startActivity(homeIntent);
-
             }
         });
     }

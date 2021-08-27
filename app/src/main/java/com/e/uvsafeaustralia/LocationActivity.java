@@ -31,6 +31,7 @@ public class LocationActivity extends AppCompatActivity {
     protected static DBManager dbManager;
     private Cursor locations;
     List<LocationModel> locationList = new ArrayList<LocationModel>();
+    List<LocationModel> searchedLocation = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,14 @@ public class LocationActivity extends AppCompatActivity {
 
         editTextSetLocation = findViewById(R.id.editTextSetLocation);
 
+        locationrv = findViewById(R.id.rvLocations);
+        locationrv.setHasFixedSize(true);
+        linearLayoutManager = new LinearLayoutManager(LocationActivity.this);
+        locationrv.setLayoutManager(linearLayoutManager);
+        locationACAdapter = new LocationAdapter(locationList, LocationActivity.this);
+        locationrv.setAdapter(locationACAdapter);
+
+
         Button searchLocation = findViewById(R.id.searchBtn);
         searchLocation.setOnClickListener(new OnClickListener() {
             @Override
@@ -51,16 +60,19 @@ public class LocationActivity extends AppCompatActivity {
                 String locationText = editTextSetLocation.getText().toString();
                 editTextSetLocation.onEditorAction(EditorInfo.IME_ACTION_DONE);
 
-                locationrv = findViewById(R.id.rvLocations);
-                locationrv.setHasFixedSize(true);
+                for (LocationModel location : locationList) {
+                    if (locationText.contains(location.getSuburb())) {
+                        searchedLocation.add(location);
+                    }
 
-                linearLayoutManager = new LinearLayoutManager(LocationActivity.this);
-                locationrv.setLayoutManager(linearLayoutManager);
+                }
+//                locationrv = findViewById(R.id.rvLocations);
+//                locationrv.setHasFixedSize(true);
+//                linearLayoutManager = new LinearLayoutManager(LocationActivity.this);
+//                locationrv.setLayoutManager(linearLayoutManager);
 
-                locationACAdapter = new LocationAdapter(locationList, LocationActivity.this);
+                locationACAdapter = new LocationAdapter(searchedLocation, LocationActivity.this);
                 locationrv.setAdapter(locationACAdapter);
-
-
             }
         });
     }
@@ -76,33 +88,6 @@ public class LocationActivity extends AppCompatActivity {
     }
 
 
-//        clearSearch = findViewById(R.id.imageViewClearIcn);
-////        locationACAdapter = new LocationAdapter(this, R.layout.search_row_location, location,null)
-//          locationrv.setLayoutManager(linearLayoutManager);
-
-
-//        locationrv.setAdapter(locationACAdapter);
-//        clearSearch.setOnClickListener(this);
-
-//        editTextSetLocation.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-
-
-
     @Override
     public boolean onCreateOptionsMenu (Menu menu) {
         getMenuInflater().inflate(R.menu.location_list, menu);
@@ -115,8 +100,7 @@ public class LocationActivity extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        locations = dbManager.getLocationsBySuburb(location);
-        Cursor c = dbManager.getAllLocations();
+      Cursor c = dbManager.getAllLocations();
         StringBuilder s = new StringBuilder();
         if (c.moveToFirst()) {
             do {
