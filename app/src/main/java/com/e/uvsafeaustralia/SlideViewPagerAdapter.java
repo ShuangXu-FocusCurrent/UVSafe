@@ -2,6 +2,7 @@ package com.e.uvsafeaustralia;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +47,11 @@ public class SlideViewPagerAdapter extends PagerAdapter {
         getStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("suburb", "1");
+                Intent intent = new Intent(context,MainFunction.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

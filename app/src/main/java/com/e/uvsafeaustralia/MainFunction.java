@@ -25,16 +25,19 @@ public class MainFunction extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Bundle location = getIntent().getExtras();
-        String suburb = location.getString("suburb");
-        String postcode = location.getString("postcode");
-        String state = location.getString("state");
-        String latitude = location.getString("latitude");
-        String longitude = location.getString("Longitude");
+        if(location.getString("suburb")!="1"){
+            String suburb = location.getString("suburb");
+            String postcode = location.getString("postcode");
+            String state = location.getString("state");
+            String latitude = location.getString("latitude");
+            String longitude = location.getString("Longitude");
 
-        locationModel = new LocationModel(1,postcode, suburb, state, latitude, longitude);
+            locationModel = new LocationModel(1,postcode, suburb, state, latitude, longitude);
 
-        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
-        sharedViewModel.setLocation(locationModel);
+            sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+            sharedViewModel.setLocation(locationModel);
+
+        }
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment)

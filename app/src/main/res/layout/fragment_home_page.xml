@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
 
-        <EditText
+        <TextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,9 +23,9 @@
             android:layout_marginRight="137dp"
             android:layout_marginBottom="617dp"
             android:ems="10"
-            android:hint="@string/sample"
+
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="Melbourne"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -58,7 +58,7 @@
             android:layout_marginEnd="339dp"
             android:layout_marginRight="339dp"
             android:layout_marginBottom="537dp"
-            app:srcCompat="@drawable/ic_sun"
+            android:src="@drawable/ic_sun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.142"

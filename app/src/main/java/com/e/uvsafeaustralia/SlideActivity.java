@@ -21,17 +21,17 @@ public class SlideActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         adapter = new SlideViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
-        if(isOpenAlread()){
-
-            Intent locationIntent = new Intent(SlideActivity.this, MainActivity.class);
-            locationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(locationIntent);
-
-        }else{
-            SharedPreferences.Editor editor = getSharedPreferences("slide",MODE_PRIVATE).edit();
-            editor.putBoolean("slide",true);
-            editor.commit();
-        }
+//        if(isOpenAlread()){
+//
+//            Intent locationIntent = new Intent(SlideActivity.this, MainFunction.class);
+//            locationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(locationIntent);
+//
+//        }else{
+//            SharedPreferences.Editor editor = getSharedPreferences("slide",MODE_PRIVATE).edit();
+//            editor.putBoolean("slide",true);
+//            editor.commit();
+//        }
     }
 
     private boolean isOpenAlread() {

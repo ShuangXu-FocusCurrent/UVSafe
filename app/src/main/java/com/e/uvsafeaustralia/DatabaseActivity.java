@@ -32,7 +32,10 @@ public class DatabaseActivity extends AppCompatActivity {
 
         insertData();
 
-        Intent slideIntent = new Intent( DatabaseActivity.this , LocationActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("suburb","1");
+        Intent slideIntent = new Intent( DatabaseActivity.this ,SlideActivity.class);
+        slideIntent.putExtras(bundle);
         startActivity(slideIntent);
     }
 

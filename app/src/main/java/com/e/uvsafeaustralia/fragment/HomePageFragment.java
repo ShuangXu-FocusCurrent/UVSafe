@@ -62,12 +62,13 @@ public class HomePageFragment extends Fragment {
                 String lat = locationModel.getLatitude();
                 String lon = locationModel.getLongitude();
                 if(lat==null || lat == ""||lon==null || lon == ""){
-                    lat="33.44";
-                    lon="-94.04";
+                    suburb = "Melbourne";
+                    lat="-37.8136";
+                    lon="144.9631";
 
                 }
                 binding.address.setText(suburb);
-                getWeatherInfor(view,lat,lon);
+                getWeatherInfor(view,lat.trim(),lon.trim());
             }
         });
 
