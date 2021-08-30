@@ -1,17 +1,22 @@
 package com.e.uvsafeaustralia;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class DatabaseActivity extends AppCompatActivity {
-    protected static DBManager dbManager;
+    protected DBManager dbManager;
     protected TextView textViewDb;
     protected RecyclerView rv_Locations;
 
@@ -27,13 +32,11 @@ public class DatabaseActivity extends AppCompatActivity {
 
         insertData();
 
-        textViewDb.setText(readData());
-
         Intent slideIntent = new Intent( DatabaseActivity.this , LocationActivity.class);
         startActivity(slideIntent);
     }
 
-    public static void openDbManager() {
+    public void openDbManager() {
         try {
             dbManager.open();
         } catch (SQLException e) {
@@ -42,21 +45,33 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
     public void insertData(){
+        AssetManager assetManager = this.getAssets();
         openDbManager();
         try {
-            dbManager.insertLocation("200", "Australian National University", "ACT", "-35.280", "149.120");
-            dbManager.insertLocation("221", "Barton", "ACT", "-35.200", "149.100");
-            dbManager.insertLocation("800", "Darwin", "NT", "-12.800", "130.960");
-            dbManager.insertLocation("801", "Darwin", "NT", "-12.800", "130.960");
-            dbManager.insertLocation("804", "Parap", "NT", "-12.430", "130.840");
-        } catch (SQLException e) {
+            if (dbManager.isDbEmpty() == true) {
+                InputStream inputStream = assetManager.open("postcodevictoria.txt");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] locationAry = line.split(",");
+                    String postcode = locationAry[0];
+                    String suburb = locationAry[1];
+                    String state = locationAry[2];
+                    String latitude = locationAry[3];
+                    String longitude = locationAry[4];
+                    dbManager.insertLocation(postcode, suburb, state, latitude, longitude);
+                }
+                inputStream.close();
+            }
+
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
         dbManager.close();
     }
 
-    public static String readData() {
+    public String readData() {
         openDbManager();
         Cursor c = dbManager.getAllLocations();
         StringBuilder s = new StringBuilder();
@@ -66,6 +81,7 @@ public class DatabaseActivity extends AppCompatActivity {
             } while (c.moveToNext());
         }
         dbManager.close();
+
         return s.toString();
 
     }

@@ -46,64 +46,53 @@ public class DBManager {
             myDBHelper.close();
         }
 
-        public long insertLocation(String postcode, String suburb, String state, String latitude, String longitude) {
+        public boolean isDbEmpty() {
+            Cursor cur = db.rawQuery("SELECT COUNT(*) FROM location", null);
+            if (cur != null) {
+                cur.moveToFirst();
+                if (cur.getInt(0) == 0) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void insertLocation(String postcode, String suburb, String state, String latitude, String longitude) {
             ContentValues values = new ContentValues();
             values.put(DBStructure.tableEntry.COLUMN_POSTCODE, postcode);
             values.put(DBStructure.tableEntry.COLUMN_SUBURB, suburb);
             values.put(DBStructure.tableEntry.COLUMN_STATE, state);
             values.put(DBStructure.tableEntry.COLUMN_LATITUDE, latitude);
             values.put(DBStructure.tableEntry.COLUMN_LONGITUDE, longitude);
-            return db.insert(DBStructure.tableEntry.TABLE_NAME, null, values);
+            db.insert(DBStructure.tableEntry.TABLE_NAME, null, values);
         }
 
         public Cursor getAllLocations() {
             return db.query(
                     DBStructure.tableEntry.TABLE_NAME,
-                    columns, null, null,  null,  null,  null);
+                    columns, null, null,  null,  null, DBStructure.tableEntry.COLUMN_SUBURB);
         }
 
-        public ArrayList<HashMap<String, String>> getLocationsBySuburb(String suburb) {
-            ArrayList<HashMap<String, String>> locationList = new ArrayList<>();
-            String query = "SELECT postcode, suburb, state FROM " + DBStructure.tableEntry.TABLE_NAME;
-            Cursor cursor = db.query(DBStructure.tableEntry.TABLE_NAME,
-                    new String[]{DBStructure.tableEntry.COLUMN_POSTCODE,
-                            DBStructure.tableEntry.COLUMN_SUBURB, DBStructure.tableEntry.COLUMN_STATE}, DBStructure.tableEntry.COLUMN_SUBURB + "?",
-                    new String[]{suburb},null, null, null, null);
-            if (cursor.moveToNext()) {
-                HashMap<String, String> location = new HashMap<>();
-                location.put("postcode", cursor.getString(cursor.getColumnIndex(DBStructure.tableEntry.COLUMN_POSTCODE)));
-                location.put("suburb", cursor.getString(cursor.getColumnIndex(DBStructure.tableEntry.COLUMN_SUBURB)));
-                location.put("state", cursor.getString(cursor.getColumnIndex(DBStructure.tableEntry.COLUMN_STATE)));
-                locationList.add(location);
-            }
-            return locationList;
+        public Cursor getSearchedLocations(String suburb) {
+            return db.rawQuery("SELECT * FROM '"+DBStructure.tableEntry.TABLE_NAME+"' WHERE '"+DBStructure.tableEntry.COLUMN_SUBURB+"' = ?", new String[] {suburb});
+//            return db.query(DBStructure.tableEntry.TABLE_NAME, columns,
+//                    DBStructure.tableEntry.COLUMN_SUBURB + "= ?",
+//                            new String[]{suburb},
+//                            null, null, DBStructure.tableEntry.COLUMN_SUBURB);
+
+
         }
-//        public String getLocation(String location) {
-////            SQLiteDatabase db = this.getWritableDatabase();
-//            String whereclause = null;
-//            String[] whereargs = null;
-//            if (location.length() > 0 ) {
-//                whereclause = DBStructure.tableEntry.COLUMN_SUBURB + " LIKE ?";
-//                whereargs = new String[]{"%" + location + "%"};
-//            }
-//            return db.query(DBStructure.tableEntry.TABLE_NAME,null, whereclause, whereargs,null,null, "ascending","1");
-//
-////            Cursor c = db.query(DBStructure.tableEntry.TABLE_NAME, columns, null, null,  null,  null,  null);
-////            StringBuffer buffer= new StringBuffer();
-////            while (c.moveToNext())
-////            {
-////                int cid =c.getInt(c.getColumnIndex(DBStructure.tableEntry._ID));
-////                String suburb =c.getString(c.getColumnIndex(DBStructure.tableEntry.COLUMN_SUBURB));
-////                String postcode =c.getString(c.getColumnIndex(DBStructure.tableEntry.COLUMN_POSTCODE));
-////                String state =c.getString(c.getColumnIndex(DBStructure.tableEntry.COLUMN_STATE));
-////                buffer.append(cid+ " " + suburb + " " + postcode + " " + state +" \n");
-////            }
-////            return buffer.toString();
-//        };
 
         private String[] columns = {
                 DBStructure.tableEntry.COLUMN_POSTCODE,
                 DBStructure.tableEntry.COLUMN_SUBURB,
+                DBStructure.tableEntry.COLUMN_STATE,
+                DBStructure.tableEntry.COLUMN_LATITUDE,
+                DBStructure.tableEntry.COLUMN_LONGITUDE
+        };
+
+        private String[] getcolumns = {
+                DBStructure.tableEntry.COLUMN_POSTCODE,
+                DBStructure.tableEntry.COLUMN_SUBURB + "= ?",
                 DBStructure.tableEntry.COLUMN_STATE,
                 DBStructure.tableEntry.COLUMN_LATITUDE,
                 DBStructure.tableEntry.COLUMN_LONGITUDE
@@ -141,28 +130,3 @@ public class DBManager {
         }
 
     }
-
-//public class DBManager extends SQLiteOpenHelper {
-//
-//    public static final String LOCATION_TABLE = "LOCATION_TABLE";
-//    public static final String POSTCODE = "POSTCODE";
-//    public static final String SUBURB = "SUBURB";
-//    public static final String STATE = "STATE";
-//    public static final String LATITUDE = "LATITUDE";
-//    public static final String LONGITUDE = "LONGITUDE";
-//    public static final String ID = "ID";
-//
-//    public DBManager(@Nullable Context context) {
-//        super(context, "location.db", null, 1);
-//    }
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {
-//        String createTableStatement = "CREATE TABLE " + LOCATION_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + POSTCODE + " TEXT, " + SUBURB + " TEXT, " + STATE + " TEXT, " + LATITUDE + " TEXT, " + LONGITUDE + " TEXT" + ")";
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//
-//    }
-//}
