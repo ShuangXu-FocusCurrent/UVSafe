@@ -7,7 +7,6 @@ public class DBStructure {
         public static final String TABLE_NAME = "location";
         public static final String COLUMN_POSTCODE = "postcode";
         public static final String COLUMN_SUBURB = "suburb";
-        public static final String COLUMN_STATE = "state";
         public static final String COLUMN_LATITUDE = "latitude";
         public static final String COLUMN_LONGITUDE = "longitude";
 

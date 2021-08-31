@@ -59,10 +59,9 @@ public class DatabaseActivity extends AppCompatActivity {
                     String[] locationAry = line.split(",");
                     String postcode = locationAry[0];
                     String suburb = locationAry[1];
-                    String state = locationAry[2];
-                    String latitude = locationAry[3];
-                    String longitude = locationAry[4];
-                    dbManager.insertLocation(postcode, suburb, state, latitude, longitude);
+                    String latitude = locationAry[2];
+                    String longitude = locationAry[3];
+                    dbManager.insertLocation(postcode, suburb, latitude, longitude);
                 }
                 inputStream.close();
             }
@@ -80,7 +79,7 @@ public class DatabaseActivity extends AppCompatActivity {
         StringBuilder s = new StringBuilder();
         if (c.moveToFirst()) {
             do {
-                s.append("postcode: ").append(c.getString(0)).append("\t").append(", suburb: ").append(c.getString(1)).append("\t").append(", state: ").append(c.getString(2)).append("\t").append(", latitude: ").append(c.getString(3)).append("\t").append(", longitude: ").append(c.getString(4)).append("\n");
+                s.append("postcode: ").append(c.getString(0)).append("\t").append(", suburb: ").append(c.getString(1)).append("\t").append(", latitude: ").append(c.getString(2)).append("\t").append(", longitude: ").append(c.getString(3)).append("\n");
             } while (c.moveToNext());
         }
         dbManager.close();

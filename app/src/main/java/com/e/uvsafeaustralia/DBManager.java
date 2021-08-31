@@ -23,7 +23,6 @@ public class DBManager {
                         DBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         DBStructure.tableEntry.COLUMN_POSTCODE + TEXT_TYPE + COMMA_SEP +
                         DBStructure.tableEntry.COLUMN_SUBURB + TEXT_TYPE + COMMA_SEP +
-                        DBStructure.tableEntry.COLUMN_STATE + TEXT_TYPE + COMMA_SEP +
                         DBStructure.tableEntry.COLUMN_LATITUDE + TEXT_TYPE + COMMA_SEP +
                         DBStructure.tableEntry.COLUMN_LONGITUDE + TEXT_TYPE +
                         ");";
@@ -56,11 +55,10 @@ public class DBManager {
             }
             return false;
         }
-        public void insertLocation(String postcode, String suburb, String state, String latitude, String longitude) {
+        public void insertLocation(String postcode, String suburb, String latitude, String longitude) {
             ContentValues values = new ContentValues();
             values.put(DBStructure.tableEntry.COLUMN_POSTCODE, postcode);
             values.put(DBStructure.tableEntry.COLUMN_SUBURB, suburb);
-            values.put(DBStructure.tableEntry.COLUMN_STATE, state);
             values.put(DBStructure.tableEntry.COLUMN_LATITUDE, latitude);
             values.put(DBStructure.tableEntry.COLUMN_LONGITUDE, longitude);
             db.insert(DBStructure.tableEntry.TABLE_NAME, null, values);
@@ -72,20 +70,9 @@ public class DBManager {
                     columns, null, null,  null,  null, DBStructure.tableEntry.COLUMN_SUBURB);
         }
 
-        public Cursor getSearchedLocations(String suburb) {
-            return db.rawQuery("SELECT * FROM '"+DBStructure.tableEntry.TABLE_NAME+"' WHERE '"+DBStructure.tableEntry.COLUMN_SUBURB+"' = ?", new String[] {suburb});
-//            return db.query(DBStructure.tableEntry.TABLE_NAME, columns,
-//                    DBStructure.tableEntry.COLUMN_SUBURB + "= ?",
-//                            new String[]{suburb},
-//                            null, null, DBStructure.tableEntry.COLUMN_SUBURB);
-
-
-        }
-
         private String[] columns = {
                 DBStructure.tableEntry.COLUMN_POSTCODE,
                 DBStructure.tableEntry.COLUMN_SUBURB,
-                DBStructure.tableEntry.COLUMN_STATE,
                 DBStructure.tableEntry.COLUMN_LATITUDE,
                 DBStructure.tableEntry.COLUMN_LONGITUDE
         };
@@ -93,7 +80,6 @@ public class DBManager {
         private String[] getcolumns = {
                 DBStructure.tableEntry.COLUMN_POSTCODE,
                 DBStructure.tableEntry.COLUMN_SUBURB + "= ?",
-                DBStructure.tableEntry.COLUMN_STATE,
                 DBStructure.tableEntry.COLUMN_LATITUDE,
                 DBStructure.tableEntry.COLUMN_LONGITUDE
         };

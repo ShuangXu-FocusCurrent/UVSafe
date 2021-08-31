@@ -49,10 +49,9 @@ public class LocationActivity extends AppCompatActivity {
             String[] locationAry = locationraw.split(",");
             String postcode = locationAry[0];
             String suburb = locationAry[1];
-            String state = locationAry[2];
-            String latitude = locationAry[3];
-            String longitude = locationAry[4];
-            LocationModel locationModel = new LocationModel(-1, postcode, suburb, state, latitude, longitude);
+            String latitude = locationAry[2];
+            String longitude = locationAry[3];
+            LocationModel locationModel = new LocationModel(-1, postcode, suburb, latitude, longitude);
             locationList.add(locationModel);
         }
         locationrv = findViewById(R.id.rvLocations);
@@ -114,27 +113,7 @@ public class LocationActivity extends AppCompatActivity {
         if (c.moveToFirst()) {
             do {
                 s.append(c.getString(0)).append(",").append(c.getString(1)).append(",")
-                        .append(c.getString(2)).append(",").append(c.getString(3)).append(",")
-                        .append(c.getString(4)).append("\n");
-            } while (c.moveToNext());
-        }
-        dbManager.close();
-        return s.toString();
-    }
-
-    public String getSearchedLocation(String location) {
-        try {
-            dbManager.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        Cursor c = dbManager.getSearchedLocations(location);
-        StringBuilder s = new StringBuilder();
-        if (c.moveToFirst()) {
-            do {
-                s.append(c.getString(0)).append(",").append(c.getString(1)).append(",")
-                        .append(c.getString(2)).append(",").append(c.getString(3)).append(",")
-                        .append(c.getString(4)).append("\n");
+                        .append(c.getString(2)).append(",").append(c.getString(3)).append("\n");
             } while (c.moveToNext());
         }
         dbManager.close();

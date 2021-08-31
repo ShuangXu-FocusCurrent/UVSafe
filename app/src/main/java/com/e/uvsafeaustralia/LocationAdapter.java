@@ -37,7 +37,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull LocationAdapter.MyViewHolder holder, int position) {
         StringBuilder s = new StringBuilder();
-        s.append(locationList.get(position).getSuburb()).append(", ").append(locationList.get(position).getPostcode()).append(", ").append(locationList.get(position).getState());
+        s.append(locationList.get(position).getSuburb()).append(", ").append(locationList.get(position).getPostcode()).append(", ");
 
         holder.locationRowTV.setText(s);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +46,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
                 Bundle bundle = new Bundle();
                 bundle.putString("suburb", locationList.get(position).getSuburb());
                 bundle.putString("postcode", locationList.get(position).getPostcode());
-                bundle.putString("state", locationList.get(position).getState());
                 bundle.putString("latitude", locationList.get(position).getLatitude());
                 bundle.putString("longitude", locationList.get(position).getLongitude());
                 Intent intent = new Intent(context, MainFunction.class);

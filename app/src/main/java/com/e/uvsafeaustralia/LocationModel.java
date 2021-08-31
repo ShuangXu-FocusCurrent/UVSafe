@@ -4,15 +4,13 @@ public class LocationModel {
     private int id;
     private String postcode;
     private String suburb;
-    private String state;
     private String latitude;
     private String longitude;
 
-    public LocationModel(int id, String postcode, String suburb, String state, String latitude, String longitude) {
+    public LocationModel(int id, String postcode, String suburb, String latitude, String longitude) {
         this.id = id;
         this.postcode = postcode;
         this.suburb = suburb;
-        this.state = state;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -26,7 +24,6 @@ public class LocationModel {
                 "id=" + id +
                 ", postcode='" + postcode + '\'' +
                 ", suburb='" + suburb + '\'' +
-                ", state='" + state + '\'' +
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 '}';
@@ -54,14 +51,6 @@ public class LocationModel {
 
     public void setSuburb(String suburb) {
         this.suburb = suburb;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public String getLatitude() {
