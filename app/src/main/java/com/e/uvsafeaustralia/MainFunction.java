@@ -30,7 +30,7 @@ public class MainFunction extends AppCompatActivity {
             String postcode = location.getString("postcode");
             String state = location.getString("state");
             String latitude = location.getString("latitude");
-            String longitude = location.getString("Longitude");
+            String longitude = location.getString("longitude");
 
             locationModel = new LocationModel(1,postcode, suburb, state, latitude, longitude);
 

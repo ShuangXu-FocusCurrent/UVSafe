@@ -48,7 +48,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
                 bundle.putString("postcode", locationList.get(position).getPostcode());
                 bundle.putString("state", locationList.get(position).getState());
                 bundle.putString("latitude", locationList.get(position).getLatitude());
-                bundle.putString("Longitude", locationList.get(position).getLongitude());
+                bundle.putString("longitude", locationList.get(position).getLongitude());
                 Intent intent = new Intent(context, MainFunction.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);

@@ -63,12 +63,22 @@ public class LocationActivity extends AppCompatActivity {
         locationrv.setAdapter(locationACAdapter);
 
 
+        clearSearch = findViewById(R.id.imageViewClearIcn);
+        clearSearch.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextSetLocation.setText("");
+            }
+        });
         Button searchLocation = findViewById(R.id.searchBtn);
         searchLocation.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 String location = editTextSetLocation.getText().toString();
                 editTextSetLocation.onEditorAction(EditorInfo.IME_ACTION_DONE);
+
+                searchedLocation.clear();
+
                 for (LocationModel locationItem : locationList) {
                     location = location.replace("\"", "");
                     if (locationItem.getSuburb().toLowerCase().contains(location.toLowerCase())) {
