@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,48 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Alarm page" />
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutReminder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewNotification"
+            android:layout_width="70dp"
+            android:layout_height="72dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="76dp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewNotification"
+            app:layout_constraintHorizontal_bias="0.888"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_notification" />
+
+        <Switch
+            android:id="@+id/switchNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewNotification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewNotification"
+            app:layout_constraintTop_toTopOf="@+id/textViewNotification"
+            android:textOff="Notification has been cancelled."
+            android:textOn="You will receive a notification when sun protection is required."/>
+
+        <TextView
+            android:id="@+id/textViewNotification"
+            android:layout_width="210dp"
+            android:layout_height="49dp"
+            android:text="@string/notification_uv"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewNotification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewNotification"
+            app:layout_constraintVertical_bias="0.652" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

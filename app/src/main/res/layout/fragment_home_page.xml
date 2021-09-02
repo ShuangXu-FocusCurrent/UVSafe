@@ -118,10 +118,10 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.568"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/temperature"
-            app:layout_constraintVertical_bias="0.952" />
+            app:layout_constraintVertical_bias="0.294" />
 
         <TextView
             android:id="@+id/uvIndex"
@@ -137,10 +137,10 @@
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.59"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/UVlabel"
             app:layout_constraintTop_toBottomOf="@+id/tempLable"
-            app:layout_constraintVertical_bias="0.893" />
+            app:layout_constraintVertical_bias="0.097" />
 
         <ImageView
             android:id="@+id/protectionMeasures"
@@ -169,7 +169,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/UVlabel" />
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
+        <Button
+            android:id="@+id/buttonInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info"
+            app:backgroundTint="#E91E63"
+            app:layout_constraintBottom_toBottomOf="@+id/uvIndex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/uvIndex"
+            app:layout_constraintTop_toTopOf="@+id/uvIndex" />
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
 <!--            android:id="@+id/rvLocations"-->
 <!--            android:layout_width="365dp"-->
 <!--            android:layout_height="406dp"-->

@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.e.uvsafeaustralia.LocationActivity;
 import com.e.uvsafeaustralia.LocationAdapter;
 import com.e.uvsafeaustralia.LocationModel;
+import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.SharedViewModel;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
@@ -72,6 +73,14 @@ public class HomePageFragment extends Fragment {
             }
         });
 
+        binding.buttonInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProtectionActivity.class);
+                startActivity(intent );
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
         binding.address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
