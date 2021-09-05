@@ -14,5 +14,6 @@
     <string name="check_weather">Let\'s check the weather</string>
     <string name="search_btn">Search</string>
     <string name="notification_uv">Notify me when sun protection is needed</string>
+    <string name="alarm">Remind me to reapply sunblock</string>
 
 </resources>
