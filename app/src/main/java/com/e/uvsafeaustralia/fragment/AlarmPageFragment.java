@@ -1,35 +1,28 @@
 package com.e.uvsafeaustralia.fragment;
 
-
-import android.app.Notification;
-import android.app.PendingIntent;
-
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-
-
 import androidx.annotation.RequiresApi;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.work.Constraints;
+import androidx.work.Data;
+import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.NetworkType;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Switch;
 import android.widget.Toast;
-
-import com.e.uvsafeaustralia.ProtectionActivity;
-
+import com.e.uvsafeaustralia.NotificationScheduler;
 import com.e.uvsafeaustralia.R;
-
+import com.e.uvsafeaustralia.SharedViewModel;
+import com.e.uvsafeaustralia.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentAlarmPageBinding;
-
-
-import static com.e.uvsafeaustralia.App.CHANNEL_1_ID;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -40,10 +33,11 @@ import static com.e.uvsafeaustralia.App.CHANNEL_1_ID;
  */
 public class AlarmPageFragment extends Fragment {
 
-
     private FragmentAlarmPageBinding binding;
+//    private SharedViewModel sharedViewModel;
 
     Switch switchNotification;
+    SharedPreferences sp;
 
 
 
@@ -56,8 +50,17 @@ public class AlarmPageFragment extends Fragment {
         binding = FragmentAlarmPageBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
+//        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        sp = getActivity().getPreferences(Context.MODE_PRIVATE);
 
         switchNotification = (Switch) root.findViewById(R.id.switchAlarm);
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("state"))
+            switchNotification.setChecked(sp.getBoolean("state", false));
+        else {
+            setNotificationState(false);
+            switchNotification.setChecked(false);
+        }
         switchNotification.setOnClickListener(new SwitchNotificationClick());
 
         return root;
@@ -70,35 +73,54 @@ public class AlarmPageFragment extends Fragment {
 
     }
 
+    private PeriodicWorkRequest checkWeather;
+
+
     private class SwitchNotificationClick implements View.OnClickListener {
+        private String suburb = sp.getString("suburb", UtilTools.DEFAULT_SUBURB);
+        private String postcode = sp.getString("postcode", UtilTools.DEFAULT_POSTCODE);
+        private String latitude = sp.getString("latitude", UtilTools.DEFAULT_LATITUDE);
+        private String longitude = sp.getString("longitude", UtilTools.DEFAULT_LONGITUDE);
         @Override
         public void onClick(View v) {
+
+            Data locationData = new Data.Builder()
+                    .putString("suburb", suburb)
+                    .putString("postcode", postcode)
+                    .putString("latitude", latitude)
+                    .putString("longitude", longitude)
+                    .build();
+
+            Constraints constraint = new Constraints.Builder()
+                    .setRequiredNetworkType(NetworkType.CONNECTED)
+                    .build();
+
+            // For Development/testing, send notification every 15 minutes.
+            // For production, change 15 minutes to 1 hour!!
+            checkWeather = new PeriodicWorkRequest.Builder(NotificationScheduler.class, 15, TimeUnit.MINUTES)
+                    .setInputData(locationData)
+                    .addTag("checkUV")
+                    .setConstraints(constraint)
+                    .setInitialDelay(15, TimeUnit.MINUTES)
+                    .build();
+
             if (switchNotification.isChecked()) {
                 Toast.makeText(getActivity(), switchNotification.getTextOn().toString(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getActivity(), ProtectionActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                Notification builder = new NotificationCompat.Builder(getActivity(), CHANNEL_1_ID)
-                        .setSmallIcon(R.drawable.ic_notification)
-                        .setContentTitle("UVSafeAustralia")
-                        .setContentText("Sun protection is now required.")
-                        .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Sun protection is now required. See what protection measures you can take."))
-                        .setPriority(NotificationCompat.PRIORITY_HIGH)
-                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                        .setAutoCancel(true)
-                        .setContentIntent(pendingIntent)
-                        .build();
-
-
-
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getActivity());
-                notificationManager.notify(1, builder);
-
+                setNotificationState(true);
+                WorkManager.getInstance(requireActivity()).enqueueUniquePeriodicWork("checkUV", ExistingPeriodicWorkPolicy.REPLACE, checkWeather);
             }
-            else
+            else {
                 Toast.makeText(getActivity(), switchNotification.getTextOff().toString(), Toast.LENGTH_LONG).show();
+                setNotificationState(false);
+                WorkManager.getInstance(requireActivity())
+                        .cancelAllWorkByTag("checkUV");
+            }
         }
     }
 
+    private void setNotificationState(Boolean state) {
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean ("state", state);
+        editor.commit();
+    }
 }

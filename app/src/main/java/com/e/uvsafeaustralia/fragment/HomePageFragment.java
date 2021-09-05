@@ -1,7 +1,9 @@
 package com.e.uvsafeaustralia.fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,6 +31,7 @@ import com.e.uvsafeaustralia.LocationModel;
 import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.SharedViewModel;
+import com.e.uvsafeaustralia.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 
 import org.json.JSONArray;
@@ -40,11 +43,9 @@ import java.text.DecimalFormat;
 
 public class HomePageFragment extends Fragment {
     private FragmentHomePageBinding binding;
-    private final String url = "https://api.openweathermap.org/data/2.5/onecall";
-    private final String appid = "03bbeee1e357560e71cdde42465aad22";
-    DecimalFormat tempdf = new DecimalFormat("#.##");
     private SharedViewModel sharedViewModel;
-    private LocationAdapter locationACAdapter;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
 
 
 
@@ -56,17 +57,27 @@ public class HomePageFragment extends Fragment {
         View view = binding.getRoot();
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-
-
-
+        sp = getActivity().getPreferences(Context.MODE_PRIVATE);
+        editor = sp.edit();
+        if (!sp.contains("suburb")) {
+            // set default location to Melbourne
+            editor.putString("suburb", UtilTools.DEFAULT_SUBURB);
+            editor.putString("postcode", UtilTools.DEFAULT_POSTCODE);
+            editor.putString("latitude", UtilTools.DEFAULT_LATITUDE);
+            editor.putString("longitude", UtilTools.DEFAULT_LONGITUDE);
+            editor.commit();
+        }
 
         sharedViewModel.getLocation().observe(getViewLifecycleOwner(), new Observer<LocationModel>() {
             @Override
             public void onChanged(LocationModel locationModel) {
-
                 String suburb = locationModel.getSuburb();
                 binding.address.setText(suburb);
-
+                editor.putString("suburb", locationModel.getSuburb());
+                editor.putString("postcode", locationModel.getPostcode());
+                editor.putString("latitude", locationModel.getLatitude());
+                editor.putString("longitude", locationModel.getLongitude());
+                editor.commit();
             }
         });
 
@@ -75,14 +86,13 @@ public class HomePageFragment extends Fragment {
             public void onChanged(String s) {
                 binding.temperature.setText(s);
                 //Log.e("Weather tResponse",s);
-
             }
         });
 
         sharedViewModel.getUvlValue().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                binding.unIndex.setText(s);
+                binding.uvIndex.setText(s);
                 //Log.e("Weather uResponse",s);
 
             }
@@ -98,27 +108,17 @@ public class HomePageFragment extends Fragment {
         binding.searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
                 Intent intent = new Intent(getActivity(), LocationActivity.class);
                 startActivity(intent );
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 
             }
         });
-
-
-        //getWeatherInfor(view);
         return view;
-
-
     }
-
 
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-
     }
 }

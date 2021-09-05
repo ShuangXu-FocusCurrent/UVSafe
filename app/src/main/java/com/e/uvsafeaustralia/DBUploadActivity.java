@@ -31,7 +31,7 @@ public class DBUploadActivity extends AppCompatActivity {
         startActivity(slideIntent);
     }
 
-    public void openDbManager() {
+    private void openDbManager() {
         try {
             dbManager.open();
         } catch (SQLException e) {
@@ -39,7 +39,7 @@ public class DBUploadActivity extends AppCompatActivity {
         }
     }
 
-    public void insertData(){
+    private void insertData(){
         AssetManager assetManager = this.getAssets();
         openDbManager();
         try {

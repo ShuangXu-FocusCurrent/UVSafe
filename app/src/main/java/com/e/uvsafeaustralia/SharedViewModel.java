@@ -1,5 +1,7 @@
 package com.e.uvsafeaustralia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -23,18 +25,9 @@ import java.text.DecimalFormat;
 
 public class SharedViewModel extends ViewModel {
     private MutableLiveData<LocationModel> location;
-    private final String url = "https://api.openweathermap.org/data/2.5/onecall";
-    private final String appid = "03bbeee1e357560e71cdde42465aad22";
-    DecimalFormat tempdf = new DecimalFormat("#");
-
     private String lat;
     private String lon;
-
-
-
-
     private MutableLiveData<String> temperature;
-
     private MutableLiveData<String> uvlValue;
 
     public SharedViewModel(){
@@ -44,37 +37,21 @@ public class SharedViewModel extends ViewModel {
         lat="";
         lon="";
     }
-    public void setLocation(LocationModel message) {
-        location.setValue(message);
-    }
-    public LiveData<LocationModel> getLocation() {
-        return location; }
 
+    public void setLocation(LocationModel message) { location.setValue(message); }
+    public LiveData<LocationModel> getLocation() { return location; }
     public String getLat() { return lat; }
     public void setLat(String lat) { this.lat = lat;}
     public String getLon() { return lon; }
     public void setLon(String lon) { this.lon = lon; }
-
     public LiveData<String> getTemperature() { return temperature; }
     public LiveData<String>  getUvlValue() { return uvlValue; }
-    public void setUvlValue(String uvlValueMes) {
-        uvlValue.setValue(uvlValueMes)
-        ;
-
-    }
-    public void setTemperature(String temperatureMes) {
-        uvlValue.setValue(temperatureMes);
-    }
-
-
-
-
+    public void setUvlValue(String uvlValueMes) { uvlValue.setValue(uvlValueMes); }
+    public void setTemperature(String temperatureMes) { uvlValue.setValue(temperatureMes); }
 
     public void getWeatherInfor(View view){
         String tempUrl = "";
-
-//
-        tempUrl=url+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+appid;
+        tempUrl=UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override
@@ -93,35 +70,21 @@ public class SharedViewModel extends ViewModel {
 
 
 
-                    temperature.setValue(String.valueOf(tempdf.format(temp)));
-                    Log.e("Weather Response ",String.valueOf(tempdf.format(temp)));
+                    temperature.setValue(String.valueOf(UtilTools.TEMPDF.format(temp)));
+                    Log.i("Weather Response ",String.valueOf(UtilTools.TEMPDF.format(temp)));
                     uvlValue.setValue(String.valueOf(uvi));
-
-
-
-
-
-
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 //Toast.makeText(requireActivity(),error.toString().trim(),Toast.LENGTH_LONG).show();
-                Log.e("Weather Response ",error.toString().trim());
-
+                Log.e("Error Response ",error.toString().trim());
             }
-        }
-        );
+        });
         RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
         requestQueue.add(stringRequest);
-
     }
-
-
 }

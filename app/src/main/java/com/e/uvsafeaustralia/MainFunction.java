@@ -30,8 +30,8 @@ public class MainFunction extends AppCompatActivity {
         Bundle location = getIntent().getExtras();
         String suburb = location.getString("suburb");
         if(suburb.equals("1")){
-            sharedViewModel.setLat("-37.8136".trim());
-            sharedViewModel.setLon("144.9631".trim());
+            sharedViewModel.setLat(UtilTools.DEFAULT_LATITUDE.trim());
+            sharedViewModel.setLon(UtilTools.DEFAULT_LONGITUDE.trim());
 
         }else{
             String postcode = location.getString("postcode");
