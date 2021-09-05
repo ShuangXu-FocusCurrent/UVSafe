@@ -12,173 +12,284 @@
         android:layout_height="match_parent">
 
 
+        <ImageView
+            android:id="@+id/home_background"
+            android:layout_width="795dp"
+            android:layout_height="559dp"
+            android:src="@drawable/b3_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/uvmeter"
+            android:layout_width="250dp"
+            android:layout_height="264dp"
+            android:layout_marginTop="156dp"
+            android:src="@drawable/uv_moderate"
+            app:layout_constraintBottom_toBottomOf="@+id/home_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_background"
+            app:layout_constraintVertical_bias="0.187" />
+
         <TextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="137dp"
-            android:layout_marginRight="137dp"
-            android:layout_marginBottom="617dp"
-            android:ems="10"
-
-            android:inputType="textPersonName"
+            android:fontFamily="@font/roboto"
             android:text="Melbourne"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#7C4B07"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/home_background"
+            app:layout_constraintVertical_bias="0.088" />
 
         <Button
             android:id="@+id/searchbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginBottom="619dp"
-            android:text="search"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="@font/concert_one"
+            android:shadowColor="#40070707"
+            android:shadowDx="0"
+            android:shadowDy="10"
+            android:text="Change Location"
+            android:textColor="#FBBC05"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="20dp"
+            app:iconTint="#050505"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/address"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="339dp"
-            android:layout_marginRight="339dp"
-            android:layout_marginBottom="537dp"
-            app:srcCompat="@drawable/ic_sun"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.142"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/address"
-            app:layout_constraintVertical_bias="0.431" />
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#C8D2DC"
+            app:strokeWidth="3dp" />
+
+        <ImageView
+            android:id="@+id/temp_img"
+            android:layout_width="66dp"
+            android:layout_height="52dp"
+            android:src="@drawable/temp_img"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="@+id/uvmeter"
+            app:layout_constraintHorizontal_bias="0.288"
+            app:layout_constraintStart_toStartOf="@+id/uvmeter"
+            app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+            app:layout_constraintVertical_bias="0.446"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="228dp"
-            android:layout_marginRight="228dp"
-            android:layout_marginBottom="538dp"
-            android:text="30"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/address"
-            app:layout_constraintVertical_bias="0.261" />
-
-        <TextView
-            android:id="@+id/tempLable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginLeft="21dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="550dp"
-            android:text="Deg Deg"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.206"
-            app:layout_constraintStart_toEndOf="@+id/temperature"
-            app:layout_constraintTop_toBottomOf="@+id/address"
-            app:layout_constraintVertical_bias="0.363" />
-
-        <TextView
-            android:id="@+id/UVlabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="263dp"
-            android:layout_marginRight="263dp"
-            android:layout_marginBottom="462dp"
-            android:text="UV Index:"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.568"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/temperature"
-            app:layout_constraintVertical_bias="0.294" />
-
-        <TextView
-            android:id="@+id/uvIndex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="129dp"
-            android:layout_marginRight="129dp"
-            android:layout_marginBottom="470dp"
+            android:fontFamily="@font/roboto"
             android:text="10"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/UVlabel"
-            app:layout_constraintTop_toBottomOf="@+id/tempLable"
-            app:layout_constraintVertical_bias="0.097" />
+            android:textColor="#693900"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="@+id/uvmeter"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="@+id/temp_img"
+            app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+            app:layout_constraintVertical_bias="0.408" />
 
-        <ImageView
-            android:id="@+id/protectionMeasures"
+        <TextView
+            android:id="@+id/degree"
             android:layout_width="wrap_content"
-            android:layout_height="280dp"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/highuvmeasures"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="o"
+            android:textColor="#693900"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/temperature"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/uvmeter" />
+            app:layout_constraintHorizontal_bias="0.224"
+            app:layout_constraintStart_toStartOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+            app:layout_constraintVertical_bias="0.357" />
+
+        <TextView
+            android:id="@+id/templable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="C"
+            android:textColor="#693900"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.135"
+            app:layout_constraintStart_toEndOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+            app:layout_constraintVertical_bias="0.4" />
 
         <ImageView
-            android:id="@+id/uvmeter"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/uvmeter2"
-            app:layout_constraintBottom_toTopOf="@+id/protectionMeasures"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/sun_rise"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:src="@drawable/sun_rise_img"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toStartOf="@+id/searchbtn"
+            app:layout_constraintHorizontal_bias="0.147"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/UVlabel" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.614"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/sun_rise_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="6:42 am"
+            android:textColor="#693900"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toStartOf="@+id/temp_img"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sun_rise"
+            app:layout_constraintVertical_bias="0.114" />
+
+        <TextView
+            android:id="@+id/sun_set_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="5:57 pm"
+            android:textColor="#693900"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.979"
+            app:layout_constraintStart_toEndOf="@+id/temp_img"
+            app:layout_constraintTop_toBottomOf="@+id/sun_set"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/sun_rise_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="Sun Rise"
+            android:textColor="#693900"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toStartOf="@+id/temp_img"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sun_rise_time"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/sun_set_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="Sun Set"
+            android:textColor="#693900"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintStart_toEndOf="@+id/temp_img"
+            app:layout_constraintTop_toTopOf="@+id/sun_set_time"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/uvlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="UV"
+            android:textColor="#FFC403"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="@+id/uvmeter"
+            app:layout_constraintHorizontal_bias="0.431"
+            app:layout_constraintStart_toStartOf="@+id/uvmeter"
+            app:layout_constraintTop_toTopOf="@+id/uvmeter"
+            app:layout_constraintVertical_bias="0.424" />
+
+        <TextView
+            android:id="@+id/unIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:textColor="#FFC403"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="@+id/uvmeter"
+            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintStart_toStartOf="@+id/uvmeter"
+            app:layout_constraintTop_toTopOf="@+id/uvmeter"
+            app:layout_constraintVertical_bias="0.562" />
 
         <Button
             android:id="@+id/buttonInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
             android:text="Info"
-            app:backgroundTint="#E91E63"
-            app:layout_constraintBottom_toBottomOf="@+id/uvIndex"
+            android:textColor="#FBBC05"
+            android:textSize="20sp"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/uvIndex"
-            app:layout_constraintTop_toTopOf="@+id/uvIndex" />
+            app:layout_constraintHorizontal_bias="0.868"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uvmeter"
+            app:layout_constraintVertical_bias="0.627"
+            app:strokeColor="#C8D2DC"
+            app:strokeWidth="3dp" />
+
+        <ImageView
+            android:id="@+id/sun_set"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:src="@drawable/sunset_img"
+            app:layout_constraintBottom_toTopOf="@+id/uvmeter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintStart_toEndOf="@+id/searchbtn"
+            app:layout_constraintTop_toTopOf="@+id/home_background"
+            app:layout_constraintVertical_bias="0.614"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/uv_instrcut"
+            android:layout_width="270dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="Moderate UV Level"
+            android:textColor="#EC6C4B"
+            android:textSize="27sp"
+            app:layout_constraintBottom_toTopOf="@+id/uv_instrcut2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/uvmeter"
+            app:layout_constraintVertical_bias="0.874" />
+
+        <TextView
+            android:id="@+id/uv_instrcut2"
+            android:layout_width="302dp"
+            android:layout_height="66dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="Sun Protection Required !"
+            android:textColor="#EC6C4B"
+            android:textSize="27sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uvmeter"
+            app:layout_constraintVertical_bias="0.511" />
 
         <!--        <androidx.recyclerview.widget.RecyclerView-->
 <!--            android:id="@+id/rvLocations"-->

@@ -25,7 +25,7 @@ public class SharedViewModel extends ViewModel {
     private MutableLiveData<LocationModel> location;
     private final String url = "https://api.openweathermap.org/data/2.5/onecall";
     private final String appid = "03bbeee1e357560e71cdde42465aad22";
-    DecimalFormat tempdf = new DecimalFormat("#.##");
+    DecimalFormat tempdf = new DecimalFormat("#");
 
     private String lat;
     private String lon;
@@ -89,7 +89,8 @@ public class SharedViewModel extends ViewModel {
                     Double temp = jsonCurrent.getDouble("temp")-273.15;
                     Double feelsLike = jsonCurrent.getDouble("feels_like")-273.15;
 
-                    Double uvi = jsonCurrent.getDouble("uvi");
+                    Integer uvi = jsonCurrent.getInt("uvi");
+
 
 
                     temperature.setValue(String.valueOf(tempdf.format(temp)));

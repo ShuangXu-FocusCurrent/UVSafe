@@ -82,7 +82,7 @@ public class HomePageFragment extends Fragment {
         sharedViewModel.getUvlValue().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                binding.uvIndex.setText(s);
+                binding.unIndex.setText(s);
                 //Log.e("Weather uResponse",s);
 
             }
