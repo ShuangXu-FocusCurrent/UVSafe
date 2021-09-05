@@ -9,83 +9,108 @@
         android:id="@+id/getStartedBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/concert_one"
         android:text="@string/check_weather"
+        android:textColor="#FBBC05"
+        android:textSize="20sp"
+        app:backgroundTint="#FFFF"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewIntroInfo1"
-        android:layout_width="341dp"
-        android:layout_height="314dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
-        app:srcCompat="@drawable/slide1" />
-
-    <ImageView
-        android:id="@+id/imageViewSliderRadio1"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewSliderRadio2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewIntroInfo1"
-        app:srcCompat="@drawable/ic_slider_not_selected" />
-
-    <ImageView
-        android:id="@+id/imageViewSliderRadio2"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewSliderRadio1"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewSliderRadio3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewSliderRadio1"
-        app:layout_constraintTop_toTopOf="@+id/imageViewSliderRadio1"
-        app:srcCompat="@drawable/ic_slider_not_selected" />
-
-    <ImageView
-        android:id="@+id/imageViewSliderRadio3"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewSliderRadio2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewSliderRadio2"
-        app:layout_constraintTop_toTopOf="@+id/imageViewSliderRadio2"
-        app:srcCompat="@drawable/ic_slider_not_selected" />
+        app:strokeColor="#C8D2DC"
+        app:strokeWidth="3dp" />
 
     <ImageView
         android:id="@+id/imageViewNextIcn2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69"
+        app:layout_constraintVertical_bias="0.875"
         app:srcCompat="@drawable/ic_next" />
+
+    <ImageView
+        android:id="@+id/imageViewIntroInfo1"
+        android:layout_width="400dp"
+        android:layout_height="539dp"
+        android:cropToPadding="false"
+        android:keepScreenOn="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/slider1" />
+
+    <ImageView
+        android:id="@+id/sliderRadio1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackIcn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackIcn1"
+        app:layout_constraintVertical_bias="0.875"
+        app:srcCompat="@drawable/ic_slider_selected" />
+
+    <ImageView
+        android:id="@+id/sliderRadio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderRadio1"
+        app:layout_constraintStart_toEndOf="@+id/sliderRadio1"
+        app:layout_constraintTop_toTopOf="@+id/sliderRadio1"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_slider_not_selected" />
+
+    <ImageView
+        android:id="@+id/sliderRadio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderRadio2"
+        app:layout_constraintStart_toEndOf="@+id/sliderRadio2"
+        app:layout_constraintTop_toTopOf="@+id/sliderRadio2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_slider_not_selected" />
+
+    <ImageView
+        android:id="@+id/sliderRadio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderRadio3"
+        app:layout_constraintStart_toEndOf="@+id/sliderRadio3"
+        app:layout_constraintTop_toTopOf="@+id/sliderRadio3"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_slider_not_selected" />
+
+    <ImageView
+        android:id="@+id/sliderRadio5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderRadio4"
+        app:layout_constraintStart_toEndOf="@+id/sliderRadio4"
+        app:layout_constraintTop_toTopOf="@+id/sliderRadio4"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_slider_not_selected" />
 
     <ImageView
         android:id="@+id/imageViewBackIcn1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69"
+        app:layout_constraintVertical_bias="0.873"
         app:srcCompat="@drawable/ic_back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
