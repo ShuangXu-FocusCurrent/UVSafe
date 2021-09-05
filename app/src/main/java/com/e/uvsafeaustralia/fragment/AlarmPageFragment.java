@@ -36,7 +36,8 @@ public class AlarmPageFragment extends Fragment {
     private FragmentAlarmPageBinding binding;
 //    private SharedViewModel sharedViewModel;
 
-    Switch switchNotification;
+    private Switch switchNotification;
+    private Switch switchAlarm;
     SharedPreferences sp;
 
 
@@ -50,12 +51,22 @@ public class AlarmPageFragment extends Fragment {
         binding = FragmentAlarmPageBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
-//        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
 
-        switchNotification = (Switch) root.findViewById(R.id.switchAlarm);
-        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("state"))
+        switchAlarm = (Switch) root.findViewById(R.id.switchAlarm);
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState"))
+            switchAlarm.setChecked(sp.getBoolean("alarmState", false));
+        else {
+            setAlarmState(false);
+            switchAlarm.setChecked(false);
+        }
+        switchAlarm.setOnClickListener(new SwitchAlarmClick());
+
+
+
+        switchNotification = (Switch) root.findViewById(R.id.switchNotification);
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("notificationState"))
             switchNotification.setChecked(sp.getBoolean("state", false));
         else {
             setNotificationState(false);
@@ -67,15 +78,21 @@ public class AlarmPageFragment extends Fragment {
 
     }
 
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-
-    }
-
     private PeriodicWorkRequest checkWeather;
 
-
+    private class SwitchAlarmClick implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            if (switchAlarm.isChecked()) {
+                Toast.makeText(getActivity(), switchAlarm.getTextOn().toString(), Toast.LENGTH_LONG).show();
+                setAlarmState(true);
+            }
+            else {
+                Toast.makeText(getActivity(), switchAlarm.getTextOff().toString(), Toast.LENGTH_LONG).show();
+                setAlarmState(false);
+            }
+        }
+    }
     private class SwitchNotificationClick implements View.OnClickListener {
         private String suburb = sp.getString("suburb", UtilTools.DEFAULT_SUBURB);
         private String postcode = sp.getString("postcode", UtilTools.DEFAULT_POSTCODE);
@@ -120,7 +137,21 @@ public class AlarmPageFragment extends Fragment {
 
     private void setNotificationState(Boolean state) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean ("state", state);
+        editor.putBoolean ("notificationState", state);
         editor.commit();
     }
+
+    private void setAlarmState(Boolean state) {
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean ("alarmState", state);
+        editor.commit();
+
+    }
+
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+
+    }
+
 }
