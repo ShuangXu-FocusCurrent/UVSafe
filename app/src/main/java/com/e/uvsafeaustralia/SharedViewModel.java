@@ -29,11 +29,15 @@ public class SharedViewModel extends ViewModel {
     private String lon;
     private MutableLiveData<String> temperature;
     private MutableLiveData<String> uvlValue;
+    private MutableLiveData<String> sunriseValue;
+    private MutableLiveData<String> sunsetValue;
 
     public SharedViewModel(){
         location = new MutableLiveData<>();
         temperature = new MutableLiveData<>();
         uvlValue=new MutableLiveData<>();
+        sunriseValue=new MutableLiveData<>();
+        sunsetValue=new MutableLiveData<>();
         lat="-37.8136";
         lon="144.9631";
     }
@@ -46,8 +50,13 @@ public class SharedViewModel extends ViewModel {
     public void setLon(String lon) { this.lon = lon; }
     public LiveData<String> getTemperature() { return temperature; }
     public LiveData<String>  getUvlValue() { return uvlValue; }
+    public LiveData<String>  getSunriselValue() { return sunriseValue; }
+    public LiveData<String>  getSunSetValue() { return sunsetValue; }
     public void setUvlValue(String uvlValueMes) { uvlValue.setValue(uvlValueMes); }
     public void setTemperature(String temperatureMes) { uvlValue.setValue(temperatureMes); }
+    public void setSunriseValue(String sunriseMes) { sunriseValue.setValue(sunriseMes); }
+    public void setSunsetValue(String sunsetMes) { sunsetValue.setValue(sunsetMes); }
+
 
     public void getWeatherInfor(View view){
         String tempUrl = "";
@@ -65,14 +74,14 @@ public class SharedViewModel extends ViewModel {
                     Integer sunset = jsonCurrent.getInt("sunset");
                     Double temp = jsonCurrent.getDouble("temp")-273.15;
                     Double feelsLike = jsonCurrent.getDouble("feels_like")-273.15;
-
                     Integer uvi = jsonCurrent.getInt("uvi");
-
-
 
                     temperature.setValue(String.valueOf(UtilTools.TEMPDF.format(temp)));
                     Log.i("Weather Response ",String.valueOf(UtilTools.TEMPDF.format(temp)));
                     uvlValue.setValue(String.valueOf(uvi));
+                    sunriseValue.setValue(String.valueOf(sunrise));
+                    sunsetValue.setValue(String.valueOf(sunset));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

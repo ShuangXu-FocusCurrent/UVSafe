@@ -39,6 +39,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+import java.util.TimeZone;
 
 
 public class HomePageFragment extends Fragment {
@@ -84,7 +88,7 @@ public class HomePageFragment extends Fragment {
         sharedViewModel.getTemperature().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                binding.temperature.setText(s);
+                binding.temperature.setText(s.trim());
                 //Log.e("Weather tResponse",s);
             }
         });
@@ -93,10 +97,62 @@ public class HomePageFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 binding.uvIndex.setText(s);
-                //Log.e("Weather uResponse",s);
-
+                int sInt = Integer.parseInt(s.trim());
+//                sInt = 0;
+//                 sInt = 6;
+//                sInt = 8;
+//                sInt = 11;
+                binding.uvIndex.setText(String.valueOf(sInt));
+                if(sInt>=0 && sInt<3){
+                    binding.uvmeter.setImageResource(R.drawable.uv_low);
+                    binding.uvInstrcut.setText("Low UV Level");
+                    binding.uvInstrcut2.setText(R.string.protectNotRequired);
+                }if(sInt>=3 && sInt<6){
+                    binding.uvmeter.setImageResource(R.drawable.uv_moderate);
+                    binding.uvInstrcut.setText("Moderate UV Level");
+                    binding.uvInstrcut2.setText(R.string.protectRequired);
+                }if(sInt>=6 && sInt<8){
+                    binding.uvmeter.setImageResource(R.drawable.uv_high);
+                    binding.uvInstrcut.setText("High UV Level");
+                    binding.uvInstrcut2.setText(R.string.protectRequired);
+                }if(sInt>=8 && sInt<11){
+                    binding.uvmeter.setImageResource(R.drawable.uv_very_high);
+                    binding.uvInstrcut.setText("Very High UV Level");
+                    binding.uvInstrcut2.setText(R.string.protectRequired);
+                }if(sInt>=11 ){
+                    binding.uvmeter.setImageResource(R.drawable.uv_extreme);
+                    binding.uvInstrcut.setText("Extreme UV Level");
+                    binding.uvInstrcut2.setText(R.string.protectRequired);
+                }
             }
         });
+
+        sharedViewModel.getSunriselValue().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                int sInt = Integer.valueOf(s);
+                Date days = new Date(sInt*1000L);
+                SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
+                String time = f.format(days);
+                binding.sunRiseTime.setText(time);
+                //Log.e("Weather tResponse",s);
+            }
+        });
+
+        sharedViewModel.getSunSetValue().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                int sInt = Integer.valueOf(s);
+                Date days = new Date(sInt*1000L);
+                SimpleDateFormat f = new SimpleDateFormat("h:mm a"); // HH for 0-23
+                f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
+                String time = f.format(days);
+                binding.sunSetTime.setText(time);
+                //Log.e("Weather tResponse",s);
+            }
+        });
+
 
         binding.address.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +167,6 @@ public class HomePageFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), LocationActivity.class);
                 startActivity(intent );
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
-
             }
         });
         return view;

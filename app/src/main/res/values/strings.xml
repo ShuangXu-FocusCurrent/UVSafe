@@ -16,5 +16,7 @@
     <string name="notification_uv">Notify me when sun protection is needed</string>
     <string name="alarm">Remind me to reapply sunblock</string>
     <string name="ultrawe">Powered by UltraWe</string>
+    <string name="protectRequired">Sun Protection \n Required</string>
+    <string name="protectNotRequired">Sun Protection Not \n  Required</string>
 
 </resources>
