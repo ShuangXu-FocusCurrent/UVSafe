@@ -58,10 +58,21 @@ public class NotificationScheduler extends Worker {
         {
             e.printStackTrace();
         }
-        System.out.println(dt);
-        System.out.println(sunrise);
-        System.out.println(sunset);
-        if (dt >= sunrise && sunset <= sunset && uvi >= 3) {
+
+        // for testing purpose only
+        // user must receive notification
+        // set the uv index to different UV level here
+//        uvi = 2;
+//        // set time (dt) to either between sunrise and sunset or outside
+//        sunrise = 1630874063;
+//        dt = 1630915321;
+//        sunset = 1630917557;
+//        System.out.println(dt);
+//        System.out.println(sunrise);
+//        System.out.println(sunset);
+//        System.out.println(uvi);
+
+        if (dt >= sunrise && dt <= sunset && uvi >= 3) {
             setNotification();
             System.out.println("Response recorded");
         }

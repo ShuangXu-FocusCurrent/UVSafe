@@ -139,12 +139,6 @@ public class AlarmPageFragment extends Fragment {
         editor.commit();
     }
 
-    private void setAlarmState(Boolean state) {
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean ("alarmState", state);
-        editor.commit();
-    }
-
     public void PopTimePicker(View view){
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -161,8 +155,6 @@ public class AlarmPageFragment extends Fragment {
         TimePickerDialog timePickerDialog = new TimePickerDialog(requireContext(),onTimeSetListener,hour,minute,true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
-
-
     }
 
     @TargetApi(Build.VERSION_CODES.O)
