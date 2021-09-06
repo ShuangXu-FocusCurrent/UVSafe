@@ -6,54 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewPlayOutside"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/play_outside"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/startAppBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/startAppBtn"
-        android:layout_width="277dp"
-        android:layout_height="50dp"
+        android:layout_width="159dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="52dp"
+        android:fontFamily="@font/concert_one"
+        android:gravity="center|center_horizontal|center_vertical"
         android:text="@string/star_here"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:backgroundTint="#FFEB00"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:backgroundTint="#FCCB3E"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewMission"
-        android:layout_width="385dp"
-        android:layout_height="370dp"
-        android:layout_marginTop="128dp"
+        android:id="@+id/welcome_img"
+        android:layout_width="386dp"
+        android:layout_height="427dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/welcome_pic" />
+        app:layout_constraintVertical_bias="0.291"
+        app:srcCompat="@drawable/welcome_pic"
+        tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="127dp"
-        android:layout_height="121dp"
-        android:layout_marginEnd="204dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="204dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="108dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewMission"
-        app:layout_constraintHorizontal_bias="0.467"
+        android:id="@+id/logo_img"
+        android:layout_width="181dp"
+        android:layout_height="261dp"
+        android:layout_marginBottom="452dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_transparent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/welcome_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/concert_one"
+        android:shadowColor="#401E1E1E"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="-1"
+        android:text="Let's Be Skin Smart"
+        android:textColor="#1976A9"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_transparent" />
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/ultWe"
+        android:layout_width="388dp"
+        android:layout_height="40dp"
+        android:text="@string/ultrawe"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startAppBtn"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
