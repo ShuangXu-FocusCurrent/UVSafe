@@ -169,6 +169,16 @@ public class HomePageFragment extends Fragment {
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
             }
         });
+
+        binding.buttonInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProtectionActivity.class);
+                startActivity(intent );
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+
         return view;
     }
 
