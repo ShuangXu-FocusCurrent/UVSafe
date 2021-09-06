@@ -33,6 +33,7 @@
         <activity android:name=".LocationActivity"
             android:parentActivityName=".MainFunction"
             android:label="Search Location"></activity>
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>

@@ -48,11 +48,9 @@ public class SlideViewPagerAdapter extends PagerAdapter {
         getStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString("suburb", "1");
+
                 Intent intent = new Intent(context,MainFunction.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

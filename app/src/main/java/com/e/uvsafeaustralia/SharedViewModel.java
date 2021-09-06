@@ -34,8 +34,8 @@ public class SharedViewModel extends ViewModel {
         location = new MutableLiveData<>();
         temperature = new MutableLiveData<>();
         uvlValue=new MutableLiveData<>();
-        lat="";
-        lon="";
+        lat="-37.8136";
+        lon="144.9631";
     }
 
     public void setLocation(LocationModel message) { location.setValue(message); }
