@@ -34,9 +34,9 @@
             android:parentActivityName=".MainFunction"
             android:label="Search Location"></activity>
 
-        <!--<activity android:name=".AboutUVActivity"
+        <activity android:name=".AboutUVActivity"
             android:parentActivityName=".MainFunction"
-            android:label="About UV"></activity>-->
+            android:label="About UV"></activity>
 
         <activity android:name=".AboutSunscreensActivity"
             android:parentActivityName=".MainFunction"
