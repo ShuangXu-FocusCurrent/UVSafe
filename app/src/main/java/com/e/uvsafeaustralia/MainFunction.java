@@ -27,63 +27,26 @@ public class MainFunction extends AppCompatActivity {
         setContentView(view);
         sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
 
-
         if(getIntent()==null || getIntent().getExtras()==null){
-            //sharedViewModel.setLat("-37.8136".trim());
-            //sharedViewModel.setLon("144.9631".trim());
             sharedViewModel.getWeatherInfor(view);
-
         }else{
             Bundle location = getIntent().getExtras();
             String suburb = location.getString("suburb");
             String postcode = location.getString("postcode");
             String latitude = location.getString("latitude");
             String longitude = location.getString("longitude");
-
             locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
-
-
             sharedViewModel.setLocation(locationModel);
             sharedViewModel.setLat(latitude.trim());
             sharedViewModel.setLon(longitude.trim());
-
             sharedViewModel.getWeatherInfor(view);
-
         }
-
-//        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
-//        Bundle location = getIntent().getExtras();
-//        String suburb = location.getString("suburb");
-//        if(suburb.equals("1")){
-//            sharedViewModel.setLat(UtilTools.DEFAULT_LATITUDE.trim());
-//            sharedViewModel.setLon(UtilTools.DEFAULT_LONGITUDE.trim());
-//
-//        }else{
-//            String postcode = location.getString("postcode");
-//            String latitude = location.getString("latitude");
-//            String longitude = location.getString("longitude");
-//
-//            locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
-//
-//
-//            sharedViewModel.setLocation(locationModel);
-//            sharedViewModel.setLat(latitude.trim());
-//            sharedViewModel.setLon(longitude.trim());
-//
-//        }
-//
-//        sharedViewModel.getWeatherInfor(view);
-
-
-
+        //R.id.quizPageFragment
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment)
+                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
-
-
-
     }
 }

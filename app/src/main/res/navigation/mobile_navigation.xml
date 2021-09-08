@@ -20,9 +20,9 @@
         android:name="com.e.uvsafeaustralia.fragment.SunEduFragment"
         android:label="Sun Education"
         tools:layout="@layout/fragment_sun_edu" />
-    <fragment
-        android:id="@+id/quizPageFragment"
-        android:name="com.e.uvsafeaustralia.fragment.QuizPageFragment"
-        android:label="Quiz"
-        tools:layout="@layout/fragment_quiz_page" />
+<!--    <fragment-->
+<!--        android:id="@+id/quizPageFragment"-->
+<!--        android:name="com.e.uvsafeaustralia.fragment.QuizPageFragment"-->
+<!--        android:label="Quiz"-->
+<!--        tools:layout="@layout/fragment_quiz_page" />-->
 </navigation>
