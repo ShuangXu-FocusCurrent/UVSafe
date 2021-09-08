@@ -28,9 +28,11 @@
             android:layout_height="wrap_content"
             android:src="@drawable/temp_back"
             app:layout_constraintBottom_toTopOf="@+id/uvmeter"
-            app:layout_constraintEnd_toEndOf="@+id/uvmeter"
-            app:layout_constraintStart_toStartOf="@+id/uvmeter"
-            app:layout_constraintTop_toBottomOf="@+id/address" />
+            app:layout_constraintEnd_toStartOf="@+id/sunset_ic"
+            app:layout_constraintHorizontal_bias="0.557"
+            app:layout_constraintStart_toEndOf="@+id/sunrise_ic"
+            app:layout_constraintTop_toBottomOf="@+id/address"
+            app:layout_constraintVertical_bias="0.484" />
 
         <ImageView
             android:id="@+id/uvmeter"
@@ -278,11 +280,11 @@
             android:id="@+id/sunset_ic"
             android:layout_width="47dp"
             android:layout_height="62dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:src="@drawable/sunset_new"
             app:layout_constraintBottom_toBottomOf="@+id/temp_back"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.931"
-            app:layout_constraintStart_toEndOf="@+id/temp_back"
             app:layout_constraintTop_toTopOf="@+id/temp_back"
             app:layout_constraintVertical_bias="0.0" />
 
