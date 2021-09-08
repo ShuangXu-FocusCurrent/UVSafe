@@ -44,6 +44,10 @@
 
         <activity android:name=".ProtectionActivity"
             android:parentActivityName=".MainFunction"
+            android:label="Sun Protection Measures"></activity>
+
+        <activity android:name=".SunProtectionActivity"
+            android:parentActivityName=".MainFunction"
             android:label="Sun Protection"></activity>
 
         <receiver android:name=".AlarmReceiver"/>

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.e.uvsafeaustralia.AboutSunscreensActivity;
 import com.e.uvsafeaustralia.AboutUVActivity;
 import com.e.uvsafeaustralia.ProtectionActivity;
+import com.e.uvsafeaustralia.SunProtectionActivity;
 import com.e.uvsafeaustralia.databinding.FragmentSunEduBinding;
 
 /**
@@ -48,7 +49,7 @@ public class SunEduFragment extends Fragment {
         binding.sunProtectionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ProtectionActivity.class);
+                Intent intent = new Intent(getActivity(), SunProtectionActivity.class);
                 startActivity(intent );
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 

@@ -5,14 +5,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewAboutUV"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scroll_view_about_uv_page"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
-        android:text="This is About UV page"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:background="@drawable/about_uv_bg">
+
+            <TextView
+                android:id="@+id/about_uv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="About UV"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <VideoView
+                android:id="@+id/about_uv_video_view"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/about_uv_video_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Source: url" />
+
+            <TextView
+                android:id="@+id/section1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:textColor="#732EB0"
+                android:textSize="20dp"
+                android:fontFamily="@font/concert_one"
+                android:text="UV Index Scale"/>
+
+            <ImageView
+                android:id="@+id/section1_image"
+                android:layout_width="wrap_content"
+                android:layout_height="176dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/uv_scale_image" />
+
+            <TextView
+                android:id="@+id/section2_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:textColor="#732EB0"
+                android:textSize="20dp"
+                android:fontFamily="@font/concert_one"
+                android:text="UV Index Variation In Melbourne 2020"/>
+
+            <ImageView
+                android:id="@+id/section2_image"
+                android:layout_width="wrap_content"
+                android:layout_height="176dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/uv_monthly_melb_2020" />
+
+            <TextView
+                android:id="@+id/section3_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:textColor="#732EB0"
+                android:textSize="20dp"
+                android:fontFamily="@font/concert_one"
+                android:text="UV Index Variation In Australia 2020"/>
+
+
+            <ImageView
+                android:id="@+id/section3_image"
+                android:layout_width="wrap_content"
+                android:layout_height="176dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/uv_capital_cities" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

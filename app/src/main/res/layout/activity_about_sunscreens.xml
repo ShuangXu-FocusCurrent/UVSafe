@@ -5,13 +5,179 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewAboutSunscreens"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scroll_view_sunscreen_page"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="This is About Sunscreens page"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:background="@drawable/about_sunscreen_bg"
+            >
+
+            <TextView
+                android:id="@+id/about_sunscreen_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="Sunscreen"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <VideoView
+                android:id="@+id/about_sunscreen_video_view"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/about_sunscreen_video_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:text="Source: url" />
+
+            <TextView
+                android:id="@+id/section1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:text="How Sunscreen helps you ?"
+                android:textColor="#3A9DF4"
+                android:textSize="20dp" />
+
+            <!--About sunscreen source:-->
+            <!--https://www.skincancer.org/skin-cancer-prevention/sun-protection/sunscreen/-->
+            <TextView
+                android:id="@+id/section1_image"
+                android:layout_width="wrap_content"
+                android:layout_height="176dp"
+                android:layout_weight="1"
+                android:text="When used as directed, sunscreen is proven to:
+\n\nDecrease your risk of skin cancers and skin precancers. Regular daily use of SPF 15 sunscreen can reduce your risk of developing squamous cell carcinoma (SCC) by about 40 percent, and lower your melanoma risk by 50 percent.
+\n\nHelp prevent premature skin aging caused by the sun, including wrinkles, sagging and age spots." />
+
+            <TextView
+                android:id="@+id/sunscreen_text_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:text="Source: https://www.skincancer.org/skin-cancer-prevention/sun-protection/sunscreen/"
+                android:textSize="8dp" />
+
+            <TextView
+                android:id="@+id/section2_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:text="Sunscreen Myths !!"
+                android:textColor="#3A9DF4"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--Myths source url:-->
+                <!--https://www.mdanderson.org/publications/focused-on-health/6-sunscreen-myths-debunked.h26-1592202.html-->
+                <TextView
+                    android:id="@+id/sunscreen_myth1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 1: Sunscreen causes cancer.
+\n\nFalse. There is no medical evidence that sunscreen causes cancer. There is a lot of medical evidence that UV rays from the sun and tanning beds do. But some people worry that the chemicals used in sunscreens are absorbed by the skin and cause cancer.
+\n\n“For those who are worried, we recommend using a sunblock,” Patel says. Sunblock typically contains zinc oxide or titanium dioxide. It cannot be absorbed by the skin and sits on the skin's surface.
+\n\n“This is why it feels like you can never really rub in your sunblock and it’s often visible,” Patel says." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myth2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 2: I have dark skin. I don’t need to wear sunscreen.
+\n\nFalse. Dark skin is just as susceptible to sun damage.
+\n\n“It’s just harder to see sun damage on dark skin,” Patel says. Skin cells respond to UV rays by releasing pigment. This pigment, which we think of as a sunburn, is harder to see in darker skin. “Your skin color is not the same as SPF sun protection,” Patel says.
+\n\nRegardless of your skin color, apply sunscreen liberally 30 minutes before going out in the sun, and don’t forget to reapply." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myth3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 3: My sunscreen is waterproof, so I don’t need to reapply it after swimming or sweating.
+\n\nFalse. There’s no such thing as waterproof sunscreen or sunblock.
+\n\n“We wouldn’t want that because then we couldn’t wash it off,” Patel says.
+\n\nYou may notice some sunscreen and sunblock labels say water resistant, but not waterproof. Regardless, if you’re swimming or sweating - anything that lessens the layer of UV protection you’ve put on - you will need to reapply your sunscreen more often. Instead of reapplying it every two hours as recommended, apply it every hour." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myth4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 4: My sunscreen is SPF 50 so I don’t need to apply it as often.
+\n\nFalse. No matter the number associated with the SPF sunscreen only works for about two hours.
+\n\n'The number refers to how much protection you’re getting from the sunscreen, but not how long it lasts,' Patel says.
+\n\nBe sure to use a sunscreen that's SPF 30 or higher and apply it every two hours." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myth5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 5: There is SPF in my makeup. I don’t need to wear sunscreen.
+\n\nFalse. Chances are, you don’t wear enough makeup to truly protect your skin from the sun, Patel says. And you probably don't use it on all the areas that are exposed to the sun.
+\n\nWhat about moisturizer or other lotions? You may cover your face and neck with these products more completely than you would foundation or blush, but the SPF wears off after a while.
+\n\n“If you put moisturizer on in the morning you still need to apply sunscreen if you go for a walk after work, or even at lunchtime,” Patel says." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myth6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:text="Myth 6: I don’t need sunscreen if it’s cloudy or cold.
+\n\nFalse. “Clouds are simply water vapor. They can’t protect you from UV rays,” Patel says.
+\n\nIf it’s cloudy or cold, you need to apply your sunscreen the same way you would if it were a warm sunny day.
+\n\n“Often people skip the sunscreen when they’re going skiing or heading out in the snow. But they’re actually getting hit by the sun’s rays more than once. Once from the sun and then when the sun’s rays bounce off the snow. The same is true on a cloudy day at the beach. You can get hit by the sun’s rays directly and when they bounce off the water or sand,” Patel says.
+\n\nSunscreen and sunblock are a great way to protect your skin from the sun if you have to be out in it. But don’t forget clothing that can protecting your skin from UV rays and sunglasses to protect the skin around your eyes." />
+
+                <TextView
+                    android:id="@+id/sunscreen_myths_text_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/concert_one"
+                    android:text="https://www.medicalnewstoday.com/articles/318290#Twelve-myths-about-sunscreen"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
