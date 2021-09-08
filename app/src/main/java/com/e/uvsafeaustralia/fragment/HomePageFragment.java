@@ -98,6 +98,7 @@ public class HomePageFragment extends Fragment {
             public void onChanged(String s) {
                 binding.uvIndex.setText(s);
                 int sInt = Integer.parseInt(s.trim());
+                // Don't remove line 102-105. They are for testing purposes.
 //                sInt = 0;
 //                 sInt = 6;
 //                sInt = 8;
@@ -155,14 +156,6 @@ public class HomePageFragment extends Fragment {
                 String time = f.format(days);
                 binding.sunSetTime.setText(time);
                 //Log.e("Weather tResponse",s);
-            }
-        });
-
-
-        binding.address.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.address.setText("Plesase click search");
             }
         });
 

@@ -47,16 +47,15 @@ import java.util.concurrent.TimeUnit;
 public class AlarmPageFragment extends Fragment {
 
     private FragmentAlarmPageBinding binding;
-//    private SharedViewModel sharedViewModel;
 
     private Switch switchNotification;
     private Switch switchAlarm;
     SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     private int hour;
     private int minute;
     private Calendar calendar;
-    private NotificationHelper notificationHelper;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -67,20 +66,29 @@ public class AlarmPageFragment extends Fragment {
         View root = binding.getRoot();
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
 
+        switchAlarm = (Switch) root.findViewById(R.id.switchAlarm);
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState"))
+            switchAlarm.setChecked(sp.getBoolean("alarmState", false));
+        else {
+            setAlarmState(false);
+            switchAlarm.setChecked(false);
+        }
         binding.switchAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     PopTimePicker(root);
+                    setAlarmState(true);
               }else{
                     cancelAlarm();
+                    setAlarmState(false);
                 }
             }
         });
 
         switchNotification = (Switch) root.findViewById(R.id.switchNotification);
         if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("notificationState"))
-            switchNotification.setChecked(sp.getBoolean("state", false));
+            switchNotification.setChecked(sp.getBoolean("notificationState", false));
         else {
             setNotificationState(false);
             switchNotification.setChecked(false);
@@ -134,8 +142,14 @@ public class AlarmPageFragment extends Fragment {
     }
 
     private void setNotificationState(Boolean state) {
-        SharedPreferences.Editor editor = sp.edit();
+        editor = sp.edit();
         editor.putBoolean ("notificationState", state);
+        editor.commit();
+    }
+
+    private void setAlarmState(Boolean state) {
+        editor = sp.edit();
+        editor.putBoolean ("alarmState", state);
         editor.commit();
     }
 
@@ -172,7 +186,7 @@ public class AlarmPageFragment extends Fragment {
     }
 
     private void cancelAlarm(){
-        Toast.makeText(getActivity(), switchNotification.getTextOff().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), switchAlarm.getTextOff().toString(), Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(requireActivity(), AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(requireActivity(),1,intent,0);

@@ -1,7 +1,5 @@
 package com.e.uvsafeaustralia;
 
-//package com.e.uvsafeaustralia;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -41,7 +39,7 @@ public class MainFunction extends AppCompatActivity {
             sharedViewModel.setLon(longitude.trim());
             sharedViewModel.getWeatherInfor(view);
         }
-        //R.id.quizPageFragment
+        //R.id.quizPageFragment // to be included in Iteration 3. DO NOT REMOVE!
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment)
                 .build();

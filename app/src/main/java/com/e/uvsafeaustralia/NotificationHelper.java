@@ -1,7 +1,6 @@
 package com.e.uvsafeaustralia;
 
 import android.annotation.TargetApi;
-import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,27 +9,20 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.e.uvsafeaustralia.MainFunction;
-import com.e.uvsafeaustralia.R;
 
 public class NotificationHelper extends ContextWrapper {
     public static final String channelID = "channel1";
     public static final String channelName = "reapplySunblock";
     private NotificationManager manager;
 
-
     public NotificationHelper(Context base) {
         super(base);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             createChannels();
         }
-
     }
-
 
     @TargetApi(Build.VERSION_CODES.O)
     public void createChannels(){
@@ -43,6 +35,7 @@ public class NotificationHelper extends ContextWrapper {
         getManager().createNotificationChannel(channel);
 
     }
+
     public NotificationManager getManager(){
         if(manager==null){
             manager =(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -60,7 +53,6 @@ public class NotificationHelper extends ContextWrapper {
                 .setContentText(message)
                 .setSmallIcon(R.drawable.ic_alarm)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
-                ;
+                .setContentIntent(pendingIntent);
     }
 }

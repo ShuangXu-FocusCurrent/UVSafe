@@ -7,10 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import androidx.annotation.Nullable;
 
 public class DBManager {
         public static final int DATABASE_VERSION = 1;

@@ -44,7 +44,6 @@ public class LocationActivity extends AppCompatActivity {
 
         String[] locationListAry = locationliststr.split("\n");
         int count = locationListAry.length;
-        System.out.println(count);
         for (String locationraw : locationListAry) {
             String[] locationAry = locationraw.split(",");
             String postcode = locationAry[0];

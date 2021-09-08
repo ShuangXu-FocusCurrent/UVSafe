@@ -2,7 +2,6 @@ package com.e.uvsafeaustralia;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,6 @@ public class SlideViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 SlideActivity.viewPager.setCurrentItem(position-1);
-
             }
         });
 
@@ -127,12 +125,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 backBtn.setVisibility(View.VISIBLE);
                 nextBtn.setVisibility(View.GONE);
                 break;
-
-
         }
-
-
-
         container.addView(view);
         return view;
     }

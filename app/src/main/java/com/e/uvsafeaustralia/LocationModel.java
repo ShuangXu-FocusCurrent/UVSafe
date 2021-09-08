@@ -1,5 +1,6 @@
 package com.e.uvsafeaustralia;
 
+
 public class LocationModel {
     private int id;
     private String postcode;
@@ -13,9 +14,6 @@ public class LocationModel {
         this.suburb = suburb;
         this.latitude = latitude;
         this.longitude = longitude;
-    }
-
-    public LocationModel() {
     }
 
     @Override
@@ -68,6 +66,4 @@ public class LocationModel {
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
-
-
 }

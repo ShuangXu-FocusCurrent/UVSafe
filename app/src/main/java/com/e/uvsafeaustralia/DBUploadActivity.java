@@ -57,8 +57,6 @@ public class DBUploadActivity extends AppCompatActivity {
                 }
                 inputStream.close();
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }

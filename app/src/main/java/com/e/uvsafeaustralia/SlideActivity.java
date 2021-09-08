@@ -1,9 +1,5 @@
 package com.e.uvsafeaustralia;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.location.Location;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,13 +17,8 @@ public class SlideActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         adapter = new SlideViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
-}
-
-    private boolean isOpenAlread() {
-        SharedPreferences sharedPreferences = getSharedPreferences("slide",MODE_PRIVATE);
-        boolean result = sharedPreferences.getBoolean("slide",false);
-        return result;
     }
+
 }
 
 

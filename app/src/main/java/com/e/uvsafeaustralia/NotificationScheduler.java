@@ -4,17 +4,12 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.work.Data;
-import androidx.work.PeriodicWorkRequest;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
@@ -27,8 +22,6 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.DecimalFormat;
 
 import static com.e.uvsafeaustralia.App.CHANNEL_1_ID;
 
@@ -80,7 +73,6 @@ public class NotificationScheduler extends Worker {
     }
 
     private void setNotification() {
-
         Intent intent = new Intent(getApplicationContext(), ProtectionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -96,17 +88,12 @@ public class NotificationScheduler extends Worker {
                 .setAutoCancel(true)
                 .build();
 
-
-
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
         notificationManager.notify(1, builder);
-
     }
 
     public void callWeatherAPI(String lat, String lon) {
         String tempUrl = "";
-
-//
         tempUrl=UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
@@ -126,19 +113,15 @@ public class NotificationScheduler extends Worker {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Toast.makeText(requireActivity(),error.toString().trim(),Toast.LENGTH_LONG).show();
                 Log.e("Weather Response ",error.toString().trim());
-
             }
-        }
-        );
+        });
+
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
-
     }
 }

@@ -83,7 +83,6 @@ public class SharedViewModel extends ViewModel {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Toast.makeText(requireActivity(),error.toString().trim(),Toast.LENGTH_LONG).show();
                 Log.e("Error Response ",error.toString().trim());
             }
         });
