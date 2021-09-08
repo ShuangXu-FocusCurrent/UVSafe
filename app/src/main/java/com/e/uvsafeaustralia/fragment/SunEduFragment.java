@@ -11,12 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.e.uvsafeaustralia.AboutSunscreensActivity;
-import com.e.uvsafeaustralia.AboutUVActivity;
-import com.e.uvsafeaustralia.LocationActivity;
-import com.e.uvsafeaustralia.R;
+/*import com.e.uvsafeaustralia.AboutUVActivity;*/
 
-import com.e.uvsafeaustralia.SunProtectionActivity;
-import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
+import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.databinding.FragmentSunEduBinding;
 
 /**
@@ -39,7 +36,7 @@ public class SunEduFragment extends Fragment {
         binding = FragmentSunEduBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        binding.aboutUVButton.setOnClickListener(new View.OnClickListener() {
+        /*binding.aboutUVButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AboutUVActivity.class);
@@ -47,12 +44,12 @@ public class SunEduFragment extends Fragment {
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 
             }
-        });
+        });*/
 
         binding.sunProtectionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SunProtectionActivity.class);
+                Intent intent = new Intent(getActivity(), ProtectionActivity.class);
                 startActivity(intent );
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 

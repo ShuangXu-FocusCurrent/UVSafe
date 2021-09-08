@@ -22,26 +22,30 @@
         </activity>
         <activity android:name=".DBUploadActivity"
             android:parentActivityName=".MainActivity"></activity>
+
         <activity android:name=".SlideActivity"
             android:parentActivityName=".MainActivity"
             android:label="Introduction"></activity>
+
         <activity android:name=".MainFunction"
             android:parentActivityName=".SlideActivity"></activity>
-        <activity android:name=".ProtectionActivity"
-            android:parentActivityName=".MainFunction"
-            android:label="Protection Measures"></activity>
+
         <activity android:name=".LocationActivity"
             android:parentActivityName=".MainFunction"
             android:label="Search Location"></activity>
-        <activity android:name=".AboutUVActivity"
+
+        <!--<activity android:name=".AboutUVActivity"
             android:parentActivityName=".MainFunction"
-            android:label="About UV"></activity>
+            android:label="About UV"></activity>-->
+
         <activity android:name=".AboutSunscreensActivity"
             android:parentActivityName=".MainFunction"
             android:label="About Sunscreens"></activity>
-        <activity android:name=".SunProtectionActivity"
+
+        <activity android:name=".ProtectionActivity"
             android:parentActivityName=".MainFunction"
             android:label="Sun Protection"></activity>
+
         <receiver android:name=".AlarmReceiver"/>
     </application>
 
