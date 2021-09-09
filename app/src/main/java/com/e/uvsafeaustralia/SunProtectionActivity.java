@@ -1,5 +1,6 @@
 package com.e.uvsafeaustralia;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,15 @@ public class SunProtectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 playSunProtectionVid();
+            }
+        });
+
+        Button protectionMeasureBtn = (Button) findViewById(R.id.edu_sun_main_button);
+        protectionMeasureBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent( SunProtectionActivity.this , ProtectionActivity.class);
+                startActivity(homeIntent);
             }
         });
     }
