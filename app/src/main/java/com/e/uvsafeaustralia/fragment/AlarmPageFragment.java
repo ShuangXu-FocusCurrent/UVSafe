@@ -20,6 +20,9 @@ import androidx.work.WorkManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TimePicker;
@@ -48,6 +51,7 @@ public class AlarmPageFragment extends Fragment {
 
     private FragmentAlarmPageBinding binding;
 
+
     private Switch switchNotification;
     private Switch switchAlarm;
     SharedPreferences sp;
@@ -56,6 +60,9 @@ public class AlarmPageFragment extends Fragment {
     private int hour;
     private int minute;
     private Calendar calendar;
+    private NotificationHelper notificationHelper;
+    String[] timeSelectionValues = {"1 minute","1 hour","2 hours","3 hours"};
+    private long addhours;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -65,6 +72,9 @@ public class AlarmPageFragment extends Fragment {
         binding = FragmentAlarmPageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(getContext(),R.array.hours_selection,R.layout.custon_spinner_layout);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.timeSlection.setAdapter(adapter);
 
         switchAlarm = (Switch) root.findViewById(R.id.switchAlarm);
         if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState"))
@@ -77,11 +87,21 @@ public class AlarmPageFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    PopTimePicker(root);
                     setAlarmState(true);
+                    String text =binding.timeSlection.getSelectedItem().toString().trim();
+                    String m = text.substring(2,3);
+                    if(text.substring(2,3).equals("m")){
+                        int value = Integer.valueOf(text.substring(0,1));
+                        addhours = 1000*60*value;
+                    }else{
+                        int value = Integer.valueOf(text.substring(0,1));
+                        addhours = 1000*60*60*value;
+                    }
+                    startAlarm(addhours);
               }else{
                     cancelAlarm();
                     setAlarmState(false);
+
                 }
             }
         });
@@ -94,12 +114,10 @@ public class AlarmPageFragment extends Fragment {
             switchNotification.setChecked(false);
         }
         switchNotification.setOnClickListener(new SwitchNotificationClick());
-
         return root;
     }
 
     private PeriodicWorkRequest checkWeather;
-
     private class SwitchNotificationClick implements View.OnClickListener {
         private String suburb = sp.getString("suburb", UtilTools.DEFAULT_SUBURB);
         private String postcode = sp.getString("postcode", UtilTools.DEFAULT_POSTCODE);
@@ -147,42 +165,22 @@ public class AlarmPageFragment extends Fragment {
         editor.commit();
     }
 
+
     private void setAlarmState(Boolean state) {
         editor = sp.edit();
         editor.putBoolean ("alarmState", state);
         editor.commit();
     }
 
-    public void PopTimePicker(View view){
-        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int hourOfDay, int minuteOfhour) {
-                hour=hourOfDay;
-                minute=minuteOfhour;
-                calendar = Calendar.getInstance();
-                calendar.set(Calendar.HOUR_OF_DAY,hour);
-                calendar.set(Calendar.MINUTE,minute);
-                calendar.set(Calendar.SECOND,0);
-                startAlarm(calendar);
-            }
-        };
-        TimePickerDialog timePickerDialog = new TimePickerDialog(requireContext(),onTimeSetListener,hour,minute,true);
-        timePickerDialog.setTitle("Select Time");
-        timePickerDialog.show();
-    }
-
     @TargetApi(Build.VERSION_CODES.O)
-    private void startAlarm(Calendar c){
-        String timeText = "Alarm set for reapplying sunblock: ";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
-
-        Toast.makeText(getActivity(), timeText, Toast.LENGTH_LONG).show();
+    private void startAlarm(long addhours){
+        long currentTime = System.currentTimeMillis();
+        Toast.makeText(getActivity(), "Setting Alarm Successful", Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(requireActivity(), AlarmReceiver.class);
         intent.putExtra("notification","alarmPageFragment");
-
         PendingIntent pendingIntent = PendingIntent.getBroadcast(requireActivity(),1,intent,0);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,currentTime+addhours,pendingIntent);
     }
 
     private void cancelAlarm(){

@@ -18,5 +18,11 @@
     <string name="ultrawe">Powered by UltraWe</string>
     <string name="protectRequired">Sun Protection \n Required</string>
     <string name="protectNotRequired">Sun Protection Not \n  Required</string>
+    <string-array name="hours_selection">
+        <item>1 minute</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>3 hours</item>
+    </string-array>
 
 </resources>

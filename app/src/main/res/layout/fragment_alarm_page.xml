@@ -58,15 +58,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:text="@string/alarm"
+            android:text="Remind me after"
             android:textColor="#300D93"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/alarm_background"
             app:layout_constraintEnd_toEndOf="@+id/alarm_background"
-            app:layout_constraintHorizontal_bias="0.793"
+            app:layout_constraintHorizontal_bias="0.374"
             app:layout_constraintStart_toStartOf="@+id/alarm_background"
             app:layout_constraintTop_toTopOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.341" />
+            app:layout_constraintVertical_bias="0.358" />
 
         <TextView
             android:id="@+id/notification_txt"
@@ -131,6 +131,17 @@
             app:layout_constraintStart_toStartOf="@+id/notification_background"
             app:layout_constraintTop_toBottomOf="@+id/alarm_background"
             app:layout_constraintVertical_bias="0.128" />
+
+        <Spinner
+            android:id="@+id/timeSlection"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_background"
+            app:layout_constraintEnd_toEndOf="@+id/alarm_background"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/alarm_background"
+            app:layout_constraintTop_toTopOf="@+id/alarm_background"
+            app:layout_constraintVertical_bias="0.369" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
