@@ -45,7 +45,7 @@ public class NotificationHelper extends ContextWrapper {
 
     public NotificationCompat.Builder getChannelNotification(String title,String message){
         Intent resultIntent = new Intent(this, MainFunction.class);
-
+        resultIntent.putExtra("Alarm","Alarm");
         PendingIntent pendingIntent=PendingIntent.getActivity(this,1,resultIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
         return new NotificationCompat.Builder(getApplicationContext(),channelID)

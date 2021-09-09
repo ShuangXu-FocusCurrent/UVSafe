@@ -25,9 +25,23 @@ public class MainFunction extends AppCompatActivity {
         setContentView(view);
         sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
 
+        //R.id.quizPageFragment // to be included in Iteration 3. DO NOT REMOVE!
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+
         if(getIntent()==null || getIntent().getExtras()==null){
+            navController.navigate(R.id.sunEduFragment);
+        } else if(getIntent().hasExtra("Alarm")){
             sharedViewModel.getWeatherInfor(view);
-        }else{
+            navController.navigate(R.id.alarmPageFragment);
+        }else if(getIntent().hasExtra("slide")){
+            sharedViewModel.getWeatherInfor(view);
+        }
+        else{
             Bundle location = getIntent().getExtras();
             String suburb = location.getString("suburb");
             String postcode = location.getString("postcode");
@@ -39,12 +53,6 @@ public class MainFunction extends AppCompatActivity {
             sharedViewModel.setLon(longitude.trim());
             sharedViewModel.getWeatherInfor(view);
         }
-        //R.id.quizPageFragment // to be included in Iteration 3. DO NOT REMOVE!
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+
     }
 }
