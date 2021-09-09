@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/edu_sun_main_bg"
         android:orientation="vertical"
-        android:padding="30dp"
-        android:background="@drawable/edu_sun_main_bg">
+        android:padding="30dp">
 
         <TextView
             android:id="@+id/edu_sun_main_header"
@@ -25,34 +27,52 @@
 
         <VideoView
             android:id="@+id/edu_sun_main_video_view"
-            android:layout_width="wrap_content"
-            android:layout_height="185dp"
+            android:layout_width="266dp"
+            android:layout_height="165dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|clip_horizontal|center|clip_vertical|center_vertical|fill_vertical"
             android:layout_marginBottom="10dp"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/buttonSunProtectionVid"
-            android:layout_width="350dp"
-            android:layout_height="62dp"
             android:layout_weight="1"
-            android:text="@string/playVideo"
-            app:backgroundTint="#EA564C" />
+            android:foregroundGravity="center|fill_vertical|clip_vertical|fill" />
+
 
         <TextView
             android:id="@+id/edu_sun_main_video_source"
-            android:layout_width="348dp"
-            android:layout_height="56dp"
+            android:layout_width="301dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:fontFamily="@font/concert_one"
-            android:text="@string/videoResouceSunProtection" />
+            android:gravity="center"
+            android:text="@string/videoResouceSunProtection"
+            android:textSize="8sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/buttonSunProtectionVid"
+            android:layout_width="191dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:text="@string/playVideo"
+            android:textColor="#FF8715"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="20dp"
+            app:strokeColor="#C6C2BE"
+            app:strokeWidth="3dp" />
 
         <ImageView
             android:id="@+id/edu_sun_main_image"
             android:layout_width="wrap_content"
             android:layout_height="176dp"
-            android:layout_weight="1"
             android:layout_marginBottom="30dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/edu_sun_main_image" />
 
         <com.google.android.material.button.MaterialButton
@@ -62,11 +82,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Click Me to See  Sun Protective Measurements"
-            android:textColor="#FBBC05 "
+            android:textColor="#FF942D"
             android:textSize="15sp"
-            app:cornerRadius="15dp"
             app:backgroundTint="@color/white"
-            app:strokeColor="#C8D2DC"
+            app:cornerRadius="15dp"
+            app:strokeColor="#C7C2BD"
             app:strokeWidth="2dp" />
 
     </LinearLayout>

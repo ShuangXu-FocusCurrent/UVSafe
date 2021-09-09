@@ -40,27 +40,37 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/buttonAboutSunscreenVid"
-                android:layout_width="347dp"
-                android:layout_height="14dp"
-                android:layout_weight="1"
-                android:text="@string/playVideo"
-                app:backgroundTint="#EA564C" />
-
             <TextView
                 android:id="@+id/about_sunscreen_video_source"
                 android:layout_width="345dp"
                 android:layout_height="16dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/concert_one"
-                android:text="@string/skinEduVideoResources" />
+                android:gravity="center"
+                android:text="@string/skinEduVideoResources"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/buttonAboutSunscreenVid"
+                android:layout_width="176dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal"
+                android:text="@string/playVideo"
+                android:textColor="#743AB7"
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="20dp"
+                app:strokeColor="#673AB7"
+                app:strokeWidth="3dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/section1_header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="15dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/concert_one"

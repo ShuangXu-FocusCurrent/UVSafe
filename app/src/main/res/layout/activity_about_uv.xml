@@ -35,36 +35,53 @@
 
             <VideoView
                 android:id="@+id/about_uv_video_view"
-                android:layout_width="wrap_content"
-                android:layout_height="170dp"
+                android:layout_width="312dp"
+                android:layout_height="177dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|clip_horizontal|center|clip_vertical|center_vertical|fill_vertical"
                 android:layout_marginBottom="10dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/buttonAboutUVVideo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/playVideo"
-                app:backgroundTint="#EA564C" />
+                android:foregroundGravity="center|fill_vertical|clip_vertical|fill" />
 
             <TextView
                 android:id="@+id/textViewAboutUVSource"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/skinEduVideoResources" />
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="@string/skinEduVideoResources"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/buttonAboutUVVideo"
+                android:layout_width="191dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal"
+                android:text="@string/playVideo"
+                android:textColor="#743AB7"
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="20dp"
+                app:strokeColor="#673AB7"
+                app:strokeWidth="3dp" />
 
             <TextView
                 android:id="@+id/section1_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:textColor="#732EB0"
-                android:textSize="20dp"
                 android:fontFamily="@font/concert_one"
-                android:text="UV Index Scale"/>
+                android:text="UV Index Scale"
+                android:textColor="#732EB0"
+                android:textSize="20dp" />
 
             <ImageView
                 android:id="@+id/section1_image"
