@@ -25,6 +25,7 @@ public class SharedViewModel extends ViewModel {
     private MutableLiveData<String> uvlValue;
     private MutableLiveData<String> sunriseValue;
     private MutableLiveData<String> sunsetValue;
+    private MutableLiveData<String> switchTag;
 
     public SharedViewModel(){
         location = new MutableLiveData<>();
@@ -32,6 +33,7 @@ public class SharedViewModel extends ViewModel {
         uvlValue=new MutableLiveData<>();
         sunriseValue=new MutableLiveData<>();
         sunsetValue=new MutableLiveData<>();
+        switchTag=new MutableLiveData<>();
         lat="-37.8136";
         lon="144.9631";
     }
@@ -46,10 +48,12 @@ public class SharedViewModel extends ViewModel {
     public LiveData<String>  getUvlValue() { return uvlValue; }
     public LiveData<String>  getSunriselValue() { return sunriseValue; }
     public LiveData<String>  getSunSetValue() { return sunsetValue; }
+    public LiveData<String> getSwitchTag() { return switchTag; }
     public void setUvlValue(String uvlValueMes) { uvlValue.setValue(uvlValueMes); }
     public void setTemperature(String temperatureMes) { uvlValue.setValue(temperatureMes); }
     public void setSunriseValue(String sunriseMes) { sunriseValue.setValue(sunriseMes); }
     public void setSunsetValue(String sunsetMes) { sunsetValue.setValue(sunsetMes); }
+    public void setSwitchTag(String switchTagMes) { switchTag.setValue(switchTagMes);}
 
 
     public void getWeatherInfor(View view){

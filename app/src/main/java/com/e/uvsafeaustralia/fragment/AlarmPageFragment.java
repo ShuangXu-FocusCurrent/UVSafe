@@ -11,12 +11,17 @@ import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.work.Constraints;
 import androidx.work.Data;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
+
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,19 +55,15 @@ import java.util.concurrent.TimeUnit;
 public class AlarmPageFragment extends Fragment {
 
     private FragmentAlarmPageBinding binding;
-
-
     private Switch switchNotification;
     private Switch switchAlarm;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-
-    private int hour;
-    private int minute;
-    private Calendar calendar;
+    private SharedViewModel sharedViewModel;
+//    private Calendar calendar;
     private NotificationHelper notificationHelper;
-    String[] timeSelectionValues = {"1 minute","1 hour","2 hours","3 hours"};
     private long addhours;
+    final Handler handler = new Handler(Looper.getMainLooper());
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -75,14 +76,27 @@ public class AlarmPageFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(getContext(),R.array.hours_selection,R.layout.custon_spinner_layout);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.timeSlection.setAdapter(adapter);
-
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         switchAlarm = (Switch) root.findViewById(R.id.switchAlarm);
-        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState"))
+
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState")) {
+            Boolean test = sp.getBoolean("alarmState", false);
             switchAlarm.setChecked(sp.getBoolean("alarmState", false));
-        else {
+        }else {
             setAlarmState(false);
             switchAlarm.setChecked(false);
         }
+
+        if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("startTime")&& getActivity().getPreferences(Context.MODE_PRIVATE).contains("addHours")){
+           long startTimeValue =sp.getLong("startTime",1);
+           long addhoursValue =sp.getLong("addHours",1);
+           long currentTime = System.currentTimeMillis();
+           if(startTimeValue+addhoursValue<= currentTime){
+               binding.switchAlarm.setChecked(false);
+               sharedViewModel.setSwitchTag("true");
+            }
+        }
+
         binding.switchAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -90,6 +104,7 @@ public class AlarmPageFragment extends Fragment {
                     setAlarmState(true);
                     String text =binding.timeSlection.getSelectedItem().toString().trim();
                     String m = text.substring(2,3);
+                    long current = System.currentTimeMillis();
                     if(text.substring(2,3).equals("m")){
                         int value = Integer.valueOf(text.substring(0,1));
                         addhours = 1000*60*value;
@@ -98,10 +113,30 @@ public class AlarmPageFragment extends Fragment {
                         addhours = 1000*60*60*value;
                     }
                     startAlarm(addhours);
+                    setAlarmState(true);
+                    storeTime(current,addhours);
+                    sharedViewModel.setSwitchTag("True");
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setAlarmState(false);
+                            sharedViewModel.setSwitchTag("False");
+                        }
+                    },addhours+2);
+
               }else{
                     cancelAlarm();
                     setAlarmState(false);
+                    handler.removeCallbacksAndMessages(null);
+                }
+            }
+        });
 
+        sharedViewModel.getSwitchTag().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                if(s.equals("False")){
+                    binding.switchAlarm.setChecked(false);
                 }
             }
         });
@@ -169,6 +204,13 @@ public class AlarmPageFragment extends Fragment {
     private void setAlarmState(Boolean state) {
         editor = sp.edit();
         editor.putBoolean ("alarmState", state);
+        editor.commit();
+    }
+
+    private void storeTime(long currentTime, long addTime) {
+        editor = sp.edit();
+        editor.putLong ("startTime", currentTime);
+        editor.putLong ("addHours", addTime);
         editor.commit();
     }
 
