@@ -102,10 +102,21 @@
                 android:fontFamily="@font/concert_one"
                 android:text="UV Index Variation In Melbourne 2020"/>
 
+            <TextView
+                android:id="@+id/uv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="Here's how the daily maximum UV level changed in each month in year 2020" />
+
             <ImageView
                 android:id="@+id/section2_image"
                 android:layout_width="wrap_content"
-                android:layout_height="176dp"
+                android:layout_height="191dp"
                 android:layout_marginBottom="30dp"
                 android:layout_weight="1"
                 android:padding="20dp"
@@ -116,7 +127,7 @@
                 android:id="@+id/section3_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:textColor="#732EB0"
                 android:textSize="20dp"
