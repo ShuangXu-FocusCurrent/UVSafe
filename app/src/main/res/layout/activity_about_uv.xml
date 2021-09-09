@@ -40,14 +40,20 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/about_uv_video_source"
+            <Button
+                android:id="@+id/buttonAboutUVVideo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Source: url" />
+                android:text="@string/playVideo"
+                app:backgroundTint="#EA564C" />
+
+            <TextView
+                android:id="@+id/textViewAboutUVSource"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/skinEduVideoResources" />
 
             <TextView
                 android:id="@+id/section1_header"
@@ -83,8 +89,10 @@
                 android:id="@+id/section2_image"
                 android:layout_width="wrap_content"
                 android:layout_height="176dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:paddingLeft="20dp"
                 app:srcCompat="@drawable/uv_monthly_melb_2020" />
 
             <TextView

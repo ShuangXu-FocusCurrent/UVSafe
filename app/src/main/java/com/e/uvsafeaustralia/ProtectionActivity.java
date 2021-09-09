@@ -8,6 +8,6 @@ public class ProtectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sun_protection_page);
+        setContentView(R.layout.activity_protection_measures);
     }
 }

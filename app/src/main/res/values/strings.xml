@@ -18,6 +18,9 @@
     <string name="ultrawe">Powered by UltraWe</string>
     <string name="protectRequired">Sun Protection \n Required</string>
     <string name="protectNotRequired">Sun Protection Not \n  Required</string>
+    <string name="skinEduVideoResources">Source: https://www.cancer.nsw.gov.au</string>
+    <string name="playVideo">Play Video</string>
+    <string name="videoResouceSunProtection">Source : SunSmart Victoria : https://www.youtube.com/watch?v=Fwa49vPr-3I</string>
     <string-array name="hours_selection">
         <item>1 minute</item>
         <item>1 hour</item>
