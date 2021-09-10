@@ -11,7 +11,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProtectionActivity extends AppCompatActivity {
-    private TextView popUpTxt;
+    private ImageView popUpTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,13 @@ public class ProtectionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        popUpTxt = (TextView) findViewById(R.id.sun_protection_message);
+        popUpTxt = (ImageView) findViewById(R.id.sun_protection_message);
 
         ImageView slip = (ImageView) findViewById(R.id.imageViewSlip);
         slip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popUpTxt.setText("Slip on Sun Protective clothing. Cover your skin.");
+
             }
         });
 
@@ -35,7 +35,7 @@ public class ProtectionActivity extends AppCompatActivity {
         slop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popUpTxt.setText("Slop on SPF 30+, broad-spectrum, water resistant sunscreen.");
+//                popUpTxt.setText("Slop on SPF 30+, broad-spectrum, water resistant sunscreen.");
             }
         });
 
@@ -43,7 +43,7 @@ public class ProtectionActivity extends AppCompatActivity {
         slap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popUpTxt.setText("Slap on a broad-brimmed hat that shades your face, ears and neck.");
+//                popUpTxt.setText("Slap on a broad-brimmed hat that shades your face, ears and neck.");
             }
         });
 
@@ -51,7 +51,7 @@ public class ProtectionActivity extends AppCompatActivity {
         seek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popUpTxt.setText("Seek Shade and take breaks from sun.");
+//                popUpTxt.setText("Seek Shade and take breaks from sun.");
             }
         });
 
@@ -59,7 +59,7 @@ public class ProtectionActivity extends AppCompatActivity {
         shade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popUpTxt.setText("Slide on a pair of sunglasses that have a good UV protection");
+//                popUpTxt.setText("Slide on a pair of sunglasses that have a good UV protection");
             }
         });
     }

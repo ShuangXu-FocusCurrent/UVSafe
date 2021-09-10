@@ -22,17 +22,6 @@
             android:background="@drawable/about_sunscreen_bg"
             >
 
-            <TextView
-                android:id="@+id/about_sunscreen_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:text="Sunscreen"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
             <VideoView
                 android:id="@+id/about_sunscreen_video_view"
                 android:layout_width="wrap_content"

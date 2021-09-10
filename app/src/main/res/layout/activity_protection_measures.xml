@@ -12,125 +12,67 @@
         android:layout_height="match_parent"
         android:background="@drawable/sun_protection_bg">
 
-        <ScrollView
-            android:id="@+id/scroll_view_sun_protection_page"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+        <ImageView
+            android:id="@+id/imageViewSlip"
+            android:layout_width="102dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:src="@drawable/slip"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466" />
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="3"
-                android:padding="30dp"
-                android:rowCount="4"
-                android:useDefaultMargins="true">
+        <ImageView
+            android:id="@+id/imageViewSlop"
+            android:layout_width="102dp"
+            android:layout_height="118dp"
+            android:src="@drawable/slop"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewSlip"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewSlap"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_columnSpan="3"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/sun_protection_header"
-                    android:gravity="center" />
+        <ImageView
+            android:id="@+id/imageViewSlap"
+            android:layout_width="105dp"
+            android:layout_height="116dp"
+            android:src="@drawable/slap"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewSlop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.468"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
+        <ImageView
+            android:id="@+id/imageViewSeek"
+            android:layout_width="120dp"
+            android:layout_height="114dp"
+            android:src="@drawable/seek"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewShade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewSlap" />
 
-                <ImageButton
-                    android:id="@+id/imageViewSlap"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/slap"
-                    android:gravity="center" />
+        <ImageView
+            android:id="@+id/imageViewShade"
+            android:layout_width="97dp"
+            android:layout_height="116dp"
+            android:src="@drawable/shade"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSlip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.657"
+            app:layout_constraintStart_toStartOf="@+id/imageViewSeek" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/imageViewSlop"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/slop"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/sun_protection_message"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="12.5dp"
-                    android:layout_marginRight="12.5dp"
-                    android:gravity="center"
-                    android:textSize="12sp" />
-
-                <ImageButton
-                    android:id="@+id/imageViewSeek"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="25dp"
-                    android:background="@drawable/seek"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/imageViewSlip"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="25dp"
-                android:background="@drawable/slip"
-                android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="12.5dp"
-                    android:layout_marginRight="12.5dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/imageViewShade"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="25dp"
-                    android:background="@drawable/shade"
-                    android:gravity="center" />
-            </GridLayout>
-        </ScrollView>
+        <ImageView
+            android:id="@+id/sun_protection_message"
+            android:layout_width="166dp"
+            android:layout_height="197dp"
+            android:src="@drawable/slip1"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSlip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap"
+            app:layout_constraintVertical_bias="0.486" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

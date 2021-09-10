@@ -21,18 +21,6 @@
             android:padding="30dp"
             android:background="@drawable/about_uv_bg">
 
-            <TextView
-                android:id="@+id/about_uv_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:text="About UV"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
             <VideoView
                 android:id="@+id/about_uv_video_view"
                 android:layout_width="312dp"

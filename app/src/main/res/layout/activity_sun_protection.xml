@@ -13,18 +13,6 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-        <TextView
-            android:id="@+id/edu_sun_main_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/concert_one"
-            android:gravity="center"
-            android:text="Sun Protection"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
         <VideoView
             android:id="@+id/edu_sun_main_video_view"
             android:layout_width="266dp"
