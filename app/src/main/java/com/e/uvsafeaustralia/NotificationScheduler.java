@@ -85,6 +85,7 @@ public class NotificationScheduler extends Worker {
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .setContentIntent(pendingIntent)
+                .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
                 .build();
 
