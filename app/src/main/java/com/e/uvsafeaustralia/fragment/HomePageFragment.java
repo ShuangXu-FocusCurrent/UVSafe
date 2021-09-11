@@ -106,27 +106,27 @@ public class HomePageFragment extends Fragment {
                 binding.uvIndex.setText(String.valueOf(sInt));
                 if(sInt>=0 && sInt<3){
                     binding.uvmeter.setImageResource(R.drawable.uv_low);
-                    binding.uvInstrcut.setText("Low UV Level");
+//                    binding.uvInstrcut.setText("Low UV Level");
                     binding.buttonInfo.setVisibility(View.GONE);
                     binding.uvInstrcut2.setText(R.string.protectNotRequired);
                 }if(sInt>=3 && sInt<6){
                     binding.uvmeter.setImageResource(R.drawable.uv_moderate);
-                    binding.uvInstrcut.setText("Moderate UV Level");
+//                    binding.uvInstrcut.setText("Moderate UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=6 && sInt<8){
                     binding.uvmeter.setImageResource(R.drawable.uv_high);
-                    binding.uvInstrcut.setText("High UV Level");
+//                    binding.uvInstrcut.setText("High UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=8 && sInt<11){
                     binding.uvmeter.setImageResource(R.drawable.uv_very_high);
-                    binding.uvInstrcut.setText("Very High UV Level");
+//                    binding.uvInstrcut.setText("Very High UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=11 ){
                     binding.uvmeter.setImageResource(R.drawable.uv_extreme);
-                    binding.uvInstrcut.setText("Extreme UV Level");
+//                    binding.uvInstrcut.setText("Extreme UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }
