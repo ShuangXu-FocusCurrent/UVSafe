@@ -4,14 +4,23 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProtectionActivity extends AppCompatActivity {
-    private ImageView popUpTxt;
+    private ImageView slip;
+    private ImageView slop;
+    private ImageView slap;
+    private ImageView seek;
+    private ImageView shade;
+    private ImageView slipTxtImgView;
+    private ImageView slopTxtImgView;
+    private ImageView slapTxtImgView;
+    private ImageView seekTxtImgView;
+    private ImageView shadeTxtImgView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,45 +30,75 @@ public class ProtectionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        popUpTxt = (ImageView) findViewById(R.id.sun_protection_message);
+        slipTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlip);
+        slopTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlop);
+        slapTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlap);
+        seekTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSeek);
+        shadeTxtImgView = (ImageView) findViewById(R.id.imageViewMessageShade);
 
-        ImageView slip = (ImageView) findViewById(R.id.imageViewSlip);
+        slipTxtImgView.setVisibility(View.INVISIBLE);
+        slopTxtImgView.setVisibility(View.INVISIBLE);
+        slapTxtImgView.setVisibility(View.INVISIBLE);
+        seekTxtImgView.setVisibility(View.INVISIBLE);
+        shadeTxtImgView.setVisibility(View.INVISIBLE);
+
+        slip = (ImageView) findViewById(R.id.imageViewSlip);
         slip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                slipTxtImgView.setVisibility(v.VISIBLE);
+                slopTxtImgView.setVisibility(v.INVISIBLE);
+                slapTxtImgView.setVisibility(v.INVISIBLE);
+                seekTxtImgView.setVisibility(v.INVISIBLE);
+                shadeTxtImgView.setVisibility(v.INVISIBLE);
             }
         });
 
-        ImageView slop = (ImageView) findViewById(R.id.imageViewSlop);
+        slop = (ImageView) findViewById(R.id.imageViewSlop);
         slop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                popUpTxt.setText("Slop on SPF 30+, broad-spectrum, water resistant sunscreen.");
+                slipTxtImgView.setVisibility(v.INVISIBLE);
+                slopTxtImgView.setVisibility(v.VISIBLE);
+                slapTxtImgView.setVisibility(v.INVISIBLE);
+                seekTxtImgView.setVisibility(v.INVISIBLE);
+                shadeTxtImgView.setVisibility(v.INVISIBLE);
             }
         });
 
-        ImageView slap = (ImageView) findViewById(R.id.imageViewSlap);
+        slap = (ImageView) findViewById(R.id.imageViewSlap);
         slap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                popUpTxt.setText("Slap on a broad-brimmed hat that shades your face, ears and neck.");
+                slipTxtImgView.setVisibility(v.INVISIBLE);
+                slopTxtImgView.setVisibility(v.INVISIBLE);
+                slapTxtImgView.setVisibility(v.VISIBLE);
+                seekTxtImgView.setVisibility(v.INVISIBLE);
+                shadeTxtImgView.setVisibility(v.INVISIBLE);
             }
         });
 
-        ImageView seek = (ImageView) findViewById(R.id.imageViewSeek);
+        seek = (ImageView) findViewById(R.id.imageViewSeek);
         seek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                popUpTxt.setText("Seek Shade and take breaks from sun.");
+                slipTxtImgView.setVisibility(v.INVISIBLE);
+                slopTxtImgView.setVisibility(v.INVISIBLE);
+                slapTxtImgView.setVisibility(v.INVISIBLE);
+                seekTxtImgView.setVisibility(v.VISIBLE);
+                shadeTxtImgView.setVisibility(v.INVISIBLE);
             }
         });
 
-        ImageView shade = (ImageView) findViewById(R.id.imageViewShade);
+        shade = (ImageView) findViewById(R.id.imageViewShade);
         shade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                popUpTxt.setText("Slide on a pair of sunglasses that have a good UV protection");
+                slipTxtImgView.setVisibility(v.INVISIBLE);
+                slopTxtImgView.setVisibility(v.INVISIBLE);
+                slapTxtImgView.setVisibility(v.INVISIBLE);
+                seekTxtImgView.setVisibility(v.INVISIBLE);
+                shadeTxtImgView.setVisibility(v.VISIBLE);
             }
         });
     }
