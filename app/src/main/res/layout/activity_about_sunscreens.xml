@@ -146,11 +146,12 @@
                 <ImageView
                     android:id="@+id/myth1"
                     android:layout_width="250dp"
-                    android:paddingRight="10dp"
-                    android:layout_rowSpan="6"
                     android:layout_height="290dp"
-                    app:srcCompat="@drawable/myth1"
-                    />
+                    android:layout_row="0"
+                    android:layout_rowSpan="6"
+                    android:layout_column="1"
+                    android:paddingRight="10dp"
+                    app:srcCompat="@drawable/myth1" />
 
                 <Button
                     android:id="@+id/button_myth2"

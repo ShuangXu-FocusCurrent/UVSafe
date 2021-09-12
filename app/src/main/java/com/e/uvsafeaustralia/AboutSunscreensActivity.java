@@ -9,7 +9,10 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.e.uvsafeaustralia.databinding.ActivityAboutSunscreensBinding;
+
 public class AboutSunscreensActivity extends AppCompatActivity {
+    private ActivityAboutSunscreensBinding binding;
     private VideoView aboutSunscreenVid;
     private Button aboutSunscreenVidBtn;
     private MediaController mediaController;
@@ -17,7 +20,9 @@ public class AboutSunscreensActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_sunscreens);
+        binding =ActivityAboutSunscreensBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         aboutSunscreenVid = (VideoView) findViewById(R.id.about_sunscreen_video_view);
         aboutSunscreenVidBtn = (Button) findViewById(R.id.buttonAboutSunscreenVid);
@@ -29,6 +34,44 @@ public class AboutSunscreensActivity extends AppCompatActivity {
                 playAboutSunscreenVid();
             }
         });
+
+        binding.buttonMyth1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth1);
+            }
+        });
+
+        binding.buttonMyth2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth2);
+            }
+        });
+        binding.buttonMyth3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth3);
+            }
+        });
+        binding.buttonMyth4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth4);
+            }
+        });
+        binding.buttonMyth5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth5);
+            }
+        });
+        binding.buttonMyth6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.myth1.setImageResource(R.drawable.myth6);
+            }
+        });
     }
 
     public void playAboutSunscreenVid() {
@@ -38,4 +81,6 @@ public class AboutSunscreensActivity extends AppCompatActivity {
         mediaController.setAnchorView(aboutSunscreenVid);
         aboutSunscreenVid.start();
     }
+
+
 }
