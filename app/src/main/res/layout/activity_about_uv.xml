@@ -17,9 +17,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/about_uv_bg"
             android:orientation="vertical"
-            android:padding="30dp"
-            android:background="@drawable/about_uv_bg">
+            android:padding="30dp">
 
             <VideoView
                 android:id="@+id/about_uv_video_view"
@@ -54,7 +54,7 @@
                 android:gravity="center|center_horizontal"
                 android:text="@string/playVideo"
                 android:textColor="#743AB7"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#C8C8C8"
                 app:cornerRadius="20dp"
                 app:strokeColor="#673AB7"
                 app:strokeWidth="3dp" />
@@ -63,20 +63,31 @@
                 android:id="@+id/section1_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/concert_one"
                 android:text="UV Index Scale"
                 android:textColor="#732EB0"
-                android:textSize="20dp" />
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/uv_scale_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="Let's understand the UV Index Scale and protect ourselves from sunlight" />
 
             <ImageView
                 android:id="@+id/section1_image"
                 android:layout_width="wrap_content"
                 android:layout_height="176dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="30dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/uv_scale_image" />
 
             <TextView
@@ -85,20 +96,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:textColor="#732EB0"
-                android:textSize="20dp"
                 android:fontFamily="@font/concert_one"
-                android:text="UV Index Variation In Melbourne 2020"/>
+                android:text="UV Index Variation In Melbourne 2020"
+                android:textColor="#732EB0"
+                android:textSize="30dp" />
 
             <TextView
                 android:id="@+id/uv_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:layout_marginTop="2dp"
                 android:text="Here's how the daily maximum UV level changed in each month in year 2020" />
 
             <ImageView
@@ -117,21 +128,47 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
-                android:textColor="#732EB0"
-                android:textSize="20dp"
                 android:fontFamily="@font/concert_one"
-                android:text="UV Index Variation In Australia 2020"/>
+                android:text="UV Index Variation In Australia 2020"
+                android:textColor="#732EB0"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/uv_states_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="Let's understand the UV index level across the various states of Australia *" />
 
 
             <ImageView
                 android:id="@+id/section3_image"
                 android:layout_width="wrap_content"
                 android:layout_height="176dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="30dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/uv_capital_cities" />
 
+            <TextView
+                android:id="@+id/uv_states_disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="* : Chart shows the average daily UV index for each State"
+                android:textSize="10dp" />
+
+
         </LinearLayout>
+
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
