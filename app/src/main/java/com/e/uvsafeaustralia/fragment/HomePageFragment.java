@@ -9,24 +9,11 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.e.uvsafeaustralia.LocationActivity;
-import com.e.uvsafeaustralia.LocationAdapter;
 import com.e.uvsafeaustralia.LocationModel;
 import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
@@ -34,13 +21,7 @@ import com.e.uvsafeaustralia.SharedViewModel;
 import com.e.uvsafeaustralia.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -50,7 +31,9 @@ public class HomePageFragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
-
+    private int sIntSunrise;
+    private int sIntSunset;
+    private int sIntDT;
 
 
     @Override
@@ -93,6 +76,22 @@ public class HomePageFragment extends Fragment {
             }
         });
 
+        sharedViewModel.getDtValue().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Integer dt = Integer.valueOf(s);
+                if (dt >= sIntSunrise && dt <= sIntSunset) {
+                    binding.dayIc.setVisibility(View.VISIBLE);
+                    binding.moonIc.setVisibility(View.GONE);
+                }
+                if (dt <= sIntSunrise || dt >= sIntSunset) {
+                    binding.dayIc.setVisibility(View.GONE);
+                    binding.moonIc.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+
         sharedViewModel.getUvlValue().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -108,26 +107,31 @@ public class HomePageFragment extends Fragment {
                     binding.uvmeter.setImageResource(R.drawable.uv_low);
 //                    binding.uvInstrcut.setText("Low UV Level");
                     binding.buttonInfo.setVisibility(View.GONE);
+                    binding.imageViewBoy.setVisibility(View.VISIBLE);
                     binding.uvInstrcut2.setText(R.string.protectNotRequired);
                 }if(sInt>=3 && sInt<6){
                     binding.uvmeter.setImageResource(R.drawable.uv_moderate);
 //                    binding.uvInstrcut.setText("Moderate UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
+                    binding.imageViewBoy.setVisibility(View.GONE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=6 && sInt<8){
                     binding.uvmeter.setImageResource(R.drawable.uv_high);
 //                    binding.uvInstrcut.setText("High UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
+                    binding.imageViewBoy.setVisibility(View.GONE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=8 && sInt<11){
                     binding.uvmeter.setImageResource(R.drawable.uv_very_high);
 //                    binding.uvInstrcut.setText("Very High UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
+                    binding.imageViewBoy.setVisibility(View.GONE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=11 ){
                     binding.uvmeter.setImageResource(R.drawable.uv_extreme);
 //                    binding.uvInstrcut.setText("Extreme UV Level");
                     binding.buttonInfo.setVisibility(View.VISIBLE);
+                    binding.imageViewBoy.setVisibility(View.GONE);
                     binding.uvInstrcut2.setText(R.string.protectRequired);
                 }
             }
@@ -136,8 +140,8 @@ public class HomePageFragment extends Fragment {
         sharedViewModel.getSunriselValue().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                int sInt = Integer.valueOf(s);
-                Date days = new Date(sInt*1000L);
+                sIntSunrise = Integer.valueOf(s);
+                Date days = new Date(sIntSunrise*1000L);
                 SimpleDateFormat f = new SimpleDateFormat("h:mm a");
                 f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
                 String time = f.format(days);
@@ -149,8 +153,8 @@ public class HomePageFragment extends Fragment {
         sharedViewModel.getSunSetValue().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                int sInt = Integer.valueOf(s);
-                Date days = new Date(sInt*1000L);
+                sIntSunset = Integer.valueOf(s);
+                Date days = new Date(sIntSunset*1000L);
                 SimpleDateFormat f = new SimpleDateFormat("h:mm a"); // HH for 0-23
                 f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
                 String time = f.format(days);

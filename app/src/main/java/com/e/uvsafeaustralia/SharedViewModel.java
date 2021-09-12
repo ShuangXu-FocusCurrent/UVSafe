@@ -21,6 +21,7 @@ public class SharedViewModel extends ViewModel {
     private MutableLiveData<LocationModel> location;
     private String lat;
     private String lon;
+    private MutableLiveData<String> dtValue;
     private MutableLiveData<String> temperature;
     private MutableLiveData<String> uvlValue;
     private MutableLiveData<String> sunriseValue;
@@ -30,12 +31,13 @@ public class SharedViewModel extends ViewModel {
     public SharedViewModel(){
         location = new MutableLiveData<>();
         temperature = new MutableLiveData<>();
-        uvlValue=new MutableLiveData<>();
-        sunriseValue=new MutableLiveData<>();
-        sunsetValue=new MutableLiveData<>();
-        switchTag=new MutableLiveData<>();
-        lat="-37.8136";
-        lon="144.9631";
+        uvlValue = new MutableLiveData<>();
+        sunriseValue = new MutableLiveData<>();
+        sunsetValue = new MutableLiveData<>();
+        switchTag = new MutableLiveData<>();
+        lat = "-37.8136";
+        lon = "144.9631";
+        dtValue = new MutableLiveData<>();
     }
 
     public void setLocation(LocationModel message) { location.setValue(message); }
@@ -44,6 +46,8 @@ public class SharedViewModel extends ViewModel {
     public void setLat(String lat) { this.lat = lat;}
     public String getLon() { return lon; }
     public void setLon(String lon) { this.lon = lon; }
+    public void setDtValue(String dtValueMes) { dtValue.setValue(dtValueMes); }
+    public LiveData<String>  getDtValue() { return dtValue; }
     public LiveData<String> getTemperature() { return temperature; }
     public LiveData<String>  getUvlValue() { return uvlValue; }
     public LiveData<String>  getSunriselValue() { return sunriseValue; }
@@ -79,6 +83,7 @@ public class SharedViewModel extends ViewModel {
                     uvlValue.setValue(String.valueOf(uvi));
                     sunriseValue.setValue(String.valueOf(sunrise));
                     sunsetValue.setValue(String.valueOf(sunset));
+                    dtValue.setValue(String.valueOf(dt));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
