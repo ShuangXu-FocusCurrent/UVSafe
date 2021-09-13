@@ -43,9 +43,13 @@ public class HomePageFragment extends Fragment {
         binding = FragmentHomePageBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
         editor = sp.edit();
+        binding.imageViewBoy.setVisibility(View.INVISIBLE);
+        binding.buttonInfo.setVisibility(View.INVISIBLE);
+
+
+
         if (!sp.contains("suburb")) {
             // set default location to Melbourne
             editor.putString("suburb", UtilTools.DEFAULT_SUBURB);

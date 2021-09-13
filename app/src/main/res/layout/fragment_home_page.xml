@@ -78,7 +78,6 @@
             android:layout_marginRight="104dp"
             android:layout_marginBottom="28dp"
             android:fontFamily="@font/roboto"
-            android:text="27"
             android:textColor="#693900"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/uvmeter"
@@ -145,6 +144,7 @@
             android:textColor="#693900"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/sunrise_img"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/sunrise_img"
             app:layout_constraintTop_toBottomOf="@+id/sun_rise_txt" />
 
@@ -166,15 +166,16 @@
             android:id="@+id/sun_rise_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="12dp"
             android:fontFamily="@font/concert_one"
             android:text="Sunrise"
             android:textColor="#693900"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/uvmeter"
             app:layout_constraintEnd_toEndOf="@+id/sunrise_img"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/sunrise_img" />
 
         <TextView
@@ -212,7 +213,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/concert_one"
-            android:text="3"
             android:textColor="#FFC403"
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="@+id/uvmeter"
