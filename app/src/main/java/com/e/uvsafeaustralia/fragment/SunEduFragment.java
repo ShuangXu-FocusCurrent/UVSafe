@@ -22,17 +22,11 @@ import com.e.uvsafeaustralia.databinding.FragmentSunEduBinding;
  * create an instance of this fragment.
  */
 public class SunEduFragment extends Fragment {
-
-
     private FragmentSunEduBinding binding;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         binding = FragmentSunEduBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 

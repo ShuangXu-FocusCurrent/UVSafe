@@ -53,15 +53,12 @@ import java.util.concurrent.TimeUnit;
  * create an instance of this fragment.
  */
 public class AlarmPageFragment extends Fragment {
-
     private FragmentAlarmPageBinding binding;
     private Switch switchNotification;
     private Switch switchAlarm;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
     private SharedViewModel sharedViewModel;
-//    private Calendar calendar;
-    private NotificationHelper notificationHelper;
     private long addhours;
     final Handler handler = new Handler(Looper.getMainLooper());
 
@@ -69,7 +66,6 @@ public class AlarmPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentAlarmPageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);

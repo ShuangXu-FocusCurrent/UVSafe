@@ -19,19 +19,11 @@ import com.e.uvsafeaustralia.databinding.FragmentQuizPageBinding;
  * create an instance of this fragment.
  */
 public class QuizPageFragment extends Fragment {
-
-
     private FragmentQuizPageBinding binding;
-
-
-    
-    
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         binding = FragmentQuizPageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;

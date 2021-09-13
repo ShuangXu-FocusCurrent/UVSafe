@@ -21,9 +21,6 @@ public class MainFunction extends AppCompatActivity {
     private static  String defaultPostcode = "3000";
     private static String defaultLatitude = "-37.8136";
     private static String defaultLongitude = "144.9631";
-    private static String weatherUrl = "https://api.openweathermap.org/data/2.5/onecall";
-    private static String appId = "03bbeee1e357560e71cdde42465aad22";
-    private static DecimalFormat tempDf= new DecimalFormat("#");
     private ActivityMainFunctionBinding binding;
     private LocationModel locationModel;
     private SharedViewModel sharedViewModel;
@@ -48,53 +45,15 @@ public class MainFunction extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
         if(getIntent()==null || getIntent().getExtras()==null){
-            if(this.getPreferences(Context.MODE_PRIVATE).contains("lat")&&this.getPreferences(Context.MODE_PRIVATE).contains("lon")
-            &&this.getPreferences(Context.MODE_PRIVATE).contains("suburb")){
-                String suburb = sp.getString("suburb", defaultSuburb);
-                String postcode = sp.getString("postcode", defaultPostcode);
-                String latitude = sp.getString("lat", defaultLatitude);
-                String longitude = sp.getString("lon", defaultLongitude);
-                locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
-                sharedViewModel.setLocation(locationModel);
-                sharedViewModel.setLat(latitude.trim());
-                sharedViewModel.setLon(longitude.trim());
-                sharedViewModel.getWeatherInfor(view);
-            }else{
-                sharedViewModel.getWeatherInfor(view);
-            }
+            checkSP(view);
             navController.navigate(R.id.sunEduFragment);
         } else if(getIntent().hasExtra("Alarm")){
-            if(this.getPreferences(Context.MODE_PRIVATE).contains("lat")&&this.getPreferences(Context.MODE_PRIVATE).contains("lon")
-                    &&this.getPreferences(Context.MODE_PRIVATE).contains("suburb")){
-                String suburb = sp.getString("suburb", defaultSuburb);
-                String postcode = sp.getString("postcode", defaultPostcode);
-                String latitude = sp.getString("lat", defaultLatitude);
-                String longitude = sp.getString("lon", defaultLongitude);
-                locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
-                sharedViewModel.setLocation(locationModel);
-                sharedViewModel.setLat(latitude.trim());
-                sharedViewModel.setLon(longitude.trim());
-                sharedViewModel.getWeatherInfor(view);
-            }else{
-                sharedViewModel.getWeatherInfor(view);
-            }
+            checkSP(view);
             navController.navigate(R.id.alarmPageFragment);
         }else if(getIntent().hasExtra("slide")){
-            if(this.getPreferences(Context.MODE_PRIVATE).contains("lat")&&this.getPreferences(Context.MODE_PRIVATE).contains("lon")
-                    &&this.getPreferences(Context.MODE_PRIVATE).contains("suburb")){
-                String suburb = sp.getString("suburb", defaultSuburb);
-                String postcode = sp.getString("postcode", defaultPostcode);
-                String latitude = sp.getString("lat", defaultLatitude);
-                String longitude = sp.getString("lon", defaultLongitude);
-                locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
-                sharedViewModel.setLocation(locationModel);
-                sharedViewModel.setLat(latitude.trim());
-                sharedViewModel.setLon(longitude.trim());
-                sharedViewModel.getWeatherInfor(view);
-            }else{
-                sharedViewModel.getWeatherInfor(view);
-            }
-        } else{
+            checkSP(view);
+        }
+        else{
             String suburb = sp.getString("suburb", defaultSuburb);
             String postcode = sp.getString("postcode", defaultPostcode);
             String latitude = sp.getString("lat", defaultLatitude);
@@ -114,5 +73,23 @@ public class MainFunction extends AppCompatActivity {
         editor.putString ("lat", latitude);
         editor.putString ("lon", longtitude);
         editor.commit();
+    }
+
+    private void checkSP(View view){
+        if(this.getPreferences(Context.MODE_PRIVATE).contains("lat")&&this.getPreferences(Context.MODE_PRIVATE).contains("lon")
+                &&this.getPreferences(Context.MODE_PRIVATE).contains("suburb")){
+            String suburb = sp.getString("suburb", defaultSuburb);
+            String postcode = sp.getString("postcode", defaultPostcode);
+            String latitude = sp.getString("lat", defaultLatitude);
+            String longitude = sp.getString("lon", defaultLongitude);
+            locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
+            sharedViewModel.setLocation(locationModel);
+            sharedViewModel.setLat(latitude.trim());
+            sharedViewModel.setLon(longitude.trim());
+            sharedViewModel.getWeatherInfor(view);
+        }else{
+            sharedViewModel.getWeatherInfor(view);
+        }
+
     }
 }
