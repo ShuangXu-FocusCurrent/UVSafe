@@ -30,10 +30,6 @@
         <activity android:name=".MainFunction"
             android:parentActivityName=".SlideActivity"></activity>
 
-        <activity android:name=".LocationActivity"
-            android:parentActivityName=".MainFunction"
-            android:label="Search Location"></activity>
-
         <activity android:name=".AboutUVActivity"
             android:parentActivityName=".MainFunction"
             android:label="About UV"></activity>

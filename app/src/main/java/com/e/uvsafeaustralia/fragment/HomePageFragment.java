@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,7 +15,10 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.e.uvsafeaustralia.LocationActivity;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+
+import com.e.uvsafeaustralia.DBManager;
 import com.e.uvsafeaustralia.LocationModel;
 import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
@@ -22,6 +27,7 @@ import com.e.uvsafeaustralia.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -33,8 +39,10 @@ public class HomePageFragment extends Fragment {
     private SharedPreferences.Editor editor;
     private int sIntSunrise;
     private int sIntSunset;
-    private int sIntDT;
-
+//    private int sIntDT;
+    protected DBManager dbManager;
+    LocationModel locationSearched;
+    ArrayList<String> locationListTrim = new ArrayList<String>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,8 +56,6 @@ public class HomePageFragment extends Fragment {
         binding.imageViewBoy.setVisibility(View.INVISIBLE);
         binding.buttonInfo.setVisibility(View.INVISIBLE);
 
-
-
         if (!sp.contains("suburb")) {
             // set default location to Melbourne
             editor.putString("suburb", UtilTools.DEFAULT_SUBURB);
@@ -57,18 +63,63 @@ public class HomePageFragment extends Fragment {
             editor.putString("latitude", UtilTools.DEFAULT_LATITUDE);
             editor.putString("longitude", UtilTools.DEFAULT_LONGITUDE);
             editor.commit();
+            binding.address.setText(UtilTools.DEFAULT_SUBURB);
         }
+
+        dbManager = new DBManager(requireActivity());
+        String locationliststr = getLocationList();
+        String[] locationListAry = locationliststr.split("\n");
+        for (String location : locationListAry) {
+            String[] locationListRaw = location.split(",");
+            StringBuilder locationOption = new StringBuilder();
+            locationOption.append(locationListRaw[0]).append(locationListRaw[1]);
+            locationListTrim.add(String.valueOf(locationOption));
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(requireActivity(),
+                android.R.layout.simple_dropdown_item_1line, locationListTrim);
+        binding.address.setThreshold(1);
+        binding.address.setAdapter(adapter);
+        binding.address.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String text = String.valueOf(binding.address.getText());
+                for (String item : locationListAry) {
+                    String[] locationAry = item.split(",");
+                    String postcode = locationAry[0];
+                    String suburb = locationAry[1];
+                    String latitude = locationAry[2];
+                    String longitude = locationAry[3];
+                    String strLoc = postcode.concat(suburb);
+                    if (strLoc.equals(text)) {
+                        locationSearched = new LocationModel(-1, postcode, suburb, latitude, longitude);
+                        binding.address.setText(locationSearched.getSuburb());
+                        sharedViewModel.setLocation(locationSearched);
+                        sharedViewModel.setLat(locationSearched.getLatitude().trim());
+                        sharedViewModel.setLon(locationSearched.getLongitude().trim());
+                        sharedViewModel.getWeatherInfor(view);
+                        editor.putString("suburb", locationSearched.getSuburb());
+                        editor.putString("postcode", locationSearched.getPostcode());
+                        editor.putString("latitude", locationSearched.getLatitude());
+                        editor.putString("longitude", locationSearched.getLongitude());
+                        editor.commit();
+                        break;
+                    }
+                }
+            }
+        });
+
 
         sharedViewModel.getLocation().observe(getViewLifecycleOwner(), new Observer<LocationModel>() {
             @Override
             public void onChanged(LocationModel locationModel) {
-                String suburb = locationModel.getSuburb();
-                binding.address.setText(suburb);
-                editor.putString("suburb", locationModel.getSuburb());
-                editor.putString("postcode", locationModel.getPostcode());
-                editor.putString("latitude", locationModel.getLatitude());
-                editor.putString("longitude", locationModel.getLongitude());
-                editor.commit();
+
+                    binding.address.setText(locationModel.getSuburb());
+                    editor.putString("suburb", locationModel.getSuburb());
+                    editor.putString("postcode", locationModel.getPostcode());
+                    editor.putString("latitude", locationModel.getLatitude());
+                    editor.putString("longitude", locationModel.getLongitude());
+                    editor.commit();
             }
         });
 
@@ -92,7 +143,6 @@ public class HomePageFragment extends Fragment {
                     binding.dayIc.setVisibility(View.GONE);
                     binding.moonIc.setVisibility(View.VISIBLE);
                 }
-
             }
         });
 
@@ -167,15 +217,6 @@ public class HomePageFragment extends Fragment {
             }
         });
 
-        binding.searchbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LocationActivity.class);
-                startActivity(intent );
-                ((Activity) getActivity()).overridePendingTransition(0, 0);
-            }
-        });
-
         binding.buttonInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,6 +227,24 @@ public class HomePageFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public String getLocationList() {
+        try {
+            dbManager.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Cursor c = dbManager.getAllLocations();
+        StringBuilder s = new StringBuilder();
+        if (c.moveToFirst()) {
+            do {
+                s.append(c.getString(0)).append(",").append(c.getString(1)).append(",")
+                        .append(c.getString(2)).append(",").append(c.getString(3)).append("\n");
+            } while (c.moveToNext());
+        }
+        dbManager.close();
+        return s.toString();
     }
 
     public void onDestroyView() {
