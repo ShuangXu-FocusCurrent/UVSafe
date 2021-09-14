@@ -13,7 +13,12 @@
         android:id="@+id/sunEduFragment"
         android:icon="@drawable/ic_edu"/>
 
-<!--    <item android:title="Quiz"-->
-<!--        android:id="@+id/quizPageFragment"-->
-<!--        android:icon="@drawable/ic_quiz"/>-->
+    <item android:title="Quiz"
+        android:id="@+id/quizPageFragment"
+        android:icon="@drawable/ic_quiz"/>
+
+    <item android:title="More"
+        android:id="@+id/moreInforFragment"
+        android:icon="@drawable/ic_more"/>
+
 </menu>

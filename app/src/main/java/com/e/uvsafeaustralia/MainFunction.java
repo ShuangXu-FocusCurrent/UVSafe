@@ -36,9 +36,9 @@ public class MainFunction extends AppCompatActivity {
         sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
         sp = this.getPreferences(Context.MODE_PRIVATE);
 
-        //R.id.quizPageFragment // to be included in Iteration 3. DO NOT REMOVE!
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment)
+                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment,R.id.moreInforFragment)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -50,10 +50,9 @@ public class MainFunction extends AppCompatActivity {
         } else if(getIntent().hasExtra("Alarm")){
             checkSP(view);
             navController.navigate(R.id.alarmPageFragment);
-        }else if(getIntent().hasExtra("slide")){
+        } else if(getIntent().hasExtra("slide")){
             checkSP(view);
-        }
-        else{
+        } else{
             String suburb = sp.getString("suburb", defaultSuburb);
             String postcode = sp.getString("postcode", defaultPostcode);
             String latitude = sp.getString("lat", defaultLatitude);
@@ -90,6 +89,5 @@ public class MainFunction extends AppCompatActivity {
         }else{
             sharedViewModel.getWeatherInfor(view);
         }
-
     }
 }
