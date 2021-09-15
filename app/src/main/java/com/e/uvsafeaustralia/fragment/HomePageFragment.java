@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -58,12 +59,23 @@ public class HomePageFragment extends Fragment {
 
         if (!sp.contains("suburb")) {
             // set default location to Melbourne
-            editor.putString("suburb", UtilTools.DEFAULT_SUBURB);
-            editor.putString("postcode", UtilTools.DEFAULT_POSTCODE);
-            editor.putString("latitude", UtilTools.DEFAULT_LATITUDE);
-            editor.putString("longitude", UtilTools.DEFAULT_LONGITUDE);
-            editor.commit();
+//            editor.putString("suburb", UtilTools.DEFAULT_SUBURB);
+//            editor.putString("postcode", UtilTools.DEFAULT_POSTCODE);
+//            editor.putString("latitude", UtilTools.DEFAULT_LATITUDE);
+//            editor.putString("longitude", UtilTools.DEFAULT_LONGITUDE);
+//            editor.commit();
             binding.address.setText(UtilTools.DEFAULT_SUBURB);
+            sharedViewModel.getWeatherInfor(view);
+        }else{
+            String suburb = sp.getString("suburb", "Melbourne");
+            String postcode = sp.getString("postcode", "3000");
+            String latitude = sp.getString("latitude", "-37.8136");
+            String longitude = sp.getString("longitude", "144.9631");
+            LocationModel locationModel = new LocationModel(1,postcode, suburb, latitude, longitude);
+            sharedViewModel.setLocation(locationModel);
+            sharedViewModel.setLat(latitude.trim());
+            sharedViewModel.setLon(longitude.trim());
+            sharedViewModel.getWeatherInfor(view);
         }
 
         dbManager = new DBManager(requireActivity());
@@ -115,11 +127,6 @@ public class HomePageFragment extends Fragment {
             public void onChanged(LocationModel locationModel) {
 
                     binding.address.setText(locationModel.getSuburb());
-                    editor.putString("suburb", locationModel.getSuburb());
-                    editor.putString("postcode", locationModel.getPostcode());
-                    editor.putString("latitude", locationModel.getLatitude());
-                    editor.putString("longitude", locationModel.getLongitude());
-                    editor.commit();
             }
         });
 
