@@ -213,7 +213,7 @@ public class AlarmPageFragment extends Fragment {
     @TargetApi(Build.VERSION_CODES.O)
     private void startAlarm(long addhours){
         long currentTime = System.currentTimeMillis();
-        Toast.makeText(getActivity(), "Setting Alarm Successful", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "We will remind you to reapply sunscreen", Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(requireActivity(), AlarmReceiver.class);
         intent.putExtra("notification","alarmPageFragment");
