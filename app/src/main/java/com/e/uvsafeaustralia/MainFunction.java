@@ -13,8 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.e.uvsafeaustralia.databinding.ActivityMainFunctionBinding;
-
-import java.text.DecimalFormat;
+import com.e.uvsafeaustralia.models.LocationModel;
 
 public class MainFunction extends AppCompatActivity {
     private static String defaultSuburb = "Melbourne";

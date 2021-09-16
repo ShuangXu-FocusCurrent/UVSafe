@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_quiz_page" />
     <fragment
         android:id="@+id/moreInforFragment"
-        android:name="com.e.uvsafeaustralia.MoreInforFragment"
+        android:name="com.e.uvsafeaustralia.fragment.MoreInforFragment"
         android:label="More"
         tools:layout="@layout/fragment_more_infor" />
 </navigation>

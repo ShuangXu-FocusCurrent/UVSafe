@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.location.Location;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,7 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.e.uvsafeaustralia.DBManager;
-import com.e.uvsafeaustralia.LocationModel;
+import com.e.uvsafeaustralia.models.LocationModel;
 import com.e.uvsafeaustralia.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.SharedViewModel;
