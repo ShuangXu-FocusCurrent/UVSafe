@@ -43,7 +43,7 @@ public class LocationDbUploader extends Worker {
         AssetManager assetManager = getApplicationContext().getAssets();
         openDbManager();
         try {
-            if (dbManager.isDbEmpty() == true) {
+            if (dbManager.isLocationDbEmpty() == true) {
                 InputStream inputStream = assetManager.open("postcodevictoria.txt");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;

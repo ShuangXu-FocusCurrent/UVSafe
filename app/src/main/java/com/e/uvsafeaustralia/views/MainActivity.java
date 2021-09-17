@@ -11,20 +11,27 @@ import android.widget.Button;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.helper.LocationDbUploader;
+import com.e.uvsafeaustralia.helper.QuestionDbUploader;
 
 public class MainActivity extends AppCompatActivity {
-    private OneTimeWorkRequest uploadLocationdb;
+    private OneTimeWorkRequest uploadLocationDb, uploadQuestionDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        uploadLocationdb = new OneTimeWorkRequest.Builder(LocationDbUploader.class)
+        uploadLocationDb = new OneTimeWorkRequest.Builder(LocationDbUploader.class)
                 .addTag("uploadLocation")
                 .build();
 
-        WorkManager.getInstance(this).enqueue(uploadLocationdb);
+        WorkManager.getInstance(this).enqueue(uploadLocationDb);
+
+        uploadQuestionDb = new OneTimeWorkRequest.Builder(QuestionDbUploader.class)
+                .addTag("uploadQuestion")
+                .build();
+
+        WorkManager.getInstance(this).enqueue(uploadQuestionDb);
 
         Button startAppBtn = findViewById(R.id.startAppBtn);
         startAppBtn.setOnClickListener(new View.OnClickListener() {
