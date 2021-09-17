@@ -45,15 +45,17 @@ public class QuestionDbUploader extends Worker {
         AssetManager assetManager = getApplicationContext().getAssets();
         openDbManager();
         try {
-            dbManager.insertQuestion(
-                    CATEGORY1,
-                    "I’m a dangerous sun, what could be my UV level?",
-                    "Below 3",
-                    "3 or above",
-                    null,
-                    null,
-                    "3 or above",
-                    "UV level from 3 and above are considered dangerous for your skin.");
+            if (dbManager.isQuestionDbEmpty() == true) {
+                dbManager.insertQuestion(
+                        CATEGORY1,
+                        "I’m a dangerous sun, what could be my UV level?",
+                        "Below 3",
+                        "3 or above",
+                        null,
+                        null,
+                        "3 or above",
+                        "UV level from 3 and above are considered dangerous for your skin.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
