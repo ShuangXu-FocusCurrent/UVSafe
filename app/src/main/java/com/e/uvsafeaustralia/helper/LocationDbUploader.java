@@ -1,34 +1,34 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.helper;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.SQLException;
-import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
+
+import com.e.uvsafeaustralia.db.DBManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class DBUploadActivity extends AppCompatActivity {
+public class LocationDbUploader extends Worker {
     protected DBManager dbManager;
 
+    public LocationDbUploader(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+
+        dbManager = new DBManager(context);
+    }
+
+    @NonNull
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_database);
-
-        dbManager = new DBManager(this);
-
-        insertData();
-
-        Bundle bundle = new Bundle();
-        bundle.putString("suburb","1");
-        Intent slideIntent = new Intent( DBUploadActivity.this ,SlideActivity.class);
-        slideIntent.putExtras(bundle);
-        startActivity(slideIntent);
+    public Result doWork() {
+        insertLocationData();
+        return Result.success();
     }
 
     private void openDbManager() {
@@ -39,8 +39,8 @@ public class DBUploadActivity extends AppCompatActivity {
         }
     }
 
-    private void insertData(){
-        AssetManager assetManager = this.getAssets();
+    private void insertLocationData(){
+        AssetManager assetManager = getApplicationContext().getAssets();
         openDbManager();
         try {
             if (dbManager.isDbEmpty() == true) {

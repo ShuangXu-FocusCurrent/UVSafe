@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.views;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityAboutSunscreensBinding;
 
 public class AboutSunscreensActivity extends AppCompatActivity {
@@ -81,6 +82,4 @@ public class AboutSunscreensActivity extends AppCompatActivity {
         mediaController.setAnchorView(aboutSunscreenVid);
         aboutSunscreenVid.start();
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.helper;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.e.uvsafeaustralia.views.MainFunction;
+import com.e.uvsafeaustralia.R;
+import com.e.uvsafeaustralia.views.SlideActivity;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
@@ -48,7 +52,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context,MainFunction.class);
+                Intent intent = new Intent(context, MainFunction.class);
                 intent.putExtra("slide","slide");
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

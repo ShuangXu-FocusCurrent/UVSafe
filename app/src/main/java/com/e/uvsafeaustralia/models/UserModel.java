@@ -32,5 +32,4 @@ public class UserModel {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
-
 }

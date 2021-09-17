@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.helper;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -9,6 +9,10 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
+
+import com.e.uvsafeaustralia.views.MainFunction;
+import com.e.uvsafeaustralia.R;
+
 import androidx.core.app.NotificationCompat;
 
 

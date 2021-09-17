@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.db;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -1,9 +1,11 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.views;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.e.uvsafeaustralia.R;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;

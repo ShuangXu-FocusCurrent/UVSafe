@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.e.uvsafeaustralia.AboutSunscreensActivity;
-import com.e.uvsafeaustralia.AboutUVActivity;
-import com.e.uvsafeaustralia.ProtectionActivity;
-import com.e.uvsafeaustralia.SunProtectionActivity;
+import com.e.uvsafeaustralia.views.AboutSunscreensActivity;
+import com.e.uvsafeaustralia.views.AboutUVActivity;
+import com.e.uvsafeaustralia.views.SunProtectionActivity;
 import com.e.uvsafeaustralia.databinding.FragmentSunEduBinding;
 
 /**

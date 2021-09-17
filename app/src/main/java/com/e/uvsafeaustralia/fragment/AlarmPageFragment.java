@@ -3,7 +3,6 @@ package com.e.uvsafeaustralia.fragment;
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,24 +24,18 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.e.uvsafeaustralia.AlarmReceiver;
-import com.e.uvsafeaustralia.NotificationHelper;
-import com.e.uvsafeaustralia.NotificationScheduler;
+import com.e.uvsafeaustralia.helper.AlarmReceiver;
+import com.e.uvsafeaustralia.helper.NotificationScheduler;
 import com.e.uvsafeaustralia.R;
-import com.e.uvsafeaustralia.SharedViewModel;
-import com.e.uvsafeaustralia.UtilTools;
+import com.e.uvsafeaustralia.viewmodels.SharedViewModel;
+import com.e.uvsafeaustralia.helper.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentAlarmPageBinding;
 
-import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 
@@ -232,6 +225,5 @@ public class AlarmPageFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-
     }
 }

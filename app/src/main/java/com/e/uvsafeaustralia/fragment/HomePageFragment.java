@@ -18,12 +18,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-import com.e.uvsafeaustralia.DBManager;
+import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.LocationModel;
-import com.e.uvsafeaustralia.ProtectionActivity;
+import com.e.uvsafeaustralia.views.ProtectionActivity;
 import com.e.uvsafeaustralia.R;
-import com.e.uvsafeaustralia.SharedViewModel;
-import com.e.uvsafeaustralia.UtilTools;
+import com.e.uvsafeaustralia.viewmodels.SharedViewModel;
+import com.e.uvsafeaustralia.helper.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 
 import java.text.SimpleDateFormat;
@@ -39,7 +39,6 @@ public class HomePageFragment extends Fragment {
     private SharedPreferences.Editor editor;
     private int sIntSunrise;
     private int sIntSunset;
-//    private int sIntDT;
     protected DBManager dbManager;
     LocationModel locationSearched;
     ArrayList<String> locationListTrim = new ArrayList<String>();
@@ -57,12 +56,6 @@ public class HomePageFragment extends Fragment {
         binding.buttonInfo.setVisibility(View.INVISIBLE);
 
         if (!sp.contains("suburb")) {
-            // set default location to Melbourne
-//            editor.putString("suburb", UtilTools.DEFAULT_SUBURB);
-//            editor.putString("postcode", UtilTools.DEFAULT_POSTCODE);
-//            editor.putString("latitude", UtilTools.DEFAULT_LATITUDE);
-//            editor.putString("longitude", UtilTools.DEFAULT_LONGITUDE);
-//            editor.commit();
             binding.address.setText(UtilTools.DEFAULT_SUBURB);
             sharedViewModel.getWeatherInfor(view);
         }else{
@@ -119,7 +112,6 @@ public class HomePageFragment extends Fragment {
                 }
             }
         });
-
 
         sharedViewModel.getLocation().observe(getViewLifecycleOwner(), new Observer<LocationModel>() {
             @Override

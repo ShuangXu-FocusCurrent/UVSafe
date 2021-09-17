@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.helper;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -19,6 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.e.uvsafeaustralia.views.ProtectionActivity;
+import com.e.uvsafeaustralia.R;
+import com.e.uvsafeaustralia.viewmodels.SharedViewModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -95,7 +98,7 @@ public class NotificationScheduler extends Worker {
 
     public void callWeatherAPI(String lat, String lon) {
         String tempUrl = "";
-        tempUrl=UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
+        tempUrl= UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override

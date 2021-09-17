@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.helper;
 
 import android.content.Context;
 import android.content.SharedPreferences;

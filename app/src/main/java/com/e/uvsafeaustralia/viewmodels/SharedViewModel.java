@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.viewmodels;
 
 import android.util.Log;
 import android.view.View;
@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.e.uvsafeaustralia.helper.UtilTools;
 import com.e.uvsafeaustralia.models.LocationModel;
 
 import org.json.JSONException;
@@ -63,7 +64,7 @@ public class SharedViewModel extends ViewModel {
 
     public void getWeatherInfor(View view){
         String tempUrl = "";
-        tempUrl=UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
+        tempUrl= UtilTools.URL+"?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly,daily&appid="+UtilTools.APPID;
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override

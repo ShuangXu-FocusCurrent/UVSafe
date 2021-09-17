@@ -1,6 +1,9 @@
-package com.e.uvsafeaustralia;
+package com.e.uvsafeaustralia.views;
 
 import android.os.Bundle;
+
+import com.e.uvsafeaustralia.R;
+import com.e.uvsafeaustralia.helper.SlideViewPagerAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
