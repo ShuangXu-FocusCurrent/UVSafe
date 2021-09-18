@@ -25,31 +25,12 @@ public class MoreInforFragment extends Fragment {
         binding = FragmentMoreInforBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int userId  = Integer.valueOf(binding.userId.getText().toString());
-                String nickname = binding.nickname.getText().toString();
-                int queationId = Integer.valueOf(binding.questionId.getText().toString());
-                String question = binding.question.getText().toString();
-                String answerOption1=binding.answer1.getText().toString();
-                String answerOption2=binding.answer2.getText().toString();
-                String answerOption3=binding.answer3.getText().toString();
-                String answerOption4=binding.answer4.getText().toString();
-                String correct=binding.correct.getText().toString();
-                String answerExplain=binding.answerExplain.getText().toString();
-                //String a = binding.qCategory.getText().toString();
-                QuestionModel.enumQCategory qCategory= QuestionModel.enumQCategory.CATEGORY1;
-
-                UserModel userModel=new UserModel(userId,nickname);
-                QuestionModel questionModel = new QuestionModel(queationId,qCategory,question,answerOption1,answerOption2,answerOption3,answerOption4,correct,answerExplain);
-                String output = userModel.toString() +"/n"+" "+questionModel.toString();
-                //binding.output.setText(output);
-                Log.i("Output value:",output);
-            }
-        });
-
-
+        QuestionModel.enumQCategory qCategory= QuestionModel.enumQCategory.CATEGORY1;
+        UserModel userModel=new UserModel(1,"Jack");
+        QuestionModel questionModel = new QuestionModel(1,qCategory,1,"question","answerOption1","answerOption2","answerOption3","answerOption4","correct","answerExplain");
+        String output = userModel.toString() +"/n"+" "+questionModel.toString();
+        //binding.output.setText(output);
+        Log.i("Output value:",output);
         return view;
     }
 

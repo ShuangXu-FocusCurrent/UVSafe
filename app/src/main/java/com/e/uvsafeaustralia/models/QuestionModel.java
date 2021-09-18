@@ -2,6 +2,7 @@ package com.e.uvsafeaustralia.models;
 
 public class QuestionModel {
     private int id;
+    private int questionNumber;
     private String question;
     private String answerOption1;
     private String answerOption2;
@@ -17,9 +18,10 @@ public class QuestionModel {
         CATEGORY4
     };
 
-    public QuestionModel(int id, enumQCategory qCategory, String question, String answerOption1, String answerOption2, String answerOption3, String answerOption4, String correct, String answerExplain) {
+    public QuestionModel(int id,enumQCategory qCategory,int questionNumber, String question, String answerOption1, String answerOption2, String answerOption3, String answerOption4, String correct, String answerExplain) {
         this.id = id;
         this.qCategory = qCategory;
+        this.questionNumber=questionNumber;
         this.question = question;
         this.answerOption1 = answerOption1;
         this.answerOption2 = answerOption2;
@@ -34,6 +36,7 @@ public class QuestionModel {
         return "QuestionModel{" +
                 "id=" + id +
                 ", qCategory='" + qCategory + '\'' +
+                ", questionNumber='" + questionNumber + '\'' +
                 ", question='" + question + '\'' +
                 ", answerOption1='" + answerOption1 + '\'' +
                 ", answerOption2='" + answerOption2 + '\'' +
