@@ -6,11 +6,6 @@ import android.database.SQLException;
 
 import com.e.uvsafeaustralia.db.DBManager;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;

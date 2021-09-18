@@ -7,6 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DBManager {
         public static final int DATABASE_VERSION = 1;
@@ -22,6 +25,7 @@ public class DBManager {
                         LocationDBStructure.tableEntry.COLUMN_LATITUDE + TEXT_TYPE + COMMA_SEP +
                         LocationDBStructure.tableEntry.COLUMN_LONGITUDE + TEXT_TYPE +
                         ");";
+
         private static final String CREATE_QUESTION =
                 "CREATE TABLE " + QuestionDBStructure.tableEntry.TABLE_QUESTION + " (" +
                         QuestionDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -34,6 +38,13 @@ public class DBManager {
                         QuestionDBStructure.tableEntry.COLUMN_CORRECT + TEXT_TYPE + COMMA_SEP +
                         QuestionDBStructure.tableEntry.COLUMN_ANSWER_EXPLANATION + TEXT_TYPE +
                         ");";
+
+        private static final String CREATE_USER =
+                "CREATE TABLE " + UserDBStructure.tableEntry.TABLE_USER + " (" +
+                        UserDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        UserDBStructure.tableEntry.COLUMN_NICKNAME + TEXT_TYPE +
+                        ");";
+
         private MySQLiteOpenHelper myDBHelper;
         private SQLiteDatabase db;
 
@@ -51,19 +62,9 @@ public class DBManager {
             myDBHelper.close();
         }
 
+        // Operations for Location DB
         public boolean isLocationDbEmpty() {
             Cursor cur = db.rawQuery("SELECT COUNT(*) FROM location", null);
-            if (cur != null) {
-                cur.moveToFirst();
-                if (cur.getInt(0) == 0) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public boolean isQuestionDbEmpty() {
-            Cursor cur = db.rawQuery("SELECT COUNT(*) FROM question", null);
             if (cur != null) {
                 cur.moveToFirst();
                 if (cur.getInt(0) == 0) {
@@ -80,6 +81,37 @@ public class DBManager {
             values.put(LocationDBStructure.tableEntry.COLUMN_LATITUDE, latitude);
             values.put(LocationDBStructure.tableEntry.COLUMN_LONGITUDE, longitude);
             db.insert(LocationDBStructure.tableEntry.TABLE_LOCATION, null, values);
+        }
+
+        public Cursor getAllLocations() {
+            return db.query(
+                    LocationDBStructure.tableEntry.TABLE_LOCATION,
+                    locationColumns, null, null,  null,  null, LocationDBStructure.tableEntry.COLUMN_SUBURB);
+        }
+
+        private String[] locationColumns = {
+                LocationDBStructure.tableEntry.COLUMN_POSTCODE,
+                LocationDBStructure.tableEntry.COLUMN_SUBURB,
+                LocationDBStructure.tableEntry.COLUMN_LATITUDE,
+                LocationDBStructure.tableEntry.COLUMN_LONGITUDE
+        };
+
+        public int deleteLocation(String rowId) {
+            String[] selectionArgs = {String.valueOf(rowId)};
+            String selection = LocationDBStructure.tableEntry._ID + " LIKE ?";
+            return db.delete(LocationDBStructure.tableEntry.TABLE_LOCATION, selection, selectionArgs);
+        }
+
+        // Operations for Question DB
+        public boolean isQuestionDbEmpty() {
+            Cursor cur = db.rawQuery("SELECT COUNT(*) FROM question", null);
+            if (cur != null) {
+                cur.moveToFirst();
+                if (cur.getInt(0) == 0) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public void insertQuestion(
@@ -102,18 +134,12 @@ public class DBManager {
             values.put(QuestionDBStructure.tableEntry.COLUMN_ANSWER_EXPLANATION, answer_explanation);
             db.insert(QuestionDBStructure.tableEntry.TABLE_QUESTION, null, values);
         }
-        public Cursor getAllLocations() {
-            return db.query(
-                    LocationDBStructure.tableEntry.TABLE_LOCATION,
-                    locationColumns, null, null,  null,  null, LocationDBStructure.tableEntry.COLUMN_SUBURB);
-        }
 
-        private String[] locationColumns = {
-                LocationDBStructure.tableEntry.COLUMN_POSTCODE,
-                LocationDBStructure.tableEntry.COLUMN_SUBURB,
-                LocationDBStructure.tableEntry.COLUMN_LATITUDE,
-                LocationDBStructure.tableEntry.COLUMN_LONGITUDE
-        };
+        public Cursor getAllQuestions() {
+            return db.query(
+                    QuestionDBStructure.tableEntry.TABLE_QUESTION,
+                    questionColumns, null, null,  QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY,  null, QuestionDBStructure.tableEntry.COLUMN_QUESTION);
+        }
 
         private String[] questionColumns = {
                 QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY,
@@ -126,26 +152,54 @@ public class DBManager {
                 QuestionDBStructure.tableEntry.COLUMN_ANSWER_EXPLANATION
         };
 
-        public int deleteLocation(String rowId) {
+        public int deleteQuestion(String rowId) {
             String[] selectionArgs = {String.valueOf(rowId)};
-            String selection = LocationDBStructure.tableEntry._ID + " LIKE ?";
-            return db.delete(LocationDBStructure.tableEntry.TABLE_LOCATION, selection, selectionArgs);
+            String selection = QuestionDBStructure.tableEntry._ID + " LIKE ?";
+            return db.delete(QuestionDBStructure.tableEntry.TABLE_QUESTION, selection, selectionArgs);
         }
+
+        // Operations for User DB
+        public boolean isUserDbEmpty() {
+            Cursor cur = db.rawQuery("SELECT COUNT(*) FROM user", null);
+            if (cur != null) {
+                cur.moveToFirst();
+                if (cur.getInt(0) == 0) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Cursor getAllUsers() {
+            return db.query(
+                    UserDBStructure.tableEntry.TABLE_USER,
+                    userColumns, null, null,  null,  null, UserDBStructure.tableEntry.COLUMN_NICKNAME);
+        }
+
+        public void insertUser(String nickname) {
+            ContentValues values = new ContentValues();
+            values.put(UserDBStructure.tableEntry.COLUMN_NICKNAME, nickname);
+            db.insert(UserDBStructure.tableEntry.TABLE_USER, null, values);
+        }
+
+        private String[] userColumns = {
+                UserDBStructure.tableEntry.COLUMN_NICKNAME
+        };
 
         private static class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
             public MySQLiteOpenHelper(Context context) {
                 super(context, DATABASE_NAME, null, DATABASE_VERSION);
             }
-            public void onCreate(SQLiteDatabase db) {
 
+            public void onCreate(SQLiteDatabase db) {
                 try {
                     db.execSQL(CREATE_LOCATION);
                     db.execSQL(CREATE_QUESTION);
+                    db.execSQL(CREATE_USER);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
 
             public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
