@@ -10,7 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-import static com.e.uvsafeaustralia.models.QuestionModel.enumQCategory.CATEGORY1;
+import static com.e.uvsafeaustralia.models.QuestionModel.EnumQCategory.CATEGORY1;
+import static com.e.uvsafeaustralia.models.QuestionModel.EnumQCategory.CATEGORY2;
 
 public class QuestionDbUploader extends Worker {
     protected DBManager dbManager;
@@ -37,19 +38,49 @@ public class QuestionDbUploader extends Worker {
     }
 
     private void insertQuestionData(){
-        AssetManager assetManager = getApplicationContext().getAssets();
         openDbManager();
         try {
             if (dbManager.isQuestionDbEmpty() == true) {
                 dbManager.insertQuestion(
                         CATEGORY1,
+                        1,
                         "I’m a dangerous sun, what could be my UV level?",
                         "Below 3",
                         "3 or above",
                         null,
                         null,
                         "3 or above",
-                        "UV level from 3 and above are considered dangerous for your skin.");
+                        "When UV level is 3 or above it could damage your skin.");
+                dbManager.insertQuestion(
+                        CATEGORY1,
+                        2,
+                        "I’m a friendly sun, what is my UV level?",
+                        "Below 3",
+                        "3 or above",
+                        null,
+                        null,
+                        "Below 3",
+                        "When UV level is 3 or above it could damage your skin.");
+                dbManager.insertQuestion(
+                        CATEGORY2,
+                        1,
+                        "Which hat is the best option to protect us from sun?",
+                        "Broad brimmed hat",
+                        "Beret",
+                        "Cap",
+                        null,
+                        "Broad brimmed hat",
+                        "Broad brimmed hat covers your face and neck");
+                dbManager.insertQuestion(
+                        CATEGORY2,
+                        2,
+                        "Where should I apply sunscreen on my body?",
+                        "Hands",
+                        "Face and neck",
+                        "All parts that are exposed to the sun",
+                        null,
+                        "All parts that are exposed to the sun",
+                        "Every part of your body that are exposed to the sun must be protected.");
             }
         } catch (SQLException e) {
             e.printStackTrace();

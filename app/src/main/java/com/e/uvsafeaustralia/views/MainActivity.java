@@ -37,18 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
         Button startAppBtn = findViewById(R.id.startAppBtn);
         startAppBtn.setOnClickListener(new View.OnClickListener() {
-            // Uncomment 40-45 and comment out 47-51 to test DB Mock
-//            @Override
-//            public void onClick(View v) {
-//                Intent homeIntent = new Intent( MainActivity.this , DBMockActivity.class);
-//                startActivity(homeIntent);
-//            }
-
+//             Uncomment 40-45 and comment out 47-51 to test DB Mock
             @Override
             public void onClick(View v) {
-                Intent homeIntent = new Intent( MainActivity.this , SlideActivity.class);
+                Intent homeIntent = new Intent( MainActivity.this , DBMockActivity.class);
                 startActivity(homeIntent);
             }
+
+//            @Override
+//            public void onClick(View v) {
+//                Intent homeIntent = new Intent( MainActivity.this , SlideActivity.class);
+//                startActivity(homeIntent);
+//            }
         });
     }
 }

@@ -6,6 +6,7 @@ public class QuestionDBStructure {
     public static abstract class tableEntry implements BaseColumns {
         public static final String TABLE_QUESTION = "question";
         public static final String COLUMN_QUESTION_CATEGORY = "question_category";
+        public static final String COLUMN_QUESTION_NUMBER = "question_number";
         public static final String COLUMN_QUESTION = "question";
         public static final String COLUMN_ANSWER_OPTION1 = "answer_option1";
         public static final String COLUMN_ANSWER_OPTION2 = "answer_option2";

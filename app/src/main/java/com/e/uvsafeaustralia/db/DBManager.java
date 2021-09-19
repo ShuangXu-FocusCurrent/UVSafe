@@ -7,8 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.e.uvsafeaustralia.models.QuestionModel;
+import com.e.uvsafeaustralia.models.UserModel;
 
 
 public class DBManager {
@@ -16,7 +16,9 @@ public class DBManager {
         public static final String DATABASE_NAME = "uvsafeaustralia.db";
         private final Context context;
         private static final String TEXT_TYPE = " TEXT";
+        private static final String INTEGER = " INTEGER";
         private static final String COMMA_SEP = ", ";
+
         private static final String CREATE_LOCATION =
                 "CREATE TABLE " + LocationDBStructure.tableEntry.TABLE_LOCATION + " (" +
                         LocationDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -30,6 +32,7 @@ public class DBManager {
                 "CREATE TABLE " + QuestionDBStructure.tableEntry.TABLE_QUESTION + " (" +
                         QuestionDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY + TEXT_TYPE + COMMA_SEP +
+                        QuestionDBStructure.tableEntry.COLUMN_QUESTION_NUMBER + INTEGER + COMMA_SEP +
                         QuestionDBStructure.tableEntry.COLUMN_QUESTION + TEXT_TYPE + COMMA_SEP +
                         QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION1 + TEXT_TYPE + COMMA_SEP +
                         QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION2 + TEXT_TYPE + COMMA_SEP +
@@ -44,6 +47,16 @@ public class DBManager {
                         UserDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         UserDBStructure.tableEntry.COLUMN_NICKNAME + TEXT_TYPE +
                         ");";
+
+        private static final String CREATE_ANSWER =
+                "CREATE TABLE " + AnswerDBStructure.tableEntry.TABLE_ANSWER + " (" +
+                        AnswerDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        AnswerDBStructure.tableEntry.COLUMN_USER_ID + " INTEGER, FOREIGN KEY(user_id) REFERENCES user(id), " +
+                        AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID + " INTEGER, FOREIGN KEY(question_id) REFERENCES question(id), " +
+                        AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER + TEXT_TYPE + COMMA_SEP +
+                        AnswerDBStructure.tableEntry.COLUMN_STATUS + INTEGER +
+                        ");";
+
 
         private MySQLiteOpenHelper myDBHelper;
         private SQLiteDatabase db;
@@ -115,7 +128,8 @@ public class DBManager {
         }
 
         public void insertQuestion(
-                Enum question_category,
+                QuestionModel.EnumQCategory question_category,
+                int question_number,
                 String question,
                 String answer_option1,
                 String answer_option2,
@@ -125,6 +139,7 @@ public class DBManager {
                 String answer_explanation) {
             ContentValues values = new ContentValues();
             values.put(QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY, String.valueOf(question_category));
+            values.put(QuestionDBStructure.tableEntry.COLUMN_QUESTION_NUMBER, question_number);
             values.put(QuestionDBStructure.tableEntry.COLUMN_QUESTION, question);
             values.put(QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION1, answer_option1);
             values.put(QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION2, answer_option2);
@@ -138,11 +153,13 @@ public class DBManager {
         public Cursor getAllQuestions() {
             return db.query(
                     QuestionDBStructure.tableEntry.TABLE_QUESTION,
-                    questionColumns, null, null,  QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY,  null, QuestionDBStructure.tableEntry.COLUMN_QUESTION);
+                    questionColumns, null, null,  null,  null, null);
         }
 
         private String[] questionColumns = {
+                QuestionDBStructure.tableEntry._ID,
                 QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY,
+                QuestionDBStructure.tableEntry.COLUMN_QUESTION_NUMBER,
                 QuestionDBStructure.tableEntry.COLUMN_QUESTION,
                 QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION1,
                 QuestionDBStructure.tableEntry.COLUMN_ANSWER_OPTION2,
@@ -183,9 +200,45 @@ public class DBManager {
         }
 
         private String[] userColumns = {
+                UserDBStructure.tableEntry._ID,
                 UserDBStructure.tableEntry.COLUMN_NICKNAME
         };
 
+        // Operations for Answer DB
+        public boolean isAnswerDbEmpty() {
+            Cursor cur = db.rawQuery("SELECT COUNT(*) FROM answer", null);
+            if (cur != null) {
+                cur.moveToFirst();
+                if (cur.getInt(0) == 0) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Cursor getAllAnswers() {
+            return db.query(
+                    AnswerDBStructure.tableEntry.TABLE_ANSWER,
+                    answerColumns, null, null,  AnswerDBStructure.tableEntry.COLUMN_USER_ID,  null, AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID);
+        }
+
+        private String[] answerColumns = {
+                AnswerDBStructure.tableEntry.COLUMN_USER_ID,
+                AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID,
+                AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER,
+                AnswerDBStructure.tableEntry.COLUMN_STATUS
+        };
+
+        public void insertAnswer(UserModel user, QuestionModel question, String selected, int status) {
+            ContentValues values = new ContentValues();
+            values.put(AnswerDBStructure.tableEntry.COLUMN_USER_ID, user.getUserId());
+            values.put(AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID, question.getqId());
+            values.put(AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER, selected);
+            values.put(AnswerDBStructure.tableEntry.COLUMN_STATUS, status);
+            db.insert(AnswerDBStructure.tableEntry.TABLE_ANSWER, null, values);
+        }
+
+        // SQLite helper
         private static class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
             public MySQLiteOpenHelper(Context context) {
@@ -197,13 +250,24 @@ public class DBManager {
                     db.execSQL(CREATE_LOCATION);
                     db.execSQL(CREATE_QUESTION);
                     db.execSQL(CREATE_USER);
+                    db.execSQL(CREATE_ANSWER);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
 
             public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+                String sqlLocation = "DROP TABLE IF EXISTS location";
+                String sqlUser = "DROP TABLE IF EXISTS user";
+                String sqlQuestion = "DROP TABLE IF EXISTS question";
+                String sqlAnswer = "DROP TABLE IF EXISTS answer";
 
+                db.execSQL(sqlLocation);
+                db.execSQL(sqlUser);
+                db.execSQL(sqlQuestion);
+                db.execSQL(sqlAnswer);
+
+                onCreate(db);
             }
         }
 

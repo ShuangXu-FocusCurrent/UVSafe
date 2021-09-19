@@ -9,6 +9,8 @@ public class UserModel {
         this.nickName = nickName;
     }
 
+    public UserModel() { }
+
     @Override
     public String toString() {
         return "UserModel{" +

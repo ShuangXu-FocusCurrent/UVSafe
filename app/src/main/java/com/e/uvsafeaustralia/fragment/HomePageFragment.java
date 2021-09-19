@@ -71,8 +71,7 @@ public class HomePageFragment extends Fragment {
         }
 
         dbManager = new DBManager(requireActivity());
-        String locationliststr = getLocationList();
-        String[] locationListAry = locationliststr.split("\n");
+        String[] locationListAry = getLocationList().split("\n");
         for (String location : locationListAry) {
             String[] locationListRaw = location.split(",");
             StringBuilder locationOption = new StringBuilder();
