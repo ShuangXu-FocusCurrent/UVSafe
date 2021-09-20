@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_category2_navigation"
+    app:startDestination="@id/q1Category2Fragment">
+
+    <fragment
+        android:id="@+id/q1Category2Fragment"
+        android:name="com.e.uvsafeaustralia.views.quiz.Category2.Q1Category2Fragment"
+        android:label="fragment_q1_category2"
+        tools:layout="@layout/fragment_q1_category2" >
+        <action
+            android:id="@+id/action_q1Category2Fragment_to_q2Category2Fragment"
+            app:destination="@id/q2Category2Fragment" />
+        <action
+            android:id="@+id/action_q1Category2Fragment_to_q3Category2Fragment"
+            app:destination="@id/q3Category2Fragment" />
+        <action
+            android:id="@+id/action_q1Category2Fragment_to_q4Category2Fragment"
+            app:destination="@id/q4Category2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/q2Category2Fragment"
+        android:name="com.e.uvsafeaustralia.views.quiz.Category2.Q2Category2Fragment"
+        android:label="fragment_q2_category2"
+        tools:layout="@layout/fragment_q2_category2" >
+        <action
+            android:id="@+id/action_q2Category2Fragment_to_q1Category2Fragment"
+            app:destination="@id/q1Category2Fragment" />
+        <action
+            android:id="@+id/action_q2Category2Fragment_to_q3Category2Fragment"
+            app:destination="@id/q3Category2Fragment" />
+        <action
+            android:id="@+id/action_q2Category2Fragment_to_q4Category2Fragment"
+            app:destination="@id/q4Category2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/q3Category2Fragment"
+        android:name="com.e.uvsafeaustralia.views.quiz.Category2.Q3Category2Fragment"
+        android:label="fragment_q3_category2"
+        tools:layout="@layout/fragment_q3_category2" >
+        <action
+            android:id="@+id/action_q3Category2Fragment_to_q1Category2Fragment"
+            app:destination="@id/q1Category2Fragment" />
+        <action
+            android:id="@+id/action_q3Category2Fragment_to_q2Category2Fragment"
+            app:destination="@id/q2Category2Fragment" />
+        <action
+            android:id="@+id/action_q3Category2Fragment_to_q4Category2Fragment"
+            app:destination="@id/q4Category2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/q4Category2Fragment"
+        android:name="com.e.uvsafeaustralia.views.quiz.Category2.Q4Category2Fragment"
+        android:label="fragment_q4_category2"
+        tools:layout="@layout/fragment_q4_category2" >
+        <action
+            android:id="@+id/action_q4Category2Fragment_to_q1Category2Fragment"
+            app:destination="@id/q1Category2Fragment" />
+        <action
+            android:id="@+id/action_q4Category2Fragment_to_q2Category2Fragment"
+            app:destination="@id/q2Category2Fragment" />
+        <action
+            android:id="@+id/action_q4Category2Fragment_to_q3Category2Fragment"
+            app:destination="@id/q3Category2Fragment" />
+    </fragment>
+</navigation>

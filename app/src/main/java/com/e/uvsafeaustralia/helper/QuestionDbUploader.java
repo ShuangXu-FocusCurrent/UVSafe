@@ -81,6 +81,7 @@ public class QuestionDbUploader extends Worker {
                         null,
                         "All parts that are exposed to the sun",
                         "Every part of your body that are exposed to the sun must be protected.");
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

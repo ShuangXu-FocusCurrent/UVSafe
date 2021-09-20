@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.quiz.Category1.QuizCategory1Activity">
+    tools:context=".views.quiz.Category4.QuizCategory4Activity">
 
     <fragment
-        android:id="@+id/fragmentContainerViewCategory1"
+        android:id="@+id/fragmentContainerViewCategory"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/quiz_category1_navigation"
+        app:navGraph="@navigation/quiz_category4_navigation"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

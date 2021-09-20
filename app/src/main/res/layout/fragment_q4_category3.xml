@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.quiz.Category1.Q3Category1Fragment">
+    tools:context=".views.quiz.Category3.Q4Category3Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,11 +14,10 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="q3_category1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="q4_category1
+"
+            tools:layout_editor_absoluteX="-54dp"
+            tools:layout_editor_absoluteY="0dp" />
 
         <Button
             android:id="@+id/button1"
@@ -26,14 +25,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginBottom="500dp"
+            android:layout_marginBottom="450dp"
             android:text="Button1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.222"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.932" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.822" />
 
         <Button
             android:id="@+id/button2"
@@ -101,8 +101,5 @@
             app:layout_constraintVertical_bias="0.777" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.quiz.Category1.Q3Category1Fragment">
+    tools:context=".views.quiz.Category4.Q1Category4Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,11 +14,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="q3_category1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="q1_category1"
+            tools:layout_editor_absoluteX="-54dp"
+            tools:layout_editor_absoluteY="0dp" />
 
         <Button
             android:id="@+id/button1"
@@ -101,8 +99,5 @@
             app:layout_constraintVertical_bias="0.777" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </FrameLayout>

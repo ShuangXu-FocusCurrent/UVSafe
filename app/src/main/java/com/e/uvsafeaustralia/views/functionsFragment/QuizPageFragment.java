@@ -1,5 +1,6 @@
-package com.e.uvsafeaustralia.fragment;
+package com.e.uvsafeaustralia.views.functionsFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,10 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.e.uvsafeaustralia.R;
-
-import com.e.uvsafeaustralia.databinding.FragmentHomePageBinding;
 import com.e.uvsafeaustralia.databinding.FragmentQuizPageBinding;
+import com.e.uvsafeaustralia.views.MainActivity;
+import com.e.uvsafeaustralia.views.SlideActivity;
+import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +27,15 @@ public class QuizPageFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentQuizPageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( requireActivity() , QuizFourBlocksActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
     }
 

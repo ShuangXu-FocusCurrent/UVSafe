@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia.fragment;
+package com.e.uvsafeaustralia.views.functionsFragment;
 
 import android.app.Activity;
 import android.content.Intent;

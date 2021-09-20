@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.e.uvsafeaustralia">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -13,13 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UVSafeAustralia">
-<!--       <activity android:name=".quizCategory1.QuziCategory1Activity">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+        <activity android:name=".views.quiz.Category4.QuizCategory4Activity"></activity>
+        <activity android:name=".views.quiz.Category3.QuizCategory3Activity" />
+        <activity android:name=".views.quiz.Category2.QuizCategory2Activity" />
+        <activity android:name=".views.quiz.QuizFourBlocksActivity" />
+        <activity android:name=".views.quiz.Category1.QuizCategory1Activity" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,33 +24,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.DBMockActivity"
-            android:label="DBMock"></activity>
+        <activity
+            android:name=".views.DBMockActivity"
+            android:label="DBMock" />
+        <activity
+            android:name=".views.SlideActivity"
+            android:label="Introduction"
+            android:parentActivityName=".views.MainActivity" />
+        <activity
+            android:name=".views.MainFunction"
+            android:parentActivityName=".views.SlideActivity" />
+        <activity
+            android:name=".views.AboutUVActivity"
+            android:label="About UV"
+            android:parentActivityName=".views.MainFunction" />
+        <activity
+            android:name=".views.AboutSunscreensActivity"
+            android:label="About Sunscreens"
+            android:parentActivityName=".views.MainFunction" />
+        <activity
+            android:name=".views.ProtectionActivity"
+            android:label="Sun Protection Measures"
+            android:parentActivityName=".views.MainFunction" />
+        <activity
+            android:name=".views.SunProtectionActivity"
+            android:label="Sun Protection"
+            android:parentActivityName=".views.MainFunction" />
 
-        <activity android:name=".views.SlideActivity"
-            android:parentActivityName=".views.MainActivity"
-            android:label="Introduction"></activity>
-
-        <activity android:name=".views.MainFunction"
-            android:parentActivityName=".views.SlideActivity"></activity>
-
-        <activity android:name=".views.AboutUVActivity"
-            android:parentActivityName=".views.MainFunction"
-            android:label="About UV"></activity>
-
-        <activity android:name=".views.AboutSunscreensActivity"
-            android:parentActivityName=".views.MainFunction"
-            android:label="About Sunscreens"></activity>
-
-        <activity android:name=".views.ProtectionActivity"
-            android:parentActivityName=".views.MainFunction"
-            android:label="Sun Protection Measures"></activity>
-
-        <activity android:name=".views.SunProtectionActivity"
-            android:parentActivityName=".views.MainFunction"
-            android:label="Sun Protection"></activity>
-
-        <receiver android:name=".helper.AlarmReceiver"/>
+        <receiver android:name=".helper.AlarmReceiver" />
     </application>
 
 </manifest>

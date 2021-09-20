@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/homePageFragment"
-        android:name="com.e.uvsafeaustralia.fragment.HomePageFragment"
+        android:name="com.e.uvsafeaustralia.views.functionsFragment.HomePageFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home_page" />
     <fragment
         android:id="@+id/alarmPageFragment"
-        android:name="com.e.uvsafeaustralia.fragment.AlarmPageFragment"
+        android:name="com.e.uvsafeaustralia.views.functionsFragment.AlarmPageFragment"
         android:label="Alarm"
         tools:layout="@layout/fragment_alarm_page" />
     <fragment
         android:id="@+id/sunEduFragment"
-        android:name="com.e.uvsafeaustralia.fragment.SunEduFragment"
+        android:name="com.e.uvsafeaustralia.views.functionsFragment.SunEduFragment"
         android:label="Sun Education"
         tools:layout="@layout/fragment_sun_edu" />
     <fragment
         android:id="@+id/quizPageFragment"
-        android:name="com.e.uvsafeaustralia.fragment.QuizPageFragment"
+        android:name="com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment"
         android:label="Quiz"
         tools:layout="@layout/fragment_quiz_page" />
     <fragment
         android:id="@+id/moreInforFragment"
-        android:name="com.e.uvsafeaustralia.fragment.MoreInforFragment"
+        android:name="com.e.uvsafeaustralia.views.functionsFragment.MoreInforFragment"
         android:label="More"
         tools:layout="@layout/fragment_more_infor" />
 </navigation>

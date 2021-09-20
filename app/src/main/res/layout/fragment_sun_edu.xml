@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SunEduFragment">
+    tools:context=".views.functionsFragment.SunEduFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/skin_edu_layout"
