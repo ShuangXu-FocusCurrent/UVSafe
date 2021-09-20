@@ -26,14 +26,13 @@ public class MainActivity extends AppCompatActivity {
         uploadLocationDb = new OneTimeWorkRequest.Builder(LocationDbUploader.class)
                 .addTag("uploadLocation")
                 .build();
-
-        WorkManager.getInstance(this).enqueue(uploadLocationDb);
-
         uploadQuestionDb = new OneTimeWorkRequest.Builder(QuestionDbUploader.class)
                 .addTag("uploadQuestion")
                 .build();
 
-        WorkManager.getInstance(this).enqueue(uploadQuestionDb);
+        WorkManager.getInstance(this).beginWith(uploadQuestionDb)
+                .then(uploadLocationDb)
+                .enqueue();
 
         Button startAppBtn = findViewById(R.id.startAppBtn);
         startAppBtn.setOnClickListener(new View.OnClickListener() {
