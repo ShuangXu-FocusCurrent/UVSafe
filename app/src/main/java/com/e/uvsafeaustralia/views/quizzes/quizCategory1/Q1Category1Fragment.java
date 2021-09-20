@@ -1,4 +1,4 @@
-package com.e.uvsafeaustralia.quizCategory1;
+package com.e.uvsafeaustralia.views.quizzes.quizCategory1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

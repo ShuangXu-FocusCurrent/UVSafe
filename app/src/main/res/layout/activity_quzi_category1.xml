@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quizCategory1.QuziCategory1Activity">
+    tools:context=".views.quizzes.quizCategory1.QuziCategory1Activity">
 
     <fragment
         android:id="@+id/fragmentContainerViewCategory1"

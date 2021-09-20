@@ -2,15 +2,15 @@ package com.e.uvsafeaustralia.models;
 
 public class AnswerModel {
     private int id;
-    private int userId;
-    private int questionId;
+    private UserModel user;
+    private QuestionModel question;
     private String selected;
     private int status;
 
     public AnswerModel(int id, UserModel userModel, QuestionModel questionModel, String selected, int status) {
         this.id = id;
-        this.userId = userModel.getUserId();
-        this.questionId = questionModel.getqId();
+        this.user = userModel;
+        this.question = questionModel;
         this.selected = selected;
         this.status = status;
     }
@@ -19,8 +19,8 @@ public class AnswerModel {
     public String toString() {
         return "AnswerModel{" +
                 "id=" + id +
-                ", userId='" + userId + '\'' +
-                ", questionId='" + questionId + '\'' +
+                ", user='" + user + '\'' +
+                ", question='" + question + '\'' +
                 ", selected='" + selected + '\'' +
                 ", status='" + status + '\'' +
                 '}';
@@ -34,20 +34,18 @@ public class AnswerModel {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public UserModel getUser() {
+        return user;
     }
 
-    public void setUserId(UserModel userModel) {
-        this.userId = userModel.getUserId();
+    public void setUser(UserModel userModel) {
+        this.user = userModel;
     }
 
-    public int getQuestionId() {
-        return questionId;
-    }
+    public QuestionModel getQuestion() { return question; }
 
-    public void setQuestionId(QuestionModel questionModel) {
-        this.questionId = questionModel.getqId();
+    public void setQuestion(QuestionModel questionModel) {
+        this.question = questionModel;
     }
 
     public String getSelected() {

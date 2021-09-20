@@ -51,8 +51,8 @@ public class DBManager {
         private static final String CREATE_ANSWER =
                 "CREATE TABLE " + AnswerDBStructure.tableEntry.TABLE_ANSWER + " (" +
                         AnswerDBStructure.tableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        AnswerDBStructure.tableEntry.COLUMN_USER_ID + " INTEGER, FOREIGN KEY(user_id) REFERENCES user(id), " +
-                        AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID + " INTEGER, FOREIGN KEY(question_id) REFERENCES question(id), " +
+                        AnswerDBStructure.tableEntry.COLUMN_USER_ID + " INTEGER NOT NULL REFERENCES user (id), " +
+                        AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID + " INTEGER NOT NULL REFERENCES question (id), " +
                         AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER + TEXT_TYPE + COMMA_SEP +
                         AnswerDBStructure.tableEntry.COLUMN_STATUS + INTEGER +
                         ");";
@@ -219,10 +219,18 @@ public class DBManager {
         public Cursor getAllAnswers() {
             return db.query(
                     AnswerDBStructure.tableEntry.TABLE_ANSWER,
-                    answerColumns, null, null,  AnswerDBStructure.tableEntry.COLUMN_USER_ID,  null, AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID);
+                    answerColumns, null, null,  null,  null, null);
         }
 
+        public Cursor getUserAnswers(int userId) {
+            String selection = "user_id=?";
+            String[] args = {String.valueOf(userId)};
+            return db.query(
+                    AnswerDBStructure.tableEntry.TABLE_ANSWER,
+                    answerColumns, selection, args,  null,  null, null);
+        }
         private String[] answerColumns = {
+                AnswerDBStructure.tableEntry._ID,
                 AnswerDBStructure.tableEntry.COLUMN_USER_ID,
                 AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID,
                 AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER,

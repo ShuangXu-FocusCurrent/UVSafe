@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.db.DBManager;
+import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 
@@ -20,6 +21,7 @@ public class DBMockActivity extends AppCompatActivity {
     protected DBManager dbManager;
     ArrayList<UserModel> userList = new ArrayList<>();
     ArrayList<QuestionModel> questionList = new ArrayList<>();
+    ArrayList<AnswerModel> userAnswersList = new ArrayList<>();
     QuestionModel question1Cat1 = new QuestionModel();
     QuestionModel question2Cat1 = new QuestionModel();
     QuestionModel question1Cat2 = new QuestionModel();
@@ -57,7 +59,7 @@ public class DBMockActivity extends AppCompatActivity {
         // get all users
         userList = getUserList();
         // Retrieve all questions in the db at the start of the quiz
-        getQuestions();
+        testGetQuestionList();
         // sort questions into category and sequence
         for (QuestionModel question : questionList)
             sortQuestions(question);
@@ -92,12 +94,16 @@ public class DBMockActivity extends AppCompatActivity {
 
         // Sammy click finish and go to Quiz homepage
 
-
+        // Sammy view his report
+        getUserAnswersList(user1);
+        for (AnswerModel answerItem : userAnswersList)
+            System.out.println(answerItem.toString());
 
         Intent homeIntent = new Intent( DBMockActivity.this , SlideActivity.class);
         startActivity(homeIntent);
     }
 
+    // User db test method
 //    private Boolean testAddUser(String user) {
 //        boolean success = false;
 //
@@ -149,10 +155,13 @@ public class DBMockActivity extends AppCompatActivity {
     private ArrayList<UserModel> getUserList() {
         openDbManager();
         Cursor c = dbManager.getAllUsers();
-        StringBuilder s = new StringBuilder();
+        int userId = 0;
+        String nickname = "";
         if (c.moveToFirst()) {
             do {
-                userList.add(new UserModel(c.getInt(0), c.getString(1)));
+                userId = c.getInt(0);
+                nickname = c.getString(1);
+                userList.add(new UserModel(userId, nickname));
             } while (c.moveToNext());
         }
         dbManager.close();
@@ -167,45 +176,36 @@ public class DBMockActivity extends AppCompatActivity {
 
     // Test get all quiz questions at the start of Quiz
 
-    private void getQuestions() {
-        String[] questionListAry = testGetQuestionList().split("\n");
-        for (String question : questionListAry) {
-            String[] questionListRaw = question.split(";");
-            QuestionModel questionModel = new QuestionModel(
-                    Integer.parseInt(questionListRaw[0]),
-                    EnumQCategory.valueOf(questionListRaw[1]),
-                    Integer.parseInt(questionListRaw[2]),
-                    questionListRaw[3],
-                    questionListRaw[4],
-                    questionListRaw[5],
-                    questionListRaw[6],
-                    questionListRaw[7],
-                    questionListRaw[8],
-                    questionListRaw[9]
-            );
-            questionList.add(questionModel);
-        }
-    }
-
-    private String testGetQuestionList() {
-        try {
-            dbManager.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    private void testGetQuestionList() {
+        openDbManager();
         Cursor c = dbManager.getAllQuestions();
-        StringBuilder s = new StringBuilder();
+        int questionId = 0;
+        EnumQCategory qCategory;
+        int qNumber = 0;
+        String question = "";
+        String answer1 = "";
+        String answer2 = "";
+        String answer3 = "";
+        String answer4 = "";
+        String correct = "";
+        String explain = "";
         if (c.moveToFirst()) {
             do {
-                s.append(c.getInt(0)).append(";").append(c.getString(1)).append(";")
-                        .append(c.getInt(2)).append(";").append(c.getString(3)).append(";")
-                        .append(c.getString(4)).append(";").append(c.getString(5)).append(";")
-                        .append(c.getString(6)).append(";").append(c.getString(7)).append(";")
-                        .append(c.getString(8)).append(";").append(c.getString(9)).append("\n");
+                questionId = c.getInt(0);
+                qCategory = EnumQCategory.valueOf(c.getString(1));
+                qNumber = c.getInt(2);
+                question = c.getString(3);
+                answer1 = c.getString(4);
+                answer2 = c.getString(5);
+                answer3 = c.getString(6);
+                answer4 = c.getString(7);
+                correct = c.getString(8);
+                explain = c.getString(9);
+                questionList.add(new QuestionModel(questionId, qCategory, qNumber, question,
+                        answer1, answer2, answer3, answer4, correct, explain));
             } while (c.moveToNext());
         }
         dbManager.close();
-        return s.toString();
     }
 
     private Boolean testAddAnswer(UserModel userModel, QuestionModel questionModel, String selected,int status) {
@@ -229,7 +229,31 @@ public class DBMockActivity extends AppCompatActivity {
             if (question.getqNumber() == 2)
                 question2Cat2 = question;
         }
+    }
 
+    private void getUserAnswersList(UserModel user) {
+        openDbManager();
+        Cursor c = dbManager.getUserAnswers(user.getUserId());
+        if (c.moveToFirst()) {
+            do {
+                int answerId = c.getInt(0);
+                int userId = c.getInt(1);
+                UserModel thisUser = new UserModel();
+                int questionId = c.getInt(2);
+                QuestionModel thisQuestion = new QuestionModel();
+                String selected = c.getString(3);
+                int status = c.getInt(4);
+                for (UserModel userItem: userList)
+                    if (userItem.getUserId() == userId)
+                        thisUser = userItem;
+                for (QuestionModel questionItem : questionList)
+                    if (questionItem.getqId() == questionId)
+                        thisQuestion = questionItem;
+                AnswerModel answer = new AnswerModel(answerId, thisUser, thisQuestion, selected, status);
+                userAnswersList.add(answer);
+            } while (c.moveToNext());
+        }
+        dbManager.close();
     }
 
     private void openDbManager() {
