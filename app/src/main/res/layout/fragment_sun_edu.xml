@@ -82,6 +82,7 @@
                     android:id="@+id/aboutMelanomaButton" />
 
                 <ImageButton
+                    android:id="@+id/melanomaRisksButton"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_columnWeight="1"
@@ -89,8 +90,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/melanoma_risk_factors"
                     android:gravity="center"
-                    android:visibility="invisible"
-                    android:id="@+id/melanomaRisksButton"/>
+                    android:visibility="visible" />
 
                 <ImageButton
                     android:layout_width="0dp"

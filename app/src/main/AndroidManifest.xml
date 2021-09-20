@@ -17,6 +17,7 @@
         <activity android:name=".views.quiz.Category2.QuizCategory2Activity" />
         <activity android:name=".views.quiz.QuizFourBlocksActivity" />
         <activity android:name=".views.quiz.Category1.QuizCategory1Activity" />
+        <activity android:name=".views.MelanomaRiskFactorsActivity"></activity>
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

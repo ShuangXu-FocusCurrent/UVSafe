@@ -83,7 +83,7 @@
                 android:text="Let's understand the UV Index Scale and protect ourselves from sunlight" />
 
             <ImageView
-                android:id="@+id/section1_image"
+                android:id="@+id/underline_1"
                 android:layout_width="wrap_content"
                 android:layout_height="197dp"
                 android:layout_marginTop="10dp"
@@ -92,7 +92,7 @@
                 app:srcCompat="@drawable/uv_scale_image" />
 
             <TextView
-                android:id="@+id/section2_header"
+                android:id="@+id/title_1_causes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"

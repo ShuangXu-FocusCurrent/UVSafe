@@ -94,7 +94,7 @@
             <!--About sunscreen source:-->
             <!--https://www.skincancer.org/skin-cancer-prevention/sun-protection/sunscreen/-->
             <TextView
-                android:id="@+id/section1_image"
+                android:id="@+id/underline_1"
                 android:layout_width="wrap_content"
                 android:layout_height="176dp"
                 android:text="When used as directed, sunscreen is proven to:
@@ -111,7 +111,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/section2_header"
+                android:id="@+id/title_1_causes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
