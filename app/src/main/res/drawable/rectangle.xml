@@ -18,7 +18,7 @@
 
             <solid android:color="#FFF9F9" />
             <corners android:radius="7dp" />
-            <size android:width="326dp" android:height="158dp"/>
+            <size android:width="330dp" android:height="200dp"/>
             <stroke android:width="3dp" android:color="#EB5164"/>
         </shape>
 

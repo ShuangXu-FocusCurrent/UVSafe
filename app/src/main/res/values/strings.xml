@@ -28,5 +28,13 @@
         <item>3 hours</item>
     </string-array>
 
+        <string name="MIA">Melanoma Institute Australia</string>
+        <string name= "miaLink">https://www.melanoma.org.au/understanding-melanoma/</string>
+        <string name="NSW">Cancer Counsil NSW</string>
+        <string name = "nswLink">https://www.cancercouncil.com.au/melanoma/about-melanoma</string>
+        <string name = "VIC">Cancer Counsil Victoria</string>
+        <string name = "vicLink">https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html</string>
+
+
 
 </resources>
