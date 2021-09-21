@@ -156,6 +156,13 @@ public class DBManager {
                     questionColumns, null, null,  null,  null, null);
         }
 
+        public Cursor getQuestionsByCategory(QuestionModel.EnumQCategory enumQCategory) {
+            String selection = "question_category=?";
+            String[] args = {String.valueOf(enumQCategory)};
+            return db.query(QuestionDBStructure.tableEntry.TABLE_QUESTION,
+                    questionColumns,selection, args, null, null, QuestionDBStructure.tableEntry.COLUMN_QUESTION_NUMBER);
+        }
+
         private String[] questionColumns = {
                 QuestionDBStructure.tableEntry._ID,
                 QuestionDBStructure.tableEntry.COLUMN_QUESTION_CATEGORY,
@@ -193,6 +200,13 @@ public class DBManager {
                     userColumns, null, null,  null,  null, UserDBStructure.tableEntry.COLUMN_NICKNAME);
         }
 
+        public Cursor getUserByNickname(String nickname) {
+            String selection = "nickname=?";
+            String[] args = {(nickname)};
+            return db.query(
+                    UserDBStructure.tableEntry.TABLE_USER,
+                    userColumns, selection, args,  null,  null, null);
+        }
         public void insertUser(String nickname) {
             ContentValues values = new ContentValues();
             values.put(UserDBStructure.tableEntry.COLUMN_NICKNAME, nickname);
@@ -219,7 +233,7 @@ public class DBManager {
         public Cursor getAllAnswers() {
             return db.query(
                     AnswerDBStructure.tableEntry.TABLE_ANSWER,
-                    answerColumns, null, null,  null,  null, null);
+                    answerColumns, null, null,  AnswerDBStructure.tableEntry.COLUMN_USER_ID,  null, null);
         }
 
         public Cursor getUserAnswers(int userId) {
@@ -278,5 +292,4 @@ public class DBManager {
                 onCreate(db);
             }
         }
-
     }

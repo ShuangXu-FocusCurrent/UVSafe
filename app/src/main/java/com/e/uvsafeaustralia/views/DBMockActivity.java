@@ -3,7 +3,9 @@ package com.e.uvsafeaustralia.views;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.ArrayMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +16,11 @@ import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import static com.e.uvsafeaustralia.models.QuestionModel.EnumQCategory;
 
@@ -21,13 +28,16 @@ public class DBMockActivity extends AppCompatActivity {
     protected DBManager dbManager;
     ArrayList<UserModel> userList = new ArrayList<>();
     ArrayList<QuestionModel> questionList = new ArrayList<>();
-    ArrayList<AnswerModel> userAnswersList = new ArrayList<>();
+    ArrayList<AnswerModel> allUsersAnswersList = new ArrayList<>();
+    ArrayList<QuestionModel> questionsCat1 = new ArrayList<>();
+    ArrayList<QuestionModel> questionsCat2 = new ArrayList<>();
     QuestionModel question1Cat1 = new QuestionModel();
     QuestionModel question2Cat1 = new QuestionModel();
     QuestionModel question1Cat2 = new QuestionModel();
     QuestionModel question2Cat2 = new QuestionModel();
 
     UserModel user1 = new UserModel();
+    UserModel user2 = new UserModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,53 +46,28 @@ public class DBMockActivity extends AppCompatActivity {
 
         dbManager = new DBManager(this);
 
-        Boolean isSuccess;
-
-        // User db Test scenarios
-
-//        // Add 1st user when User table is empty
-//        // new user data must be inserted
-//        isSuccess = testAddUser("Sammy");
-//        System.out.println("Add 1st user " + isSuccess);
-//
-//        // Try add the 1st user again
-//        // user data must not be inserted
-//        isSuccess = testAddUser("Sammy");
-//        System.out.println("Add the same user " + isSuccess);
-//
-//        // Try add the 2nd user
-//        // new user data must be inserted
-//        isSuccess = testAddUser("Oliver");
-//        System.out.println("Add 2nd user " + isSuccess);
-
         // Answer DB Test scenarios
         // get all users
         userList = getUserList();
         // Retrieve all questions in the db at the start of the quiz
         testGetQuestionList();
         // sort questions into category and sequence
+        // for testing purposes this only takes q1-2 of Category 1 and 2
         for (QuestionModel question : questionList)
             sortQuestions(question);
 
         // Sammy starts a quiz
 
         // check if Sammy exist
-        // scenario 1 - Sammy is a new user
-        if (isUserTableEmpty() || !userList.contains("Sammy")) {
-            // add user record in db
-            insertUser("Sammy");
-            // update userList
-            userList = getUserList();
-        }
-        // add Sammy as a player
-        for (UserModel user : userList) {
-            if (user.getNickName().equals("Sammy"))
-                user1 = user;
-        }
+        // if not add to db and get user data
+        user1 = getUser("Sammy");
+        // update user list
+        userList.add(user1);
+
         // Sammy answers all questions
         // Sammy answers Category 1
-        // Sammy answers question1 wrong
-        testAddAnswer(user1, question1Cat1, "Below 3", 0);
+        // Sammy answers question1 right
+        testAddAnswer(user1, question1Cat1, "3 or above", 1);
         // Sammy  answer question2 right
         testAddAnswer(user1, question2Cat1, "Below 3", 1);
 
@@ -92,55 +77,89 @@ public class DBMockActivity extends AppCompatActivity {
         // Sammy answers question 2 wrong
         testAddAnswer(user1, question2Cat2, "Hands", 0);
 
-        // Sammy click finish and go to Quiz homepage
+        // Sammy clicks finish and go to Quiz homepage
 
-        // Sammy view his report
-        getUserAnswersList(user1);
-        for (AnswerModel answerItem : userAnswersList)
-            System.out.println(answerItem.toString());
+        // Sammy views his report
+        ArrayList<AnswerModel> user1AnswersList = getUserAnswersList(user1);
+        if (user1AnswersList.size() != 0)
+            for (AnswerModel answerItem : user1AnswersList)
+                System.out.println(answerItem.toString());
 
-        Intent homeIntent = new Intent( DBMockActivity.this , SlideActivity.class);
+        // Add and test Leaderboard functionality
+
+        // Add another user - Oliver
+        // check if Oliver exist
+        // if not, add to db and get user data
+        user2 = getUser("Oliver");
+        // Add Oliver to user list
+        userList.add(user2);
+
+        // Oliver answers 2 questions from category 1
+        // Oliver answers question1 right
+        testAddAnswer(user2, question1Cat1, "3 or above", 1);
+        // Oliver  answer question2 right
+        testAddAnswer(user2, question2Cat1, "Below 3", 1);
+
+        // Oliver clicks finish and go to Quiz homepage
+
+        // Oliver views his report
+        ArrayList<AnswerModel> user2AnswersList = getUserAnswersList(user2);
+        if (user2AnswersList.size() != 0) {
+            for (AnswerModel answerItem : user2AnswersList)
+                System.out.println(answerItem.toString());
+        }
+
+        // Sammy or Oliver views the Leaderboard
+
+        Map<String, Integer> mapCorrect = new HashMap<>();
+        Map<String, Integer> mapAttempt = new HashMap<>();
+        openDbManager();
+        for (UserModel user : userList) {
+            int countCorrect = 0;
+            int countAttempt = 0;
+            ArrayList<AnswerModel> userAnswers = getUserAnswersList(user);
+            countAttempt = userAnswers.size();
+            for (AnswerModel answerItem : userAnswers) {
+                if (answerItem.getStatus() == 1) countCorrect++;
+            }
+            mapCorrect.put(user.getNickName(), countCorrect);
+            mapAttempt.put(user.getNickName(), countAttempt);
+        }
+        // sort the users according to the one with most correct answers
+        List<Map.Entry<String, Integer>> correctList = new ArrayList<>(mapCorrect.entrySet());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            correctList.sort(Map.Entry.comparingByValue());
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            correctList.forEach(System.out::println);
+        }
+        // rank users and show total correct and total attempt
+        for (UserModel user : userList) {
+            for (Map.Entry<String, Integer> item: correctList) {
+                for (String attempt : mapAttempt.keySet())
+                    if (item.getKey().equals(user.getNickName()) && attempt.equals(user.getNickName())) {
+                        System.out.println(user.getNickName() + ", Total correct: " + item.getValue() + ", Total attempt: " + mapAttempt.get(attempt));
+                    }
+            }
+        }
+
+    Intent homeIntent = new Intent( DBMockActivity.this , SlideActivity.class);
         startActivity(homeIntent);
     }
 
-    // User db test method
-//    private Boolean testAddUser(String user) {
-//        boolean success = false;
-//
-//        // test scenarios
-//        // New user opens the Quiz page
-//        // Add name - Sammy, then click Confirm
-//        // in the app logic, this method will be called to check if db insert is successful/not
-//        if (isUserTableEmpty()) {
-//            insertUser(user);
-//            success = true;
-//        }
-//        else {
-//            if (getUserList().contains(user)) {
-//                success = false;
-//            }
-//            if (!getUserList().contains(user)) {
-//                insertUser(user);
-//                success = true;
-//            }
-//        }
-//        return success;
-//    }
-
-    private Boolean isUserAdded(String nickname) {
-        boolean isAdded = false;
-        // if user is a new user
-        if (isUserTableEmpty() || !userList.contains(nickname)) {
+    private UserModel getUser(String nickname) {
+        UserModel thisUser = new UserModel();
+        if (isUserTableEmpty())
+            // add user record in db
             insertUser(nickname);
-            isAdded = true;
-        }
         else {
-            for (UserModel user : userList) {
-                if (user.getNickName().equals(nickname))
-                    System.out.println("user already exist");
-            }
+            thisUser = getUserDB(nickname);
+            if (thisUser == null);
+            insertUser(nickname);
         }
-        return isAdded;
+        // update userList
+        thisUser = getUserDB(nickname);
+        return thisUser;
     }
 
     // Test add new users
@@ -166,6 +185,24 @@ public class DBMockActivity extends AppCompatActivity {
         }
         dbManager.close();
         return userList;
+    }
+
+    private UserModel getUserDB(String newUser) {
+        openDbManager();
+        Cursor c = dbManager.getUserByNickname(newUser);
+        UserModel user = new UserModel();
+        int userId = 0;
+        String nickname = "";
+        if (c.moveToFirst()) {
+            do {
+                userId = c.getInt(0);
+                nickname = c.getString(1);
+                user.setUserId(userId);
+                user.setNickName(nickname);
+            } while (c.moveToNext());
+        }
+        dbManager.close();
+        return user;
     }
 
     private void insertUser(String user) {
@@ -231,7 +268,8 @@ public class DBMockActivity extends AppCompatActivity {
         }
     }
 
-    private void getUserAnswersList(UserModel user) {
+    private ArrayList<AnswerModel> getUserAnswersList(UserModel user) {
+        ArrayList<AnswerModel> userAnswersList = new ArrayList<>();
         openDbManager();
         Cursor c = dbManager.getUserAnswers(user.getUserId());
         if (c.moveToFirst()) {
@@ -254,6 +292,7 @@ public class DBMockActivity extends AppCompatActivity {
             } while (c.moveToNext());
         }
         dbManager.close();
+        return userAnswersList;
     }
 
     private void openDbManager() {
