@@ -69,7 +69,7 @@
                 android:fontFamily="@font/concert_one"
                 android:text="UV Index Scale"
                 android:textColor="#732EB0"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/uv_scale_desc"
@@ -101,7 +101,7 @@
                 android:fontFamily="@font/concert_one"
                 android:text="UV Index Variation In Melbourne 2020"
                 android:textColor="#732EB0"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/uv_desc"
@@ -134,7 +134,7 @@
                 android:fontFamily="@font/concert_one"
                 android:text="UV Index Variation In Australia 2020"
                 android:textColor="#732EB0"
-                android:textSize="24dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/uv_states_desc"
@@ -147,26 +147,89 @@
                 android:gravity="center"
                 android:text="Let's understand the UV index level across the various states of Australia *" />
 
+            <RelativeLayout
+                android:id="@+id/relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:id="@+id/uv_capital_cities_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:src="@drawable/uv_capital_cities_new1" />
+
+                <ImageView
+                    android:id="@+id/darwin_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/perth_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/adelaide_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="180dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/act_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="290dp"
+                    android:layout_marginTop="190dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/sydeny_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="160dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/melbourne_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="220dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/hobart_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="255dp"
+                    android:src="@drawable/map_marker2" />
+
+                <ImageView
+                    android:id="@+id/brisbane_marker"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="120dp"
+                    android:src="@drawable/map_marker2" />
+
+            </RelativeLayout>
 
             <ImageView
-                android:id="@+id/section3_image"
+                android:id="@+id/uv_details_capital"
                 android:layout_width="wrap_content"
-                android:layout_height="176dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/uv_capital_cities" />
-
-            <TextView
-                android:id="@+id/uv_states_disclaimer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginTop="2dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:text="* : Chart shows the average daily UV index for each State"
-                android:textSize="10dp" />
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/uv_index_melbourne" />
 
 
         </LinearLayout>
