@@ -53,6 +53,9 @@ public class HomePageFragment extends Fragment {
         sp = getActivity().getPreferences(Context.MODE_PRIVATE);
         editor = sp.edit();
         binding.imageViewBoy.setVisibility(View.INVISIBLE);
+        binding.imageViewBoy2.setVisibility(View.INVISIBLE);
+        binding.uvInstrcut2.setVisibility(View.INVISIBLE);
+        binding.uvInstrcut.setVisibility(View.INVISIBLE);
         binding.buttonInfo.setVisibility(View.INVISIBLE);
 
         if (!sp.contains("suburb")) {
@@ -158,7 +161,9 @@ public class HomePageFragment extends Fragment {
                     binding.uvmeter.setImageResource(R.drawable.uv_low);
                     binding.buttonInfo.setVisibility(View.GONE);
                     binding.imageViewBoy.setVisibility(View.VISIBLE);
-                    binding.uvInstrcut2.setText(R.string.protectNotRequired);
+                    binding.imageViewBoy2.setVisibility(View.VISIBLE);
+                    binding.uvInstrcut2.setVisibility(View.VISIBLE);
+                    binding.uvInstrcut.setVisibility(View.GONE);
                 }if(sInt>=3 && sInt<6){
                     binding.uvmeter.setImageResource(R.drawable.uv_moderate);
                     above3View();
@@ -234,8 +239,10 @@ public class HomePageFragment extends Fragment {
 
     public void above3View(){
         binding.buttonInfo.setVisibility(View.VISIBLE);
-        binding.imageViewBoy.setVisibility(View.GONE);
-        binding.uvInstrcut2.setText(R.string.protectRequired);
+        binding.imageViewBoy.setVisibility(View.VISIBLE);
+        binding.imageViewBoy2.setVisibility(View.GONE);
+        binding.uvInstrcut.setVisibility(View.VISIBLE);
+        binding.uvInstrcut2.setVisibility(View.GONE);
     }
 
     public void onDestroyView() {
