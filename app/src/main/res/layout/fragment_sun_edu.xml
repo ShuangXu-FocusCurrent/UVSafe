@@ -70,6 +70,7 @@
                     android:id="@+id/aboutSunscreenButton" />
 
                 <ImageButton
+                    android:id="@+id/aboutMelanomaButton"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_columnWeight="1"
@@ -78,8 +79,7 @@
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/about_melanoma"
                     android:gravity="center"
-                    android:visibility="invisible"
-                    android:id="@+id/aboutMelanomaButton" />
+                    android:visibility="visible" />
 
                 <ImageButton
                     android:id="@+id/melanomaRisksButton"
@@ -93,6 +93,7 @@
                     android:visibility="visible" />
 
                 <ImageButton
+                    android:id="@+id/melanomaStatsButton"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_columnWeight="1"
@@ -100,8 +101,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/melanoma_stats"
                     android:gravity="center"
-                    android:visibility="invisible"
-                    android:id="@+id/melanomaStatsButton" />
+                    android:visibility="visible" />
 
             </GridLayout>
         </ScrollView>

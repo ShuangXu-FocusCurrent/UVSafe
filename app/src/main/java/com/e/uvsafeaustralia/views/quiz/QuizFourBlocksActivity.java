@@ -11,6 +11,7 @@ import com.e.uvsafeaustralia.views.quiz.Category1.QuizCategory1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category2.QuizCategory2Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
+import com.e.uvsafeaustralia.views.quiz.leaderboard.OriginalLeadernoardActivity;
 
 public class QuizFourBlocksActivity extends AppCompatActivity {
     private ActivityQuizFourBlocksBinding binding;
@@ -20,6 +21,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityQuizFourBlocksBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+        setContentView(view);
         binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +53,13 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        setContentView(view);
+
+        binding.checkLeaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( QuizFourBlocksActivity.this , OriginalLeadernoardActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

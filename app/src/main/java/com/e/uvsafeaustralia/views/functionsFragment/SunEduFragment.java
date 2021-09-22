@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.e.uvsafeaustralia.views.AboutMelanomaActivity;
 import com.e.uvsafeaustralia.views.AboutSunscreensActivity;
 import com.e.uvsafeaustralia.views.AboutUVActivity;
 import com.e.uvsafeaustralia.views.MelanomaRiskFactorsActivity;
+import com.e.uvsafeaustralia.views.MelanomaStatesActivity;
 import com.e.uvsafeaustralia.views.SunProtectionActivity;
 import com.e.uvsafeaustralia.databinding.FragmentSunEduBinding;
 
@@ -67,6 +69,22 @@ public class SunEduFragment extends Fragment {
                 startActivity(intent );
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
 
+            }
+        });
+
+        binding.aboutMelanomaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutMelanomaActivity.class);
+                startActivity(intent );
+            }
+        });
+
+        binding.melanomaStatsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MelanomaStatesActivity.class);
+                startActivity(intent );
             }
         });
 

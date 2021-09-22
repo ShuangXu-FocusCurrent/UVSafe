@@ -61,4 +61,20 @@
         app:layout_constraintStart_toEndOf="@+id/category3"
         app:layout_constraintTop_toBottomOf="@+id/category2"
         app:srcCompat="@drawable/c4" />
+
+    <Button
+        android:id="@+id/checkLeaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:layout_marginBottom="81dp"
+        android:text="Check Leaderboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
