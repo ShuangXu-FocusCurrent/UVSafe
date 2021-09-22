@@ -243,6 +243,7 @@ public class DBManager {
                     AnswerDBStructure.tableEntry.TABLE_ANSWER,
                     answerColumns, selection, args,  null,  null, null);
         }
+
         private String[] answerColumns = {
                 AnswerDBStructure.tableEntry._ID,
                 AnswerDBStructure.tableEntry.COLUMN_USER_ID,
@@ -258,6 +259,12 @@ public class DBManager {
             values.put(AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER, selected);
             values.put(AnswerDBStructure.tableEntry.COLUMN_STATUS, status);
             db.insert(AnswerDBStructure.tableEntry.TABLE_ANSWER, null, values);
+        }
+
+        public void deleteUserAnswers(int userId) {
+            String selection = "user_id=?";
+            String[] args = {String.valueOf(userId)};
+            db.delete(AnswerDBStructure.tableEntry.TABLE_ANSWER, selection, args);
         }
 
         // SQLite helper

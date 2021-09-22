@@ -134,16 +134,22 @@ public class DBMockActivity extends AppCompatActivity {
             correctList.forEach(System.out::println);
         }
         // rank users and show total correct and total attempt
-        for (UserModel user : userList) {
-            for (Map.Entry<String, Integer> item: correctList) {
+        for (UserModel user : userList)
+            for (Map.Entry<String, Integer> item: correctList)
                 for (String attempt : mapAttempt.keySet())
-                    if (item.getKey().equals(user.getNickName()) && attempt.equals(user.getNickName())) {
+                    if (item.getKey().equals(user.getNickName()) && attempt.equals(user.getNickName()))
                         System.out.println(user.getNickName() + ", Total correct: " + item.getValue() + ", Total attempt: " + mapAttempt.get(attempt));
-                    }
-            }
-        }
 
-    Intent homeIntent = new Intent( DBMockActivity.this , SlideActivity.class);
+        // Oliver wants to try the quiz again
+        // He clicks on the Try Again button
+
+        // Delete Oliver's record from the Answer table
+        System.out.println(getAllUsersAnswersList());
+        deleteAnswers(user2.getUserId());
+        System.out.println(getAllUsersAnswersList());
+
+
+        Intent homeIntent = new Intent( DBMockActivity.this , SlideActivity.class);
         startActivity(homeIntent);
     }
 
@@ -293,6 +299,39 @@ public class DBMockActivity extends AppCompatActivity {
         }
         dbManager.close();
         return userAnswersList;
+    }
+
+    private ArrayList<AnswerModel> getAllUsersAnswersList() {
+        ArrayList<AnswerModel> answersList = new ArrayList<>();
+        openDbManager();
+        Cursor c = dbManager.getAllAnswers();
+        if (c.moveToFirst()) {
+            do {
+                int answerId = c.getInt(0);
+                int userId = c.getInt(1);
+                UserModel thisUser = new UserModel();
+                int questionId = c.getInt(2);
+                QuestionModel thisQuestion = new QuestionModel();
+                String selected = c.getString(3);
+                int status = c.getInt(4);
+                for (UserModel userItem: userList)
+                    if (userItem.getUserId() == userId)
+                        thisUser = userItem;
+                for (QuestionModel questionItem : questionList)
+                    if (questionItem.getqId() == questionId)
+                        thisQuestion = questionItem;
+                AnswerModel answer = new AnswerModel(answerId, thisUser, thisQuestion, selected, status);
+                answersList.add(answer);
+            } while (c.moveToNext());
+        }
+        dbManager.close();
+        return answersList;
+    }
+
+    private void deleteAnswers(int userId) {
+        openDbManager();
+        dbManager.deleteUserAnswers(userId);
+        dbManager.close();
     }
 
     private void openDbManager() {
