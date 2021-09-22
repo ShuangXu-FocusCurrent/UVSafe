@@ -6,4 +6,296 @@
     android:layout_height="match_parent"
     tools:context=".views.AboutMelanomaActivity">
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/about_melanoma_bg"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="What is Melanoma ?"
+                android:textColor="#C73411"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/what_is_melanoma_img" />
+
+            <TextView
+                android:id="@+id/section1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Watch Patient’s Stories"
+                android:textColor="#C73411"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:text="Adam will never forget the day he was
+diagnosed with melanoma at age 27"
+                android:textAlignment="center"
+                android:textColor="#C73411"
+                android:textSize="20dp" />
+
+            <VideoView
+                android:id="@+id/about_melanoma_video1"
+                android:layout_width="312dp"
+                android:layout_height="177dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|clip_horizontal|center|clip_vertical|center_vertical|fill_vertical"
+                android:layout_marginBottom="10dp"
+                android:foregroundGravity="center|fill_vertical|clip_vertical|fill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="Source: Add Video URL"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:text="Hanging on to hope was cruicial ! Watch Juilia’s stroy abou how she got through it and where she went for help"
+                android:textAlignment="center"
+                android:textColor="#C73411"
+                android:textSize="20dp" />
+
+            <VideoView
+                android:id="@+id/about_melanoma_video2"
+                android:layout_width="312dp"
+                android:layout_height="177dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|clip_horizontal|center|clip_vertical|center_vertical|fill_vertical"
+                android:layout_marginBottom="10dp"
+                android:foregroundGravity="center|fill_vertical|clip_vertical|fill" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="Source: Add Video URL"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/section1_hesebader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Can melanoma be perevented ?"
+                android:textColor="#C73411"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:id="@+id/section1gj_image"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/section1_image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="350dp"
+                    android:layout_marginBottom="30dp"
+                    app:srcCompat="@drawable/can_melanoma_be_prevented_img1" />
+
+                <TextView
+                    android:id="@+id/ImageViewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/section1_image1"
+                    android:layout_alignTop="@id/section1_image1"
+                    android:layout_alignRight="@id/section1_image1"
+                    android:layout_alignBottom="@id/section1_image1"
+                    android:gravity="center"
+                    android:paddingLeft="130dp"
+                    android:paddingTop="30dp"
+                    android:paddingRight="10dp"
+                    android:text="If detected early, Melanoma can be effectively treated.\n\nThe most effective way to prevent melanoma is to practice sun safety at all times. This means avoiding exposure to the sun during the hottest parts of the day\n\nHave a regular skin check at least once every 12 months to maximise the chances of picking up melanoma early."
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    tools:ignore="RtlCompat" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/section1_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="380dp"
+                    android:layout_marginBottom="30dp"
+                    app:srcCompat="@drawable/can_melanoma_be_prevented_img2" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/section1_image2"
+                    android:layout_alignTop="@id/section1_image2"
+                    android:layout_alignRight="@id/section1_image2"
+                    android:layout_alignBottom="@id/section1_image2"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="60dp"
+                    android:paddingRight="100dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="Want to know more ?"
+                        android:textAlignment="textStart"
+                        android:textColor="#C73411"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/concert_one"
+                        android:text="Visit"
+                        android:textAlignment="textStart"
+                        android:textColor="#C73411"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Melanoma Institute Australia"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/melanoma_org_link_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="https://www.melanoma.org.au/understanding-melanoma/"
+                        android:textColor="#085CBE"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Cancer Counsil NSW"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/cancer_council_link_id1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="https://www.cancercouncil.com.au/melanoma/about-melanoma"
+                        android:textColor="#085CBE"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Cancer Counsil Victoria"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/cancer_council_link_id2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:text="https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"
+                        android:textColor="#085CBE"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:paddingTop="50dp"
+                android:text="Information Retrieved from:
+Melanoma Institute Australia, Cancer Counsil NSW and
+Cancer Counsil Victoria" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
