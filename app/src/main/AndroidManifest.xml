@@ -22,7 +22,10 @@
         <activity android:name=".views.quiz.Category2.QuizCategory2Activity" />
         <activity android:name=".views.quiz.QuizFourBlocksActivity" />
         <activity android:name=".views.quiz.Category1.QuizCategory1Activity" />
-        <activity android:name=".views.MelanomaRiskFactorsActivity" />
+        <activity
+            android:name=".views.MelanomaRiskFactorsActivity"
+            android:label="Melanoma Risk Factors"
+            android:parentActivityName=".views.MainFunction"/>
         <activity
             android:name=".views.quiz.leaderboard.LeaderboardActivity"
             android:parentActivityName=".views.quiz.Category1.QuizCategory1Activity" />

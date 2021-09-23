@@ -695,7 +695,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/textViewMIALink"
                     android:layout_width="281dp"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -707,7 +707,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/textViewNSWLink"
                     android:layout_width="281dp"
                     android:layout_height="24dp"
                     android:layout_marginTop="5dp"
@@ -719,7 +719,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/textViewVicLink"
                     android:layout_width="281dp"
                     android:layout_height="24dp"
                     android:layout_marginTop="5dp"
@@ -738,8 +738,8 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:fontFamily="@font/concert_one"
                     android:text="@string/NSW"
                     android:textColor="#535151"
-                    app:layout_constraintStart_toStartOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                    app:layout_constraintStart_toStartOf="@+id/textViewMIALink"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMIALink" />
 
                 <TextView
                     android:id="@+id/textView18"
@@ -749,8 +749,8 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:fontFamily="@font/concert_one"
                     android:text="@string/VIC"
                     android:textColor="#535151"
-                    app:layout_constraintStart_toStartOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                    app:layout_constraintStart_toStartOf="@+id/textViewMIALink"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewNSWLink" />
 
                 <TextView
                     android:id="@+id/textView20"
