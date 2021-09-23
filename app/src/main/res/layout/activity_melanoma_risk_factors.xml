@@ -113,7 +113,7 @@
                 app:srcCompat="@drawable/skin_info_1" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textAddName"
                 android:layout_width="274dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
