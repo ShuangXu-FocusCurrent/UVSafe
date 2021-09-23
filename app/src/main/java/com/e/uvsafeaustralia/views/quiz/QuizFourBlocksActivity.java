@@ -3,6 +3,7 @@ package com.e.uvsafeaustralia.views.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,8 +14,14 @@ import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.OriginalLeadernoardActivity;
 
+import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.player;
+
+
 public class QuizFourBlocksActivity extends AppCompatActivity {
     private ActivityQuizFourBlocksBinding binding;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,8 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding = ActivityQuizFourBlocksBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        binding.textViewPlayer.setText(player.getNickName());
         binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

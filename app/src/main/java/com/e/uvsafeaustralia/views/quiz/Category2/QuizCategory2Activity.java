@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityQuizCategory2Binding;
-import com.e.uvsafeaustralia.databinding.ActivityQuziCategory1Binding;
 
 
 public class QuizCategory2Activity extends AppCompatActivity {

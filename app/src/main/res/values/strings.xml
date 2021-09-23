@@ -34,7 +34,7 @@
         <string name = "nswLink">https://www.cancercouncil.com.au/melanoma/about-melanoma</string>
         <string name = "VIC">Cancer Counsil Victoria</string>
         <string name = "vicLink">https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html</string>
-
+    <string name="start_quiz">Let\'s get started</string>
 
 
 </resources>

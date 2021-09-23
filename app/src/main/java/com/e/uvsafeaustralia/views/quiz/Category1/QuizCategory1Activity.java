@@ -8,15 +8,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.e.uvsafeaustralia.R;
-import com.e.uvsafeaustralia.databinding.ActivityQuziCategory1Binding;
+import com.e.uvsafeaustralia.databinding.ActivityQuizCategory1Binding;
 
 public class QuizCategory1Activity extends AppCompatActivity {
-    private ActivityQuziCategory1Binding binding;
+    private ActivityQuizCategory1Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityQuziCategory1Binding.inflate(getLayoutInflater());
+        binding=ActivityQuizCategory1Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
