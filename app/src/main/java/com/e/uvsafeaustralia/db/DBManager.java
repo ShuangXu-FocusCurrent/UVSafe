@@ -244,6 +244,12 @@ public class DBManager {
                     answerColumns, selection, args,  null,  null, null);
         }
 
+        public Cursor getUserAnswerByQuestion(int userId, int question_id) {
+            String selection = "user_id=? AND question_id=?";
+            String[] args = {String.valueOf(userId), String.valueOf(question_id)};
+            return db.query(AnswerDBStructure.tableEntry.TABLE_ANSWER,
+                    answerColumns,selection, args, null, null, null);
+        }
         private String[] answerColumns = {
                 AnswerDBStructure.tableEntry._ID,
                 AnswerDBStructure.tableEntry.COLUMN_USER_ID,

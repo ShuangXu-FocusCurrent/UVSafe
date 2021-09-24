@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.e.uvsafeaustralia.databinding.ActivityOriginalLeardernoardBinding;
 
-public class OriginalLeadernoardActivity extends AppCompatActivity {
+public class OriginalLeaderboardActivity extends AppCompatActivity {
     private ActivityOriginalLeardernoardBinding binding;
 
     @Override

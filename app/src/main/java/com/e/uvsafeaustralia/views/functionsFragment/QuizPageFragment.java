@@ -22,6 +22,7 @@ import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -33,12 +34,12 @@ import java.util.Iterator;
 public class QuizPageFragment extends Fragment {
     private FragmentQuizPageBinding binding;
     protected DBManager dbManager;
-    ArrayList<UserModel> userList = new ArrayList<>();
+    public static ArrayList<UserModel> userList;
     private String existingPlayer;
     public static UserModel player;
     private static String nicknameInput;
-    private SharedPreferences sp;
-    private SharedPreferences.Editor editor;
+//    private SharedPreferences sp;
+//    private SharedPreferences.Editor editor;
 
 
     @Override
@@ -48,8 +49,8 @@ public class QuizPageFragment extends Fragment {
         View root = binding.getRoot();
 
         dbManager = new DBManager(requireActivity());
-        sp = getActivity().getPreferences(Context.MODE_PRIVATE);
-        editor = sp.edit();
+//        sp = getActivity().getPreferences(Context.MODE_PRIVATE);
+//        editor = sp.edit();
 
         // get list of users from db
         userList = getUsersList();
@@ -155,6 +156,7 @@ public class QuizPageFragment extends Fragment {
     }
 
     private ArrayList<UserModel> getUsersList() {
+        ArrayList<UserModel> users = new ArrayList<>();
         openDbManager();
         Cursor c = dbManager.getAllUsers();
         int userId = 0;
@@ -163,11 +165,11 @@ public class QuizPageFragment extends Fragment {
             do {
                 userId = c.getInt(0);
                 nickname = c.getString(1);
-                userList.add(new UserModel(userId, nickname));
+                users.add(new UserModel(userId, nickname));
             } while (c.moveToNext());
         }
         dbManager.close();
-        return userList;
+        return users;
     }
 
     private UserModel getUserDB(String newUser) {
