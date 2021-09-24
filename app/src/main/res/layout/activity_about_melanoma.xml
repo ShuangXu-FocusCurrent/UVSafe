@@ -91,6 +91,12 @@ diagnosed with melanoma at age 27"
                 android:gravity="center"
                 android:text="Source: Add Video URL"
                 android:textStyle="italic" />
+            <Button
+                android:id="@+id/playvideo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play video"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -125,6 +131,13 @@ diagnosed with melanoma at age 27"
                 android:gravity="center"
                 android:text="Source: Add Video URL"
                 android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/playvideo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play video"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/section1_hesebader"

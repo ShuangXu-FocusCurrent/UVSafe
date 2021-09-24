@@ -46,7 +46,9 @@
             android:name=".views.SunProtectionActivity"
             android:label="Sun Protection"
             android:parentActivityName=".views.MainFunction" />
-        <activity android:name=".views.AboutMelanomaActivity" />
+        <activity android:name=".views.AboutMelanomaActivity"
+            android:label="About Melanoma"
+            android:parentActivityName=".views.MainFunction"/>
         <activity
             android:name=".views.MelanomaRiskFactorsActivity"
             android:label="Melanoma Risk Factors"
