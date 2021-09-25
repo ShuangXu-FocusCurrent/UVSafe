@@ -8,8 +8,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 
 import com.e.uvsafeaustralia.R;
@@ -35,7 +38,8 @@ public class MainFunction extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
-        sp = this.getPreferences(Context.MODE_PRIVATE);
+        sp = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        editor=sp.edit();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment,R.id.moreInforFragment)
@@ -44,10 +48,25 @@ public class MainFunction extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
-        if(getIntent()==null || getIntent().getExtras()==null){
-            navController.navigate(R.id.sunEduFragment);
-        } else if(getIntent().hasExtra("Alarm")){
-            navController.navigate(R.id.alarmPageFragment);
+        if(sp.contains("quiz") && sp.getString("quiz","null").equals("quiz")){
+            editor.putString("quiz","null");
+            editor.apply();
+            navController.navigate(R.id.quizPageFragment);
+        }else{
+            if(getIntent()==null || getIntent().getExtras()==null){
+                navController.navigate(R.id.sunEduFragment);
+            } else if(getIntent().hasExtra("Alarm")){
+                navController.navigate(R.id.alarmPageFragment);
+            }
         }
     }
+
+    private void setSp(String quiz) {
+        editor = sp.edit();
+        editor.putString ("quiz", quiz);
+        editor.commit();
+    }
+
+//
+
 }

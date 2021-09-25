@@ -7,18 +7,85 @@
     tools:context=".views.quiz.reportWithReview.ReportActivity">
 
     <Button
-        android:id="@+id/goReview"
+        android:id="@+id/backMainQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginLeft="108dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="109dp"
         android:layout_marginRight="109dp"
         android:layout_marginBottom="291dp"
-        android:text="go aboutUV review"
+        android:text="go back to main quiz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/c1Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="7dp"
+        android:text="Category1"
+        app:layout_constraintBottom_toTopOf="@+id/c3Review"
+        app:layout_constraintEnd_toStartOf="@+id/c2Review"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/c2Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="7dp"
+        android:text="Category2"
+        app:layout_constraintBottom_toTopOf="@+id/c4Review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c1Review"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/c3Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="84dp"
+        android:text="Category3"
+        app:layout_constraintBottom_toTopOf="@+id/backMainQuiz"
+        app:layout_constraintEnd_toStartOf="@+id/c4Review"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c1Review" />
+
+    <Button
+        android:id="@+id/c4Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="84dp"
+        android:text="Category4"
+        app:layout_constraintBottom_toTopOf="@+id/backMainQuiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c3Review"
+        app:layout_constraintTop_toBottomOf="@+id/c2Review" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,17 @@
 package com.e.uvsafeaustralia.views.quiz;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -16,12 +20,14 @@ import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
+import com.e.uvsafeaustralia.views.MainFunction;
 import com.e.uvsafeaustralia.views.quiz.Category1.QuizCategory1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category2.QuizCategory2Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.OriginalLeaderboardActivity;
+import com.e.uvsafeaustralia.views.quiz.reportWithReview.Category4ReviewActivity;
 
 import java.util.ArrayList;
 
@@ -38,7 +44,8 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
     public static ArrayList<AnswerModel> userAnswersCategory2;
     public static ArrayList<AnswerModel> userAnswersCategory3;
     public static ArrayList<AnswerModel> userAnswersCategory4;
-
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +53,11 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding = ActivityQuizFourBlocksBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
+        sp = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        editor=sp.edit();
+        editor.putString("quiz","quiz");
+        editor.apply();
         dbManager = new DBManager(this);
-
         questionsList = getQuestionList();
         allUserAnswers = getUserAnswersList(player);
         if (!allUserAnswers.isEmpty()) {
@@ -128,14 +134,16 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<AnswerModel> allUsersAnswers = getAllUsersAnswersList();
-                if (allUsersAnswers.isEmpty()) {
-                    Intent intent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
-                    startActivity(intent);
-                }
-                else {
-                    Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
+                startActivity(intent);
+//                if (allUsersAnswers.isEmpty()) {
+//                    Intent intent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
+//                    startActivity(intent);
+//                }
+//                else {
+//                    Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
+//                    startActivity(intent);
+//                }
             }
         });
 
@@ -271,15 +279,5 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

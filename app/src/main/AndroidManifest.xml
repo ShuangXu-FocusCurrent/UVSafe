@@ -13,6 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UVSafeAustralia">
+        <activity android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
+            android:label="Review - About Melanoma"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
+        <activity android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
+            android:label="Review - About Sunscreens"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity"/>
+        <activity android:name=".views.quiz.reportWithReview.Category2ReviewActivity"
+            android:label="Review - Sun Protection"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity"/>
+        <activity android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
+            android:label="Review - About UV"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity"/>
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,44 +58,46 @@
             android:name=".views.SunProtectionActivity"
             android:label="Sun Protection"
             android:parentActivityName=".views.MainFunction" />
-        <activity android:name=".views.AboutMelanomaActivity"
+        <activity
+            android:name=".views.AboutMelanomaActivity"
             android:label="About Melanoma"
-            android:parentActivityName=".views.MainFunction"/>
+            android:parentActivityName=".views.MainFunction" />
         <activity
             android:name=".views.MelanomaRiskFactorsActivity"
             android:label="Melanoma Risk Factors"
-            android:parentActivityName=".views.MainFunction"/>
-        <activity android:name=".views.MelanomaStatesActivity"></activity>
+            android:parentActivityName=".views.MainFunction" />
+        <activity android:name=".views.MelanomaStatesActivity" />
         <activity
             android:name=".views.quiz.QuizFourBlocksActivity"
             android:label="Quiz Homepage"
-            android:parentActivityName=".views.MainFunction"/>
+            android:parentActivityName=".views.MainFunction" />
         <activity
             android:name=".views.quiz.Category1.QuizCategory1Activity"
             android:label="Quiz - About UV"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity"/>
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity
             android:name=".views.quiz.Category2.QuizCategory2Activity"
             android:label="Quiz - Sun protection"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity"/>
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity
             android:name=".views.quiz.Category3.QuizCategory3Activity"
             android:label="Quiz - Sunscreen"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity"/>
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity
             android:name=".views.quiz.Category4.QuizCategory4Activity"
             android:label="Quiz - Melanoma"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity"/>
-        <activity android:name=".views.quiz.reportWithReview.ReviewActivity" />
-        <activity android:name=".views.quiz.reportWithReview.ReportActivity" />
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
+        <activity android:name=".views.quiz.reportWithReview.ReportActivity"
+            android:label="Quiz - Report"
+            android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity"/>
         <activity
             android:name=".views.quiz.leaderboard.LeaderboardActivity"
             android:label="Leaderboard"
-            android:parentActivityName=".views.quiz.Category1.QuizCategory1Activity" />
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity
             android:name=".views.quiz.leaderboard.OriginalLeaderboardActivity"
             android:label="Leaderboard"
-            android:parentActivityName=".views.quiz.Category1.QuizCategory1Activity" />
+            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
 
         <receiver android:name=".helper.AlarmReceiver" />
     </application>

@@ -5,15 +5,15 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.e.uvsafeaustralia.databinding.ActivityOriginalLeardernoardBinding;
+import com.e.uvsafeaustralia.databinding.ActivityOriginalLearderboardBinding;
 
 public class OriginalLeaderboardActivity extends AppCompatActivity {
-    private ActivityOriginalLeardernoardBinding binding;
+    private ActivityOriginalLearderboardBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityOriginalLeardernoardBinding.inflate(getLayoutInflater());
+        binding = ActivityOriginalLearderboardBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
     }
