@@ -1,8 +1,6 @@
 package com.e.uvsafeaustralia.views.functionsFragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
@@ -22,9 +20,8 @@ import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,8 +35,6 @@ public class QuizPageFragment extends Fragment {
     private String existingPlayer;
     public static UserModel player;
     private static String nicknameInput;
-//    private SharedPreferences sp;
-//    private SharedPreferences.Editor editor;
 
 
     @Override
@@ -49,8 +44,6 @@ public class QuizPageFragment extends Fragment {
         View root = binding.getRoot();
 
         dbManager = new DBManager(requireActivity());
-//        sp = getActivity().getPreferences(Context.MODE_PRIVATE);
-//        editor = sp.edit();
 
         // get list of users from db
         userList = getUsersList();

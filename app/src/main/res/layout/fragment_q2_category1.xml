@@ -21,13 +21,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonCat1Q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="500dp"
-            android:text="Button1"
+            android:text="Q1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.222"
@@ -36,7 +36,7 @@
             app:layout_constraintVertical_bias="0.932" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonCat1Q2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -44,7 +44,7 @@
             android:layout_marginEnd="300dp"
             android:layout_marginRight="300dp"
             android:layout_marginBottom="500dp"
-            android:text="Button2"
+            android:text="Q2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.982"
@@ -53,13 +53,13 @@
             app:layout_constraintVertical_bias="0.843" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonCat1Q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginLeft="200dp"
             android:layout_marginBottom="500dp"
-            android:text="Button3"
+            android:text="Q3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.613"
@@ -68,13 +68,13 @@
             app:layout_constraintVertical_bias="0.753" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonCat1Q4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginLeft="200dp"
             android:layout_marginBottom="500dp"
-            android:text="Button4"
+            android:text="Q4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.613"
@@ -83,7 +83,7 @@
             app:layout_constraintVertical_bias="0.667" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonCat1End"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"

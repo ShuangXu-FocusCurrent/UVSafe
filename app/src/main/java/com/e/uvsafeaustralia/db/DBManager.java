@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 
@@ -160,7 +161,7 @@ public class DBManager {
             String selection = "question_category=?";
             String[] args = {String.valueOf(enumQCategory)};
             return db.query(QuestionDBStructure.tableEntry.TABLE_QUESTION,
-                    questionColumns,selection, args, null, null, QuestionDBStructure.tableEntry.COLUMN_QUESTION_NUMBER);
+                    questionColumns,selection, args, null, null, null);
         }
 
         private String[] questionColumns = {
@@ -248,8 +249,23 @@ public class DBManager {
             String selection = "user_id=? AND question_id=?";
             String[] args = {String.valueOf(userId), String.valueOf(question_id)};
             return db.query(AnswerDBStructure.tableEntry.TABLE_ANSWER,
-                    answerColumns,selection, args, null, null, null);
+                    answerColumns, selection, args, null, null, null);
         }
+
+        public void updateAnswer(UserModel user, QuestionModel question, String selected, int status) {
+            String selection = "user_id=? AND question_id=?";
+            String[] args = {
+                    String.valueOf(user.getUserId()),
+                    String.valueOf(question.getqId())
+            };
+            ContentValues values = new ContentValues();
+            values.put(AnswerDBStructure.tableEntry.COLUMN_USER_ID, user.getUserId());
+            values.put(AnswerDBStructure.tableEntry.COLUMN_QUESTION_ID, question.getqId());
+            values.put(AnswerDBStructure.tableEntry.COLUMN_SELECTED_ANSWER, selected);
+            values.put(AnswerDBStructure.tableEntry.COLUMN_STATUS, status);
+            db.update(AnswerDBStructure.tableEntry.TABLE_ANSWER, values, selection, args);
+        }
+
         private String[] answerColumns = {
                 AnswerDBStructure.tableEntry._ID,
                 AnswerDBStructure.tableEntry.COLUMN_USER_ID,

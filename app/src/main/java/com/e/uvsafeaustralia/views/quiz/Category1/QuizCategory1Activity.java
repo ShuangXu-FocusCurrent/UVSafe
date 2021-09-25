@@ -10,8 +10,10 @@ import androidx.navigation.Navigation;
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityQuizCategory1Binding;
 
+
 public class QuizCategory1Activity extends AppCompatActivity {
     private ActivityQuizCategory1Binding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,5 @@ public class QuizCategory1Activity extends AppCompatActivity {
         setContentView(view);
 
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerViewCategory1);
-
     }
 }

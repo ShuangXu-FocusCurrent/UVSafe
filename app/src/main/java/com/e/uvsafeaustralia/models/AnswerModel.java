@@ -15,6 +15,8 @@ public class AnswerModel {
         this.status = status;
     }
 
+    public AnswerModel(){}
+
     @Override
     public String toString() {
         return "AnswerModel{" +

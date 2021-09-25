@@ -32,12 +32,12 @@ import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.use
 public class QuizFourBlocksActivity extends AppCompatActivity {
     private ActivityQuizFourBlocksBinding binding;
     protected DBManager dbManager;
-    private ArrayList<QuestionModel> questionsList;
-    private ArrayList<AnswerModel> allUserAnswers;
-    private ArrayList<AnswerModel> userAnswersCategory1;
-    private ArrayList<AnswerModel> userAnswersCategory2;
-    private ArrayList<AnswerModel> userAnswersCategory3;
-    private ArrayList<AnswerModel> userAnswersCategory4;
+    public static ArrayList<QuestionModel> questionsList;
+    public static ArrayList<AnswerModel> allUserAnswers;
+    public static ArrayList<AnswerModel> userAnswersCategory1;
+    public static ArrayList<AnswerModel> userAnswersCategory2;
+    public static ArrayList<AnswerModel> userAnswersCategory3;
+    public static ArrayList<AnswerModel> userAnswersCategory4;
 
 
     @Override
@@ -75,16 +75,24 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
                 userAnswersCategory4.add(answer);
         }
 
-        if (!userAnswersCategory1.isEmpty())
+        if (!userAnswersCategory1.isEmpty()) {
             binding.category1.setEnabled(false);
-        if (!userAnswersCategory2.isEmpty())
+            binding.category1.setAlpha(0.25f);
+        }
+        if (!userAnswersCategory2.isEmpty()) {
             binding.category2.setEnabled(false);
-        if (!userAnswersCategory3.isEmpty())
+            binding.category2.setAlpha(0.25f);
+        }
+        if (!userAnswersCategory3.isEmpty()) {
             binding.category3.setEnabled(false);
-        if (!userAnswersCategory4.isEmpty())
+            binding.category3.setAlpha(0.25f);
+        }
+        if (!userAnswersCategory4.isEmpty()) {
             binding.category4.setEnabled(false);
+            binding.category4.setAlpha(0.25f);
+        }
 
-        binding.category1.setOnClickListener(new View.OnClickListener() {
+            binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QuizFourBlocksActivity.this, QuizCategory1Activity.class);
@@ -135,10 +143,24 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteAnswers(player.getUserId());
+                if (userAnswersCategory1.size() != 0)
+                    userAnswersCategory1.clear();
+                if (userAnswersCategory2.size() != 0)
+                    userAnswersCategory2.clear();
+                if (userAnswersCategory3.size() != 0)
+                    userAnswersCategory3.clear();
+                if (userAnswersCategory4.size() != 0)
+                    userAnswersCategory4.clear();
                 binding.category1.setEnabled(true);
+                binding.category1.setAlpha(1f);
                 binding.category2.setEnabled(true);
+                binding.category2.setAlpha(1f);
                 binding.category3.setEnabled(true);
+                binding.category3.setAlpha(1f);
                 binding.category4.setEnabled(true);
+                binding.category4.setAlpha(1f);
+                binding.tryAgainBtn.setVisibility(View.INVISIBLE);
+                binding.tryAgainBtnStroke.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -177,7 +199,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         return questions;
     }
 
-    private ArrayList<AnswerModel> getUserAnswersList(UserModel user) {
+    public ArrayList<AnswerModel> getUserAnswersList(UserModel user) {
         ArrayList<AnswerModel> userAnswersList = new ArrayList<>();
         openDbManager();
         Cursor c = dbManager.getUserAnswers(user.getUserId());
@@ -202,6 +224,12 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         }
         dbManager.close();
         return userAnswersList;
+    }
+
+    public void insertAnswer(AnswerModel answer) {
+        openDbManager();
+        dbManager.insertAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
+        dbManager.close();
     }
 
     private void deleteAnswers(int userId) {

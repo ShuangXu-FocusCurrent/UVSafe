@@ -25,28 +25,28 @@ public class Q1Category4Fragment extends Fragment {
         binding = FragmentQ1Category4Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         NavController navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerViewCategory);
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat4Q2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_q1Category4Fragment_to_q2Category4Fragment);
             }
         });
 
-        binding.button3.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat4Q3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_q1Category4Fragment_to_q3Category4Fragment);
             }
         });
 
-        binding.button4.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat4Q4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_q1Category4Fragment_to_q4Category4Fragment);
             }
         });
 
-        binding.button5.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat4End.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( requireActivity(), QuizFourBlocksActivity.class);
