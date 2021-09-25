@@ -31,7 +31,7 @@ import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.userAnswer
 
 public class Q1Category1Fragment extends Fragment {
     private FragmentQ1Category1Binding binding;
-    protected DBManager dbManager;
+    protected static DBManager dbManager;
     public static ArrayList<QuestionModel> questionsCategory1;
     private QuestionModel question;
     public static AnswerModel userAnswerC1Q1;
@@ -64,6 +64,7 @@ public class Q1Category1Fragment extends Fragment {
                 binding.buttonOpt1Answer.setBackgroundColor(Color.YELLOW);
             if (binding.buttonOpt2Answer.getText().equals(selected))
                 binding.buttonOpt2Answer.setBackgroundColor(Color.YELLOW);
+            disableAnswerOptions();
         }
 
         binding.buttonCat1Q1.setBackgroundColor(Color.MAGENTA);
@@ -73,13 +74,14 @@ public class Q1Category1Fragment extends Fragment {
                 binding.buttonOpt1Answer.setBackgroundColor(Color.YELLOW);
                 binding.buttonOpt2Answer.setBackgroundColor(Color.LTGRAY);
                 // show wrong answer feedback
-//                Toast.makeText(getActivity(), "Wrong answer", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Wrong answer", Toast.LENGTH_LONG).show();
                 // record answer
                 userAnswerC1Q1.setUser(player);
                 userAnswerC1Q1.setQuestion(question);
                 userAnswerC1Q1.setSelected(question.getAnswerOption1());
                 userAnswerC1Q1.setStatus(0);
                 recordAnswer(userAnswerC1Q1);
+                disableAnswerOptions();
             }
         });
 
@@ -89,13 +91,14 @@ public class Q1Category1Fragment extends Fragment {
                 binding.buttonOpt1Answer.setBackgroundColor(Color.LTGRAY);
                 binding.buttonOpt2Answer.setBackgroundColor(Color.YELLOW);
                 // show right answer feedback
-//                Toast.makeText(getActivity(), "Right answer", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Right answer", Toast.LENGTH_LONG).show();
                 // add answer to answermodel instance
                 userAnswerC1Q1.setUser(player);
                 userAnswerC1Q1.setQuestion(question);
                 userAnswerC1Q1.setSelected(question.getAnswerOption2());
                 userAnswerC1Q1.setStatus(1);
                 recordAnswer(userAnswerC1Q1);
+                disableAnswerOptions();
             }
         });
 
@@ -125,21 +128,21 @@ public class Q1Category1Fragment extends Fragment {
         binding.buttonCat1End.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getActivity(), "You'll be redirected to the Quiz Homepage. Thanks for attempting the quiz.", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent( requireActivity(), QuizFourBlocksActivity.class);
                 startActivity(intent);
             }
         });
-
         return view;
     }
 
-    private void updateAnswer(AnswerModel answer) {
+    public static void updateAnswer(AnswerModel answer) {
         openDbManager();
         dbManager.updateAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
         dbManager.close();
     }
 
-    private void insertAnswer(AnswerModel answer) {
+    public static void insertAnswer(AnswerModel answer) {
         openDbManager();
         dbManager.insertAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
         dbManager.close();
@@ -151,7 +154,6 @@ public class Q1Category1Fragment extends Fragment {
                 if (answerItem.getQuestion().equals(answer.getQuestion())) {
                     updateAnswer(userAnswerC1Q1);
                     userAnswersCategory1.set(userAnswersCategory1.indexOf(answerItem), answer);
-
                 }
             }
         }
@@ -161,7 +163,7 @@ public class Q1Category1Fragment extends Fragment {
         }
     }
 
-    private AnswerModel getUserAnswer(UserModel user, QuestionModel question) {
+    public static AnswerModel getUserAnswer(UserModel user, QuestionModel question) {
         AnswerModel answer = new AnswerModel();
         openDbManager();
         Cursor c = dbManager.getUserAnswerByQuestion(user.getUserId(), question.getqId());
@@ -179,13 +181,19 @@ public class Q1Category1Fragment extends Fragment {
         return answer;
     }
 
-    private void openDbManager() {
+    private static void openDbManager() {
         try {
             dbManager.open();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    private void disableAnswerOptions() {
+        binding.buttonOpt1Answer.setEnabled(false);
+        binding.buttonOpt2Answer.setEnabled(false);
+    }
+
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
