@@ -1,33 +1,27 @@
 package com.e.uvsafeaustralia.views.quiz;
 
-import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.e.uvsafeaustralia.databinding.ActivityQuizFourBlocksBinding;
 import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
-import com.e.uvsafeaustralia.views.MainFunction;
 import com.e.uvsafeaustralia.views.quiz.Category1.QuizCategory1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category2.QuizCategory2Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
-import com.e.uvsafeaustralia.views.quiz.leaderboard.OriginalLeaderboardActivity;
-import com.e.uvsafeaustralia.views.quiz.reportWithReview.Category4ReviewActivity;
 
 import java.util.ArrayList;
 
@@ -37,9 +31,13 @@ import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.use
 
 public class QuizFourBlocksActivity extends AppCompatActivity {
     private ActivityQuizFourBlocksBinding binding;
-    protected DBManager dbManager;
+    protected static DBManager dbManager;
     public static ArrayList<QuestionModel> questionsList;
     public static ArrayList<AnswerModel> allUserAnswers;
+    public static ArrayList<QuestionModel> questionsCategory1;
+    public static ArrayList<QuestionModel> questionsCategory2;
+    public static ArrayList<QuestionModel> questionsCategory3;
+    public static ArrayList<QuestionModel> questionsCategory4;
     public static ArrayList<AnswerModel> userAnswersCategory1;
     public static ArrayList<AnswerModel> userAnswersCategory2;
     public static ArrayList<AnswerModel> userAnswersCategory3;
@@ -59,6 +57,31 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         editor.apply();
         dbManager = new DBManager(this);
         questionsList = getQuestionList();
+        // put questions into Category
+        questionsCategory1 = new ArrayList<>();
+        for (QuestionModel questionItem : questionsList) {
+            if (questionItem.getqCategory().equals(QuestionModel.EnumQCategory.CATEGORY1)) {
+                questionsCategory1.add(questionItem);
+            }
+        }
+        questionsCategory2 = new ArrayList<>();
+        for (QuestionModel questionItem : questionsList) {
+            if (questionItem.getqCategory().equals(QuestionModel.EnumQCategory.CATEGORY2)) {
+                questionsCategory2.add(questionItem);
+            }
+        }
+        questionsCategory3 = new ArrayList<>();
+        for (QuestionModel questionItem : questionsList) {
+            if (questionItem.getqCategory().equals(QuestionModel.EnumQCategory.CATEGORY3)) {
+                questionsCategory3.add(questionItem);
+            }
+        }
+        questionsCategory4 = new ArrayList<>();
+        for (QuestionModel questionItem : questionsList) {
+            if (questionItem.getqCategory().equals(QuestionModel.EnumQCategory.CATEGORY4)) {
+                questionsCategory4.add(questionItem);
+            }
+        }
         allUserAnswers = getUserAnswersList(player);
         if (!allUserAnswers.isEmpty()) {
             binding.tryAgainBtn.setVisibility(View.VISIBLE);
@@ -234,7 +257,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         return userAnswersList;
     }
 
-    public void insertAnswer(AnswerModel answer) {
+    public static void insertAnswer(AnswerModel answer) {
         openDbManager();
         dbManager.insertAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
         dbManager.close();
@@ -246,6 +269,38 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         dbManager.close();
     }
 
+    public static void recordAnswer(ArrayList<AnswerModel> answersByCat, AnswerModel answer) {
+        if (answersByCat.size() != 0) {
+            for (AnswerModel answerItem : answersByCat) {
+                if (answerItem.getQuestion().equals(answer.getQuestion())) {
+                    updateAnswer(answer);
+                    answersByCat.set(answersByCat.indexOf(answerItem), answer);
+                }
+            }
+        }
+        if (answersByCat.size() == 0) {
+            insertAnswer(answer);
+            answersByCat.add(answer);
+        }
+    }
+
+    public static AnswerModel getUserAnswer(UserModel user, QuestionModel question) {
+        AnswerModel answer = new AnswerModel();
+        openDbManager();
+        Cursor c = dbManager.getUserAnswerByQuestion(user.getUserId(), question.getqId());
+        int answerId = 0;
+        String selected = "";
+        int status = 0;
+        if (c.moveToFirst()) {
+            do {
+                answerId = c.getInt(0);
+                selected = c.getString(3);
+                status = c.getInt(4);
+                answer = new AnswerModel(answerId, user, question, selected, status);
+            } while (c.moveToNext());
+        }
+        return answer;
+    }
     private ArrayList<AnswerModel> getAllUsersAnswersList() {
         ArrayList<AnswerModel> answersList = new ArrayList<>();
         openDbManager();
@@ -273,7 +328,25 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         return answersList;
     }
 
-    private void openDbManager() {
+    public static void updateAnswer(AnswerModel answer) {
+        openDbManager();
+        dbManager.updateAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
+        dbManager.close();
+    }
+
+    public static void showFeedback(String status, String correct, String explain, Activity activity) {
+        // replace this with the textview elements inside the  once it's done
+        String wrong = "Wrong answer";
+        String right = "Right answer";
+        if (status.equals(wrong))
+            Toast.makeText(activity, status + ". The correct answer is " + correct + ".", Toast.LENGTH_LONG).show();
+        if (status.equals(right))
+            Toast.makeText(activity, status + ". Great job.", Toast.LENGTH_LONG).show();
+        // show answer explanation
+        Toast.makeText(activity, "Explanation: " + explain, Toast.LENGTH_LONG).show();
+    }
+
+    private static void openDbManager() {
         try {
             dbManager.open();
         } catch (SQLException e) {

@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.e.uvsafeaustralia.R;
-import com.e.uvsafeaustralia.databinding.FragmentQ1Category4Binding;
 import com.e.uvsafeaustralia.databinding.FragmentQ3Category4Binding;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
@@ -25,7 +24,7 @@ public class Q3Category4Fragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentQ3Category4Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        NavController navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerViewCategory);
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerViewCategory2);
         binding.buttonCat4Q1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

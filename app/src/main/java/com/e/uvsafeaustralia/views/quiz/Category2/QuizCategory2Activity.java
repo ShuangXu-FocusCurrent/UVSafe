@@ -21,6 +21,6 @@ public class QuizCategory2Activity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        NavController navController = Navigation.findNavController(this, R.id.fragmentContainerViewCategory);
+        NavController navController = Navigation.findNavController(this, R.id.fragmentContainerViewCategory2);
     }
 }

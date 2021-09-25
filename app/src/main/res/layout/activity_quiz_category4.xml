@@ -7,7 +7,7 @@
     tools:context=".views.quiz.Category4.QuizCategory4Activity">
 
     <fragment
-        android:id="@+id/fragmentContainerViewCategory"
+        android:id="@+id/fragmentContainerViewCategory4"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

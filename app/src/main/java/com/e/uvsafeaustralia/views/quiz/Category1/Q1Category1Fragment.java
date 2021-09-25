@@ -1,8 +1,6 @@
 package com.e.uvsafeaustralia.views.quiz.Category1;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,24 +15,21 @@ import androidx.navigation.Navigation;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.FragmentQ1Category1Binding;
-import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
-import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
-import java.util.ArrayList;
-
 import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.player;
-import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.questionsList;
+import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.getUserAnswer;
+import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.questionsCategory1;
+import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.recordAnswer;
+import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.showFeedback;
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.userAnswersCategory1;
 
 
 public class Q1Category1Fragment extends Fragment {
     private FragmentQ1Category1Binding binding;
-    protected static DBManager dbManager;
-    public static ArrayList<QuestionModel> questionsCategory1;
-    private QuestionModel question;
+    private static QuestionModel question;
     public static AnswerModel userAnswerC1Q1;
 
     @Override
@@ -43,15 +38,10 @@ public class Q1Category1Fragment extends Fragment {
         binding = FragmentQ1Category1Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        dbManager = new DBManager(getActivity());
-        questionsCategory1 = new ArrayList<>();
         question = new QuestionModel();
-        for (QuestionModel questionItem : questionsList) {
-            if (questionItem.getqCategory().equals(QuestionModel.EnumQCategory.CATEGORY1)) {
-                questionsCategory1.add(questionItem);
-                if (questionItem.getqNumber() == 1)
-                    question = questionItem;
-            }
+        for (QuestionModel questionItem : questionsCategory1) {
+            if (questionItem.getqNumber() == 1)
+                question = questionItem;
         }
 
         binding.textViewCat1Q1.setText(question.getQuestion());
@@ -68,28 +58,19 @@ public class Q1Category1Fragment extends Fragment {
             disableAnswerOptions();
         }
 
-//        binding.buttonCat1Q1.setBackgroundColor(Color.MAGENTA);
         binding.buttonOpt1Answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.buttonOpt1Answer.setBackgroundColor(0xFFFFD78A);
                 binding.buttonOpt2Answer.setBackgroundColor(0xFFEBEAE9);
-                // show wrong answer feedback
-                Toast.makeText(getActivity(), "Wrong answer", Toast.LENGTH_LONG).show();
                 // record answer
                 userAnswerC1Q1.setUser(player);
                 userAnswerC1Q1.setQuestion(question);
                 userAnswerC1Q1.setSelected(question.getAnswerOption1());
                 userAnswerC1Q1.setStatus(0);
-                recordAnswer(userAnswerC1Q1);
+                recordAnswer(userAnswersCategory1, userAnswerC1Q1);
                 disableAnswerOptions();
-                binding.waitingImg.setVisibility(View.INVISIBLE);
-                binding.feedbackWrong.setVisibility(View.VISIBLE);
-                binding.sadImg.setVisibility(View.VISIBLE);
-                binding.wrongText1.setVisibility(View.VISIBLE);
-                binding.wrongText2.setVisibility(View.VISIBLE);
-                binding.feedbackConstraintLayout.setVisibility(View.VISIBLE);
-
+                showFeedback("wrong", question);
             }
         });
 
@@ -98,22 +79,14 @@ public class Q1Category1Fragment extends Fragment {
             public void onClick(View v) {
                 binding.buttonOpt1Answer.setBackgroundColor(0xFFEBEAE9);
                 binding.buttonOpt2Answer.setBackgroundColor(0xFFFFD78A);
-                // show right answer feedback
-                Toast.makeText(getActivity(), "Right answer", Toast.LENGTH_LONG).show();
                 // add answer to answermodel instance
                 userAnswerC1Q1.setUser(player);
                 userAnswerC1Q1.setQuestion(question);
                 userAnswerC1Q1.setSelected(question.getAnswerOption2());
                 userAnswerC1Q1.setStatus(1);
-                recordAnswer(userAnswerC1Q1);
+                recordAnswer(userAnswersCategory1, userAnswerC1Q1);
                 disableAnswerOptions();
-                binding.waitingImg.setVisibility(View.INVISIBLE);
-                binding.feedbackWrong.setVisibility(View.VISIBLE);
-                binding.balnImg.setVisibility(View.VISIBLE);
-                binding.correctText1.setVisibility(View.VISIBLE);
-                binding.correctText2.setVisibility(View.VISIBLE);
-                binding.feedbackConstraintLayout.setVisibility(View.VISIBLE);
-
+                showFeedback("right", question);
             }
         });
 
@@ -151,57 +124,22 @@ public class Q1Category1Fragment extends Fragment {
         return view;
     }
 
-    public static void updateAnswer(AnswerModel answer) {
-        openDbManager();
-        dbManager.updateAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
-        dbManager.close();
-    }
-
-    public static void insertAnswer(AnswerModel answer) {
-        openDbManager();
-        dbManager.insertAnswer(answer.getUser(), answer.getQuestion(), answer.getSelected(), answer.getStatus());
-        dbManager.close();
-    }
-
-    private void recordAnswer(AnswerModel answer) {
-        if (userAnswersCategory1.size() != 0) {
-            for (AnswerModel answerItem : userAnswersCategory1) {
-                if (answerItem.getQuestion().equals(answer.getQuestion())) {
-                    updateAnswer(userAnswerC1Q1);
-                    userAnswersCategory1.set(userAnswersCategory1.indexOf(answerItem), answer);
-                }
-            }
+    public void showFeedback(String status, QuestionModel question) {
+        if (status.equals("wrong")) {
+            binding.sadImg.setVisibility(View.VISIBLE);
+            binding.wrongText1.setVisibility(View.VISIBLE);
+            binding.wrongText2.setVisibility(View.VISIBLE);
         }
-        if (userAnswersCategory1.size() == 0) {
-            insertAnswer(userAnswerC1Q1);
-            userAnswersCategory1.add(userAnswerC1Q1);
+        if (status.equals("right")) {
+            binding.balnImg.setVisibility(View.VISIBLE);
+            binding.correctText1.setVisibility(View.VISIBLE);
+            binding.correctText2.setVisibility(View.VISIBLE);
         }
-    }
-
-    public static AnswerModel getUserAnswer(UserModel user, QuestionModel question) {
-        AnswerModel answer = new AnswerModel();
-        openDbManager();
-        Cursor c = dbManager.getUserAnswerByQuestion(user.getUserId(), question.getqId());
-        int answerId = 0;
-        String selected = "";
-        int status = 0;
-        if (c.moveToFirst()) {
-            do {
-                answerId = c.getInt(0);
-                selected = c.getString(3);
-                status = c.getInt(4);
-                answer = new AnswerModel(answerId, user, question, selected, status);
-            } while (c.moveToNext());
-        }
-        return answer;
-    }
-
-    private static void openDbManager() {
-        try {
-            dbManager.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        binding.waitingImg.setVisibility(View.INVISIBLE);
+        binding.feedbackWrong.setVisibility(View.VISIBLE);
+        binding.feedbackConstraintLayout.setVisibility(View.VISIBLE);
+        binding.correctText4.setText(question.getCorrect());
+        binding.infoText.setText(question.getAnswerExplain());
     }
 
     private void disableAnswerOptions() {
