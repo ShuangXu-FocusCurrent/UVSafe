@@ -115,7 +115,7 @@
             style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="145dp"
             android:layout_height="35dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/text_input_bcg"
@@ -157,7 +157,7 @@
             app:layout_constraintEnd_toEndOf="@+id/textAddName"
             app:layout_constraintStart_toEndOf="@+id/editTextInputName"
             app:layout_constraintTop_toTopOf="@+id/editTextInputName"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/btnConfirmSelectUser"
@@ -171,8 +171,10 @@
             app:cornerRadius="7dp"
             app:layout_constraintBottom_toBottomOf="@+id/spinnerNamesDropdown"
             app:layout_constraintEnd_toEndOf="@+id/btnConfirmAddUser"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/btnConfirmAddUser"
-            app:layout_constraintTop_toTopOf="@+id/spinnerNamesDropdown" />
+            app:layout_constraintTop_toTopOf="@+id/spinnerNamesDropdown"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/nameCallout"
@@ -193,13 +195,13 @@
             android:id="@+id/textUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginLeft="56dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:fontFamily="@font/concert_one"
             android:text="Hi Harry"
-            android:visibility="invisible"
             android:textColor="#682929"
             android:textSize="24sp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/nameCallout"
             app:layout_constraintStart_toStartOf="@+id/nameCallout"
             app:layout_constraintTop_toTopOf="@+id/nameCallout"

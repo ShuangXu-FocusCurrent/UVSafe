@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.ViewUtils;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -67,12 +68,12 @@ public class Q1Category1Fragment extends Fragment {
             disableAnswerOptions();
         }
 
-        binding.buttonCat1Q1.setBackgroundColor(Color.MAGENTA);
+//        binding.buttonCat1Q1.setBackgroundColor(Color.MAGENTA);
         binding.buttonOpt1Answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.buttonOpt1Answer.setBackgroundColor(Color.YELLOW);
-                binding.buttonOpt2Answer.setBackgroundColor(Color.LTGRAY);
+                binding.buttonOpt1Answer.setBackgroundColor(0xFFFFD78A);
+                binding.buttonOpt2Answer.setBackgroundColor(0xFFEBEAE9);
                 // show wrong answer feedback
                 Toast.makeText(getActivity(), "Wrong answer", Toast.LENGTH_LONG).show();
                 // record answer
@@ -82,14 +83,21 @@ public class Q1Category1Fragment extends Fragment {
                 userAnswerC1Q1.setStatus(0);
                 recordAnswer(userAnswerC1Q1);
                 disableAnswerOptions();
+                binding.waitingImg.setVisibility(View.INVISIBLE);
+                binding.feedbackWrong.setVisibility(View.VISIBLE);
+                binding.sadImg.setVisibility(View.VISIBLE);
+                binding.wrongText1.setVisibility(View.VISIBLE);
+                binding.wrongText2.setVisibility(View.VISIBLE);
+                binding.feedbackConstraintLayout.setVisibility(View.VISIBLE);
+
             }
         });
 
         binding.buttonOpt2Answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.buttonOpt1Answer.setBackgroundColor(Color.LTGRAY);
-                binding.buttonOpt2Answer.setBackgroundColor(Color.YELLOW);
+                binding.buttonOpt1Answer.setBackgroundColor(0xFFEBEAE9);
+                binding.buttonOpt2Answer.setBackgroundColor(0xFFFFD78A);
                 // show right answer feedback
                 Toast.makeText(getActivity(), "Right answer", Toast.LENGTH_LONG).show();
                 // add answer to answermodel instance
@@ -99,6 +107,13 @@ public class Q1Category1Fragment extends Fragment {
                 userAnswerC1Q1.setStatus(1);
                 recordAnswer(userAnswerC1Q1);
                 disableAnswerOptions();
+                binding.waitingImg.setVisibility(View.INVISIBLE);
+                binding.feedbackWrong.setVisibility(View.VISIBLE);
+                binding.balnImg.setVisibility(View.VISIBLE);
+                binding.correctText1.setVisibility(View.VISIBLE);
+                binding.correctText2.setVisibility(View.VISIBLE);
+                binding.feedbackConstraintLayout.setVisibility(View.VISIBLE);
+
             }
         });
 
