@@ -48,7 +48,9 @@ public class MainFunction extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
-        if(sp.contains("quiz") && sp.getString("quiz","null").equals("quiz")){
+        if(getIntent()!=null && getIntent().hasExtra("Slide")){
+            navController.navigate(R.id.homePageFragment);
+        }else if(sp.contains("quiz") && sp.getString("quiz","null").equals("quiz")){
             editor.putString("quiz","null");
             editor.apply();
             navController.navigate(R.id.quizPageFragment);
