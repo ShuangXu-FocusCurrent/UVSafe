@@ -54,7 +54,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
 
                 Intent intent = new Intent(context, MainFunction.class);
                 intent.putExtra("slide","slide");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });

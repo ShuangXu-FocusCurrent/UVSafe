@@ -48,25 +48,31 @@ public class MainFunction extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
-        if(getIntent()!=null && getIntent().hasExtra("Slide")){
+        if(getIntent()!=null && getIntent().hasExtra("slide")){
+            setSp();
             navController.navigate(R.id.homePageFragment);
-        }else if(sp.contains("quiz") && sp.getString("quiz","null").equals("quiz")){
-            editor.putString("quiz","null");
-            editor.apply();
-            navController.navigate(R.id.quizPageFragment);
-        }else{
-            if(getIntent()==null || getIntent().getExtras()==null){
-                navController.navigate(R.id.sunEduFragment);
-            } else if(getIntent().hasExtra("Alarm")){
-                navController.navigate(R.id.alarmPageFragment);
+        }else {
+            if(sp.contains("quiz") && sp.getString("quiz","null").equals("quiz")){
+                setSp();
+                navController.navigate(R.id.quizPageFragment);
+            }else{
+                if(getIntent()==null || getIntent().getExtras()==null){
+                    navController.navigate(R.id.sunEduFragment);
+                } else if(getIntent().hasExtra("Alarm")){
+                    setSp();
+                    navController.navigate(R.id.alarmPageFragment);
+                }
             }
         }
+
+
+
+
     }
 
-    private void setSp(String quiz) {
-        editor = sp.edit();
-        editor.putString ("quiz", quiz);
-        editor.commit();
+    private void setSp() {
+        editor.putString("quiz","null");
+        editor.apply();
     }
 
 //
