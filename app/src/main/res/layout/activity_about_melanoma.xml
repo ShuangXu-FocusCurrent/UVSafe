@@ -36,11 +36,83 @@
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="300dp"
-                android:layout_marginBottom="30dp"
-                app:srcCompat="@drawable/what_is_melanoma_img" />
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/mel_img_sec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/what_is_melanoma_img1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/mel_img_sec"
+                    android:layout_alignTop="@id/mel_img_sec"
+                    android:layout_alignRight="@id/mel_img_sec"
+                    android:layout_alignBottom="@id/mel_img_sec"
+                    android:gravity="center"
+                    android:paddingLeft="80dp"
+                    android:paddingRight="10dp"
+                    android:text="Melanoma is a form of cancer that develops in the skin’s pigment cells which are known as Melanocytes."
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    tools:ignore="RtlCompat" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/mel_img_sec1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/what_is_melanoma_img2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/mel_img_sec1"
+                    android:layout_alignTop="@id/mel_img_sec1"
+                    android:layout_alignRight="@id/mel_img_sec1"
+                    android:layout_alignBottom="@id/mel_img_sec1"
+                    android:gravity="center"
+                    android:paddingRight="80dp"
+                    android:paddingLeft="10dp"
+                    android:text="Melanocyte cells in your skin produce melanin to protect your skin from UV radiation. Overexposure to UV radiation during childhood or adolescence causes skin cells to grow abnormally and develop skin cancer later in the life."
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    tools:ignore="RtlCompat" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/mel_img_sec2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/what_is_melanoma_img3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/mel_img_sec2"
+                    android:layout_alignTop="@id/mel_img_sec2"
+                    android:layout_alignRight="@id/mel_img_sec2"
+                    android:layout_alignBottom="@id/mel_img_sec2"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="80dp"
+                    android:text="Melanoma is the most serious form of skin cancer and grows very quickly if left untreated."
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    tools:ignore="RtlCompat" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/section1_header"
@@ -89,8 +161,10 @@ diagnosed with melanoma at age 27"
                 android:layout_gravity="center"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:text="Source: Add Video URL"
-                android:textStyle="italic" />
+                android:text="Video Courtesy : Melanoma Institute Australia\n
+https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patient-support-melanoma-matters/"
+                android:textStyle="italic"
+                android:textSize="10dp" />
             <Button
                 android:id="@+id/playvideo1"
                 android:layout_width="wrap_content"
@@ -105,7 +179,7 @@ diagnosed with melanoma at age 27"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center_horizontal"
-                android:text="Hanging on to hope was cruicial ! Watch Juilia’s stroy abou how she got through it and where she went for help"
+                android:text="Hanging on to hope was crucial ! Watch Juilia’s story about how she got through it and where she went for help"
                 android:textAlignment="center"
                 android:textColor="#C73411"
                 android:textSize="20dp" />
@@ -129,8 +203,10 @@ diagnosed with melanoma at age 27"
                 android:layout_gravity="center"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:text="Source: Add Video URL"
-                android:textStyle="italic" />
+                android:text="Video Courtesy : Melanoma Institute Australia
+https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patient-support-melanoma-matters/"
+                android:textStyle="italic"
+                android:textSize="10dp"/>
 
             <Button
                 android:id="@+id/playvideo2"
@@ -146,7 +222,7 @@ diagnosed with melanoma at age 27"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/concert_one"
-                android:text="Can melanoma be perevented ?"
+                android:text="Can melanoma be prevented ?"
                 android:textColor="#C73411"
                 android:textSize="25dp" />
 
@@ -253,7 +329,7 @@ diagnosed with melanoma at age 27"
                         android:paddingBottom="10dp"
                         android:text="https://www.melanoma.org.au/understanding-melanoma/"
                         android:textColor="#085CBE"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -273,7 +349,7 @@ diagnosed with melanoma at age 27"
                         android:paddingBottom="10dp"
                         android:text="https://www.cancercouncil.com.au/melanoma/about-melanoma"
                         android:textColor="#085CBE"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -292,7 +368,7 @@ diagnosed with melanoma at age 27"
                         android:fontFamily="@font/concert_one"
                         android:text="https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"
                         android:textColor="#085CBE"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -305,8 +381,8 @@ diagnosed with melanoma at age 27"
                 android:gravity="center"
                 android:paddingTop="50dp"
                 android:text="Information Retrieved from:
-Melanoma Institute Australia, Cancer Counsil NSW and
-Cancer Counsil Victoria" />
+Melanoma Institute Australia, Cancer Council NSW and
+Cancer Council Victoria" />
 
         </LinearLayout>
     </ScrollView>
