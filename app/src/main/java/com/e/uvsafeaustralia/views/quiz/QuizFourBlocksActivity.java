@@ -17,8 +17,8 @@ import com.e.uvsafeaustralia.db.DBManager;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
-import com.e.uvsafeaustralia.views.quiz.Category1.QuizCategory1Activity;
-import com.e.uvsafeaustralia.views.quiz.Category2.QuizCategory2Activity;
+import com.e.uvsafeaustralia.views.quiz.Category1.Q1Category1Activity;
+import com.e.uvsafeaustralia.views.quiz.Category1.Q2Category1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
@@ -42,6 +42,8 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
     public static ArrayList<AnswerModel> userAnswersCategory2;
     public static ArrayList<AnswerModel> userAnswersCategory3;
     public static ArrayList<AnswerModel> userAnswersCategory4;
+    public static final int SELECTED_BTN_COLOUR = 0xFFFFD78A;
+    public static final int NOT_SELECTED_BTN_COLOUR = 0xFFEBEAE9;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
 
@@ -51,11 +53,14 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding = ActivityQuizFourBlocksBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
         sp = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         editor=sp.edit();
         editor.putString("quiz","quiz");
         editor.apply();
+
         dbManager = new DBManager(this);
+
         questionsList = getQuestionList();
         // put questions into Category
         questionsCategory1 = new ArrayList<>();
@@ -121,10 +126,14 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             binding.category4.setAlpha(0.25f);
         }
 
-            binding.category1.setOnClickListener(new View.OnClickListener() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("player", player);
+
+        binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(QuizFourBlocksActivity.this, QuizCategory1Activity.class);
+                Intent intent = new Intent(QuizFourBlocksActivity.this, Q1Category1Activity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -132,7 +141,8 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( QuizFourBlocksActivity.this , QuizCategory2Activity.class);
+                Intent intent = new Intent(QuizFourBlocksActivity.this, Q2Category1Activity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -141,6 +151,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( QuizFourBlocksActivity.this , QuizCategory3Activity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -149,6 +160,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( QuizFourBlocksActivity.this , QuizCategory4Activity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -271,12 +283,18 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
 
     public static void recordAnswer(ArrayList<AnswerModel> answersByCat, AnswerModel answer) {
         if (answersByCat.size() != 0) {
+            int count = 0;
             for (AnswerModel answerItem : answersByCat) {
                 if (answerItem.getQuestion().equals(answer.getQuestion())) {
                     updateAnswer(answer);
                     answersByCat.set(answersByCat.indexOf(answerItem), answer);
+                    count++;
                 }
             }
+            if (count == 0) {
+                insertAnswer(answer);
+                answersByCat.add(answer);
+            };
         }
         if (answersByCat.size() == 0) {
             insertAnswer(answer);

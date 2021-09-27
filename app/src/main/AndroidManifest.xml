@@ -36,6 +36,12 @@
             android:name=".views.DBMockActivity"
             android:label="DBMock" />
         <activity
+            android:name=".views.quiz.Category1.Q1Category1Activity"
+            android:label="Quiz - About UV" />
+        <activity
+            android:name=".views.quiz.Category1.Q2Category1Activity"
+            android:label="Quiz - About UV" />
+        <activity
             android:name=".views.SlideActivity"
             android:label="Introduction"
             android:parentActivityName=".views.MainActivity" />
