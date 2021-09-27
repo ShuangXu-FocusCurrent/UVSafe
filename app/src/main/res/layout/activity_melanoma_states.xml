@@ -6,4 +6,409 @@
     android:layout_height="match_parent"
     tools:context=".views.MelanomaStatesActivity">
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/about_melanoma_bg"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:text="Melanoma Stats"
+                android:textColor="#C73411"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="How Common is \nMelanoma in Victoria ?"
+                android:textColor="#C73411"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:text="In Year 2019,"
+                android:textColor="#C73411"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/melanoma_page_img1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Source : Cancer Council Victoria\n
+https://www.cancervic.org.au/research/vcr/fact-sheets-and-annual-reports/melanoma-factsheet.html"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/section1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Distribution of Melanoma incidences by Gender"
+                android:textColor="#C73411"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/graph_desc_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Trends in Melanoma Incidence Rate Over Time"
+                android:textColor="#C73411"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/graph_desc_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Trends in Melanoma Mortality Rate Over Time"
+                android:textColor="#C73411"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/section1gj_image"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/graph_desc_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Trends in Melanoma Mortality Rate Over States"
+                android:textColor="#C73411"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="5dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Lets understand the Mortality rate of Australian states from over 1982 to 2017"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/mortality_rate_infographic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/desc_mortality_states"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/graph_desc_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/desc_mortality_states"
+                    android:layout_alignTop="@id/desc_mortality_states"
+                    android:layout_alignRight="@id/desc_mortality_states"
+                    android:layout_alignBottom="@id/desc_mortality_states"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="265dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:paddingRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="NSW has highest avg number of deaths due to Melanoma of approximately 196 per 100,000 each year"
+                        android:textAlignment="textStart"
+                        android:textColor="#222020"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Trends in Melanoma Incidence Rate Over States"
+                android:textColor="#C73411"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Lets understand the Melanoma Incidence rate of Australian states from over 1982 to 2017"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/incidence_rate_infographic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/desc_incidence_states"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/graph_desc_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/desc_incidence_states"
+                    android:layout_alignTop="@id/desc_incidence_states"
+                    android:layout_alignRight="@id/desc_incidence_states"
+                    android:layout_alignBottom="@id/desc_incidence_states"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="258dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="NSW has the highest average number of Melanoma cases of approximately 1487 per 100,000 each year"
+                        android:textAlignment="textStart"
+                        android:textColor="#222020"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/horizontal_line" />
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/section1_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="30dp"
+                    app:srcCompat="@drawable/can_melanoma_be_prevented_img2" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/section1_image2"
+                    android:layout_alignTop="@id/section1_image2"
+                    android:layout_alignRight="@id/section1_image2"
+                    android:layout_alignBottom="@id/section1_image2"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="100dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="Want to know more ?"
+                        android:textAlignment="textStart"
+                        android:textColor="#C73411"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/concert_one"
+                        android:text="Visit"
+                        android:textAlignment="textStart"
+                        android:textColor="#C73411"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Melanoma Institute Australia"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/melanoma_org_link_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="https://www.melanoma.org.au/understanding-melanoma/"
+                        android:textColor="#085CBE"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Cancer Council NSW"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/cancer_council_link_id1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="https://www.cancercouncil.com.au/melanoma/about-melanoma"
+                        android:textColor="#085CBE"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="10dp"
+                        android:text="Cancer Council Victoria"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/cancer_council_link_id2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/concert_one"
+                        android:text="https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"
+                        android:textColor="#085CBE"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Information Retrieved from:
+Melanoma Institute Australia, Cancer Council NSW and
+Cancer Council Victoria" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
