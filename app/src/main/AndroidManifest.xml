@@ -97,22 +97,6 @@
             android:label="Quiz Homepage"
             android:parentActivityName=".views.MainFunction" />
         <activity
-            android:name=".views.quiz.Category1.QuizCategory1Activity"
-            android:label="Quiz - About UV"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
-        <activity
-            android:name=".views.quiz.Category2.QuizCategory2Activity"
-            android:label="Quiz - Sun protection"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
-        <activity
-            android:name=".views.quiz.Category3.QuizCategory3Activity"
-            android:label="Quiz - Sunscreen"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
-        <activity
-            android:name=".views.quiz.Category4.QuizCategory4Activity"
-            android:label="Quiz - Melanoma"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
-        <activity
             android:name=".views.quiz.reportWithReview.ReportActivity"
             android:label="Quiz - Report"
             android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity" />

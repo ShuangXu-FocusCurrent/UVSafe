@@ -7,8 +7,7 @@ import android.view.View;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityQ1Category3Binding;
-import com.e.uvsafeaustralia.databinding.FragmentQ1Category1Binding;
-import com.e.uvsafeaustralia.databinding.FragmentQ1Category3Binding;
+
 
 public class Q1Category3Activity extends AppCompatActivity {
     private ActivityQ1Category3Binding binding;
