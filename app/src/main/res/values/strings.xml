@@ -28,19 +28,18 @@
         <item>3 hours</item>
     </string-array>
 
-        <string name="MIA">Melanoma Institute Australia</string>
-        <string name= "miaLink">https://www.melanoma.org.au/understanding-melanoma/</string>
-        <string name="NSW">Cancer Counsil NSW</string>
-        <string name = "nswLink">https://www.cancercouncil.com.au/melanoma/about-melanoma</string>
-        <string name = "VIC">Cancer Counsil Victoria</string>
-        <string name = "vicLink">https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html</string>
+    <string name="MIA">Melanoma Institute Australia</string>
+    <string name="miaLink">https://www.melanoma.org.au/understanding-melanoma/</string>
+    <string name="NSW">Cancer Counsil NSW</string>
+    <string name="nswLink">https://www.cancercouncil.com.au/melanoma/about-melanoma</string>
+    <string name="VIC">Cancer Counsil Victoria</string>
+    <string name="vicLink">https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html</string>
     <string name="start_quiz">Let\'s get started</string>
     <string name="wrongText1">Oh No !!</string>
     <string name="wrongText2">Answer is Incorrect</string>
     <string name="correctText1">Yayyy!!</string>
     <string name="correctText2">You are correct</string>
     <string name="correctText3">The correct answer is</string>
-
 
 
 </resources>

@@ -19,7 +19,10 @@ import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.Category1.Q1Category1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category1.Q2Category1Activity;
+import com.e.uvsafeaustralia.views.quiz.Category2.Q1Category2Activity;
+import com.e.uvsafeaustralia.views.quiz.Category3.Q1Category3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
+import com.e.uvsafeaustralia.views.quiz.Category4.Q1Category4Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
 
@@ -141,7 +144,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(QuizFourBlocksActivity.this, Q2Category1Activity.class);
+                Intent intent = new Intent(QuizFourBlocksActivity.this, Q1Category2Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -150,7 +153,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( QuizFourBlocksActivity.this , QuizCategory3Activity.class);
+                Intent intent = new Intent( QuizFourBlocksActivity.this , Q1Category3Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -159,7 +162,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( QuizFourBlocksActivity.this , QuizCategory4Activity.class);
+                Intent intent = new Intent( QuizFourBlocksActivity.this , Q1Category4Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
