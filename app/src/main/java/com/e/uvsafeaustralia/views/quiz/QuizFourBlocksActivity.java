@@ -18,12 +18,9 @@ import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.Category1.Q1Category1Activity;
-import com.e.uvsafeaustralia.views.quiz.Category1.Q2Category1Activity;
 import com.e.uvsafeaustralia.views.quiz.Category2.Q1Category2Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.Q1Category3Activity;
-import com.e.uvsafeaustralia.views.quiz.Category3.QuizCategory3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.Q1Category4Activity;
-import com.e.uvsafeaustralia.views.quiz.Category4.QuizCategory4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
 
 import java.util.ArrayList;
@@ -131,6 +128,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         bundle.putParcelable("player", player);
+        bundle.putParcelableArrayList("questionsCategory1", questionsCategory1);
 
         binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override

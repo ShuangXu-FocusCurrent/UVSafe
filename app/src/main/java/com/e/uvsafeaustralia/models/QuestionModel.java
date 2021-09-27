@@ -1,6 +1,9 @@
 package com.e.uvsafeaustralia.models;
 
-public class QuestionModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class QuestionModel implements Parcelable {
     private int id;
     private int qNumber;
     private String question;
@@ -11,6 +14,49 @@ public class QuestionModel {
     private String correct;
     private String answerExplain;
     private EnumQCategory qCategory;
+
+    protected QuestionModel(Parcel in) {
+        id = in.readInt();
+        qNumber = in.readInt();
+        question = in.readString();
+        answerOption1 = in.readString();
+        answerOption2 = in.readString();
+        answerOption3 = in.readString();
+        answerOption4 = in.readString();
+        correct = in.readString();
+        answerExplain = in.readString();
+    }
+
+    public static final Creator<QuestionModel> CREATOR = new Creator<QuestionModel>() {
+        @Override
+        public QuestionModel createFromParcel(Parcel in) {
+            return new QuestionModel(in);
+        }
+
+        @Override
+        public QuestionModel[] newArray(int size) {
+            return new QuestionModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(qNumber);
+        dest.writeString(question);
+        dest.writeString(answerOption1);
+        dest.writeString(answerOption2);
+        dest.writeString(answerOption3);
+        dest.writeString(answerOption4);
+        dest.writeString(correct);
+        dest.writeString(answerExplain);
+    }
+
     public enum EnumQCategory{
         CATEGORY1,
         CATEGORY2,
