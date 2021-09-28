@@ -7,7 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
 
@@ -214,6 +213,10 @@ public class DBManager {
             db.insert(UserDBStructure.tableEntry.TABLE_USER, null, values);
         }
 
+        public int deleteAllUsers() {
+            return db.delete(UserDBStructure.tableEntry.TABLE_USER, null, null);
+        }
+
         private String[] userColumns = {
                 UserDBStructure.tableEntry._ID,
                 UserDBStructure.tableEntry.COLUMN_NICKNAME
@@ -287,6 +290,10 @@ public class DBManager {
             String selection = "user_id=?";
             String[] args = {String.valueOf(userId)};
             db.delete(AnswerDBStructure.tableEntry.TABLE_ANSWER, selection, args);
+        }
+
+        public int deleteAllUsersAnswers() {
+            return db.delete(AnswerDBStructure.tableEntry.TABLE_ANSWER, null, null);
         }
 
         // SQLite helper

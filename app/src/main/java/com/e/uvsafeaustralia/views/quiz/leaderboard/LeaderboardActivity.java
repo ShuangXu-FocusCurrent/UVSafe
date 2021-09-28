@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.player;
 import static com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment.userList;
 
 public class LeaderboardActivity extends AppCompatActivity {
@@ -94,80 +95,101 @@ public class LeaderboardActivity extends AppCompatActivity {
         for (UserModel user : userList) {
             name = user.getNickName();
             for (Map.Entry<String, Integer> item : correctList) {
-                for (String attempt : mapAttempt.keySet())
-                    if (item.getKey().equals(user.getNickName()) && attempt.equals(user.getNickName())) {
-                        StringBuilder sAttemptedNumber = new StringBuilder();
-                        sAttemptedNumber.append(mapAttempt.get(attempt)).append("/").append(questionsList.size());
-                        StringBuilder sCorrectNumber = new StringBuilder();
-                        sCorrectNumber.append(item.getValue()).append("/").append(mapAttempt.get(attempt));
-                        System.out.println(user.getNickName() + ", Total correct: " + item.getValue() + ", Total attempt: " + mapAttempt.get(attempt));
-                        int level = uniqueCorrect.size();
-                        // if there are more then 3 levels, the players with level above 3 will be runner ups
-                        if (level > 3) {
-                            for (Integer i : uniqueCorrect) {
-                                // runner up
-                                if (i == item.getValue() && level > 3) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), RUNNER_UP);
-                                    models.add(model);
+                for (String attempt : mapAttempt.keySet()) {
+                    if (user.equals(player) && mapAttempt.get(attempt) == 0) {
+                        binding.goReport.setEnabled(false);
+                        binding.goReport.setAlpha(0.25f);
+                    }
+                    if (mapAttempt.get(attempt) != 0) {
+                        if (item.getKey().equals(user.getNickName()) && attempt.equals(user.getNickName())) {
+                            StringBuilder sAttemptedNumber = new StringBuilder();
+                            sAttemptedNumber.append(mapAttempt.get(attempt)).append("/").append(questionsList.size());
+                            StringBuilder sCorrectNumber = new StringBuilder();
+                            sCorrectNumber.append(item.getValue()).append("/").append(mapAttempt.get(attempt));
+                            System.out.println(user.getNickName() + ", Total correct: " + item.getValue() + ", Total attempt: " + mapAttempt.get(attempt));
+                            int level = uniqueCorrect.size();
+                            // if there are more then 3 levels, the players with level above 3 will be runner ups
+                            if (level > 3 && item.getValue() != 0) {
+                                for (Integer i : uniqueCorrect) {
+                                    // runner up
+                                    if (i == item.getValue() && level == 1) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level == 2) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level == 3) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), THIRD_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level > 3) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), RUNNER_UP);
+                                        models.add(model);
+                                    }
+                                    level--;
                                 }
-                                if (i == item.getValue() && level == 3) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), THIRD_PLACE);
-                                    models.add(model);
-                                }
-                                if (i == item.getValue() && level == 2) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
-                                    models.add(model);
-                                }
-                                if (i == item.getValue() && level == 1) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
-                                    models.add(model);
-                                }
-                                level--;
                             }
-                        }
-                        // if only 3 levels, everyone get a trophy
-                        if (level == 3) {
-                            for (Integer i : uniqueCorrect) {
-                                if (i == item.getValue() && level == 3) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), THIRD_PLACE);
-                                    models.add(model);
+                            // if only 3 levels, everyone get a trophy
+                            if (level == 3 && item.getValue() != 0) {
+                                for (Integer i : uniqueCorrect) {
+                                    if (i == item.getValue() && level == 1) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level == 2) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level == 3) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), THIRD_PLACE);
+                                        models.add(model);
+                                    }
+                                    level--;
                                 }
-                                if (i == item.getValue() && level == 2) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
-                                    models.add(model);
-                                }
-                                if (i == item.getValue() && level == 1) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
-                                    models.add(model);
-                                }
-                                level--;
                             }
-                        }
-                        // if only 2 levels, only Gold and Bronze trophies are given
-                        if (level == 2) {
-                            for (Integer i : uniqueCorrect) {
-                                if (i == item.getValue() && level == 2) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
-                                    models.add(model);
+                            // if only 2 levels, only Gold and Bronze trophies are given
+                            if (level == 2 && item.getValue() != 0) {
+                                for (Integer i : uniqueCorrect) {
+                                    if (i == item.getValue() && level == 1) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
+                                        models.add(model);
+                                    }
+                                    if (i == item.getValue() && level == 2) {
+                                        LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), SECOND_PLACE);
+                                        models.add(model);
+                                    }
+                                    level--;
                                 }
-                                if (i == item.getValue() && level == 1) {
-                                    LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
-                                    models.add(model);
-                                }
-                                level--;
                             }
-                        }
-                        // if only one level, only Gold trophy is given
-                        if (level == 1) {
-                            LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
-                            models.add(model);
+                            // if only one level, only Gold trophy is given
+                            if (level == 1 && item.getValue() != 0) {
+                                LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), FIRST_PLACE);
+                                models.add(model);
+                            }
+                            // if user has no correct answer
+                            if (item.getValue() == 0) {
+                                LeaderboardModel model = new LeaderboardModel(name, sAttemptedNumber.toString(), sCorrectNumber.toString(), RUNNER_UP);
+                                models.add(model);
+                            }
                         }
                     }
+                }
             }
         }
+        // sort rank by trophy
+        ArrayList<LeaderboardModel> sortedModels = new ArrayList<>();
+        String[] ranks = {FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, RUNNER_UP};
+        for (String rank : ranks)
+        for (LeaderboardModel model : models)
+            if (model.getTrophy().equals(rank))
+                sortedModels.add(model);
+
+        // set adapter
         layoutManager = new LinearLayoutManager(this);
         binding.recyclerView.setLayoutManager(layoutManager);
-        adapter = new LeaderboardRvAdapter(models,LeaderboardActivity.this);
+        adapter = new LeaderboardRvAdapter(sortedModels,LeaderboardActivity.this);
         binding.recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         binding.recyclerView.setAdapter(adapter);
 
