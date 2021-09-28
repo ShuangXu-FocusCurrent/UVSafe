@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.quiz.Category2.Q1Category2Activity">
+    tools:context=".views.quiz.Category2.Q2Category2Activity">
 
     <ScrollView
         android:id="@+id/scrollView4"
@@ -501,7 +501,7 @@
                     app:layout_constraintTop_toTopOf="@+id/buttonCat2Q4" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/quiz_boy"
                     android:layout_width="186dp"
                     android:layout_height="163dp"
                     android:layout_marginStart="208dp"
