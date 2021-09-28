@@ -22,6 +22,7 @@ import com.e.uvsafeaustralia.views.quiz.Category2.Q1Category2Activity;
 import com.e.uvsafeaustralia.views.quiz.Category3.Q1Category3Activity;
 import com.e.uvsafeaustralia.views.quiz.Category4.Q1Category4Activity;
 import com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity;
+import com.e.uvsafeaustralia.views.quiz.leaderboard.OriginalLeaderboardActivity;
 
 import java.util.ArrayList;
 
@@ -170,16 +171,14 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<AnswerModel> allUsersAnswers = getAllUsersAnswersList();
-                Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
-                startActivity(intent);
-//                if (allUsersAnswers.isEmpty()) {
-//                    Intent intent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
-//                    startActivity(intent);
-//                }
-//                else {
-//                    Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
-//                    startActivity(intent);
-//                }
+                if (allUsersAnswers.isEmpty()) {
+                    Intent intent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
