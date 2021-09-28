@@ -7,12 +7,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.LeaderboardRvLayoutBinding;
 import com.e.uvsafeaustralia.models.LeaderboardModel;
 
 import java.util.List;
+
+import static com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity.FIRST_PLACE;
+import static com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity.RUNNER_UP;
+import static com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity.SECOND_PLACE;
+import static com.e.uvsafeaustralia.views.quiz.leaderboard.LeaderboardActivity.THIRD_PLACE;
 
 public class LeaderboardRvAdapter extends RecyclerView.Adapter<LeaderboardRvAdapter.ViewHolder>{
     List<LeaderboardModel> models;
@@ -32,11 +36,18 @@ public class LeaderboardRvAdapter extends RecyclerView.Adapter<LeaderboardRvAdap
 
     @Override
     public void onBindViewHolder(@NonNull LeaderboardRvAdapter.ViewHolder holder, int position) {
-        final LeaderboardModel model = models.get(position);
+        LeaderboardModel model = models.get(position);
         holder.binding.name.setText(model.getName());
         holder.binding.attemptedNumber.setText(model.getAttemptedNumber());
         holder.binding.correctAnswerNumber.setText(model.getCorrectAnswerNumber());
-        Glide.with(this.context).load(model.getTrophy()).into(holder.binding.trophy);
+        if (model.getTrophy().equals(FIRST_PLACE))
+            holder.binding.trophy.setImageResource(R.drawable.gold);
+        if (model.getTrophy().equals(SECOND_PLACE))
+            holder.binding.trophy.setImageResource(R.drawable.silver);
+        if (model.getTrophy().equals(THIRD_PLACE))
+            holder.binding.trophy.setImageResource(R.drawable.bronze);
+        if (model.getTrophy().equals(RUNNER_UP))
+            holder.binding.trophy.setImageResource(R.drawable.waiting_img);
     }
 
     @Override
@@ -50,5 +61,12 @@ public class LeaderboardRvAdapter extends RecyclerView.Adapter<LeaderboardRvAdap
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+    public int getImage(String imageName) {
+
+        int drawableResourceId = this.context.getResources().getIdentifier(imageName, "drawable", this.context.getPackageName());
+
+        return drawableResourceId;
     }
 }

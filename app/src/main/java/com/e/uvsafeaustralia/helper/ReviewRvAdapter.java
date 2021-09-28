@@ -7,12 +7,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.e.uvsafeaustralia.R;
-import com.e.uvsafeaustralia.databinding.LeaderboardRvLayoutBinding;
 import com.e.uvsafeaustralia.databinding.OnelineReviewRvLayoutBinding;
 import com.e.uvsafeaustralia.models.AnswerModel;
-import com.e.uvsafeaustralia.models.LeaderboardModel;
 
 import java.util.List;
 

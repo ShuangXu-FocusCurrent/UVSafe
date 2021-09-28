@@ -1,6 +1,9 @@
 package com.e.uvsafeaustralia.models;
 
-public class AnswerModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class AnswerModel implements Parcelable {
     private int id;
     private UserModel user;
     private QuestionModel question;
@@ -16,6 +19,26 @@ public class AnswerModel {
     }
 
     public AnswerModel(){}
+
+    protected AnswerModel(Parcel in) {
+        id = in.readInt();
+        user = in.readParcelable(UserModel.class.getClassLoader());
+        question = in.readParcelable(QuestionModel.class.getClassLoader());
+        selected = in.readString();
+        status = in.readInt();
+    }
+
+    public static final Creator<AnswerModel> CREATOR = new Creator<AnswerModel>() {
+        @Override
+        public AnswerModel createFromParcel(Parcel in) {
+            return new AnswerModel(in);
+        }
+
+        @Override
+        public AnswerModel[] newArray(int size) {
+            return new AnswerModel[size];
+        }
+    };
 
     @Override
     public String toString() {
@@ -64,5 +87,19 @@ public class AnswerModel {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeParcelable(user, flags);
+        dest.writeParcelable(question, flags);
+        dest.writeString(selected);
+        dest.writeInt(status);
     }
 }

@@ -129,11 +129,11 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         bundle.putParcelable("player", player);
-        bundle.putParcelableArrayList("questionsCategory1", questionsCategory1);
 
         binding.category1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putParcelableArrayList("questionsCategory1", questionsCategory1);
                 Intent intent = new Intent(QuizFourBlocksActivity.this, Q1Category1Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -143,6 +143,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putParcelableArrayList("questionsCategory2", questionsCategory2);
                 Intent intent = new Intent(QuizFourBlocksActivity.this, Q1Category2Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -171,12 +172,16 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<AnswerModel> allUsersAnswers = getAllUsersAnswersList();
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("allUsersAnswers", allUsersAnswers);
+                bundle.putParcelableArrayList("questionsList", questionsList);
                 if (allUsersAnswers.isEmpty()) {
-                    Intent intent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
-                    startActivity(intent);
+                    Intent originalIntent = new Intent(QuizFourBlocksActivity.this, OriginalLeaderboardActivity.class);
+                    startActivity(originalIntent);
                 }
                 else {
                     Intent intent = new Intent(QuizFourBlocksActivity.this, LeaderboardActivity.class);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             }

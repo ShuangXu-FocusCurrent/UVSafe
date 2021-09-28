@@ -141,7 +141,7 @@ public class DBMockActivity extends AppCompatActivity {
                         System.out.println(user.getNickName() + ", Total correct: " + item.getValue() + ", Total attempt: " + mapAttempt.get(attempt));
 
         // Oliver wants to try the quiz again
-        // He clicks on the Try Again button
+        // He clicks on Try Again
 
         // Delete Oliver's record from the Answer table
         System.out.println(getAllUsersAnswersList());

@@ -234,7 +234,7 @@ public class DBManager {
         public Cursor getAllAnswers() {
             return db.query(
                     AnswerDBStructure.tableEntry.TABLE_ANSWER,
-                    answerColumns, null, null,  AnswerDBStructure.tableEntry.COLUMN_USER_ID,  null, null);
+                    answerColumns, null, null,  null,  null, null);
         }
 
         public Cursor getUserAnswers(int userId) {

@@ -76,7 +76,7 @@ public class Q4Category1Activity extends AppCompatActivity {
                 userAnswerC1Q4.setUser(player);
                 userAnswerC1Q4.setQuestion(question);
                 userAnswerC1Q4.setSelected(question.getAnswerOption1());
-                userAnswerC1Q4.setStatus(1);
+                userAnswerC1Q4.setStatus(0);
                 recordAnswer(userAnswersCategory1, userAnswerC1Q4);
                 disableAnswerOptions();
                 showFeedback("wrong", question);

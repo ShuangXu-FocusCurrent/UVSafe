@@ -119,7 +119,7 @@ public class Q3Category1Activity extends AppCompatActivity {
                 // add answer to answermodel instance
                 userAnswerC1Q3.setUser(player);
                 userAnswerC1Q3.setQuestion(question);
-                userAnswerC1Q3.setSelected(question.getAnswerOption2());
+                userAnswerC1Q3.setSelected(question.getAnswerOption3());
                 userAnswerC1Q3.setStatus(1);
                 recordAnswer(userAnswersCategory1, userAnswerC1Q3);
                 disableAnswerOptions();
@@ -137,7 +137,7 @@ public class Q3Category1Activity extends AppCompatActivity {
                 // add answer to answermodel instance
                 userAnswerC1Q3.setUser(player);
                 userAnswerC1Q3.setQuestion(question);
-                userAnswerC1Q3.setSelected(question.getAnswerOption2());
+                userAnswerC1Q3.setSelected(question.getAnswerOption4());
                 userAnswerC1Q3.setStatus(0);
                 recordAnswer(userAnswersCategory1, userAnswerC1Q3);
                 disableAnswerOptions();

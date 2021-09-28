@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UVSafeAustralia">
+        <activity android:name=".views.quiz.leaderboard.ClearLeaderboardActivity"></activity>
         <activity
             android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
             android:label="Review - About Sunscreen"
@@ -53,13 +54,13 @@
             android:label="Quiz - About UV" />
         <activity
             android:name=".views.quiz.Category2.Q1Category2Activity"
-            android:label="About Sun Protection"></activity>
+            android:label="About Sun Protection" />
         <activity
             android:name=".views.quiz.Category3.Q1Category3Activity"
             android:label="Quiz - Melanoma" />
         <activity
             android:name=".views.quiz.Category4.Q1Category4Activity"
-            android:label="About Sunscreen"></activity>
+            android:label="About Sunscreen" />
         <activity
             android:name=".views.SlideActivity"
             android:label="Introduction"
