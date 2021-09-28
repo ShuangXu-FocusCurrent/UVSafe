@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".views.quiz.Category2.Q1Category2Activity">
 
     <ScrollView
         android:id="@+id/scrollView4"
@@ -29,25 +30,14 @@
                     android:id="@+id/question_bcg"
                     android:layout_width="316dp"
                     android:layout_height="147dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="45dp"
                     android:src="@drawable/question_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.55"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/angrySun"
-                    android:layout_width="113dp"
-                    android:layout_height="116dp"
-                    android:contentDescription="ignore"
-                    android:src="@drawable/angry_sun"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewCat1Q1"
+                    android:id="@+id/textViewCat2Q1"
                     android:layout_width="281dp"
                     android:layout_height="144dp"
                     android:fontFamily="@font/concert_one"
@@ -57,10 +47,8 @@
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@+id/question_bcg"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/question_bcg"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toTopOf="@+id/question_bcg" />
 
                 <Button
                     android:id="@+id/buttonOpt1Answer"
@@ -78,6 +66,25 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
                     app:layout_constraintTop_toBottomOf="@+id/question_bcg"
+                    app:strokeColor="#95404040"
+                    app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/buttonOpt3Answer"
+                    android:layout_width="305dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/concert_one"
+                    android:gravity="start"
+                    android:text="AnswerOpt3"
+                    android:textColor="#756861"
+                    android:textSize="20sp"
+                    app:backgroundTint="#FFFFFF"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonOpt1Answer"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/buttonOpt1Answer"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt2Answer"
                     app:strokeColor="#95404040"
                     app:strokeWidth="2dp" />
 
@@ -107,10 +114,10 @@
                     android:layout_marginTop="24dp"
                     android:src="@drawable/waiting_img"
                     android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonOpt2Answer"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonOpt3Answer"
                     app:layout_constraintHorizontal_bias="0.54"
-                    app:layout_constraintStart_toStartOf="@+id/buttonOpt2Answer"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt2Answer" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonOpt3Answer"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt3Answer" />
 
                 <ImageView
                     android:id="@+id/feedbackWrong"
@@ -123,7 +130,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.555"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt2Answer" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt3Answer" />
 
                 <ImageView
                     android:id="@+id/sad_img"
@@ -294,49 +301,50 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q1"
+                    android:id="@+id/buttonCat2Q1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/quz_button_active"
                     android:src="@drawable/quz_button_active"
                     app:layout_constraintEnd_toEndOf="@+id/feedbackConstraintLayout"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonCat1Q2"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat2Q2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q1_incative"
+                    android:id="@+id/buttonCat2Q1_incative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="100dp"
                     android:layout_marginRight="100dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
                     android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q1"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonCat1Q3"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q1"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q1"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat2Q3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q1"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q2"
+                    android:id="@+id/buttonCat2Q2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginLeft="24dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q1"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonCat1Q3"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q1"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat2Q3"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/buttonCat1Q1"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q1"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat2Q1"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q1"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q2_active"
+                    android:id="@+id/buttonCat2Q2_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="136dp"
@@ -349,22 +357,22 @@
                     app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q3"
+                    android:id="@+id/buttonCat2Q3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginLeft="24dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q2"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonCat1Q4"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q2"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat2Q4"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/buttonCat1Q2"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q2"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat2Q2"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q2"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q3_active"
+                    android:id="@+id/buttonCat2Q3_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="212dp"
@@ -377,22 +385,22 @@
                     app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q4"
+                    android:id="@+id/buttonCat2Q4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginLeft="24dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q3"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/buttonCat1Q3"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q3"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat2Q3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q3"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
-                    android:id="@+id/buttonCat1Q4_active"
+                    android:id="@+id/buttonCat2Q4_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
@@ -405,34 +413,34 @@
                     app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
                 <ImageView
-                    android:id="@+id/buttonCat1End"
+                    android:id="@+id/buttonCat2End"
                     android:layout_width="110dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="12dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="24dp"
                     android:src="@drawable/quiz_end_btn"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonCat1Q3"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCat2Q3"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1Q2"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonCat1Q3" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2Q2"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonCat2Q3" />
 
                 <TextView
                     android:id="@+id/textEnd"
                     android:layout_width="71dp"
                     android:layout_height="21dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/concert_one"
                     android:text="End Quiz"
                     android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1End"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonCat1End"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2End"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCat2End"
                     app:layout_constraintHorizontal_bias="0.358"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1End"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1End"
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2End"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2End"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
@@ -444,10 +452,10 @@
                     android:gravity="center"
                     android:text="Q1"
                     android:textSize="27sp"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonCat1Q1"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCat2Q1"
                     app:layout_constraintHorizontal_bias="0.454"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1Q1"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q1" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2Q1"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q1" />
 
                 <TextView
                     android:id="@+id/textQ2"
@@ -457,10 +465,10 @@
                     android:gravity="center"
                     android:text="Q2"
                     android:textSize="27sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q2"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonCat1Q2"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1Q2"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q2"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCat2Q2"
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2Q2"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q2" />
 
                 <TextView
                     android:id="@+id/textQ3"
@@ -472,11 +480,11 @@
                     android:gravity="center"
                     android:text="Q3"
                     android:textSize="27sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q3"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonCat1Q3"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q3"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCat2Q3"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1Q3"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q3" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2Q3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q3" />
 
                 <TextView
                     android:id="@+id/textQ4"
@@ -488,30 +496,20 @@
                     android:gravity="center"
                     android:text="Q4"
                     android:textSize="27sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat1Q4"
-                    app:layout_constraintStart_toStartOf="@+id/buttonCat1Q4"
-                    app:layout_constraintTop_toTopOf="@+id/buttonCat1Q4" />
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat2Q4"
+                    app:layout_constraintStart_toStartOf="@+id/buttonCat2Q4"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat2Q4" />
 
                 <ImageView
-                    android:id="@+id/friendlySun_img"
-                    android:layout_width="111dp"
-                    android:layout_height="122dp"
-                    android:src="@drawable/friendly_sun"
-                    android:visibility="invisible"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/girl_child"
-                    android:layout_width="118dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="320dp"
-                    android:layout_marginRight="320dp"
-                    android:rotation="37"
-                    android:src="@drawable/girl_child"
-                    android:visibility="invisible"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/imageView"
+                    android:layout_width="186dp"
+                    android:layout_height="163dp"
+                    android:layout_marginStart="208dp"
+                    android:layout_marginLeft="208dp"
+                    android:layout_marginTop="16dp"
+                    android:rotation="-26"
+                    android:src="@drawable/boy_child"
+                    app:layout_constraintStart_toStartOf="@+id/question_bcg"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

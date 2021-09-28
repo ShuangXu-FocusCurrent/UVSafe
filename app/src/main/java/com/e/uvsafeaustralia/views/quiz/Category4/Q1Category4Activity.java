@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.e.uvsafeaustralia.databinding.ActivityQ1Category2Binding;
+import com.e.uvsafeaustralia.databinding.ActivityQ2Category2Binding;
 import com.e.uvsafeaustralia.databinding.ActivityQ1Category4Binding;
 
 public class Q1Category4Activity extends AppCompatActivity {
