@@ -153,6 +153,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putParcelableArrayList("questionsCategory3", questionsCategory3);
                 Intent intent = new Intent( QuizFourBlocksActivity.this , Q1Category3Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -162,6 +163,7 @@ public class QuizFourBlocksActivity extends AppCompatActivity {
         binding.category4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putParcelableArrayList("questionsCategory4", questionsCategory4);
                 Intent intent = new Intent( QuizFourBlocksActivity.this , Q1Category4Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);

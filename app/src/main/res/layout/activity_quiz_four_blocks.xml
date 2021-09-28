@@ -45,7 +45,7 @@
         app:srcCompat="@drawable/c1" />
 
     <ImageView
-        android:id="@+id/category3"
+        android:id="@+id/category4"
         android:layout_width="150dp"
         android:layout_height="148dp"
         android:layout_marginTop="45dp"
@@ -71,7 +71,7 @@
         app:srcCompat="@drawable/c3" />
 
     <ImageView
-        android:id="@+id/category4"
+        android:id="@+id/category3"
         android:layout_width="150dp"
         android:layout_height="148dp"
         android:layout_marginStart="9dp"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/category3"
+        app:layout_constraintTop_toTopOf="@+id/category4"
         app:srcCompat="@drawable/c4" />
 
     <TextView

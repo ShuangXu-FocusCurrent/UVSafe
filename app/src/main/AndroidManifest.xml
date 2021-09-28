@@ -54,13 +54,16 @@
             android:label="Quiz - About UV" />
         <activity
             android:name=".views.quiz.Category2.Q1Category2Activity"
-            android:label="About Sun Protection" />
+            android:label="Quiz - About Sun Protection" />
         <activity
             android:name=".views.quiz.Category3.Q1Category3Activity"
-            android:label="Quiz - Melanoma" />
+            android:label="Quiz - About Sunscreen" />
+        <activity
+            android:name=".views.quiz.Category3.Q2Category3Activity"
+            android:label="Quiz - About Sunscreen" />
         <activity
             android:name=".views.quiz.Category4.Q1Category4Activity"
-            android:label="About Sunscreen" />
+            android:label="Quiz - Melanoma" />
         <activity
             android:name=".views.SlideActivity"
             android:label="Introduction"

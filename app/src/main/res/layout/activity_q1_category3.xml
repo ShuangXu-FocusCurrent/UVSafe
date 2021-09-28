@@ -320,6 +320,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
+                <ImageButton
+                    android:id="@+id/buttonCat3Q1_incative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/quiz_btn_inactive"
+                    android:src="@drawable/quiz_btn_inactive"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q1"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat3Q3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q1"
+                    app:layout_constraintVertical_bias="0.0" />
+
                 <TextView
                     android:id="@+id/textQ1"
                     android:layout_width="wrap_content"
@@ -348,6 +362,19 @@
                     app:layout_constraintStart_toEndOf="@+id/buttonCat3Q1"
                     app:layout_constraintTop_toTopOf="@+id/buttonCat3Q1"
                     app:layout_constraintVertical_bias="0.0" />
+
+                <ImageButton
+                    android:id="@+id/buttonCat3Q2_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="136dp"
+                    android:layout_marginLeft="136dp"
+                    android:background="@drawable/quz_button_active"
+                    android:src="@drawable/quz_button_active"
+                    android:visibility="invisible"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
 
                 <ImageButton
                     android:id="@+id/buttonCat3Q3"

@@ -1,13 +1,12 @@
 package com.e.uvsafeaustralia.views.quiz.Category3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.e.uvsafeaustralia.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.e.uvsafeaustralia.databinding.ActivityQ1Category3Binding;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
@@ -22,17 +21,15 @@ import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.getUserAns
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.recordAnswer;
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.userAnswersCategory3;
 
-
-public class Q1Category3Activity extends AppCompatActivity {
+public class Q2Category3Activity extends AppCompatActivity {
     private ActivityQ1Category3Binding binding;
     private QuestionModel question;
-    private AnswerModel userAnswerC3Q1;
+    private AnswerModel userAnswerC3Q2;
     private ArrayList<QuestionModel> questionsCategory3;
     private UserModel player;
     Bundle getBundle;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = ActivityQ1Category3Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
@@ -44,20 +41,20 @@ public class Q1Category3Activity extends AppCompatActivity {
         question = new QuestionModel();
 
         for (QuestionModel questionItem : questionsCategory3)
-            if (questionItem.getqNumber() == 1)
+            if (questionItem.getqNumber() == 2)
                 question = questionItem;
 
         binding.textViewCat3Q1.setText(question.getQuestion());
-//        binding.buttonCat3Q2Active.setVisibility(View.INVISIBLE);
-//        binding.buttonCat3Q1Incative.setVisibility(View.INVISIBLE);
+        binding.buttonCat3Q2Active.setVisibility(View.VISIBLE);
+        binding.buttonCat3Q1Incative.setVisibility(View.VISIBLE);
         binding.buttonOpt1Answer.setText(question.getAnswerOption1());
         binding.buttonOpt2Answer.setText(question.getAnswerOption2());
 
         // check if user already selected an answer
         // if they have, show the selected answer and feedback
-        userAnswerC3Q1 = getUserAnswer(player, question);
-        if (userAnswerC3Q1.getId() != 0) {
-            String selected = userAnswerC3Q1.getSelected();
+        userAnswerC3Q2 = getUserAnswer(player, question);
+        if (userAnswerC3Q2.getId() != 0) {
+            String selected = userAnswerC3Q2.getSelected();
             if (binding.buttonOpt1Answer.getText().equals(selected)) {
                 binding.buttonOpt1Answer.setBackgroundColor(SELECTED_BTN_COLOUR);
                 showFeedback("wrong", question);
@@ -75,11 +72,11 @@ public class Q1Category3Activity extends AppCompatActivity {
                 binding.buttonOpt1Answer.setBackgroundColor(SELECTED_BTN_COLOUR);
                 binding.buttonOpt2Answer.setBackgroundColor(NOT_SELECTED_BTN_COLOUR);
                 // record answer
-                userAnswerC3Q1.setUser(player);
-                userAnswerC3Q1.setQuestion(question);
-                userAnswerC3Q1.setSelected(question.getAnswerOption1());
-                userAnswerC3Q1.setStatus(0);
-                recordAnswer(userAnswersCategory3, userAnswerC3Q1);
+                userAnswerC3Q2.setUser(player);
+                userAnswerC3Q2.setQuestion(question);
+                userAnswerC3Q2.setSelected(question.getAnswerOption1());
+                userAnswerC3Q2.setStatus(0);
+                recordAnswer(userAnswersCategory3, userAnswerC3Q2);
                 disableAnswerOptions();
                 showFeedback("wrong", question);
             }
@@ -91,11 +88,11 @@ public class Q1Category3Activity extends AppCompatActivity {
                 binding.buttonOpt1Answer.setBackgroundColor(NOT_SELECTED_BTN_COLOUR);
                 binding.buttonOpt2Answer.setBackgroundColor(SELECTED_BTN_COLOUR);
                 // add answer to answermodel instance
-                userAnswerC3Q1.setUser(player);
-                userAnswerC3Q1.setQuestion(question);
-                userAnswerC3Q1.setSelected(question.getAnswerOption2());
-                userAnswerC3Q1.setStatus(1);
-                recordAnswer(userAnswersCategory3, userAnswerC3Q1);
+                userAnswerC3Q2.setUser(player);
+                userAnswerC3Q2.setQuestion(question);
+                userAnswerC3Q2.setSelected(question.getAnswerOption2());
+                userAnswerC3Q2.setStatus(1);
+                recordAnswer(userAnswersCategory3, userAnswerC3Q2);
                 disableAnswerOptions();
                 showFeedback("right", question);
             }
@@ -105,10 +102,10 @@ public class Q1Category3Activity extends AppCompatActivity {
         bundle.putParcelable("player", player);
         bundle.putParcelableArrayList("questionsCategory3", questionsCategory3);
 
-        binding.buttonCat3Q2.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat3Q1Incative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Q1Category3Activity.this, Q2Category3Activity.class);
+                Intent intent = new Intent(Q2Category3Activity.this, Q1Category3Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -117,16 +114,7 @@ public class Q1Category3Activity extends AppCompatActivity {
 //        binding.buttonCat3Q3.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(Q1Category3Activity.this, Q3Category3Activity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        binding.buttonCat3Q4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Q1Category3Activity.this, Q4Category3Activity.class);
+//                Intent intent = new Intent(Q2Category3Activity.this, Q3Category3Activity.class);
 //                intent.putExtras(bundle);
 //                startActivity(intent);
 //            }
@@ -135,11 +123,12 @@ public class Q1Category3Activity extends AppCompatActivity {
         binding.buttonCat3End.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Q1Category3Activity.this, "You'll be redirected to the Quiz Homepage. Thanks for attempting the quiz.", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent( Q1Category3Activity.this, QuizFourBlocksActivity.class);
+                Toast.makeText(Q2Category3Activity.this, "You'll be redirected to the Quiz Homepage. Thanks for attempting the quiz.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent( Q2Category3Activity.this, QuizFourBlocksActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
     public void showFeedback(String status, QuestionModel question) {
