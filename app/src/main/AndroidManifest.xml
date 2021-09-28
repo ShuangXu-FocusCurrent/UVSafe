@@ -65,6 +65,9 @@
             android:name=".views.quiz.Category4.Q1Category4Activity"
             android:label="Quiz - Melanoma" />
         <activity
+            android:name=".views.quiz.Category4.Q2Category4Activity"
+            android:label="Quiz - Melanoma" />
+        <activity
             android:name=".views.SlideActivity"
             android:label="Introduction"
             android:parentActivityName=".views.MainActivity" />

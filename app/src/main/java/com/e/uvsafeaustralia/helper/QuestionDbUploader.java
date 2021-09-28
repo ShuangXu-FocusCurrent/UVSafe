@@ -167,7 +167,7 @@ public class QuestionDbUploader extends Worker {
                 dbManager.insertQuestion(
                         CATEGORY4,
                         1,
-                        "I dont need to reapply SPF50 Sunscreen too often ?",
+                        "What is true about melanoma?",
                         "It is a serious form of skin cancer",
                         "It may develop from a mole",
                         "Both A & B",

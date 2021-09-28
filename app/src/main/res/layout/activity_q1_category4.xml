@@ -97,7 +97,7 @@
                 <Button
                     android:id="@+id/buttonOpt2Answer"
                     android:layout_width="295dp"
-                    android:layout_height="47dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="start"
@@ -112,6 +112,26 @@
                     app:layout_constraintTop_toBottomOf="@+id/buttonOpt1Answer"
                     app:strokeColor="#95404040"
                     app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/buttonOpt3Answer"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/concert_one"
+                    android:gravity="start"
+                    android:text="AnswerOpt2"
+                    android:textColor="#756861"
+                    android:textSize="20sp"
+                    app:backgroundTint="#FFFFFF"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonOpt2Answer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/buttonOpt2Answer"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt2Answer"
+                    app:strokeColor="#95404040"
+                    app:strokeWidth="2dp" />
+
 
                 <ImageView
                     android:id="@+id/waiting_img"
