@@ -53,6 +53,13 @@ public class ReportActivity extends AppCompatActivity {
         binding.textViewTotalCorrect.setText(String.valueOf(totalCorrect));
         binding.textViewTotalWrong.setText(String.valueOf(totalWrong));
 
+        binding.progressBarAttempt.setMax(totalQuestions);
+        binding.progressBarAttempt.setProgress(totalAttempted);
+        binding.progressBarCorrect.setMax(totalAttempted);
+        binding.progressBarCorrect.setProgress(totalCorrect);
+        binding.progressBarWrong.setMax(totalAttempted);
+        binding.progressBarWrong.setProgress(totalWrong);
+
         if (userAnswersCategory1.size() == 0) {
             binding.c1Review.setEnabled(false);
             binding.c1Review.setAlpha(0.5f);
