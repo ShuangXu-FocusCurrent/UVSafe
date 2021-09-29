@@ -131,24 +131,24 @@ public class Q2Category4Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//
-//        binding.buttonCat4Q3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Q1Category4Activity.this, Q3Category4Activity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        binding.buttonCat4Q4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Q1Category4Activity.this, Q4Category4Activity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
+
+        binding.buttonCat4Q3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Q2Category4Activity.this, Q3Category4Activity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        binding.buttonCat4Q4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Q2Category4Activity.this, Q4Category4Activity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
         binding.buttonCat4End.setOnClickListener(new View.OnClickListener() {
             @Override
