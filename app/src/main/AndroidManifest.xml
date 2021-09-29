@@ -13,23 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UVSafeAustralia">
-        <activity android:name=".views.quiz.leaderboard.ClearLeaderboardActivity"></activity>
-        <activity
-            android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
-            android:label="Review - About Sunscreen"
-            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
-        <activity
-            android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
-            android:label="Review - Melanoma"
-            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
-        <activity
-            android:name=".views.quiz.reportWithReview.Category2ReviewActivity"
-            android:label="Review - Sun Protection"
-            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
-        <activity
-            android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
-            android:label="Review - About UV"
-            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,6 +37,15 @@
             android:label="Quiz - About UV" />
         <activity
             android:name=".views.quiz.Category2.Q1Category2Activity"
+            android:label="Quiz - About Sun Protection" />
+        <activity
+            android:name=".views.quiz.Category2.Q2Category2Activity"
+            android:label="Quiz - About Sun Protection" />
+        <activity
+            android:name=".views.quiz.Category2.Q3Category2Activity"
+            android:label="Quiz - About Sun Protection" />
+        <activity
+            android:name=".views.quiz.Category2.Q4Category2Activity"
             android:label="Quiz - About Sun Protection" />
         <activity
             android:name=".views.quiz.Category3.Q1Category3Activity"
@@ -115,6 +107,25 @@
             android:name=".views.quiz.leaderboard.OriginalLeaderboardActivity"
             android:label="Leaderboard"
             android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
+        <activity android:name=".views.quiz.leaderboard.ClearLeaderboardActivity"></activity>
+        <activity
+        android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
+        android:label="Review - About Sunscreen"
+        android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
+        <activity
+            android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
+            android:label="Review - Melanoma"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
+        <activity
+            android:name=".views.quiz.reportWithReview.Category2ReviewActivity"
+            android:label="Review - Sun Protection"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
+        <activity
+            android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
+            android:label="Review - About UV"
+            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
+
+
 
         <receiver android:name=".helper.AlarmReceiver" />
     </application>

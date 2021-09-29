@@ -47,8 +47,10 @@ public class Q2Category1Activity extends AppCompatActivity {
 
         binding.friendlySunImg.setVisibility(View.VISIBLE);
         binding.angrySun.setVisibility(View.INVISIBLE);
-        binding.buttonCat1Q2Active.setVisibility(View.VISIBLE);
+        binding.buttonCat1Q1.setVisibility(View.INVISIBLE);
         binding.buttonCat1Q1Incative.setVisibility(View.VISIBLE);
+        binding.buttonCat1Q2.setVisibility(View.INVISIBLE);
+        binding.buttonCat1Q2Active.setVisibility(View.VISIBLE);
         binding.textViewCat1Q1.setText(question.getQuestion());
         binding.buttonOpt1Answer.setText(question.getAnswerOption1());
         binding.buttonOpt2Answer.setText(question.getAnswerOption2());
