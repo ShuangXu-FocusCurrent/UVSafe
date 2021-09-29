@@ -40,8 +40,10 @@ public class LeaderboardActivity extends AppCompatActivity {
     public static final String SECOND_PLACE = "silver_med.png";
     public static final String THIRD_PLACE = "bronze_med.png";
     public static final String RUNNER_UP = "waiting_img.png";
-
     MediaPlayer bcg_music;
+    public static Map<String, Integer> mapCorrect;
+    public static Map<String, Integer> mapAttempt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +60,8 @@ public class LeaderboardActivity extends AppCompatActivity {
 
         // create initial leaderboard list without any ranking
         models = new ArrayList<LeaderboardModel>();
-        Map<String, Integer> mapCorrect = new HashMap<>();
-        Map<String, Integer> mapAttempt = new HashMap<>();
+        mapCorrect = new HashMap<>();
+        mapAttempt = new HashMap<>();
         String name = "";
         for (UserModel user : userList) {
             int attempted = 0;

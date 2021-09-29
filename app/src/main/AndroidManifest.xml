@@ -108,10 +108,6 @@
             android:label="Quiz Homepage"
             android:parentActivityName=".views.MainFunction" />
         <activity
-            android:name=".views.quiz.reportWithReview.ReportActivity"
-            android:label="Quiz - Report"
-            android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity" />
-        <activity
             android:name=".views.quiz.leaderboard.LeaderboardActivity"
             android:label="Leaderboard" />
         <activity
@@ -119,23 +115,25 @@
             android:label="Leaderboard"
             android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity android:name=".views.quiz.leaderboard.ClearLeaderboardActivity" />
+        <activity android:name=".views.quiz.reportWithReview.ReportActivity"
+            android:label="Quiz Report"
+            android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity"/>
         <activity
-            android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
-            android:label="Review - About Sunscreen"
-            android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
-        <activity
-            android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
-            android:label="Review - Melanoma"
+            android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
+            android:label="Review - About UV"
             android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <activity
             android:name=".views.quiz.reportWithReview.Category2ReviewActivity"
             android:label="Review - Sun Protection"
             android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <activity
-            android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
-            android:label="Review - About UV"
+            android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
+            android:label="Review - Melanoma"
             android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
-
+        <activity
+        android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
+        android:label="Review - About Sunscreen"
+        android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <receiver android:name=".helper.AlarmReceiver" />
     </application>
 
