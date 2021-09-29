@@ -41,11 +41,11 @@ public class LeaderboardRvAdapter extends RecyclerView.Adapter<LeaderboardRvAdap
         holder.binding.attemptedNumber.setText(model.getAttemptedNumber());
         holder.binding.correctAnswerNumber.setText(model.getCorrectAnswerNumber());
         if (model.getTrophy().equals(FIRST_PLACE))
-            holder.binding.trophy.setImageResource(R.drawable.gold);
+            holder.binding.trophy.setImageResource(R.drawable.gold_med);
         if (model.getTrophy().equals(SECOND_PLACE))
-            holder.binding.trophy.setImageResource(R.drawable.silver);
+            holder.binding.trophy.setImageResource(R.drawable.silver_med);
         if (model.getTrophy().equals(THIRD_PLACE))
-            holder.binding.trophy.setImageResource(R.drawable.bronze);
+            holder.binding.trophy.setImageResource(R.drawable.bronze_med);
         if (model.getTrophy().equals(RUNNER_UP))
             holder.binding.trophy.setImageResource(R.drawable.waiting_img);
     }

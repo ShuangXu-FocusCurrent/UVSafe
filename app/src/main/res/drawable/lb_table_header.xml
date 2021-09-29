@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- White pink color -->
+    <item android:bottom="10px" android:right="5px">
+
+        <shape  android:shape="rectangle">
+
+            <solid android:color="#FF9356" />
+            <corners android:radius="7dp" />
+            <size android:width="419dp" android:height="49dp"/>
+<!--            <stroke android:width="2dp" android:color="@color/white"/>-->
+        </shape>
+
+    </item>
+
+
+</layer-list>

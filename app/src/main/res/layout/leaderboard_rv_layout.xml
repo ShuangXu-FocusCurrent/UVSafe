@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
-    <TextView
-        android:id="@+id/attemptedNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
-    <TextView
-        android:id="@+id/correctAnswerNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
-    <ImageView
-        android:id="@+id/trophy"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_weight="1"
-        android:padding="8dp"
-        android:src="@drawable/originalleaderboard"/>
+    android:layout_height="wrap_content"
+    android:background="@drawable/lb_row_bcg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="102dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center|fill_horizontal"
+            android:text="Oliver"
+            android:textColor="#2E2C2C"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.527" />
+
+        <TextView
+            android:id="@+id/attemptedNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/concert_one"
+            android:text="04/16"
+            android:textColor="#401F1F"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/correctAnswerNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/concert_one"
+            android:text="02/04"
+            android:textColor="#2E2C2C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/attemptedNumber"
+            app:layout_constraintTop_toTopOf="@+id/attemptedNumber" />
+
+        <ImageView
+            android:id="@+id/trophy"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="52dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/originalleaderboard"
+            app:layout_constraintStart_toStartOf="@+id/correctAnswerNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

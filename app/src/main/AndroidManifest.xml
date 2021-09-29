@@ -113,8 +113,7 @@
             android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity" />
         <activity
             android:name=".views.quiz.leaderboard.LeaderboardActivity"
-            android:label="Leaderboard"
-            android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
+            android:label="Leaderboard" />
         <activity
             android:name=".views.quiz.leaderboard.OriginalLeaderboardActivity"
             android:label="Leaderboard"

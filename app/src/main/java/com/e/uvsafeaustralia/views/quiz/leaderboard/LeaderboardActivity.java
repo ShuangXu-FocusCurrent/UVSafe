@@ -2,6 +2,7 @@ package com.e.uvsafeaustralia.views.quiz.leaderboard;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityLeaderboardBinding;
 import com.e.uvsafeaustralia.helper.LeaderboardRvAdapter;
 import com.e.uvsafeaustralia.models.AnswerModel;
@@ -34,11 +36,12 @@ public class LeaderboardActivity extends AppCompatActivity {
     private List<LeaderboardModel> models;
     private ArrayList<AnswerModel> allUsersAnswers;
     private ArrayList<QuestionModel> questionsList;
-    public static final String FIRST_PLACE = "gold.png";
-    public static final String SECOND_PLACE = "silver.png";
-    public static final String THIRD_PLACE = "bronze.png";
+    public static final String FIRST_PLACE = "gold_med.png";
+    public static final String SECOND_PLACE = "silver_med.png";
+    public static final String THIRD_PLACE = "bronze_med.png";
     public static final String RUNNER_UP = "waiting_img.png";
 
+    MediaPlayer bcg_music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class LeaderboardActivity extends AppCompatActivity {
         binding = ActivityLeaderboardBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        bcg_music = MediaPlayer.create(getApplicationContext(), R.raw.lb_bcg_music);
+        bcg_music.start();
 
         Bundle bundle = getIntent().getExtras();
         allUsersAnswers = bundle.getParcelableArrayList("allUsersAnswers");
@@ -198,6 +203,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( LeaderboardActivity.this , ReportActivity.class);
                 startActivity(intent);
+                bcg_music.release();
             }
         });
 
@@ -206,7 +212,9 @@ public class LeaderboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LeaderboardActivity.this, ClearLeaderboardActivity.class);
                 startActivity(intent);
+                bcg_music.release();
             }
         });
+
     }
 }
