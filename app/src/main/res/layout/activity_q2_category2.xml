@@ -24,15 +24,16 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="900dp">
+                android:layout_height="1050dp">
 
                 <ImageView
                     android:id="@+id/question_bcg"
                     android:layout_width="316dp"
                     android:layout_height="147dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="40dp"
                     android:src="@drawable/question_background"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.312"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,23 +48,25 @@
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@+id/question_bcg"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
+                    app:layout_constraintHorizontal_bias="0.371"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/question_bcg" />
+                    app:layout_constraintTop_toTopOf="@+id/question_bcg"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/buttonOpt1Answer"
-                    android:layout_width="305dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="307dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="32dp"
                     android:fontFamily="@font/concert_one"
-                    android:gravity="start"
+                    android:gravity="start|fill_horizontal|fill_vertical"
                     android:text="AnswerOpt1"
                     android:textColor="#756861"
                     android:textSize="20sp"
                     app:backgroundTint="#FFFFFF"
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
                     app:layout_constraintTop_toBottomOf="@+id/question_bcg"
                     app:strokeColor="#95404040"
@@ -71,11 +74,11 @@
 
                 <Button
                     android:id="@+id/buttonOpt3Answer"
-                    android:layout_width="305dp"
-                    android:layout_height="47dp"
+                    android:layout_width="307dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/concert_one"
-                    android:gravity="start"
+                    android:gravity="start|fill_horizontal|fill_vertical"
                     android:text="AnswerOpt3"
                     android:textColor="#756861"
                     android:textSize="20sp"
@@ -90,11 +93,11 @@
 
                 <Button
                     android:id="@+id/buttonOpt2Answer"
-                    android:layout_width="305dp"
-                    android:layout_height="47dp"
+                    android:layout_width="307dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/concert_one"
-                    android:gravity="start"
+                    android:gravity="start|center_horizontal|fill_vertical"
                     android:text="AnswerOpt2"
                     android:textColor="#756861"
                     android:textSize="20sp"
@@ -273,7 +276,7 @@
                     <TextView
                         android:id="@+id/correctText4"
                         android:layout_width="216dp"
-                        android:layout_height="29dp"
+                        android:layout_height="40dp"
                         android:layout_marginTop="12dp"
                         android:fontFamily="@font/concert_one"
                         android:text="Answer "
@@ -318,9 +321,8 @@
                     android:id="@+id/buttonCat2Q1_incative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="26dp"
                     android:layout_marginEnd="100dp"
-                    android:layout_marginRight="100dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
                     android:visibility="visible"
@@ -504,11 +506,9 @@
 
                 <ImageView
                     android:id="@+id/quiz_boy"
-                    android:layout_width="186dp"
-                    android:layout_height="163dp"
-                    android:layout_marginStart="208dp"
-                    android:layout_marginLeft="208dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="230dp"
+                    android:layout_height="174dp"
+                    android:layout_marginStart="224dp"
                     android:rotation="-26"
                     android:src="@drawable/boy_child"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"

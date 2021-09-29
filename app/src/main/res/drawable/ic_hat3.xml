@@ -3,8 +3,8 @@
 
     <item
         android:drawable="@drawable/hat3"
-        android:width="60dp"
-        android:height="60dp"
+        android:width="70dp"
+        android:height="70dp"
         />
 
 </layer-list >
