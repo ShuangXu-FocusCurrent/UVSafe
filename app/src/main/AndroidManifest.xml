@@ -54,6 +54,12 @@
             android:name=".views.quiz.Category3.Q2Category3Activity"
             android:label="Quiz - About Sunscreen" />
         <activity
+            android:name=".views.quiz.Category3.Q3Category3Activity"
+            android:label="Quiz - About Sunscreen" />
+        <activity
+            android:name=".views.quiz.Category3.Q4Category3Activity"
+            android:label="Quiz - About Sunscreen" />
+        <activity
             android:name=".views.quiz.Category4.Q1Category4Activity"
             android:label="Quiz - Melanoma" />
         <activity

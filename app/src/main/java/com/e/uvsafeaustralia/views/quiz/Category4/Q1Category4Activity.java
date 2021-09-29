@@ -99,7 +99,7 @@ public class Q1Category4Activity extends AppCompatActivity {
                 userAnswerC4Q1.setUser(player);
                 userAnswerC4Q1.setQuestion(question);
                 userAnswerC4Q1.setSelected(question.getAnswerOption2());
-                userAnswerC4Q1.setStatus(1);
+                userAnswerC4Q1.setStatus(0);
                 recordAnswer(userAnswersCategory4, userAnswerC4Q1);
                 disableAnswerOptions();
                 showFeedback("wrong", question);
@@ -116,7 +116,7 @@ public class Q1Category4Activity extends AppCompatActivity {
                 userAnswerC4Q1.setUser(player);
                 userAnswerC4Q1.setQuestion(question);
                 userAnswerC4Q1.setSelected(question.getAnswerOption3());
-                userAnswerC4Q1.setStatus(0);
+                userAnswerC4Q1.setStatus(1);
                 recordAnswer(userAnswersCategory4, userAnswerC4Q1);
                 disableAnswerOptions();
                 showFeedback("right", question);

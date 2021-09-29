@@ -66,13 +66,13 @@ public class QuestionDbUploader extends Worker {
                 dbManager.insertQuestion(
                         CATEGORY1,
                         3,
-                        "I’m a friendly sun, what is my UV level?",
+                        "Which months UV level is at the lowest daily average in Melbourne?",
                         "Nov - Jan",
                         "Feb - Apr",
                         "May - Jul",
                         "Aug - Oct",
                         "May - Jul",
-                        "Wingter is when the UV level is at its lowest daily average.");
+                        "Winter is when the UV level is at its lowest daily average.");
                 dbManager.insertQuestion(
                         CATEGORY1,
                         4,

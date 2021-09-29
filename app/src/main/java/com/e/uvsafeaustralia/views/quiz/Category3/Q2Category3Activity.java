@@ -111,14 +111,24 @@ public class Q2Category3Activity extends AppCompatActivity {
             }
         });
 
-//        binding.buttonCat3Q3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Q2Category3Activity.this, Q3Category3Activity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
+        binding.buttonCat3Q3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Q2Category3Activity.this, Q3Category3Activity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+
+        binding.buttonCat3Q4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Q2Category3Activity.this, Q4Category3Activity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
         binding.buttonCat3End.setOnClickListener(new View.OnClickListener() {
             @Override
