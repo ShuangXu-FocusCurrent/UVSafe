@@ -7,16 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.e.uvsafeaustralia.databinding.ActivityCategory1ReviewBinding;
-import com.e.uvsafeaustralia.databinding.ActivityCategory3ReviewBinding;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
 public class Category3ReviewActivity extends AppCompatActivity {
-    private ActivityCategory3ReviewBinding binding;
+    private ActivityCategory1ReviewBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCategory3ReviewBinding.inflate(getLayoutInflater());
+        binding = ActivityCategory1ReviewBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
