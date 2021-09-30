@@ -11,6 +11,7 @@
         android:id="@+id/scrollView4"
         android:layout_width="396dp"
         android:layout_height="662dp"
+        android:background="@drawable/quiz_main_bcg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,10 +50,21 @@
                     app:layout_constraintStart_toStartOf="@+id/quiz_bcg_top"
                     app:layout_constraintTop_toTopOf="@+id/quiz_bcg_top" />
 
+                <!--<ImageView
+                    android:id="@+id/question_bcg"
+                    android:layout_width="280dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/question_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.612"
+                    app:layout_constraintStart_toStartOf="@+id/quiz_bcg_top"
+                    app:layout_constraintTop_toTopOf="@+id/quiz_bcg_top" />-->
+
                 <ImageView
                     android:id="@+id/thinking_boy"
                     android:layout_width="113dp"
-                    android:layout_height="186dp"
+                    android:layout_height="116dp"
                     android:contentDescription="ignore"
                     android:src="@drawable/thinking_boy"
                     app:layout_constraintStart_toStartOf="parent"
@@ -62,15 +74,20 @@
                     android:id="@+id/textViewCat3Q1"
                     android:layout_width="281dp"
                     android:layout_height="144dp"
+                    android:layout_marginLeft="6dp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="15dp"
                     android:text="Question"
                     android:textColor="#535151"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/question_bcg"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/question_bcg" />
+                    app:layout_constraintTop_toTopOf="@+id/question_bcg"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/buttonOpt1Answer"
@@ -78,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
                     android:layout_marginLeft="100dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="200dp"
                     android:layout_marginRight="200dp"
                     android:fontFamily="@font/concert_one"
@@ -119,6 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/waiting_img"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="@+id/buttonOpt2Answer"
@@ -130,7 +148,7 @@
                     android:id="@+id/feedbackWrong"
                     android:layout_width="360dp"
                     android:layout_height="146dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="20dp"
                     android:scaleX="1.2"
                     android:src="@drawable/question_background"
                     android:visibility="invisible"
@@ -392,6 +410,23 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
+                    android:id="@+id/buttonCat3Q3_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:background="@drawable/quz_button_active"
+                    android:src="@drawable/quz_button_active"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q2"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonCat3Q4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q2"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q2"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <ImageButton
                     android:id="@+id/buttonCat3Q4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -401,6 +436,20 @@
                     android:src="@drawable/quiz_btn_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q3"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q3"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageButton
+                    android:id="@+id/buttonCat3Q4_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:background="@drawable/quz_button_active"
+                    android:src="@drawable/quz_button_active"
+                    android:visibility="invisible"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/buttonCat3Q3"
                     app:layout_constraintTop_toTopOf="@+id/buttonCat3Q3"
