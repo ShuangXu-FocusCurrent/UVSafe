@@ -40,6 +40,10 @@
     <string name="correctText1">Yayyy!!</string>
     <string name="correctText2">You are correct</string>
     <string name="correctText3">The correct answer is</string>
+    <string name= "reportText2"> Here is the result of your quiz </string>
+    <string name ="reportText3">Want to know where you got wrong?</string>
+    <string name = "reportText4">Click on each category below..</string>
+    <string name = "cat1"> Sun Protection</string>
 
 
 </resources>
