@@ -116,8 +116,7 @@
             android:parentActivityName=".views.quiz.QuizFourBlocksActivity" />
         <activity android:name=".views.quiz.leaderboard.ClearLeaderboardActivity" />
         <activity android:name=".views.quiz.reportWithReview.ReportActivity"
-            android:label="Quiz Report"
-            android:parentActivityName=".views.quiz.leaderboard.LeaderboardActivity"/>
+            android:label="Quiz Report" />
         <activity
             android:name=".views.quiz.reportWithReview.Category1ReviewActivity"
             android:label="Review - About UV"

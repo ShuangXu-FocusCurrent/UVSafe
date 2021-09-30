@@ -7,15 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.e.uvsafeaustralia.databinding.ActivityQ1Category1Binding;
 import com.e.uvsafeaustralia.databinding.ActivityQ1Category2Binding;
 import com.e.uvsafeaustralia.models.AnswerModel;
 import com.e.uvsafeaustralia.models.QuestionModel;
 import com.e.uvsafeaustralia.models.UserModel;
-import com.e.uvsafeaustralia.views.quiz.Category1.Q1Category1Activity;
-import com.e.uvsafeaustralia.views.quiz.Category1.Q2Category1Activity;
-import com.e.uvsafeaustralia.views.quiz.Category1.Q3Category1Activity;
-import com.e.uvsafeaustralia.views.quiz.Category1.Q4Category1Activity;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
 import java.util.ArrayList;
@@ -24,7 +19,6 @@ import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.NOT_SELECT
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.SELECTED_BTN_COLOUR;
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.getUserAnswer;
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.recordAnswer;
-import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.userAnswersCategory1;
 import static com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity.userAnswersCategory2;
 
 public class Q1Category2Activity extends AppCompatActivity {
