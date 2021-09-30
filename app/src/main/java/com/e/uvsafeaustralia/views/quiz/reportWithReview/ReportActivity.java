@@ -80,10 +80,7 @@ public class ReportActivity extends AppCompatActivity {
         binding.c1Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle c1bundle = new Bundle();
-                c1bundle.putParcelableArrayList("userAnswersCategory1", userAnswersCategory1);
                 Intent intent = new Intent( ReportActivity.this , Category1ReviewActivity.class);
-                intent.putExtras(c1bundle);
                 startActivity(intent);
             }
         });
@@ -91,10 +88,7 @@ public class ReportActivity extends AppCompatActivity {
         binding.c2Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle c2bundle = new Bundle();
-                c2bundle.putParcelableArrayList("userAnswersCategory2", userAnswersCategory2);
                 Intent intent = new Intent( ReportActivity.this , Category2ReviewActivity.class);
-                intent.putExtras(c2bundle);
                 startActivity(intent);
             }
         });
@@ -102,10 +96,7 @@ public class ReportActivity extends AppCompatActivity {
         binding.c3Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle c3bundle = new Bundle();
-                c3bundle.putParcelableArrayList("userAnswersCategory3", userAnswersCategory3);
                 Intent intent = new Intent( ReportActivity.this , Category3ReviewActivity.class);
-                intent.putExtras(c3bundle);
                 startActivity(intent);
             }
         });
@@ -113,10 +104,7 @@ public class ReportActivity extends AppCompatActivity {
         binding.c4Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle c4bundle = new Bundle();
-                c4bundle.putParcelableArrayList("userAnswersCategory4", userAnswersCategory4);
                 Intent intent = new Intent( ReportActivity.this , Category4ReviewActivity.class);
-                intent.putExtras(c4bundle);
                 startActivity(intent);
             }
         });

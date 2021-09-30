@@ -127,11 +127,11 @@
             android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <activity
             android:name=".views.quiz.reportWithReview.Category3ReviewActivity"
-            android:label="Review - Melanoma"
+            android:label="Review - About Sunscreen"
             android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <activity
         android:name=".views.quiz.reportWithReview.Category4ReviewActivity"
-        android:label="Review - About Sunscreen"
+        android:label="Review - About Melanoma"
         android:parentActivityName=".views.quiz.reportWithReview.ReportActivity" />
         <receiver android:name=".helper.AlarmReceiver" />
     </application>
