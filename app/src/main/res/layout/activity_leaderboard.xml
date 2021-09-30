@@ -28,7 +28,7 @@
                 android:orientation="vertical">
 
                 <pl.droidsonroids.gif.GifImageView
-                    android:id="@+id/lb_gif"
+                    android:id="@+id/gifImageView"
                     android:layout_width="390dp"
                     android:layout_height="192dp"
                     android:layout_marginStart="4dp"
@@ -96,7 +96,7 @@
                     android:layout_marginStart="146dp"
                     android:layout_marginTop="129dp"
                     app:layout_constraintStart_toStartOf="@+id/lb_pillars"
-                    app:layout_constraintTop_toTopOf="@+id/lb_gif"
+                    app:layout_constraintTop_toTopOf="@+id/gifImageView"
                     app:srcCompat="@drawable/gold" />
 
                 <ImageView

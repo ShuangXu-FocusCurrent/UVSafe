@@ -4,369 +4,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lb_bcg2"
-    android:scaleY="1.1"
-    android:textAlignment="gravity"
     tools:context=".views.quiz.reportWithReview.ReportActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView5"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+    <Button
+        android:id="@+id/backMainQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Back to main quiz"
+        app:layout_constraintEnd_toEndOf="@+id/c4Review"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/c2Review"
+        app:layout_constraintTop_toBottomOf="@+id/c4Review" />
+
+    <Button
+        android:id="@+id/c1Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Category1"
+        app:layout_constraintBottom_toTopOf="@+id/c2Review"
+        app:layout_constraintEnd_toStartOf="@+id/c3Review"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/c3Review"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/c3Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:text="Category3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalWrong" />
 
+    <Button
+        android:id="@+id/c2Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category2"
+        app:layout_constraintBottom_toBottomOf="@+id/c4Review"
+        app:layout_constraintEnd_toStartOf="@+id/c4Review"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/c1Review"
+        app:layout_constraintTop_toTopOf="@+id/c4Review"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <ImageView
-                android:id="@+id/report_bcg"
-                android:layout_width="376dp"
-                android:layout_height="178dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.47"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                app:srcCompat="@drawable/report_bcg" />
+    <Button
+        android:id="@+id/c4Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Category4"
+        app:layout_constraintEnd_toEndOf="@+id/c3Review"
+        app:layout_constraintTop_toBottomOf="@+id/c3Review" />
 
-            <TextView
-                android:id="@+id/textViewAttempt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Total Attempted"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/report_bcg"
-                app:layout_constraintTop_toTopOf="@+id/report_bcg" />
+    <ProgressBar
+        android:id="@+id/progressBarAttempt"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewAttempt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAttempt" />
 
+    <TextView
+        android:id="@+id/textViewAttempt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Total Attempted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c3Review"
-                android:layout_width="133dp"
-                android:layout_height="147dp"
-                android:layout_marginStart="124dp"
-                android:background="@drawable/puzzle2"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:scaleX="1.19"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/c1Review"
-                app:layout_constraintTop_toTopOf="@+id/c1Review" />
+    <TextView
+        android:id="@+id/textViewCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="Total Correct"
+        app:layout_constraintStart_toStartOf="@+id/textViewAttempt"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarAttempt" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c1Review"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="86dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/puzzle1"
-                android:fontFamily="@font/concert_one"
-                android:scaleX="1.19"
-                android:textAlignment="center"
-                android:textColor="#FAF9F9"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intructTextBcg" />
+    <TextView
+        android:id="@+id/textViewQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questions"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAttempted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewAttempted"
+        app:layout_constraintTop_toTopOf="@+id/textViewAttempted"
+        app:layout_constraintVertical_bias="1.0" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c2Review"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="115dp"
-                android:background="@drawable/puzzle3"
-                android:gravity="center"
-                android:scaleX="1.15"
-                android:scaleY="1.15"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/c1Review" />
+    <ProgressBar
+        android:id="@+id/progressBarCorrect"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewCorrect"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCorrect" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c4Review"
-                android:layout_width="145dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="115dp"
-                android:layout_marginTop="124dp"
-                android:layout_marginEnd="2dp"
-                android:background="@drawable/puzzle4"
-                android:scaleX="1.05"
-                app:layout_constraintEnd_toEndOf="@+id/c3Review"
-                app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toTopOf="@+id/c3Review" />
+    <TextView
+        android:id="@+id/textViewAttempted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="4dp"
+        android:text="Attempted"
+        app:layout_constraintStart_toEndOf="@+id/textViewAttempt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAttempt" />
 
-            <ProgressBar
-                android:id="@+id/progressBarAttempt"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="337dp"
-                android:progressBackgroundTint="#FE6D6D"
-                android:progressTint="#FE6D6D"
-                android:scaleY="3"
-                app:layout_constraintStart_toStartOf="@+id/textViewAttempt"
-                app:layout_constraintTop_toBottomOf="@+id/textViewAttempt" />
+    <TextView
+        android:id="@+id/textViewTotalAttempted1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attempted"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTotalCorrect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalCorrect"
+        app:layout_constraintTop_toTopOf="@+id/textViewTotalCorrect"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/textViewCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Total Correct"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/progressBarAttempt"
-                app:layout_constraintTop_toBottomOf="@+id/progressBarAttempt" />
+    <TextView
+        android:id="@+id/textViewTotalCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="4dp"
+        android:text="Correct"
+        app:layout_constraintStart_toEndOf="@+id/textViewCorrect"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCorrect" />
 
-            <TextView
-                android:id="@+id/textViewQuestions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/concert_one"
-                android:text="16"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewAttempted"
-                app:layout_constraintTop_toTopOf="@+id/textViewAttempted" />
+    <TextView
+        android:id="@+id/textViewWrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="Total Wrong"
+        app:layout_constraintStart_toStartOf="@+id/textViewCorrect"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarCorrect" />
 
-            <ProgressBar
-                android:id="@+id/progressBarCorrect"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="337dp"
-                android:progressBackgroundTint="#4D4BD23F"
-                android:progressTint="#4BD23F"
-                android:scaleY="3"
-                app:layout_constraintStart_toStartOf="@+id/textViewCorrect"
-                app:layout_constraintTop_toBottomOf="@+id/textViewCorrect" />
+    <ProgressBar
+        android:id="@+id/progressBarWrong"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewWrong"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWrong" />
 
-            <TextView
-                android:id="@+id/textViewAttempted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="188dp"
-                android:fontFamily="@font/concert_one"
-                android:text="16"
-                android:textColor="#FE6D6D"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewAttempt"
-                app:layout_constraintTop_toTopOf="@+id/textViewAttempt" />
+    <TextView
+        android:id="@+id/textViewTotalWrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="4dp"
+        android:text="Wrong"
+        app:layout_constraintStart_toEndOf="@+id/textViewWrong"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWrong" />
 
-            <TextView
-                android:id="@+id/textViewTotalAttempted1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/concert_one"
-                android:text="16"
-                android:textColor="#FE6D6D"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewTotalWrong"
-                app:layout_constraintTop_toTopOf="@+id/textViewTotalWrong" />
-
-            <TextView
-                android:id="@+id/textViewTotalCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="212dp"
-                android:fontFamily="@font/concert_one"
-                android:text="06"
-                android:textColor="#4BD23F"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewCorrect"
-                app:layout_constraintTop_toTopOf="@+id/textViewCorrect" />
-
-            <TextView
-                android:id="@+id/textViewWrong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Total Wrong"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/progressBarCorrect"
-                app:layout_constraintTop_toBottomOf="@+id/progressBarCorrect" />
-
-            <ProgressBar
-                android:id="@+id/progressBarWrong"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="337dp"
-                android:progressBackgroundTint="#4FF5A548"
-                android:progressTint="#F5A548"
-                android:scaleY="3"
-                app:layout_constraintStart_toStartOf="@+id/textViewWrong"
-                app:layout_constraintTop_toBottomOf="@+id/textViewWrong" />
-
-            <TextView
-                android:id="@+id/textViewTotalWrong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:fontFamily="@font/concert_one"
-                android:text="10"
-                android:textColor="#F5A548"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewWrong"
-                app:layout_constraintTop_toTopOf="@+id/textViewWrong" />
-
-            <TextView
-                android:id="@+id/textViewTotalAttempted2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/concert_one"
-                android:text="16"
-                android:textColor="#FE6D6D"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textViewTotalCorrect"
-                app:layout_constraintTop_toTopOf="@+id/textViewTotalCorrect" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="238dp"
-                android:layout_height="234dp"
-                android:layout_marginTop="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/report_img1" />
-
-            <TextView
-                android:id="@+id/reportText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="108dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Hi"
-                android:textColor="#1B1919"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintHorizontal_bias="0.357"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="80dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="6dp"
-                android:fontFamily="@font/concert_one"
-                android:gravity="start|fill_horizontal"
-                android:text="Sammy"
-                android:textColor="#1B1919"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/reportText1"
-                app:layout_constraintTop_toTopOf="@+id/reportText1" />
-
-            <TextView
-                android:id="@+id/reportText2"
-                android:layout_width="134dp"
-                android:layout_height="64dp"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:text="@string/reportText2"
-                android:textColor="#1B1919"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/user_name"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/backMainQuiz"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:fontFamily="@font/concert_one"
-                android:text="Back to main quiz"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/c3Review"
-                app:layout_constraintHorizontal_bias="0.458"
-                app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toBottomOf="@+id/c4Review"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <ImageView
-                android:id="@+id/intructTextBcg"
-                android:layout_width="314dp"
-                android:layout_height="138dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="16dp"
-                android:scaleX="1.5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/report_child"
-                app:layout_constraintTop_toTopOf="@+id/report_child"
-                app:srcCompat="@drawable/question_background" />
-
-            <pl.droidsonroids.gif.GifImageView
-                android:id="@+id/lb_gif"
-                android:layout_width="64dp"
-                android:layout_height="59dp"
-                android:src="@drawable/arrow_gif"
-                app:layout_constraintEnd_toEndOf="@+id/reportText5"
-                app:layout_constraintStart_toStartOf="@+id/reportText5"
-                app:layout_constraintTop_toBottomOf="@+id/reportText5" />
-
-            <ImageView
-                android:id="@+id/report_child"
-                android:layout_width="162dp"
-                android:layout_height="188dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="264dp"
-                android:rotationY="195"
-                android:scaleY="1.3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/report_bcg"
-                app:srcCompat="@drawable/quiz_boy_child" />
-
-            <TextView
-                android:id="@+id/reportText4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/concert_one"
-                android:text="@string/reportText3"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/intructTextBcg"
-                app:layout_constraintHorizontal_bias="0.6"
-                app:layout_constraintStart_toStartOf="@+id/intructTextBcg"
-                app:layout_constraintTop_toTopOf="@+id/intructTextBcg" />
-
-            <TextView
-                android:id="@+id/reportText5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/concert_one"
-                android:text="@string/reportText4"
-                android:textColor="#1B1919"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/reportText4"
-                app:layout_constraintHorizontal_bias="0.422"
-                app:layout_constraintStart_toStartOf="@+id/reportText4"
-                app:layout_constraintTop_toBottomOf="@+id/reportText4" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
+    <TextView
+        android:id="@+id/textViewTotalAttempted2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attempted"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTotalWrong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalWrong"
+        app:layout_constraintTop_toTopOf="@+id/textViewTotalWrong"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
