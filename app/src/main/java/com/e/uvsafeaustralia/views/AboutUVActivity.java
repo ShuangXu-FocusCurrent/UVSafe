@@ -50,12 +50,6 @@ public class AboutUVActivity extends AppCompatActivity {
             }
         });
 
-        binding.perthMarker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_perth);
-            }
-        });
 
         binding.darwinMarker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +61,7 @@ public class AboutUVActivity extends AppCompatActivity {
         binding.actMarker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_);
+                binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_canberra);
             }
         });
 
@@ -85,17 +79,11 @@ public class AboutUVActivity extends AppCompatActivity {
             }
         });
 
-        binding.melbourneMarker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_melbourne);
-            }
-        });
 
         binding.hobartMarker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_);
+                binding.uvDetailsCapital.setImageResource(R.drawable.uv_index_hobart);
             }
         });
 

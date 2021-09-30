@@ -50,6 +50,10 @@ public class Q1Category4Activity extends AppCompatActivity {
                 question = questionItem;
 
         binding.textViewCat3Q1.setText(question.getQuestion());
+        binding.buttonCat4Q1Incative.setVisibility(View.INVISIBLE);
+        binding.buttonCat4Q2Active.setVisibility(View.INVISIBLE);
+        binding.buttonCat4Q3Active.setVisibility(View.INVISIBLE);
+        binding.buttonCat4Q4Active.setVisibility(View.INVISIBLE);
         binding.buttonOpt1Answer.setText(question.getAnswerOption1());
         binding.buttonOpt2Answer.setText(question.getAnswerOption2());
         binding.buttonOpt3Answer.setText(question.getAnswerOption3());

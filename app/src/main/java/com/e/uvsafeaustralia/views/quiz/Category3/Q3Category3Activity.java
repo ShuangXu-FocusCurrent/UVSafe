@@ -46,8 +46,10 @@ public class Q3Category3Activity extends AppCompatActivity {
                 question = questionItem;
 
         binding.textViewCat3Q1.setText(question.getQuestion());
-//        binding.buttonCat4Q1Active.setVisibility(View.VISIBLE);
-//        binding.buttonCat4Q1Incative.setVisibility(View.VISIBLE);
+        binding.buttonCat4Q1Incative.setVisibility(View.VISIBLE);
+        binding.buttonCat4Q2Active.setVisibility(View.INVISIBLE);
+        binding.buttonCat4Q3Active.setVisibility(View.VISIBLE);
+        binding.buttonCat4Q4Active.setVisibility(View.INVISIBLE);
         binding.buttonOpt1Answer.setText(question.getAnswerOption1());
         binding.buttonOpt2Answer.setText(question.getAnswerOption2());
         binding.buttonOpt3Answer.setText(question.getAnswerOption3());
@@ -125,7 +127,7 @@ public class Q3Category3Activity extends AppCompatActivity {
         bundle.putParcelable("player", player);
         bundle.putParcelableArrayList("questionsCategory3", questionsCategory3);
 
-        binding.buttonCat4Q1.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCat4Q1Incative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Q3Category3Activity.this, Q1Category3Activity.class);

@@ -2,6 +2,7 @@ package com.e.uvsafeaustralia.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,32 @@ public class AboutMelanomaActivity extends AppCompatActivity {
             }
         });
 
+        binding.melanomaOrgLinkId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.melanoma.org.au/understanding-melanoma/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        binding.cancerCouncilLinkId1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cancercouncil.com.au/melanoma/about-melanoma"));
+                startActivity(browserIntent);
+            }
+        });
+
+        binding.cancerCouncilLinkId2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"));
+                startActivity(browserIntent);
+            }
+        });
+
+
+
     }
     public void playAboutMelanomaVideo1() {
         Uri uri = Uri.parse("android.resource://com.e.uvsafeaustralia/"+ R.raw.aboutmelanoma1);
@@ -52,4 +79,6 @@ public class AboutMelanomaActivity extends AppCompatActivity {
         mediaController2.setAnchorView(binding.aboutMelanomaVideo2);
         binding.aboutMelanomaVideo2.start();
     }
+
+
 }
