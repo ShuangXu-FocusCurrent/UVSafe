@@ -30,25 +30,25 @@
 
         <TextView
             android:id="@+id/attemptedNumber"
-            android:layout_width="0dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:fontFamily="@font/concert_one"
             android:text="04/16"
-            android:textColor="#401F1F"
+            android:textColor="#2E2C2C"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/name"
             app:layout_constraintTop_toTopOf="@+id/name" />
 
         <TextView
             android:id="@+id/correctAnswerNumber"
-            android:layout_width="0dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:fontFamily="@font/concert_one"
-            android:text="02/04"
+            android:text="1/04"
             android:textColor="#2E2C2C"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/attemptedNumber"
@@ -58,11 +58,10 @@
             android:id="@+id/trophy"
             android:layout_width="100dp"
             android:layout_height="72dp"
-            android:layout_marginStart="52dp"
             android:layout_weight="1"
             android:padding="8dp"
             android:src="@drawable/originalleaderboard"
-            app:layout_constraintStart_toStartOf="@+id/correctAnswerNumber"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

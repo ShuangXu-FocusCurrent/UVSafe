@@ -228,7 +228,7 @@
                     android:id="@+id/feedbackConstraintLayout"
                     android:layout_width="362dp"
                     android:layout_height="214dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/feedbackWrong">

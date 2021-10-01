@@ -47,7 +47,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c3Review"
+                android:id="@+id/c4Review"
                 android:layout_width="133dp"
                 android:layout_height="147dp"
                 android:layout_marginStart="124dp"
@@ -74,7 +74,7 @@
                 android:textColor="#FAF9F9"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intructTextBcg" />
+                app:layout_constraintTop_toBottomOf="@+id/instructTextBcg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/c2Review"
@@ -91,17 +91,15 @@
                 app:layout_constraintTop_toTopOf="@+id/c1Review" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c4Review"
+                android:id="@+id/c3Review"
                 android:layout_width="145dp"
                 android:layout_height="130dp"
-                android:layout_marginStart="115dp"
+                android:layout_marginStart="118dp"
                 android:layout_marginTop="124dp"
-                android:layout_marginEnd="2dp"
                 android:background="@drawable/puzzle4"
                 android:scaleX="1.05"
-                app:layout_constraintEnd_toEndOf="@+id/c3Review"
                 app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toTopOf="@+id/c3Review" />
+                app:layout_constraintTop_toTopOf="@+id/c4Review" />
 
             <ProgressBar
                 android:id="@+id/progressBarAttempt"
@@ -291,7 +289,7 @@
                 android:id="@+id/backMainQuiz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="32dp"
                 android:fontFamily="@font/concert_one"
                 android:text="Back to main quiz"
@@ -301,11 +299,11 @@
                 app:layout_constraintEnd_toEndOf="@+id/c3Review"
                 app:layout_constraintHorizontal_bias="0.458"
                 app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toBottomOf="@+id/c4Review"
+                app:layout_constraintTop_toBottomOf="@+id/c2Review"
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
-                android:id="@+id/intructTextBcg"
+                android:id="@+id/instructTextBcg"
                 android:layout_width="314dp"
                 android:layout_height="138dp"
                 android:layout_marginStart="100dp"
@@ -347,10 +345,10 @@
                 android:text="@string/reportText3"
                 android:textColor="#1B1919"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/intructTextBcg"
+                app:layout_constraintEnd_toEndOf="@+id/instructTextBcg"
                 app:layout_constraintHorizontal_bias="0.6"
-                app:layout_constraintStart_toStartOf="@+id/intructTextBcg"
-                app:layout_constraintTop_toTopOf="@+id/intructTextBcg" />
+                app:layout_constraintStart_toStartOf="@+id/instructTextBcg"
+                app:layout_constraintTop_toTopOf="@+id/instructTextBcg" />
 
             <TextView
                 android:id="@+id/reportText5"

@@ -30,9 +30,9 @@
 
     <string name="MIA">Melanoma Institute Australia</string>
     <string name="miaLink">https://www.melanoma.org.au/understanding-melanoma/</string>
-    <string name="NSW">Cancer Counsil NSW</string>
+    <string name="NSW">Cancer Council NSW</string>
     <string name="nswLink">https://www.cancercouncil.com.au/melanoma/about-melanoma</string>
-    <string name="VIC">Cancer Counsil Victoria</string>
+    <string name="VIC">Cancer Council Victoria</string>
     <string name="vicLink">https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html</string>
     <string name="start_quiz">Let\'s get started</string>
     <string name="wrongText1">Oh No !!</string>
@@ -44,6 +44,9 @@
     <string name ="reportText3">Want to know where you got wrong?</string>
     <string name = "reportText4">Click on each category below..</string>
     <string name = "cat1"> Sun Protection</string>
+    <string name = "reviewText1">Here\'s a review on the questions you attempted </string>
+    <string name = "reviewText2">We appreciate your effort..</string>
+    <string name = "reviewText3">Seek knowledge and share it your with friends..</string>
 
 
 </resources>

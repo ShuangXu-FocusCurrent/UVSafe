@@ -550,7 +550,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:layout_height="55dp"
                     android:fontFamily="@font/abel"
                     android:gravity="center"
-                    android:text="The first sign of Melanoma is often a new spot or a change in an exisiting mole"
+                    android:text="The first sign of Melanoma is often a new spot or a change in an existing mole"
                     android:textColor="#121111"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/signs_background"
@@ -757,7 +757,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:layout_width="232dp"
                     android:layout_height="87dp"
                     android:gravity="center"
-                    android:text="Information Retrieved from: Melanoma Institute Australia, Cancer Counsil NSW and Cancer Counsil Victoria"
+                    android:text="Information Retrieved from: Melanoma Institute Australia, Cancer Council NSW and Cancer Council Victoria"
                     app:layout_constraintEnd_toEndOf="@+id/resource_bcg"
                     app:layout_constraintStart_toStartOf="@+id/resource_bcg"
                     app:layout_constraintTop_toBottomOf="@+id/resource_bcg" />

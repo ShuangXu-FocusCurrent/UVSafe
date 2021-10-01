@@ -179,7 +179,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center_horizontal"
-                android:text="Hanging on to hope was crucial ! Watch Juilia’s story about how she got through it and where she went for help"
+                android:text="Hanging on to hope was crucial ! Watch Julia’s story about how she got through it and where she went for help"
                 android:textAlignment="center"
                 android:textColor="#C73411"
                 android:textSize="20dp" />
@@ -263,7 +263,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                     tools:ignore="RtlCompat" />
             </RelativeLayout>
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -337,7 +337,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                         android:layout_gravity="center"
                         android:fontFamily="@font/concert_one"
                         android:paddingBottom="10dp"
-                        android:text="Cancer Counsil NSW"
+                        android:text="@string/NSW"
                         android:textSize="15sp" />
 
                     <TextView
@@ -357,7 +357,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                         android:layout_gravity="center"
                         android:fontFamily="@font/concert_one"
                         android:paddingBottom="10dp"
-                        android:text="Cancer Counsil Victoria"
+                        android:text="@string/VIC"
                         android:textSize="15sp" />
 
                     <TextView
