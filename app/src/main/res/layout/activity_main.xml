@@ -8,45 +8,21 @@
 
     <Button
         android:id="@+id/startAppBtn"
-        android:layout_width="159dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/concert_one"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="@string/star_here"
         android:textColor="#FFFFFF"
-        android:textSize="34sp"
+        android:textSize="@dimen/_15ssp"
         app:backgroundTint="#FCCB3E"
-        app:cornerRadius="20dp"
+        app:cornerRadius="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/welcome_img"
-        android:layout_width="386dp"
-        android:layout_height="427dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"
-        app:srcCompat="@drawable/welcome_pic"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/logo_img"
-        android:layout_width="181dp"
-        android:layout_height="261dp"
-        android:layout_marginBottom="452dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_transparent"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintEnd_toEndOf="@+id/welcome_txt"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="@+id/welcome_txt"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_txt"
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <TextView
         android:id="@+id/welcome_txt"
@@ -59,27 +35,52 @@
         android:shadowRadius="-1"
         android:text="Let's Be Skin Smart"
         android:textColor="#1976A9"
-        android:textSize="34sp"
+        android:textSize="@dimen/_20ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_img"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/ultWe"
-        android:layout_width="388dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:scaleX="1.2"
         android:scaleY="1.2"
         android:text="@string/ultrawe"
-        android:textSize="12sp"
+        android:textSize="@dimen/_10ssp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startAppBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/startAppBtn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/welcome_img"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_280sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/welcome_pic"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_transparent"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

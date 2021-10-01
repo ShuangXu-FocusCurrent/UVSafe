@@ -159,15 +159,14 @@ public class HomePageFragment extends Fragment {
                 binding.uvIndex.setText(String.valueOf(sInt));
                 if(sInt>=0 && sInt<3){
                     binding.uvmeter.setImageResource(R.drawable.uv_low);
-                    binding.buttonInfo.setVisibility(View.GONE);
                     binding.imageViewBoy.setVisibility(View.VISIBLE);
                     binding.imageViewBoy2.setVisibility(View.VISIBLE);
+                    binding.buttonInfo.setVisibility(View.GONE);
                     binding.uvInstrcut2.setVisibility(View.VISIBLE);
                     binding.uvInstrcut.setVisibility(View.GONE);
                 }if(sInt>=3 && sInt<6){
                     binding.uvmeter.setImageResource(R.drawable.uv_moderate);
                     above3View();
-                    binding.uvInstrcut2.setText(R.string.protectRequired);
                 }if(sInt>=6 && sInt<8){
                     binding.uvmeter.setImageResource(R.drawable.uv_high);
                     above3View();
@@ -240,9 +239,8 @@ public class HomePageFragment extends Fragment {
     public void above3View(){
         binding.buttonInfo.setVisibility(View.VISIBLE);
         binding.imageViewBoy.setVisibility(View.VISIBLE);
-        binding.imageViewBoy2.setVisibility(View.GONE);
-        binding.uvInstrcut.setVisibility(View.VISIBLE);
         binding.uvInstrcut2.setVisibility(View.GONE);
+        binding.uvInstrcut.setVisibility(View.VISIBLE);
     }
 
     public void onDestroyView() {
