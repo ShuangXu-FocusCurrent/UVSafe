@@ -16,9 +16,12 @@
             android:id="@+id/scrollView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -37,46 +40,46 @@
                     android:gravity="center" />
 
                 <ImageButton
+                    android:id="@+id/aboutUVButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_24sdp"
                     android:background="@drawable/about_us"
-                    android:gravity="center"
-                    android:id="@+id/aboutUVButton" />
+                    android:gravity="center" />
 
                 <ImageButton
+                    android:id="@+id/sunProtectionButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_24sdp"
                     android:background="@drawable/sun_protection"
-                    android:gravity="center"
-                    android:id="@+id/sunProtectionButton" />
+                    android:gravity="center" />
 
                 <ImageButton
+                    android:id="@+id/aboutSunscreenButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_24sdp"
                     android:background="@drawable/about_sunscreen"
-                    android:gravity="center"
-                    android:id="@+id/aboutSunscreenButton" />
+                    android:gravity="center" />
 
                 <ImageButton
                     android:id="@+id/aboutMelanomaButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_24sdp"
                     android:background="@drawable/about_melanoma"
                     android:gravity="center"
                     android:visibility="visible" />
@@ -84,10 +87,10 @@
                 <ImageButton
                     android:id="@+id/melanomaRisksButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/_8sdp"
                     android:background="@drawable/melanoma_risk_factors"
                     android:gravity="center"
                     android:visibility="visible" />
@@ -95,10 +98,10 @@
                 <ImageButton
                     android:id="@+id/melanomaStatsButton"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="@dimen/_90sdp"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/_8sdp"
                     android:background="@drawable/melanoma_stats"
                     android:gravity="center"
                     android:visibility="visible" />
