@@ -51,8 +51,8 @@ public class QuizPageFragment extends Fragment {
         // initiate a new player
         // or clear previously saved player
         player = new UserModel();
-        binding.nameCallout.setVisibility(View.INVISIBLE);
-        binding.textUserName.setVisibility(View.INVISIBLE);
+//        binding.nameCallout.setVisibility(View.INVISIBLE);
+//        binding.textUserName.setVisibility(View.INVISIBLE);
         binding.textAddName.clearComposingText();
         binding.spinnerNamesDropdown.setSelection(0);
 
@@ -89,9 +89,9 @@ public class QuizPageFragment extends Fragment {
                 if (existingUser.getUserId() == 0) {
                     player = addUser(nicknameInput);
                     userList.add(player);
-                    binding.nameCallout.setVisibility(View.VISIBLE);
-                    binding.textUserName.setText("Hi "+ player.getNickName());
-                    binding.textUserName.setVisibility(View.VISIBLE);
+//                    binding.nameCallout.setVisibility(View.VISIBLE);
+//                    binding.textUserName.setText("Hi "+ player.getNickName());
+//                    binding.textUserName.setVisibility(View.VISIBLE);
                     binding.buttonStartQuiz.setEnabled(true);
                 }
                 else
@@ -105,8 +105,8 @@ public class QuizPageFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (parent.getItemAtPosition(position).equals("Select player")) {}
                 else {
-                    binding.nameCallout.setVisibility(View.INVISIBLE);
-                    binding.textUserName.setVisibility(View.INVISIBLE);
+//                    binding.nameCallout.setVisibility(View.INVISIBLE);
+//                    binding.textUserName.setVisibility(View.INVISIBLE);
                     existingPlayer = String.valueOf(parent.getItemAtPosition(position));
                     binding.btnConfirmSelectUser.setEnabled(true);
                 }
@@ -114,8 +114,8 @@ public class QuizPageFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                binding.nameCallout.setVisibility(View.INVISIBLE);
-                binding.textUserName.setVisibility(View.INVISIBLE);
+//                binding.nameCallout.setVisibility(View.INVISIBLE);
+//                binding.textUserName.setVisibility(View.INVISIBLE);
                 binding.btnConfirmSelectUser.setEnabled(false);
             }
         });
@@ -124,9 +124,9 @@ public class QuizPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 player = getUserDB(existingPlayer);
-                binding.textUserName.setText("Hi "+ player.getNickName());
-                binding.nameCallout.setVisibility(View.VISIBLE);
-                binding.textUserName.setVisibility(View.VISIBLE);
+//                binding.textUserName.setText("Hi "+ player.getNickName());
+//                binding.nameCallout.setVisibility(View.VISIBLE);
+//                binding.textUserName.setVisibility(View.VISIBLE);
                 binding.buttonStartQuiz.setEnabled(true);
             }
         });
