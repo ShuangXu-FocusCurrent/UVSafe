@@ -6,272 +6,309 @@
     android:layout_height="match_parent"
     tools:context=".views.functionsFragment.AlarmPageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutReminder"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/alarm_background"
-            android:layout_width="295dp"
-            android:layout_height="156dp"
+            android:id="@+id/notification_background2"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_87sdp"
             android:contentDescription="ignore"
             android:src="@drawable/alarm_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.959"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.277" />
-
-        <ImageView
-            android:id="@+id/notification_background"
-            android:layout_width="278dp"
-            android:layout_height="160dp"
-            android:contentDescription="ignore"
-            android:src="@drawable/alarm_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.069"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.879" />
-
-        <Switch
-            android:id="@+id/switchAlarm"
-            android:layout_width="120dp"
-            android:layout_height="46dp"
-            android:fontFamily="@font/concert_one"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:switchMinWidth="50dp"
-            android:textOff="Alarm turned OFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/alarm_background"
-            app:layout_constraintEnd_toEndOf="@+id/alarm_background"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="@+id/alarm_background"
-            app:layout_constraintTop_toTopOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.818" />
+            app:layout_constraintVertical_bias="0.829" />
 
         <Switch
             android:id="@+id/switchNotification"
-            android:layout_width="120dp"
-            android:layout_height="46dp"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
             android:fontFamily="@font/concert_one"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:switchMinWidth="50dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:switchMinWidth="@dimen/_30sdp"
             android:textOff="Notification Cancelled"
             android:textOn="You will receive a notification when sun protection is required"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/notification_background"
-            app:layout_constraintEnd_toEndOf="@+id/alarm_background"
-            app:layout_constraintHorizontal_bias="0.137"
-            app:layout_constraintStart_toStartOf="@+id/alarm_background"
-            app:layout_constraintTop_toTopOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.941" />
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/notification_background2"
+            app:layout_constraintEnd_toEndOf="@+id/notification_background2"
+            app:layout_constraintStart_toStartOf="@+id/notification_background2"
+            app:layout_constraintTop_toTopOf="@+id/notification_background2" />
+
+        <ImageView
+            android:id="@+id/ic_bell2"
+            android:layout_width="@dimen/_47sdp"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_145sdp"
+            android:layout_marginBottom="@dimen/_57sdp"
+            android:src="@drawable/bell_new"
+            app:layout_constraintBottom_toBottomOf="@+id/notification_background2"
+            app:layout_constraintEnd_toEndOf="@+id/notification_background2"
+            app:layout_constraintHorizontal_bias="0.588"
+            app:layout_constraintStart_toStartOf="@+id/notification_background2"
+            app:layout_constraintTop_toTopOf="@+id/notification_background2"
+            app:layout_constraintVertical_bias="0.348" />
+
+        <TextView
+            android:id="@+id/not_text_7"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_87sdp"
+            android:fontFamily="@font/alegreya"
+            android:text="Notify Me when UV index reaches 3 or above"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/notification_background2"
+            app:layout_constraintEnd_toEndOf="@+id/notification_background2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/notification_background2"
+            app:layout_constraintTop_toTopOf="@+id/notification_background2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/callout_3"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:rotationX="-11"
+            android:rotationY="182"
+            android:src="@drawable/callout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/not_text_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_80sdp"
+            android:layout_marginEnd="@dimen/_120sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:fontFamily="@font/concert_one"
+            android:text="Never Mind..."
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_3"
+            app:layout_constraintEnd_toEndOf="@+id/callout_3"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="@+id/callout_3"
+            app:layout_constraintTop_toBottomOf="@+id/not_text_"
+            app:layout_constraintVertical_bias="0.909" />
+
+        <TextView
+            android:id="@+id/not_text_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_80sdp"
+            android:layout_marginEnd="@dimen/_75sdp"
+            android:layout_marginBottom="@dimen/_27sdp"
+            android:fontFamily="@font/concert_one"
+            android:text="We Can notify you!"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_3"
+            app:layout_constraintEnd_toEndOf="@+id/callout_3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/callout_3"
+            app:layout_constraintTop_toBottomOf="@+id/not_text_4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/not_text_"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_37sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_93sdp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="Did you know UV index change throughout the day?"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_3"
+            app:layout_constraintEnd_toEndOf="@+id/callout_3"
+            app:layout_constraintHorizontal_bias="0.722"
+            app:layout_constraintStart_toStartOf="@+id/callout_3"
+            app:layout_constraintTop_toTopOf="@+id/callout_3"
+            app:layout_constraintVertical_bias="0.29" />
+
+        <ImageView
+            android:id="@+id/boy_child2"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_marginStart="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:rotation="-22"
+            android:src="@drawable/boy_child"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Switch
+            android:id="@+id/switchAlarm"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_127sdp"
+            android:layout_marginTop="@dimen/_75sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
+            android:fontFamily="@font/concert_one"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:switchMinWidth="@dimen/_35sdp"
+            android:textOff="Alarm turned OFF"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintEnd_toEndOf="@+id/alarm_background2"
+            app:layout_constraintStart_toStartOf="@+id/alarm_background2"
+            app:layout_constraintTop_toTopOf="@+id/alarm_background2" />
+
+        <ImageView
+            android:id="@+id/alarm_background2"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:contentDescription="ignore"
+            android:src="@drawable/alarm_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.897"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26999998" />
+
+        <ImageView
+            android:id="@+id/callout_"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:src="@drawable/callout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/al_text_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_63sdp"
+            android:layout_marginEnd="@dimen/_57sdp"
+            android:layout_marginBottom="@dimen/_27sdp"
+            android:fontFamily="@font/concert_one"
+            android:text="We can remind you!"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_"
+            app:layout_constraintEnd_toEndOf="@+id/callout_"
+            app:layout_constraintStart_toStartOf="@+id/callout_"
+            app:layout_constraintTop_toTopOf="@+id/callout_" />
+
+        <TextView
+            android:id="@+id/al_text_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/concert_one"
+            android:text="Forget to reapply sunblock?"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_"
+            app:layout_constraintEnd_toEndOf="@id/callout_"
+            app:layout_constraintHorizontal_bias="0.651"
+            app:layout_constraintStart_toStartOf="@+id/callout_"
+            app:layout_constraintTop_toTopOf="@+id/callout_"
+            app:layout_constraintVertical_bias="0.238" />
+
+        <TextView
+            android:id="@+id/al_text_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginBottom="@dimen/_54sdp"
+            android:fontFamily="@font/concert_one"
+            android:text="Don't Worry,"
+            android:textColor="#262424"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/callout_"
+            app:layout_constraintEnd_toEndOf="@+id/callout_"
+            app:layout_constraintHorizontal_bias="0.554"
+            app:layout_constraintStart_toStartOf="@+id/callout_"
+            app:layout_constraintTop_toTopOf="@+id/callout_"
+            app:layout_constraintVertical_bias="0.333" />
 
         <Spinner
             android:id="@+id/timeSlection"
-            android:layout_width="130dp"
+            android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/alarm_background"
-            app:layout_constraintEnd_toEndOf="@+id/alarm_background"
-            app:layout_constraintHorizontal_bias="0.46"
-            app:layout_constraintStart_toStartOf="@+id/alarm_background"
-            app:layout_constraintTop_toTopOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.765" />
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_marginEnd="@dimen/_85sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintEnd_toEndOf="@+id/alarm_background2"
+            app:layout_constraintStart_toStartOf="@+id/alarm_background2"
+            app:layout_constraintTop_toTopOf="@+id/alarm_background2" />
 
         <ImageView
-            android:id="@+id/girl_child"
-            android:layout_width="181dp"
-            android:layout_height="295dp"
-            android:layout_marginEnd="284dp"
-            android:layout_marginRight="284dp"
+            android:id="@+id/girl_child2"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_220sdp"
+            android:layout_marginEnd="@dimen/_205sdp"
             android:rotation="38"
             android:src="@drawable/girl_child"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/callout_1"
-            android:layout_width="295dp"
-            android:layout_height="332dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="416dp"
-            android:src="@drawable/callout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
         <TextView
-            android:id="@+id/al_text_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginBottom="188dp"
-            android:fontFamily="@font/concert_one"
-            android:text="Forget to reapply sunblock ?"
-            android:textColor="#262424"
-            app:layout_constraintBottom_toBottomOf="@+id/callout_1"
-            app:layout_constraintStart_toEndOf="@+id/girl_child" />
-
-        <TextView
-            android:id="@+id/al_text_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="89dp"
-            android:layout_marginRight="89dp"
-            android:fontFamily="@font/concert_one"
-            android:text="Don't Worry !"
-            android:textColor="#262424"
-            app:layout_constraintBottom_toTopOf="@+id/al_text_3"
-            app:layout_constraintEnd_toEndOf="@+id/callout_1"
-            app:layout_constraintTop_toBottomOf="@+id/al_text_1" />
-
-        <TextView
-            android:id="@+id/al_text_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="65dp"
-            android:layout_marginRight="65dp"
-            android:fontFamily="@font/concert_one"
-            android:text="We can remind you !!"
-            android:textColor="#262424"
-            app:layout_constraintBottom_toTopOf="@+id/alarm_background"
-            app:layout_constraintEnd_toEndOf="@+id/callout_1"
-            app:layout_constraintTop_toBottomOf="@+id/al_text_1"
-            app:layout_constraintVertical_bias="0.568" />
-
-        <ImageView
-            android:id="@+id/ic_alarm"
-            android:layout_width="65dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/alarm_new"
-            app:layout_constraintStart_toStartOf="@+id/alarm_background"
-            app:layout_constraintTop_toTopOf="@+id/alarm_background" />
-
-        <TextView
-            android:id="@+id/al_text_4"
-            android:layout_width="195dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="42dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginRight="26dp"
+            android:id="@+id/al_text_7"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
             android:fontFamily="@font/alegreya"
             android:text="Select the time and Switch ON the alarm"
             android:textColor="#262424"
-            app:layout_constraintEnd_toEndOf="@+id/alarm_background"
-            app:layout_constraintTop_toTopOf="@+id/alarm_background" />
-
-        <ImageView
-            android:id="@+id/boy_child"
-            android:layout_width="186dp"
-            android:layout_height="300dp"
-            android:rotation="-22"
-            android:src="@drawable/boy_child"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/not_text_5"
-            app:layout_constraintTop_toBottomOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.428" />
-
-        <ImageView
-            android:id="@+id/callout_2"
-            android:layout_width="295dp"
-            android:layout_height="460dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginBottom="52dp"
-            android:rotationX="-11"
-            android:rotationY="182"
-            android:src="@drawable/callout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/ic_bell"
-            android:layout_width="58dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="29dp"
-            android:src="@drawable/bell_new"
-            app:layout_constraintStart_toStartOf="@+id/notification_background"
-            app:layout_constraintTop_toTopOf="@+id/notification_background" />
-
-        <TextView
-            android:id="@+id/not_text_1"
-            android:layout_width="202dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:fontFamily="@font/concert_one"
-            android:gravity="center"
-            android:text="Did you know that UV index changes through out the day ?"
-            android:textColor="#262424"
-            app:layout_constraintBottom_toTopOf="@+id/notification_background"
-            app:layout_constraintStart_toStartOf="@+id/callout_2"
-            app:layout_constraintTop_toBottomOf="@+id/alarm_background"
-            app:layout_constraintVertical_bias="0.345" />
-
-        <TextView
-            android:id="@+id/not_text_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="86dp"
-            android:layout_marginLeft="86dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="126dp"
-            android:layout_marginRight="126dp"
-            android:layout_marginBottom="2dp"
-            android:fontFamily="@font/concert_one"
-            android:text="Never Mind..."
-            android:textColor="#262424"
-            app:layout_constraintBottom_toTopOf="@+id/not_text_3"
-            app:layout_constraintEnd_toEndOf="@+id/callout_2"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintEnd_toEndOf="@+id/alarm_background2"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/callout_2"
-            app:layout_constraintTop_toBottomOf="@+id/not_text_1"
+            app:layout_constraintStart_toStartOf="@+id/alarm_background2"
+            app:layout_constraintTop_toTopOf="@+id/alarm_background2"
+            app:layout_constraintVertical_bias="0.466" />
+
+        <ImageView
+            android:id="@+id/ic_alarm2"
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_57sdp"
+            android:src="@drawable/alarm_new"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_background2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/alarm_background2"
+            app:layout_constraintTop_toTopOf="@+id/alarm_background2"
             app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/not_text_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="66dp"
-            android:layout_marginLeft="66dp"
-            android:layout_marginEnd="98dp"
-            android:layout_marginRight="98dp"
-            android:layout_marginBottom="28dp"
-            android:fontFamily="@font/concert_one"
-            android:text="We Can notify you !!"
-            android:textColor="#262424"
-            app:layout_constraintBottom_toTopOf="@+id/notification_background"
-            app:layout_constraintEnd_toEndOf="@+id/callout_2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/callout_2" />
-
-        <TextView
-            android:id="@+id/not_text_5"
-            android:layout_width="189dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="75dp"
-            android:layout_marginLeft="75dp"
-            android:layout_marginTop="37dp"
-            android:fontFamily="@font/alegreya"
-            android:text="Notify Me when UV index reaches 3 or above"
-            android:textColor="#262424"
-            app:layout_constraintStart_toStartOf="@+id/notification_background"
-            app:layout_constraintTop_toTopOf="@+id/notification_background" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
