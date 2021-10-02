@@ -98,11 +98,16 @@
             android:name=".views.AboutMelanomaActivity"
             android:label="About Melanoma"
             android:parentActivityName=".views.MainFunction" />
+
+        <activity
+            android:name=".views.MelanomaStatesActivity"
+            android:label="Melanoma Stats"
+            android:parentActivityName=".views.MainFunction" />
         <activity
             android:name=".views.MelanomaRiskFactorsActivity"
             android:label="Melanoma Risk Factors"
             android:parentActivityName=".views.MainFunction" />
-        <activity android:name=".views.MelanomaStatesActivity" />
+
         <activity
             android:name=".views.quiz.QuizFourBlocksActivity"
             android:label="Quiz Homepage"

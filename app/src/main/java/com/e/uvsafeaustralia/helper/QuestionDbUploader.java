@@ -133,7 +133,7 @@ public class QuestionDbUploader extends Worker {
                         null,
                         null,
                         "False",
-                        "Added later");
+                        " No matter the SPF sunscreen works for only for about 2 hours.");
                 dbManager.insertQuestion(
                         CATEGORY3,
                         2,
@@ -143,7 +143,7 @@ public class QuestionDbUploader extends Worker {
                         null,
                         null,
                         "Chemical Sunscreen",
-                        "Added later");
+                        "Chemical sunscreen absorbs into the skin and then absorbs UV rays, converts the rays into heat, and releases them from the body. ");
                 dbManager.insertQuestion(
                         CATEGORY3,
                         3,
@@ -153,7 +153,7 @@ public class QuestionDbUploader extends Worker {
                         "SPF 50",
                         null,
                         "SPF 30",
-                        "Added later");
+                        "SPF 30 sunscreen is recommended by Australian ARPANSA organistion.");
                 dbManager.insertQuestion(
                         CATEGORY3,
                         4,
@@ -163,7 +163,7 @@ public class QuestionDbUploader extends Worker {
                         "Both A&B",
                         null,
                         "Both A&B",
-                        "Added later");
+                        " Physical sunblock sits on top of the skin and reflects the sun’s rays. The minerals titanium dioxide and zinc oxide are the main active ingredients in physical blocks.");
                 dbManager.insertQuestion(
                         CATEGORY4,
                         1,
