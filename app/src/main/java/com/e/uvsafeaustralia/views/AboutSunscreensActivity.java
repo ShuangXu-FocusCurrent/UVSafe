@@ -39,38 +39,38 @@ public class AboutSunscreensActivity extends AppCompatActivity {
         binding.buttonMyth1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth1);
+                binding.myth.setImageResource(R.drawable.myth1);
             }
         });
 
         binding.buttonMyth2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth2);
+                binding.myth.setImageResource(R.drawable.myth2);
             }
         });
         binding.buttonMyth3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth3);
+                binding.myth.setImageResource(R.drawable.myth3);
             }
         });
         binding.buttonMyth4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth4);
+                binding.myth.setImageResource(R.drawable.myth4);
             }
         });
         binding.buttonMyth5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth5);
+                binding.myth.setImageResource(R.drawable.myth5);
             }
         });
         binding.buttonMyth6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.myth1.setImageResource(R.drawable.myth6);
+                binding.myth.setImageResource(R.drawable.myth6);
             }
         });
     }
