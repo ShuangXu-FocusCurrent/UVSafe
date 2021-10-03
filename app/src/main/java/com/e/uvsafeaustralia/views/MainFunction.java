@@ -41,8 +41,9 @@ public class MainFunction extends AppCompatActivity {
         sp = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         editor=sp.edit();
 
+        //R.id.moreInforFragment
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment,R.id.moreInforFragment)
+                R.id.homePageFragment, R.id.alarmPageFragment, R.id.sunEduFragment,R.id.quizPageFragment)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

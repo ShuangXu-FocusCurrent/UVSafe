@@ -25,9 +25,9 @@
         android:name="com.e.uvsafeaustralia.views.functionsFragment.QuizPageFragment"
         android:label="Quiz"
         tools:layout="@layout/fragment_quiz_page" />
-    <fragment
-        android:id="@+id/moreInforFragment"
-        android:name="com.e.uvsafeaustralia.views.functionsFragment.MoreInforFragment"
-        android:label="More"
-        tools:layout="@layout/fragment_more_infor" />
+<!--    <fragment-->
+<!--        android:id="@+id/moreInforFragment"-->
+<!--        android:name="com.e.uvsafeaustralia.views.functionsFragment.MoreInforFragment"-->
+<!--        android:label="More"-->
+<!--        tools:layout="@layout/fragment_more_infor" />-->
 </navigation>

@@ -17,8 +17,8 @@
         android:id="@+id/quizPageFragment"
         android:icon="@drawable/ic_quiz"/>
 
-    <item android:title="More"
-        android:id="@+id/moreInforFragment"
-        android:icon="@drawable/ic_more"/>
+<!--    <item android:title="More"-->
+<!--        android:id="@+id/moreInforFragment"-->
+<!--        android:icon="@drawable/ic_more"/>-->
 
 </menu>
