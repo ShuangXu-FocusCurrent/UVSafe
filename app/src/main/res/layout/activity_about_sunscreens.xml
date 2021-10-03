@@ -97,9 +97,11 @@
                 android:id="@+id/underline_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
                 android:text="When used as directed, sunscreen is proven to:
 \n\n1. Decrease your risk of skin cancers and skin precancers. \n\n2. Regular daily use of SPF 15 sunscreen can reduce your risk of developing squamous cell carcinoma (SCC) by about 40 percent, and lower your melanoma risk by 50 percent.
-\n\n3. Help prevent premature skin aging caused by the sun, including wrinkles, sagging and age spots." />
+\n\n3. Help prevent premature skin aging caused by the sun, including wrinkles, sagging and age spots."
+                android:textColor="#454141" />
 
             <TextView
                 android:id="@+id/sunscreen_text_source"
@@ -132,17 +134,18 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
                     android:text="Myth 1"
-                    android:textColor="#743AB7"
+                    android:textColor="#FFFFFF"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#F2A33B"
                     app:cornerRadius="@dimen/_18sdp"
+                    android:elevation="2dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#FFFEFE"
                     app:strokeWidth="@dimen/_2sdp" />
 
                 <Button
@@ -150,16 +153,17 @@
                     android:layout_width="@dimen/_75sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
+                    android:elevation="2dp"
                     android:text="Myth 2"
-                    android:textColor="#743AB7"
+                    android:textColor="#FDFDFD"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#EE774D"
                     app:cornerRadius="@dimen/_18sdp"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_myth1"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#FDFDFD"
                     app:strokeWidth="@dimen/_2sdp" />
 
                 <Button
@@ -168,15 +172,16 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
                     android:text="Myth 3"
-                    android:textColor="#743AB7"
+                    android:textColor="#FFFFFF"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#AF80C3"
                     app:cornerRadius="@dimen/_18sdp"
+                    android:elevation="2dp"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_myth2"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#F6F6F6"
                     app:strokeWidth="@dimen/_2sdp" />
 
                 <Button
@@ -185,15 +190,16 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
                     android:text="Myth 4"
-                    android:textColor="#743AB7"
+                    android:textColor="#FFFEFF"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#627FC9"
                     app:cornerRadius="@dimen/_18sdp"
+                    android:elevation="2dp"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_myth3"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#F8F6FA"
                     app:strokeWidth="@dimen/_2sdp" />
 
                 <Button
@@ -202,15 +208,16 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
                     android:text="Myth 5"
-                    android:textColor="#743AB7"
+                    android:textColor="#FBFBFB"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#73C1CD"
                     app:cornerRadius="@dimen/_18sdp"
+                    android:elevation="2dp"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_myth4"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#F3F1F6"
                     app:strokeWidth="@dimen/_2sdp" />
 
                 <Button
@@ -219,9 +226,9 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="left|top"
                     android:text="Myth 6"
-                    android:textColor="#743AB7"
+                    android:textColor="#F8F7FA"
                     android:textSize="@dimen/_10ssp"
-                    app:backgroundTint="#EAFCFF"
+                    app:backgroundTint="#81CC98"
                     app:cornerRadius="@dimen/_18sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/myth"
@@ -229,21 +236,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_myth5"
                     app:layout_constraintVertical_bias="1.0"
-                    app:strokeColor="#673AB7"
+                    app:strokeColor="#FAFAFB"
                     app:strokeWidth="@dimen/_2sdp" />
 
-                <ImageView
+                <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/myth"
-                    android:layout_width="@dimen/_180sdp"
-                    android:layout_height="@dimen/_223sdp"
+                    android:layout_width="@dimen/_185sdp"
+                    android:layout_height="@dimen/_250sdp"
                     android:paddingRight="0dp"
+                    android:scaleX="2.1"
+                    android:scaleY="2.3"
+                    android:src="@drawable/gif_myth1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.608"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.51"
-                    app:srcCompat="@drawable/myth1" />
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
