@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.quiz.Category4.Q4Category4Activity">
+
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="396dp"
-        android:layout_height="662dp"
+        android:layout_height="700dp"
         android:background="@drawable/quiz_main_bcg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,39 +24,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="900dp">
-
-                <ImageView
-                    android:id="@+id/quiz_bcg_top"
-                    android:layout_width="399dp"
-                    android:layout_height="104dp"
-                    android:contentDescription="ignore"
-                    android:rotation="180"
-                    android:scaleX="2"
-                    android:scaleY="1.3"
-                    android:src="@drawable/quiz_login_bcg"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/question_bcg"
-                    android:layout_width="280dp"
-                    android:layout_height="145dp"
-                    android:layout_marginTop="25dp"
-                    android:src="@drawable/question_background"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.612"
-                    app:layout_constraintStart_toStartOf="@+id/quiz_bcg_top"
-                    app:layout_constraintTop_toTopOf="@+id/quiz_bcg_top" />
-
-                <ImageView
-                    android:id="@+id/thinking_boy"
-                    android:layout_width="113dp"
-                    android:layout_height="116dp"
-                    android:contentDescription="ignore"
-                    android:src="@drawable/thinking_boy"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/quiz_bcg_top" />
+                android:layout_height="1120dp">
 
                 <!--<TextView
                     android:id="@+id/textViewCat3Q1"
@@ -70,6 +39,28 @@
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
                     app:layout_constraintTop_toTopOf="@+id/question_bcg" />-->
+
+                <ImageView
+                    android:id="@+id/question_bcg"
+                    android:layout_width="280dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/question_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/thinking_boy" />
+
+                <ImageView
+                    android:id="@+id/thinking_boy"
+                    android:layout_width="144dp"
+                    android:layout_height="155dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="236dp"
+                    android:contentDescription="ignore"
+                    android:rotationY="28"
+                    android:src="@drawable/thinking_boy"
+                    app:layout_constraintEnd_toEndOf="@+id/textViewCat3Q1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textViewCat3Q1"
@@ -86,20 +77,18 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/question_bcg"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/question_bcg"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="@+id/thinking_boy"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/buttonOpt1Answer"
                     android:layout_width="295dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginEnd="200dp"
-                    android:layout_marginRight="200dp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="start"
                     android:text="AnswerOpt1"
@@ -108,7 +97,7 @@
                     app:backgroundTint="#FFFFFF"
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
-                    app:layout_constraintHorizontal_bias="0.38"
+                    app:layout_constraintHorizontal_bias="0.46"
                     app:layout_constraintStart_toStartOf="@+id/question_bcg"
                     app:layout_constraintTop_toBottomOf="@+id/question_bcg"
                     app:strokeColor="#95404040"
@@ -188,14 +177,14 @@
                     android:id="@+id/feedbackWrong"
                     android:layout_width="360dp"
                     android:layout_height="146dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:scaleX="1.2"
                     android:src="@drawable/question_background"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.555"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt2Answer" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonOpt4Answer" />
 
                 <ImageView
                     android:id="@+id/sad_img"
@@ -369,6 +358,7 @@
                     android:id="@+id/buttonCat4Q1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
                     app:layout_constraintEnd_toEndOf="@+id/feedbackConstraintLayout"
