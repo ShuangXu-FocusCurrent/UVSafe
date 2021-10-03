@@ -24,11 +24,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/concert_one"
                 android:text="What is Melanoma ?"
                 android:textColor="#C73411"
-                android:textSize="30dp" />
+                android:textSize="@dimen/_25sdp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -36,82 +36,115 @@
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_16sdp">
 
-                <ImageView
-                    android:id="@+id/mel_img_sec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/what_is_melanoma_img1" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/mel_img_sec"
-                    android:layout_alignTop="@id/mel_img_sec"
-                    android:layout_alignRight="@id/mel_img_sec"
-                    android:layout_alignBottom="@id/mel_img_sec"
-                    android:gravity="center"
-                    android:paddingLeft="80dp"
-                    android:paddingRight="10dp"
-                    android:text="Melanoma is a form of cancer that develops in the skin’s pigment cells which are known as Melanocytes."
-                    android:textAlignment="textStart"
-                    android:textSize="15sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/mel_img_sec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/what_is_melanoma_img1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_60sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:text="Melanoma is a form of cancer that develops in the skin’s pigment cells which are known as Melanocytes."
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mel_img_sec"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/mel_img_sec"
+                        tools:ignore="RtlCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </RelativeLayout>
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_117sdp"
+                android:layout_marginBottom="@dimen/_20sdp">
 
-                <ImageView
-                    android:id="@+id/mel_img_sec1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/what_is_melanoma_img2" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/mel_img_sec1"
-                    android:layout_alignTop="@id/mel_img_sec1"
-                    android:layout_alignRight="@id/mel_img_sec1"
-                    android:layout_alignBottom="@id/mel_img_sec1"
-                    android:gravity="center"
-                    android:paddingRight="80dp"
-                    android:paddingLeft="10dp"
-                    android:text="Melanocyte cells in your skin produce melanin to protect your skin from UV radiation. Overexposure to UV radiation during childhood or adolescence causes skin cells to grow abnormally and develop skin cancer later in the life."
-                    android:textAlignment="textStart"
-                    android:textSize="15sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/mel_img_sec1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/what_is_melanoma_img2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_4sdp"
+                        android:paddingRight="@dimen/_45sdp"
+                        android:text="Melanocyte cells in your skin produce melanin to protect your skin from UV radiation. Overexposure to UV radiation during childhood or adolescence causes skin cells to grow abnormally and develop skin cancer later in the life."
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mel_img_sec1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/mel_img_sec1"
+                        tools:ignore="RtlCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </RelativeLayout>
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_marginBottom="@dimen/_15sdp">
 
-                <ImageView
-                    android:id="@+id/mel_img_sec2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/what_is_melanoma_img3" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/mel_img_sec2"
-                    android:layout_alignTop="@id/mel_img_sec2"
-                    android:layout_alignRight="@id/mel_img_sec2"
-                    android:layout_alignBottom="@id/mel_img_sec2"
-                    android:gravity="center"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="80dp"
-                    android:text="Melanoma is the most serious form of skin cancer and grows very quickly if left untreated."
-                    android:textAlignment="textStart"
-                    android:textSize="15sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/mel_img_sec2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/what_is_melanoma_img3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_60sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:text="Melanoma is the most serious form of skin cancer and grows very quickly if left untreated."
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mel_img_sec2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </RelativeLayout>
 
             <TextView
@@ -122,7 +155,7 @@
                 android:fontFamily="@font/concert_one"
                 android:text="Watch Patient’s Stories"
                 android:textColor="#C73411"
-                android:textSize="25dp" />
+                android:textSize="@dimen/_18ssp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -141,7 +174,7 @@
 diagnosed with melanoma at age 27"
                 android:textAlignment="center"
                 android:textColor="#C73411"
-                android:textSize="20dp" />
+                android:textSize="@dimen/_18ssp" />
 
             <VideoView
                 android:id="@+id/about_melanoma_video1"
@@ -165,12 +198,14 @@ diagnosed with melanoma at age 27"
 https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patient-support-melanoma-matters/"
                 android:textStyle="italic"
                 android:textSize="10dp" />
+
             <Button
                 android:id="@+id/playvideo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Play video"
-                android:layout_gravity="center"/>
+                android:textSize="@dimen/_11ssp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -182,7 +217,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:text="Hanging on to hope was crucial ! Watch Julia’s story about how she got through it and where she went for help"
                 android:textAlignment="center"
                 android:textColor="#C73411"
-                android:textSize="20dp" />
+                android:textSize="@dimen/_18ssp" />
 
             <VideoView
                 android:id="@+id/about_melanoma_video2"
@@ -193,7 +228,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom|clip_horizontal|center|clip_vertical|center_vertical|fill_vertical"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimen/_6sdp"
                 android:foregroundGravity="center|fill_vertical|clip_vertical|fill" />
 
 
@@ -212,19 +247,20 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:id="@+id/playvideo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Play video"
-                android:layout_gravity="center"/>
+                android:textSize="@dimen/_11ssp" />
 
             <TextView
                 android:id="@+id/section1_hesebader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:fontFamily="@font/concert_one"
                 android:text="Can melanoma be prevented ?"
                 android:textColor="#C73411"
-                android:textSize="25dp" />
+                android:textSize="@dimen/_18ssp" />
 
             <ImageView
                 android:id="@+id/section1gj_image"
@@ -233,34 +269,43 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <RelativeLayout
                 android:id="@+id/rel_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/_300sdp">
 
-                <ImageView
-                    android:id="@+id/section1_image1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="350dp"
-                    android:layout_marginBottom="30dp"
-                    app:srcCompat="@drawable/can_melanoma_be_prevented_img1" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/ImageViewText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/section1_image1"
-                    android:layout_alignTop="@id/section1_image1"
-                    android:layout_alignRight="@id/section1_image1"
-                    android:layout_alignBottom="@id/section1_image1"
-                    android:gravity="center"
-                    android:paddingLeft="130dp"
-                    android:paddingTop="30dp"
-                    android:paddingRight="10dp"
-                    android:text="If detected early, Melanoma can be effectively treated.\n\nThe most effective way to prevent melanoma is to practice sun safety at all times. This means avoiding exposure to the sun during the hottest parts of the day\n\nHave a regular skin check at least once every 12 months to maximise the chances of picking up melanoma early."
-                    android:textAlignment="textStart"
-                    android:textSize="15sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/section1_image1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/can_melanoma_be_prevented_img1" />
+
+                    <TextView
+                        android:id="@+id/ImageViewText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_97sdp"
+                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:text="If detected early, Melanoma can be effectively treated.\n\nThe most effective way to prevent melanoma is to practice sun safety at all times. This means avoiding exposure to the sun during the hottest parts of the day\n\nHave a regular skin check at least once every 12 months to maximise the chances of picking up melanoma early."
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/section1_image1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/section1_image1"
+                        tools:ignore="RtlCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -270,8 +315,8 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 <ImageView
                     android:id="@+id/section1_image2"
                     android:layout_width="wrap_content"
-                    android:layout_height="380dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_height="@dimen/_330sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     app:srcCompat="@drawable/can_melanoma_be_prevented_img2" />
 
 
@@ -283,92 +328,131 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                     android:layout_alignRight="@id/section1_image2"
                     android:layout_alignBottom="@id/section1_image2"
                     android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="60dp"
-                    android:paddingRight="100dp">
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp">
 
-                    <TextView
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/concert_one"
-                        android:gravity="center_horizontal"
-                        android:text="Want to know more ?"
-                        android:textAlignment="textStart"
-                        android:textColor="#C73411"
-                        android:textSize="20sp"
-                        tools:ignore="RtlCompat" />
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_65sdp"
+                        android:paddingRight="@dimen/_70sdp"
+                        android:paddingBottom="@dimen/_30sdp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/concert_one"
-                        android:text="Visit"
-                        android:textAlignment="textStart"
-                        android:textColor="#C73411"
-                        android:textSize="15sp"
-                        tools:ignore="RtlCompat" />
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:fontFamily="@font/concert_one"
+                            android:gravity="center_horizontal"
+                            android:text="Want to know more ?"
+                            android:textAlignment="textStart"
+                            android:textColor="#C73411"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            tools:ignore="RtlCompat" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:paddingBottom="10dp"
-                        android:text="Melanoma Institute Australia"
-                        android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/concert_one"
+                            android:text="Visit"
+                            android:textAlignment="textStart"
+                            android:textColor="#C73411"
+                            android:textSize="15sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textView11"
+                            tools:ignore="RtlCompat" />
 
-                    <TextView
-                        android:id="@+id/melanoma_org_link_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:paddingBottom="10dp"
-                        android:text="https://www.melanoma.org.au/understanding-melanoma/"
-                        android:textColor="#085CBE"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/textViewMIA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="Melanoma Institute Australia"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:paddingBottom="10dp"
-                        android:text="@string/NSW"
-                        android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/melanoma_org_link_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="https://www.melanoma.org.au/understanding-melanoma/"
+                            android:textColor="#085CBE"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewMIA" />
 
-                    <TextView
-                        android:id="@+id/cancer_council_link_id1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:paddingBottom="10dp"
-                        android:text="https://www.cancercouncil.com.au/melanoma/about-melanoma"
-                        android:textColor="#085CBE"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/texViewCCN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="@string/NSW"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/melanoma_org_link_id" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:paddingBottom="10dp"
-                        android:text="@string/VIC"
-                        android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/cancer_council_link_id1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="https://www.cancercouncil.com.au/melanoma/about-melanoma"
+                            android:textColor="#085CBE"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/texViewCCN" />
 
-                    <TextView
-                        android:id="@+id/cancer_council_link_id2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/concert_one"
-                        android:text="https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"
-                        android:textColor="#085CBE"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="@string/VIC"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cancer_council_link_id1" />
+
+                        <TextView
+                            android:id="@+id/cancer_council_link_id2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/concert_one"
+                            android:text="https://www.cancervic.org.au/cancer-information/types-of-cancer/melanoma/melanoma-overview.html"
+                            android:textColor="#085CBE"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
             </RelativeLayout>
