@@ -12,215 +12,259 @@
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="396dp"
-            android:layout_height="501dp"
+            android:layout_width="@dimen/_500sdp"
+            android:layout_height="@dimen/_400sdp"
+            android:layout_marginTop="@dimen/_100sdp"
             android:rotation="180"
             android:scaleX="1.4"
             android:scaleY="1.2"
             android:src="@drawable/lb_bcg1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/buttonStartQuiz"
-            android:layout_width="265dp"
-            android:layout_height="62dp"
-            android:layout_marginBottom="64dp"
-            android:elevation="4dp"
-            android:enabled="false"
-            android:fontFamily="@font/concert_one"
-            android:text="Let's Get Started"
-            android:textSize="20sp"
-            app:backgroundTint="#F8852E"
-            app:cornerRadius="27dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/bcg_ext_user"
-            app:layout_constraintHorizontal_bias="0.484"
-            app:layout_constraintStart_toStartOf="@+id/bcg_ext_user"
-            app:layout_constraintTop_toBottomOf="@+id/bcg_ext_user"
-            app:layout_constraintVertical_bias="0.757"
-            app:strokeColor="@color/yellow_500"
-            app:strokeWidth="4dp" />
-
-        <ImageView
-            android:id="@+id/bcg_new_user"
-            android:layout_width="364dp"
-            android:layout_height="137dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/quiz_login_bcg_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutNewUser"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewHello" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/bcg_ext_user"
-            android:layout_width="364dp"
-            android:layout_height="137dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/quiz_login_bcg_2"
-            app:layout_constraintEnd_toEndOf="@+id/bcg_new_user"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/bcg_new_user"
-            app:layout_constraintTop_toBottomOf="@+id/bcg_new_user" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutNewUser"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.44">
+
+            <ImageView
+                android:id="@+id/bcg_new_user"
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="@dimen/_109sdp"
+                android:src="@drawable/quiz_login_bcg_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textHello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/concert_one"
+                android:text="New to this quiz ?"
+                android:textColor="#453F3F"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textAddName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/concert_one"
+                android:inputType="text"
+                android:text="Add a nickname"
+                android:textColor="#453F3F"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textHello" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextInputName"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_115sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/text_input_bcg"
+                android:gravity="center|center_vertical"
+                android:hint="Add a nickname"
+                android:soundEffectsEnabled="true"
+                android:textColor="#453F3F"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAddName"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btnConfirmAddUser"
+                android:layout_width="@dimen/_77sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="4dp"
+                android:enabled="false"
+                android:fontFamily="@font/concert_one"
+                android:text="Confirm"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="#1992EA"
+                app:cornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toEndOf="@id/editTextInputName"
+                app:layout_constraintTop_toBottomOf="@id/textAddName"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutExistUser"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayoutNewUser"
+            app:layout_constraintVertical_bias="0.55">
+
+            <ImageView
+                android:id="@+id/bcg_ext_user"
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="@dimen/_109sdp"
+                android:src="@drawable/quiz_login_bcg_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textSelectName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/concert_one"
+                android:text="Already a player ? "
+                android:textColor="#453F3F"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textAddName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/concert_one"
+                android:inputType="text"
+                android:text="Select your nickname"
+                android:textColor="#453F3F"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textSelectName" />
+
+            <Spinner
+                android:id="@+id/spinnerNamesDropdown"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/text_input_bcg"
+                android:dropDownWidth="match_parent"
+                android:gravity="center|center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAddName2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btnConfirmSelectUser"
+                android:layout_width="@dimen/_77sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="4dp"
+                android:enabled="false"
+                android:fontFamily="@font/concert_one"
+                android:text="Confirm"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="#08C28B"
+                app:cornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toEndOf="@id/spinnerNamesDropdown"
+                app:layout_constraintTop_toBottomOf="@id/textAddName2"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/textViewHello"
-            android:layout_width="212dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="192dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="@dimen/_135sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_marginStart="@dimen/_110sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/concert_one"
             android:gravity="center|top"
             android:text="It's Quiz Time"
             android:textColor="#685E5E"
-            android:textSize="40sp"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textHello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/concert_one"
-            android:text="New to this quiz ?"
-            android:textColor="#453F3F"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/bcg_new_user"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="@+id/bcg_new_user"
-            app:layout_constraintTop_toTopOf="@+id/bcg_new_user" />
-
-        <TextView
-            android:id="@+id/textAddName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="216dp"
-            android:fontFamily="@font/concert_one"
-            android:inputType="text"
-            android:text="Add a nickname"
-            android:textColor="#453F3F"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/textHello"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textHello"
-            app:layout_constraintTop_toBottomOf="@+id/textHello" />
-
-        <TextView
-            android:id="@+id/textAddName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="216dp"
-            android:fontFamily="@font/concert_one"
-            android:inputType="text"
-            android:text="Select your nickname"
-            android:textColor="#453F3F"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/textSelectName"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textSelectName"
-            app:layout_constraintTop_toBottomOf="@+id/textSelectName" />
-
-        <TextView
-            android:id="@+id/textSelectName"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/concert_one"
-            android:text="Already a player ? "
-            android:textColor="#453F3F"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/bcg_ext_user"
-            app:layout_constraintHorizontal_bias="0.071"
-            app:layout_constraintStart_toStartOf="@+id/bcg_ext_user"
-            app:layout_constraintTop_toTopOf="@+id/bcg_ext_user" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextInputName"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="145dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/text_input_bcg"
-            android:gravity="center|center_vertical"
-            android:hint="Add a nickname"
-            android:soundEffectsEnabled="true"
-            android:textColor="#453F3F"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btnConfirmAddUser"
-            app:layout_constraintEnd_toEndOf="@+id/textAddName"
-            app:layout_constraintStart_toStartOf="@+id/textAddName"
-            app:layout_constraintTop_toBottomOf="@+id/textAddName" />
-
-        <Spinner
-            android:id="@+id/spinnerNamesDropdown"
-            android:layout_width="170dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/text_input_bcg"
-            android:dropDownWidth="match_parent"
-            android:gravity="center|center_vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/btnConfirmSelectUser"
-            app:layout_constraintEnd_toEndOf="@+id/textAddName2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textAddName2"
-            app:layout_constraintTop_toBottomOf="@+id/textAddName2" />
-
-        <Button
-            android:id="@+id/btnConfirmAddUser"
-            android:layout_width="96dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginBottom="16dp"
-            android:elevation="4dp"
-            android:enabled="false"
-            android:fontFamily="@font/concert_one"
-            android:text="Confirm"
-            app:backgroundTint="#1992EA"
-            app:cornerRadius="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bcg_new_user"
-            app:layout_constraintStart_toEndOf="@+id/editTextInputName" />
-
-        <Button
-            android:id="@+id/btnConfirmSelectUser"
-            android:layout_width="96dp"
-            android:layout_height="38dp"
-            android:layout_marginBottom="16dp"
-            android:elevation="4dp"
-            android:enabled="false"
-            android:fontFamily="@font/concert_one"
-            android:text="Confirm"
-            app:backgroundTint="#08C28B"
-            app:cornerRadius="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bcg_ext_user"
-            app:layout_constraintEnd_toEndOf="@+id/btnConfirmAddUser"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/btnConfirmAddUser" />
-
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="232dp"
-            android:layout_height="195dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_150sdp"
             android:rotation="2"
             android:rotationY="195"
             android:src="@drawable/quiz_child"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:layout_width="79dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="92dp"
+            android:id="@+id/imageViewGif"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:scaleY="1.2"
             android:src="@drawable/quiz_img_2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.592"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/textViewHello"
             app:layout_constraintTop_toTopOf="@+id/textViewHello" />
+
+        <Button
+            android:id="@+id/buttonStartQuiz"
+            android:layout_width="@dimen/_215sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:fontFamily="@font/concert_one"
+            android:text="Let's Get Started"
+            android:textSize="@dimen/_15ssp"
+            app:backgroundTint="#F8852E"
+            app:cornerRadius="@dimen/_23sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayoutExistUser"
+            app:layout_constraintVertical_bias="0.70"
+            app:strokeColor="@color/yellow_500"
+            app:strokeWidth="@dimen/_2sdp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
