@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.e.uvsafeaustralia.R;
 
@@ -17,11 +18,17 @@ public class ProtectionActivity extends AppCompatActivity {
     private ImageView slap;
     private ImageView seek;
     private ImageView shade;
-    private ImageView slipTxtImgView;
-    private ImageView slopTxtImgView;
-    private ImageView slapTxtImgView;
-    private ImageView seekTxtImgView;
-    private ImageView shadeTxtImgView;
+    private ImageView slip_indicator;
+    private ImageView slop_indicator;
+    private ImageView slap_indicator;
+    private ImageView seek_indicator;
+    private ImageView shade_indicator;
+    private ImageView instruct_bcg;
+    private TextView slipTxtView;
+    private TextView slopTxtView;
+    private TextView slapTxtView;
+    private TextView seekTxtView;
+    private TextView shadeTxtView;
 
 
     @Override
@@ -32,27 +39,46 @@ public class ProtectionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        slipTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlip);
-        slopTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlop);
-        slapTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSlap);
-        seekTxtImgView = (ImageView) findViewById(R.id.imageViewMessageSeek);
-        shadeTxtImgView = (ImageView) findViewById(R.id.imageViewMessageShade);
+        slipTxtView = (TextView) findViewById(R.id.textSlip);
+        slopTxtView = (TextView) findViewById(R.id.textSlop);
+        slapTxtView = (TextView) findViewById(R.id.textSlap);
+        seekTxtView = (TextView) findViewById(R.id.textSeek);
+        shadeTxtView = (TextView) findViewById(R.id.textShade);
 
-        slipTxtImgView.setVisibility(View.INVISIBLE);
-        slopTxtImgView.setVisibility(View.INVISIBLE);
-        slapTxtImgView.setVisibility(View.INVISIBLE);
-        seekTxtImgView.setVisibility(View.INVISIBLE);
-        shadeTxtImgView.setVisibility(View.INVISIBLE);
+        instruct_bcg = (ImageView) findViewById(R.id.instruct_bcg);
+        slip_indicator = (ImageView) findViewById(R.id.slip_indicator);
+        slop_indicator = (ImageView) findViewById(R.id.slop_indicator);
+        slap_indicator = (ImageView) findViewById(R.id.slap_indicator);
+        seek_indicator = (ImageView) findViewById(R.id.seek_indicator);
+        shade_indicator = (ImageView) findViewById(R.id.shade_indicator);
+
+        instruct_bcg.setVisibility(View.VISIBLE);
+
+        slipTxtView.setVisibility(View.VISIBLE);
+        slip_indicator.setVisibility(View.VISIBLE);
+        slopTxtView.setVisibility(View.INVISIBLE);
+        slop_indicator.setVisibility(View.INVISIBLE);
+        slapTxtView.setVisibility(View.INVISIBLE);
+        slap_indicator.setVisibility(View.INVISIBLE);
+        seekTxtView.setVisibility(View.INVISIBLE);
+        seek_indicator.setVisibility(View.INVISIBLE);
+        shadeTxtView.setVisibility(View.INVISIBLE);
+        shade_indicator.setVisibility(View.INVISIBLE);
 
         slip = (ImageView) findViewById(R.id.imageViewSlip);
         slip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slipTxtImgView.setVisibility(v.VISIBLE);
-                slopTxtImgView.setVisibility(v.INVISIBLE);
-                slapTxtImgView.setVisibility(v.INVISIBLE);
-                seekTxtImgView.setVisibility(v.INVISIBLE);
-                shadeTxtImgView.setVisibility(v.INVISIBLE);
+                slipTxtView.setVisibility(v.VISIBLE);
+                slip_indicator.setVisibility(View.VISIBLE);
+                slopTxtView.setVisibility(View.INVISIBLE);
+                slop_indicator.setVisibility(View.INVISIBLE);
+                slapTxtView.setVisibility(View.INVISIBLE);
+                slap_indicator.setVisibility(View.INVISIBLE);
+                seekTxtView.setVisibility(View.INVISIBLE);
+                seek_indicator.setVisibility(View.INVISIBLE);
+                shadeTxtView.setVisibility(View.INVISIBLE);
+                shade_indicator.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -60,11 +86,16 @@ public class ProtectionActivity extends AppCompatActivity {
         slop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slipTxtImgView.setVisibility(v.INVISIBLE);
-                slopTxtImgView.setVisibility(v.VISIBLE);
-                slapTxtImgView.setVisibility(v.INVISIBLE);
-                seekTxtImgView.setVisibility(v.INVISIBLE);
-                shadeTxtImgView.setVisibility(v.INVISIBLE);
+                slipTxtView.setVisibility(v.INVISIBLE);
+                slip_indicator.setVisibility(View.INVISIBLE);
+                slopTxtView.setVisibility(v.VISIBLE);
+                slop_indicator.setVisibility(View.VISIBLE);
+                slapTxtView.setVisibility(View.INVISIBLE);
+                slap_indicator.setVisibility(View.INVISIBLE);
+                seekTxtView.setVisibility(View.INVISIBLE);
+                seek_indicator.setVisibility(View.INVISIBLE);
+                shadeTxtView.setVisibility(View.INVISIBLE);
+                shade_indicator.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -72,11 +103,16 @@ public class ProtectionActivity extends AppCompatActivity {
         slap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slipTxtImgView.setVisibility(v.INVISIBLE);
-                slopTxtImgView.setVisibility(v.INVISIBLE);
-                slapTxtImgView.setVisibility(v.VISIBLE);
-                seekTxtImgView.setVisibility(v.INVISIBLE);
-                shadeTxtImgView.setVisibility(v.INVISIBLE);
+                slipTxtView.setVisibility(v.INVISIBLE);
+                slip_indicator.setVisibility(View.INVISIBLE);
+                slopTxtView.setVisibility(View.INVISIBLE);
+                slop_indicator.setVisibility(View.INVISIBLE);
+                slapTxtView.setVisibility(v.VISIBLE);
+                slap_indicator.setVisibility(View.VISIBLE);
+                seekTxtView.setVisibility(View.INVISIBLE);
+                seek_indicator.setVisibility(View.INVISIBLE);
+                shadeTxtView.setVisibility(View.INVISIBLE);
+                shade_indicator.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -84,11 +120,16 @@ public class ProtectionActivity extends AppCompatActivity {
         seek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slipTxtImgView.setVisibility(v.INVISIBLE);
-                slopTxtImgView.setVisibility(v.INVISIBLE);
-                slapTxtImgView.setVisibility(v.INVISIBLE);
-                seekTxtImgView.setVisibility(v.VISIBLE);
-                shadeTxtImgView.setVisibility(v.INVISIBLE);
+                slipTxtView.setVisibility(v.INVISIBLE);
+                slip_indicator.setVisibility(View.INVISIBLE);
+                slopTxtView.setVisibility(View.INVISIBLE);
+                slop_indicator.setVisibility(View.INVISIBLE);
+                slapTxtView.setVisibility(View.INVISIBLE);
+                slap_indicator.setVisibility(View.INVISIBLE);
+                seekTxtView.setVisibility(View.VISIBLE);
+                seek_indicator.setVisibility(View.VISIBLE);
+                shadeTxtView.setVisibility(View.INVISIBLE);
+                shade_indicator.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -96,11 +137,16 @@ public class ProtectionActivity extends AppCompatActivity {
         shade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slipTxtImgView.setVisibility(v.INVISIBLE);
-                slopTxtImgView.setVisibility(v.INVISIBLE);
-                slapTxtImgView.setVisibility(v.INVISIBLE);
-                seekTxtImgView.setVisibility(v.INVISIBLE);
-                shadeTxtImgView.setVisibility(v.VISIBLE);
+                slipTxtView.setVisibility(v.INVISIBLE);
+                slip_indicator.setVisibility(View.INVISIBLE);
+                slopTxtView.setVisibility(View.INVISIBLE);
+                slop_indicator.setVisibility(View.INVISIBLE);
+                slapTxtView.setVisibility(View.INVISIBLE);
+                slap_indicator.setVisibility(View.INVISIBLE);
+                seekTxtView.setVisibility(View.INVISIBLE);
+                seek_indicator.setVisibility(View.INVISIBLE);
+                shadeTxtView.setVisibility(View.VISIBLE);
+                shade_indicator.setVisibility(View.VISIBLE);
             }
         });
     }

@@ -16,13 +16,9 @@
             android:id="@+id/imageViewSlip"
             android:layout_width="108dp"
             android:layout_height="146dp"
-            android:layout_marginEnd="9dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="9dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
             android:src="@drawable/slip"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewSlop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewSlop" />
 
@@ -30,10 +26,10 @@
             android:id="@+id/imageViewSlop"
             android:layout_width="127dp"
             android:layout_height="129dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="100dp"
             android:src="@drawable/slop"
             app:layout_constraintEnd_toStartOf="@+id/imageViewSlap"
-            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,76 +48,189 @@
             android:id="@+id/imageViewSeek"
             android:layout_width="118dp"
             android:layout_height="122dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="100dp"
             android:src="@drawable/seek"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.708"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/imageViewSlap"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageViewShade"
             android:layout_width="105dp"
-            android:layout_height="118dp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="146dp"
             android:layout_marginTop="42dp"
+            android:layout_marginBottom="16dp"
             android:src="@drawable/shade"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewSlip"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintStart_toStartOf="@+id/imageViewSeek"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSeek" />
-
-        <ImageView
-            android:id="@+id/imageViewMessageSlip"
-            android:layout_width="161dp"
-            android:layout_height="139dp"
-            android:src="@drawable/slip1"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewSlip"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSeek"
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/imageViewMessageSlop"
-            android:layout_width="161dp"
-            android:layout_height="111dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/slop2"
+            android:id="@+id/instruct_bcg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="128dp"
+            android:src="@drawable/sun_prot_bcg"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSlip"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap" />
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textSlip"
+            android:layout_width="148dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="@string/slip"
+            android:textColor="#271F1F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instruct_bcg"
+            app:layout_constraintEnd_toEndOf="@+id/instruct_bcg"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="@+id/instruct_bcg"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <TextView
+            android:id="@+id/textSlop"
+            android:layout_width="148dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="@string/slop"
+            android:textColor="#271F1F"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instruct_bcg"
+            app:layout_constraintEnd_toEndOf="@+id/instruct_bcg"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="@+id/instruct_bcg"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <TextView
+            android:id="@+id/textSlap"
+            android:layout_width="148dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="@string/slap"
+            android:textColor="#271F1F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instruct_bcg"
+            app:layout_constraintEnd_toEndOf="@+id/instruct_bcg"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="@+id/instruct_bcg"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <TextView
+            android:id="@+id/textSeek"
+            android:layout_width="148dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="@string/seek"
+            android:textColor="#271F1F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instruct_bcg"
+            app:layout_constraintEnd_toEndOf="@+id/instruct_bcg"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="@+id/instruct_bcg"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <TextView
+            android:id="@+id/textShade"
+            android:layout_width="148dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:text="@string/shade"
+            android:textColor="#271F1F"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instruct_bcg"
+            app:layout_constraintEnd_toEndOf="@+id/instruct_bcg"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="@+id/instruct_bcg"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.13" />
 
         <ImageView
-            android:id="@+id/imageViewMessageSlap"
-            android:layout_width="150dp"
-            android:layout_height="136dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/slap3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap" />
+            android:id="@+id/slip_indicator"
+            android:layout_width="88dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="316dp"
+            android:src="@drawable/sun_prot_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewShade"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/imageViewMessageSeek"
-            android:layout_width="157dp"
-            android:layout_height="107dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/seek4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap" />
+            android:id="@+id/shade_indicator"
+            android:layout_width="88dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginBottom="316dp"
+            android:rotationY="182"
+            android:src="@drawable/sun_prot_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/slip_indicator"
+            app:layout_constraintTop_toTopOf="@+id/instruct_bcg"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/imageViewMessageShade"
-            android:layout_width="152dp"
-            android:layout_height="124dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/shade5"
+            android:id="@+id/slop_indicator"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="389dp"
+            android:rotationY="182"
+            android:src="@drawable/sun_prot_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.142"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSlap" />
+            app:layout_constraintTop_toTopOf="@+id/imageViewSlop"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/seek_indicator"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="392dp"
+            android:src="@drawable/sun_prot_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.851"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/slap_indicator"
+            android:layout_width="94dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="188dp"
+            android:src="@drawable/slap_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewSlap" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/sun_gif"
+            android:layout_width="117dp"
+            android:layout_height="112dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/sun_gif"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewShade"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
