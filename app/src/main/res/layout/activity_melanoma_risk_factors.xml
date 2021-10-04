@@ -20,10 +20,10 @@
 
     <ImageView
         android:id="@+id/bottom_background"
-        android:layout_width="470dp"
-        android:layout_height="186dp"
-        android:layout_marginTop="520dp"
-        android:layout_weight="10"
+        android:layout_width="@dimen/_400sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginTop="@dimen/_355sdp"
+        android:layout_weight="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,283 +31,406 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="392dp"
-        android:layout_height="691dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title_1_causes"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/title_1_causes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/concert_one"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingTop="0dp"
+                    android:text="Causes of Melanoma"
+                    android:textColor="#D60000"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/underline_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toTopOf="@id/title_1_causes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.22000003"
+                    app:srcCompat="@drawable/underline" />
+
+                <ImageView
+                    android:id="@+id/background_1"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_1_causes"
+                    app:layout_constraintVertical_bias="0.23000002"
+                    app:srcCompat="@drawable/mrf_background_1" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="@dimen/_170sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/concert_one"
+                    android:gravity="center"
+                    android:text="Learn how skin colour can be a risk factor of Melanoma"
+                    android:textColor="#493031"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/background_1"
+                    app:layout_constraintEnd_toEndOf="@id/background_1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/background_1"
+                    app:layout_constraintTop_toTopOf="@id/background_1"
+                    app:layout_constraintVertical_bias="0.39" />
+
+                <ImageView
+                    android:id="@+id/doctor_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_180sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/doctor_2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/concert_one"
-                android:text="Causes of Melanoma"
-                android:textColor="#D60000"
-                android:textSize="24sp" />
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/underline_1"
-                android:layout_width="wrap_content"
-                android:layout_height="143dp"
-                android:layout_marginLeft="-14dp"
-                android:layout_marginTop="-70dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/underline" />
-
-            <ImageView
-                android:id="@+id/background_1"
-                android:layout_width="wrap_content"
-                android:layout_height="143dp"
-                android:layout_marginLeft="31dp"
-                android:layout_marginTop="-80dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/mrf_background_1" />
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="182dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="71dp"
-                android:layout_marginTop="-115dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:text="Learn how skin colour can be a risk factor of Melanoma"
-                android:textColor="#493031"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/doctor_2"
-                android:layout_width="334dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="-115dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/doctor_2" />
-
-            <ImageView
-                android:id="@+id/skin_info"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/skin_info_1" />
+                <ImageView
+                    android:id="@+id/skin_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/skin_info_1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textAddName"
-                android:layout_width="274dp"
-                android:layout_height="47dp"
+                android:layout_width="@dimen/_227sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_weight="1"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
                 android:text="Not only your skin colour.. Here are some other factors"
                 android:textColor="#A30606"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factors_backgorund" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background_2"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginLeft="-249dp"
-                android:layout_marginTop="-95dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factor_bcg_2" />
-
-            <ImageView
-                android:id="@+id/sun"
-                android:layout_width="308dp"
-                android:layout_height="76dp"
-                android:layout_marginLeft="-82dp"
-                android:layout_marginTop="-90dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/sun" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="247dp"
-                android:layout_height="88dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="-80dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/abel"
-                android:gravity="fill"
-                android:text="Overexposure to UV radiation:
-particularly a pattern of short, intense periods of sun exposure and sunburn, such as on weekends and holidays"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factors_backgorund" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background2_1"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginLeft="-249dp"
-                android:layout_marginTop="-95dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factor_bcg_2" />
-
-            <ImageView
-                android:id="@+id/spots"
-                android:layout_width="308dp"
-                android:layout_height="76dp"
-                android:layout_marginLeft="-85dp"
-                android:layout_marginTop="-90dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/spots" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="247dp"
-                android:layout_height="88dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="-80dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/abel"
-                android:gravity="fill"
-                android:text="High Mole count:
-more than 10 moles above the elbow on the arms and more than 50 on the body, especially if the moles have an irregular shape and uneven colour "
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factors_backgorund" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background3_1"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginLeft="-249dp"
-                android:layout_marginTop="-95dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factor_bcg_2" />
-
-            <ImageView
-                android:id="@+id/family"
-                android:layout_width="308dp"
-                android:layout_height="76dp"
-                android:layout_marginLeft="-85dp"
-                android:layout_marginTop="-90dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/family" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="237dp"
-                android:layout_height="88dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="-80dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/abel"
-                android:gravity="fill"
-                android:text="A strong family history :
-Because family members have a similar skin type or a similar pattern of sun exposure in childhood. Only 1-2% of melanomas in Australia involve an inherited faulty gene.
-"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factors_backgorund" />
-
-            <ImageView
-                android:id="@+id/risk_factors_background4_1"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginLeft="-249dp"
-                android:layout_marginTop="-95dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/risk_factor_bcg_2" />
-
-            <ImageView
-                android:id="@+id/eyes_hair"
-                android:layout_width="308dp"
-                android:layout_height="76dp"
-                android:layout_marginLeft="-85dp"
-                android:layout_marginTop="-90dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/eyes" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="239dp"
-                android:layout_height="91dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="-80dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/abel"
-                android:gravity="fill"
-                android:text="Light-coloured eyes, fair or red hair:
-Anyone can develop Melanoma. However, risk is higher with people who have light-coloured eys(blue/green) and fair or red hair.
-"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_17ssp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="968dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/risk_factors_background"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factors_backgorund" />
+
+                <ImageView
+                    android:id="@+id/risk_factors_background_2"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@id/risk_factors_background"
+                    app:layout_constraintEnd_toEndOf="@id/risk_factors_background"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/risk_factors_background"
+                    app:layout_constraintTop_toTopOf="@id/risk_factors_background"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factor_bcg_2" />
+
+                <ImageView
+                    android:id="@+id/sun"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background_2"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background_2"
+                    app:layout_constraintHorizontal_bias="0.50"
+                    app:layout_constraintStart_toStartOf="@+id/risk_factors_background_2"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background_2"
+                    app:layout_constraintVertical_bias="0.40"
+                    app:srcCompat="@drawable/sun" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="fill"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:paddingEnd="0dp"
+                    android:text="Overexposure to UV radiation:
+    particularly a pattern of short, intense periods of sun exposure and sunburn, such as on weekends and holidays"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/risk_factors_background_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/risk_factors_background2"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factors_backgorund" />
+
+                <ImageView
+                    android:id="@+id/risk_factors_background2_1"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background2"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/risk_factors_background2"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background2"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factor_bcg_2" />
+
+                <ImageView
+                    android:id="@+id/spots"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@id/risk_factors_background2_1"
+                    app:layout_constraintEnd_toEndOf="@id/risk_factors_background2_1"
+                    app:layout_constraintStart_toStartOf="@id/risk_factors_background2_1"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background2_1"
+                    app:layout_constraintVertical_bias="0.4"
+                    app:srcCompat="@drawable/spots" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="fill"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:paddingEnd="0dp"
+                    android:text="High Mole count:
+    more than 10 moles above the elbow on the arms and more than 50 on the body, especially if the moles have an irregular shape and uneven colour "
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/risk_factors_background2_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/risk_factors_background3"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factors_backgorund" />
+
+                <ImageView
+                    android:id="@+id/risk_factors_background3_1"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background3"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/risk_factors_background3"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background3"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factor_bcg_2" />
+
+                <ImageView
+                    android:id="@+id/family"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background3_1"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background3_1"
+                    app:layout_constraintStart_toStartOf="@+id/risk_factors_background3_1"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background3_1"
+                    app:layout_constraintVertical_bias="0.32999998"
+                    app:srcCompat="@drawable/family" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="fill"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="A strong family history :
+    Because family members have a similar skin type or a similar pattern of sun exposure in childhood. Only 1-2% of melanomas in Australia involve an inherited faulty gene.
+    "
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/risk_factors_background3_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/risk_factors_background4"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factors_backgorund" />
+
+                <ImageView
+                    android:id="@+id/risk_factors_background4_1"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background4"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/risk_factors_background4"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background4"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/risk_factor_bcg_2" />
+
+                <ImageView
+                    android:id="@+id/eyes_hair"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintEnd_toEndOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintStart_toStartOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintVertical_bias="0.39"
+                    app:srcCompat="@drawable/eyes" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="fill"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Light-coloured eyes, fair or red hair:
+    Anyone can develop Melanoma. However, risk is higher with people who have light-coloured eys(blue/green) and fair or red hair.
+    "
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:visibility="visible">
 
                 <ImageView
                     android:id="@+id/girl_child"
-                    android:layout_width="165dp"
-                    android:layout_height="230dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="288dp"
-                    android:layout_marginRight="288dp"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_230sdp"
                     android:layout_weight="1"
                     android:rotation="39"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -316,8 +439,8 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/signs_callout"
-                    android:layout_width="295dp"
-                    android:layout_height="180dp"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_140sdp"
                     android:layout_weight="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -327,20 +450,21 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/hex1"
-                    android:layout_width="82dp"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.02"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/signs_callout"
                     app:srcCompat="@drawable/polygon_1" />
 
                 <ImageView
                     android:id="@+id/hex2"
-                    android:layout_width="82dp"
-                    android:layout_height="72dp"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginLeft="76dp"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_58sdp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/hex1"
@@ -350,10 +474,9 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/hex3"
-                    android:layout_width="82dp"
-                    android:layout_height="72dp"
-                    android:layout_marginStart="75dp"
-                    android:layout_marginLeft="75dp"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_58sdp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="@+id/hex1"
                     app:layout_constraintStart_toStartOf="@+id/hex2"
@@ -361,10 +484,9 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/hex4"
-                    android:layout_width="82dp"
-                    android:layout_height="72dp"
-                    android:layout_marginStart="75dp"
-                    android:layout_marginLeft="75dp"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_58sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/hex2"
                     app:layout_constraintStart_toStartOf="@+id/hex3"
                     app:layout_constraintTop_toTopOf="@+id/hex2"
@@ -372,18 +494,17 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/hex5"
-                    android:layout_width="82dp"
-                    android:layout_height="72dp"
-                    android:layout_marginStart="75dp"
-                    android:layout_marginLeft="75dp"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_58sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/hex3"
                     app:layout_constraintStart_toStartOf="@+id/hex4"
                     app:srcCompat="@drawable/polygon_1" />
 
                 <ImageView
                     android:id="@+id/indicator1"
-                    android:layout_width="20dp"
-                    android:layout_height="78dp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_67sdp"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="@+id/hex1"
                     app:layout_constraintStart_toStartOf="@+id/hex1"
@@ -392,12 +513,12 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/indicator2"
-                    android:layout_width="29dp"
-                    android:layout_height="101dp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_85sdp"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/indicator1"
                     app:layout_constraintEnd_toEndOf="@+id/hex2"
-                    app:layout_constraintHorizontal_bias="0.433"
+                    app:layout_constraintHorizontal_bias="0.50"
                     app:layout_constraintStart_toStartOf="@+id/hex2"
                     app:layout_constraintTop_toBottomOf="@+id/hex2"
                     app:layout_constraintVertical_bias="0.0"
@@ -405,12 +526,12 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/indicator3"
-                    android:layout_width="23dp"
-                    android:layout_height="80dp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_67sdp"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/indicator1"
                     app:layout_constraintEnd_toEndOf="@+id/hex3"
-                    app:layout_constraintHorizontal_bias="0.455"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/hex3"
                     app:layout_constraintTop_toBottomOf="@+id/hex3"
                     app:layout_constraintVertical_bias="0.0"
@@ -418,12 +539,12 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/indicator4"
-                    android:layout_width="29dp"
-                    android:layout_height="101dp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_85sdp"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/indicator3"
                     app:layout_constraintEnd_toEndOf="@+id/hex4"
-                    app:layout_constraintHorizontal_bias="0.539"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/hex4"
                     app:layout_constraintTop_toBottomOf="@+id/hex4"
                     app:layout_constraintVertical_bias="0.0"
@@ -431,44 +552,16 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <ImageView
                     android:id="@+id/indicator5"
-                    android:layout_width="24dp"
-                    android:layout_height="79dp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_67sdp"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/indicator1"
                     app:layout_constraintEnd_toEndOf="@+id/hex5"
-                    app:layout_constraintHorizontal_bias="0.485"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/hex5"
                     app:layout_constraintTop_toBottomOf="@+id/hex5"
                     app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/indicator" />
-
-                <ImageView
-                    android:id="@+id/signs_background"
-                    android:layout_width="387dp"
-                    android:layout_height="205dp"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginRight="2dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/indicator2"
-                    app:srcCompat="@drawable/rectangle" />
-
-                <ImageView
-                    android:id="@+id/resource_bcg"
-                    android:layout_width="312dp"
-                    android:layout_height="265dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toBottomOf="@+id/signs_background"
-                    app:srcCompat="@drawable/resource_background" />
 
                 <TextView
                     android:id="@+id/sign_1_size"
@@ -477,7 +570,7 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:fontFamily="@font/concert_one"
                     android:text="Size"
                     android:textColor="#FFFFFF"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_18ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/hex1"
                     app:layout_constraintEnd_toEndOf="@+id/hex1"
                     app:layout_constraintStart_toStartOf="@+id/hex1"
@@ -485,13 +578,13 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
 
                 <TextView
                     android:id="@+id/sign_3_itching"
-                    android:layout_width="59dp"
-                    android:layout_height="66dp"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
                     android:text="Itching or Bleeding"
                     android:textColor="#FFFFFF"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/hex3"
                     app:layout_constraintEnd_toEndOf="@+id/hex3"
                     app:layout_constraintStart_toStartOf="@+id/hex3"
@@ -501,11 +594,11 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:id="@+id/sign_2_colour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="7dp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     android:fontFamily="@font/concert_one"
                     android:text="Colour"
                     android:textColor="#FFFFFF"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_18ssp"
                     app:layout_constraintBottom_toTopOf="@+id/indicator2"
                     app:layout_constraintEnd_toEndOf="@+id/hex2"
                     app:layout_constraintStart_toStartOf="@+id/hex2"
@@ -515,11 +608,11 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:id="@+id/sign_4_shape"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="7dp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     android:fontFamily="@font/concert_one"
                     android:text="Shape"
                     android:textColor="#FFFFFF"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_18ssp"
                     app:layout_constraintBottom_toTopOf="@+id/indicator2"
                     app:layout_constraintEnd_toEndOf="@+id/hex4"
                     app:layout_constraintStart_toStartOf="@+id/hex4"
@@ -529,14 +622,12 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     android:id="@+id/sign_5_elevation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginEnd="1dp"
-                    android:layout_marginRight="1dp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_1sdp"
                     android:fontFamily="@font/concert_one"
                     android:text="Elevation"
                     android:textColor="#FFFFFF"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/hex5"
                     app:layout_constraintEnd_toEndOf="@+id/hex5"
                     app:layout_constraintHorizontal_bias="0.6"
@@ -544,223 +635,285 @@ Anyone can develop Melanoma. However, risk is higher with people who have light-
                     app:layout_constraintTop_toTopOf="@+id/hex5"
                     app:layout_constraintVertical_bias="0.49" />
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="324dp"
-                    android:layout_height="55dp"
-                    android:fontFamily="@font/abel"
-                    android:gravity="center"
-                    android:text="The first sign of Melanoma is often a new spot or a change in an existing mole"
-                    android:textColor="#121111"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_170sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/indicator2">
 
-                <TextView
-                    android:id="@+id/sign_desc_1"
-                    android:layout_width="274dp"
-                    android:layout_height="114dp"
-                    android:fontFamily="@font/concert_one"
-                    android:gravity="center"
-                    android:text="The Spot may appear, or begin to grow later"
-                    android:textColor="#EB5164"
-                    android:textSize="34sp"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="@+id/signs_background"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="0.477"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background"
-                    app:layout_constraintVertical_bias="0.714" />
+                    <ImageView
+                        android:id="@+id/signs_background"
+                        android:layout_width="@dimen/_270sdp"
+                        android:layout_height="@dimen/_155sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.49"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/rectangle" />
 
-                <TextView
-                    android:id="@+id/sign_desc_2"
-                    android:layout_width="274dp"
-                    android:layout_height="114dp"
-                    android:fontFamily="@font/concert_one"
-                    android:gravity="center"
-                    android:text="The spot may become blotchy different depths and shades of colour, often black or brown"
-                    android:textColor="#EB5164"
-                    android:textSize="24sp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/signs_background"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="0.477"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background"
-                    app:layout_constraintVertical_bias="0.714" />
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/abel"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:text="The first sign of Melanoma is often a new spot or a change in an existing mole"
+                        android:textColor="#121111"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/sign_desc_3"
-                    android:layout_width="274dp"
-                    android:layout_height="114dp"
-                    android:fontFamily="@font/concert_one"
-                    android:gravity="center"
-                    android:text="The spot may itch or bleed very easily"
-                    android:textColor="#EB5164"
-                    android:textSize="34sp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/signs_background"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="0.477"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background"
-                    app:layout_constraintVertical_bias="0.714" />
+                    <TextView
+                        android:id="@+id/sign_desc_1"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center"
+                        android:text="The Spot may appear, or begin to grow later"
+                        android:textColor="#EB5164"
+                        android:textSize="@dimen/_24ssp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/signs_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintVertical_bias="0.4" />
 
-                <TextView
-                    android:id="@+id/sign_desc_4"
-                    android:layout_width="318dp"
-                    android:layout_height="145dp"
-                    android:fontFamily="@font/concert_one"
-                    android:gravity="center"
-                    android:text="The spot may increase in height, become scaly,have an irregular shape or not be symmetrical"
-                    android:textColor="#EB5164"
-                    android:textSize="24sp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/signs_background"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="0.477"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background"
-                    app:layout_constraintVertical_bias="0.714" />
+                    <TextView
+                        android:id="@+id/sign_desc_2"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center"
+                        android:text="The spot may become blotchy different depths and shades of colour, often black or brown"
+                        android:textColor="#EB5164"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/signs_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintVertical_bias="0.4" />
 
-                <TextView
-                    android:id="@+id/sign_desc_5"
-                    android:layout_width="318dp"
-                    android:layout_height="145dp"
-                    android:fontFamily="@font/concert_one"
-                    android:gravity="center"
-                    android:text="The spot may start as a raised nodule or develop a raised area, which is often reddish or reddish brown"
-                    android:textColor="#EB5164"
-                    android:textSize="24sp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/signs_background"
-                    app:layout_constraintEnd_toEndOf="@+id/signs_background"
-                    app:layout_constraintHorizontal_bias="0.477"
-                    app:layout_constraintStart_toStartOf="@+id/signs_background"
-                    app:layout_constraintTop_toTopOf="@+id/signs_background"
-                    app:layout_constraintVertical_bias="0.714" />
+                    <TextView
+                        android:id="@+id/sign_desc_3"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center"
+                        android:text="The spot may itch or bleed very easily"
+                        android:textColor="#EB5164"
+                        android:textSize="@dimen/_24ssp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/signs_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintVertical_bias="0.40" />
+
+                    <TextView
+                        android:id="@+id/sign_desc_4"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center"
+                        android:text="The spot may increase in height, become scaly,have an irregular shape or not be symmetrical"
+                        android:textColor="#EB5164"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/signs_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintVertical_bias="0.4" />
+
+                    <TextView
+                        android:id="@+id/sign_desc_5"
+                        android:layout_width="@dimen/_210sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center"
+                        android:text="The spot may start as a raised nodule or develop a raised area, which is often reddish or reddish brown"
+                        android:textColor="#EB5164"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/signs_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintVertical_bias="0.4" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/resource_bcg"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_300sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
+                    app:srcCompat="@drawable/resource_background" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:paddingStart="@dimen/_40sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/resource_bcg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout3">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/concert_one"
+                        android:text="Want to know more ?"
+                        android:textColor="#D60000"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.19"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_6sdp"
+                        android:text="Visit"
+                        android:textColor="#D60000"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView10" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/MIA"
+                        android:textColor="#535151"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView13" />
+
+                    <TextView
+                        android:id="@+id/textViewMIALink"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/miaLink"
+                        android:textColor="#085CBE"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textViewNSWLink"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/nswLink"
+                        android:textColor="#085CBE"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/NSW"
+                        android:textColor="#535151"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewMIALink" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/VIC"
+                        android:textColor="#535151"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewNSWLink" />
+
+                    <TextView
+                        android:id="@+id/textViewVicLink"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/concert_one"
+                        android:text="@string/vicLink"
+                        android:textColor="#085CBE"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
                     android:id="@+id/boy_child_2"
-                    android:layout_width="126dp"
-                    android:layout_height="124dp"
-                    android:layout_marginStart="236dp"
-                    android:layout_marginLeft="236dp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_212sdp"
                     android:rotation="-48"
-                    app:layout_constraintBottom_toBottomOf="@+id/resource_bcg"
-                    app:layout_constraintStart_toStartOf="@+id/resource_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/resource_bcg"
-                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constraintLayout2"
+                    app:layout_constraintVertical_bias="0.19999999"
                     app:srcCompat="@drawable/boy_child_2" />
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="Want to know more ?"
-                    android:textColor="#D60000"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/resource_bcg"
-                    app:layout_constraintHorizontal_bias="0.467"
-                    app:layout_constraintStart_toStartOf="@+id/resource_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/resource_bcg" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="52dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="Visit"
-                    android:textColor="#D60000"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="@+id/resource_bcg"
-                    app:layout_constraintHorizontal_bias="0.029"
-                    app:layout_constraintStart_toStartOf="@+id/resource_bcg"
-                    app:layout_constraintTop_toTopOf="@+id/resource_bcg" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/MIA"
-                    android:textColor="#535151"
-                    app:layout_constraintStart_toStartOf="@+id/textView13"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-                <TextView
-                    android:id="@+id/textViewMIALink"
-                    android:layout_width="281dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/miaLink"
-                    android:textColor="#085CBE"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView14"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-                <TextView
-                    android:id="@+id/textViewNSWLink"
-                    android:layout_width="281dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/nswLink"
-                    android:textColor="#085CBE"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView14"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-                <TextView
-                    android:id="@+id/textViewVicLink"
-                    android:layout_width="281dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/vicLink"
-                    android:textColor="#085CBE"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView14"
-                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/NSW"
-                    android:textColor="#535151"
-                    app:layout_constraintStart_toStartOf="@+id/textViewMIALink"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewMIALink" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/concert_one"
-                    android:text="@string/VIC"
-                    android:textColor="#535151"
-                    app:layout_constraintStart_toStartOf="@+id/textViewMIALink"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewNSWLink" />
-
-                <TextView
                     android:id="@+id/textView20"
-                    android:layout_width="232dp"
-                    android:layout_height="87dp"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Information Retrieved from: Melanoma Institute Australia, Cancer Council NSW and Cancer Council Victoria"
-                    app:layout_constraintEnd_toEndOf="@+id/resource_bcg"
-                    app:layout_constraintStart_toStartOf="@+id/resource_bcg"
-                    app:layout_constraintTop_toBottomOf="@+id/resource_bcg" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
