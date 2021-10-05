@@ -79,6 +79,8 @@
 https://www.cancervic.org.au/research/vcr/fact-sheets-and-annual-reports/melanoma-factsheet.html"
                 android:textSize="12sp" />
 
+
+
             <TextView
                 android:id="@+id/section1_header"
                 android:layout_width="match_parent"
@@ -95,10 +97,59 @@ https://www.cancervic.org.au/research/vcr/fact-sheets-and-annual-reports/melanom
                 android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Lets understand the percentage of mortality out of the total Melanoma cases distributed by Gender"
+                android:textSize="15sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/graph_desc_bg" />
+                android:layout_height="240dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/infographic_mort_inc" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/desc_mortality_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/graph_desc_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/desc_mortality_gender"
+                    android:layout_alignTop="@id/desc_mortality_gender"
+                    android:layout_alignRight="@id/desc_mortality_gender"
+                    android:layout_alignBottom="@id/desc_mortality_gender"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="265dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:paddingRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="Most number of deaths due to Melanoma is seen in people over 40 years old."
+                        android:textAlignment="textStart"
+                        android:textColor="#222020"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -116,10 +167,59 @@ https://www.cancervic.org.au/research/vcr/fact-sheets-and-annual-reports/melanom
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Lets understand the trends in Melanoma cases in Australia since 1982."
+                android:textSize="15sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/graph_desc_bg" />
+                android:layout_height="210dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/melanoma_incidence_infographic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/desc_mortality_trends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/graph_desc_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/desc_mortality_trends"
+                    android:layout_alignTop="@id/desc_mortality_trends"
+                    android:layout_alignRight="@id/desc_mortality_trends"
+                    android:layout_alignBottom="@id/desc_mortality_trends"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="265dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:paddingRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="The cases of Melanoma has seen an increasing trends over the years since 1982."
+                        android:textAlignment="textStart"
+                        android:textColor="#222020"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -138,10 +238,60 @@ https://www.cancervic.org.au/research/vcr/fact-sheets-and-annual-reports/melanom
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/horizontal_line" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:text="Lets understand the trends in Melanoma mortality in Australia since 1982."
+                android:textSize="15sp" />
+
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/graph_desc_bg" />
+                android:layout_height="210dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/melanoma_mortality_infographic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/desc_incidence_trends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/graph_desc_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/desc_incidence_trends"
+                    android:layout_alignTop="@id/desc_incidence_trends"
+                    android:layout_alignRight="@id/desc_incidence_trends"
+                    android:layout_alignBottom="@id/desc_incidence_trends"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="265dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:paddingRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/concert_one"
+                        android:gravity="center_horizontal"
+                        android:text="Deaths due to Skin cancer has been amongst the top 20 cause amongst cancer types in Australia."
+                        android:textAlignment="textStart"
+                        android:textColor="#222020"
+                        android:textSize="15sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
