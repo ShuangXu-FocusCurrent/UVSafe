@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
@@ -30,6 +32,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 public class HomePageFragment extends Fragment {
@@ -118,8 +122,9 @@ public class HomePageFragment extends Fragment {
         sharedViewModel.getLocation().observe(getViewLifecycleOwner(), new Observer<LocationModel>() {
             @Override
             public void onChanged(LocationModel locationModel) {
-
-                    binding.address.setText(locationModel.getSuburb());
+                binding.address.setText(locationModel.getSuburb().trim());
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         });
 

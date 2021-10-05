@@ -1,5 +1,6 @@
 package com.e.uvsafeaustralia.views.functionsFragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -21,6 +23,8 @@ import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -74,28 +78,29 @@ public class QuizPageFragment extends Fragment {
         binding.editTextInputName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                nicknameInput = binding.editTextInputName.getText().toString().trim();
                 binding.btnConfirmAddUser.setEnabled(true);
-                nicknameInput = binding.editTextInputName.getText().toString();
             }
         });
 
         binding.btnConfirmAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.editTextInputName.onEditorAction(EditorInfo.IME_ACTION_DONE);
-                // check if user exist in list of users
-                // if user doesn't exist in db, add as a new user
-                UserModel existingUser = getUserDB(nicknameInput);
-                if (existingUser.getUserId() == 0) {
-                    player = addUser(nicknameInput);
-                    userList.add(player);
-//                    binding.nameCallout.setVisibility(View.VISIBLE);
-//                    binding.textUserName.setText("Hi "+ player.getNickName());
-//                    binding.textUserName.setVisibility(View.VISIBLE);
-                    binding.buttonStartQuiz.setEnabled(true);
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                if (nicknameInput.trim().equals("") || Pattern.matches(" ", nicknameInput))
+                    Toast.makeText(getActivity(), "Please enter a nickname. It must only be one word.", Toast.LENGTH_LONG).show();
+                if (!nicknameInput.trim().equals("") && !nicknameInput.trim().equals("") && !Pattern.matches(" ", nicknameInput)) {
+                    // check if user exist in list of users
+                    // if user doesn't exist in db, add as a new user
+                    UserModel existingUser = getUserDB(nicknameInput);
+                    if (existingUser.getUserId() == 0) {
+                        player = addUser(nicknameInput);
+                        userList.add(player);
+                        binding.buttonStartQuiz.setEnabled(true);
+                    } else
+                        Toast.makeText(getActivity(), "Nickname already exist. Select from the options below", Toast.LENGTH_LONG).show();
                 }
-                else
-                    Toast.makeText(getActivity(), "Nickname already exist. Select from the options below", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -105,8 +110,6 @@ public class QuizPageFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (parent.getItemAtPosition(position).equals("Select player")) {}
                 else {
-//                    binding.nameCallout.setVisibility(View.INVISIBLE);
-//                    binding.textUserName.setVisibility(View.INVISIBLE);
                     existingPlayer = String.valueOf(parent.getItemAtPosition(position));
                     binding.btnConfirmSelectUser.setEnabled(true);
                 }
@@ -114,8 +117,6 @@ public class QuizPageFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-//                binding.nameCallout.setVisibility(View.INVISIBLE);
-//                binding.textUserName.setVisibility(View.INVISIBLE);
                 binding.btnConfirmSelectUser.setEnabled(false);
             }
         });
@@ -124,9 +125,6 @@ public class QuizPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 player = getUserDB(existingPlayer);
-//                binding.textUserName.setText("Hi "+ player.getNickName());
-//                binding.nameCallout.setVisibility(View.VISIBLE);
-//                binding.textUserName.setVisibility(View.VISIBLE);
                 binding.buttonStartQuiz.setEnabled(true);
             }
         });
