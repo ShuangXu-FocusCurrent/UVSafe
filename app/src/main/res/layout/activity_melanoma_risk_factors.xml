@@ -20,9 +20,9 @@
 
     <ImageView
         android:id="@+id/bottom_background"
-        android:layout_width="@dimen/_400sdp"
-        android:layout_height="@dimen/_180sdp"
-        android:layout_marginTop="@dimen/_355sdp"
+        android:layout_width="@dimen/_500sdp"
+        android:layout_height="@dimen/_350sdp"
+        android:layout_marginTop="@dimen/_300sdp"
         android:layout_weight="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
