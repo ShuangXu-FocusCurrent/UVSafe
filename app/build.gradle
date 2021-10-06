@@ -5,6 +5,16 @@ plugins {
 android {
     compileSdkVersion 30
 
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    file("src/main/res/layouts/").listFiles(),
+                    "src/main/res/layouts",
+                    "src/main/res"
+            ]
+        }
+    }
+
     defaultConfig {
         applicationId "com.e.uvsafeaustralia"
         minSdkVersion 17
@@ -53,3 +63,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+

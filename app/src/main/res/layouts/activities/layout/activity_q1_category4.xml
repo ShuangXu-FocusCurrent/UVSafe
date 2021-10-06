@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/quiz_main_bcg"
     tools:context=".views.quiz.Category4.Q1Category4Activity">
 
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="396dp"
         android:layout_height="662dp"
-        android:background="@drawable/quiz_main_bcg"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
