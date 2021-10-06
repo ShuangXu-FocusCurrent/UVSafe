@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/quiz_main_bcg"
     tools:context=".views.quiz.Category3.Q1Category3Activity">
 
 
     <ScrollView
         android:id="@+id/scrollView4"
-        android:layout_width="396dp"
-        android:layout_height="662dp"
-        android:background="@drawable/quiz_main_bcg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,20 +41,20 @@
 
                 <ImageView
                     android:id="@+id/question_bcg"
-                    android:layout_width="280dp"
-                    android:layout_height="145dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
                     android:src="@drawable/question_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/thinking_boy"
-                    android:layout_width="144dp"
-                    android:layout_height="155dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="232dp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_115sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:layout_marginEnd="@dimen/_175sdp"
                     android:contentDescription="ignore"
                     android:rotationY="28"
                     android:src="@drawable/thinking_boy"
@@ -62,8 +63,8 @@
 
                 <TextView
                     android:id="@+id/textViewCat3Q1"
-                    android:layout_width="281dp"
-                    android:layout_height="144dp"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_110sdp"
                     android:layout_marginEnd="2dp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
@@ -79,18 +80,16 @@
 
                 <Button
                     android:id="@+id/buttonOpt1Answer"
-                    android:layout_width="295dp"
+                    android:layout_width="@dimen/_225sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="200dp"
-                    android:layout_marginRight="200dp"
+                    android:layout_marginStart="@dimen/_75sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_160sdp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="start"
                     android:text="AnswerOpt1"
                     android:textColor="#756861"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_15ssp"
                     app:backgroundTint="#FFFFFF"
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/question_bcg"
@@ -102,14 +101,14 @@
 
                 <Button
                     android:id="@+id/buttonOpt2Answer"
-                    android:layout_width="295dp"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="@dimen/_225sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="start"
                     android:text="AnswerOpt2"
                     android:textColor="#756861"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_15ssp"
                     app:backgroundTint="#FFFFFF"
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/buttonOpt1Answer"
@@ -121,10 +120,9 @@
 
                 <ImageView
                     android:id="@+id/waiting_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_width="@dimen/_210sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:src="@drawable/waiting_img"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="@+id/buttonOpt2Answer"
@@ -134,9 +132,11 @@
 
                 <ImageView
                     android:id="@+id/feedbackWrong"
-                    android:layout_width="360dp"
-                    android:layout_height="146dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
                     android:scaleX="1.2"
                     android:src="@drawable/question_background"
                     android:visibility="invisible"
@@ -149,10 +149,12 @@
                     android:id="@+id/sad_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:src="@drawable/sad_img"
                     android:visibility="invisible"
+
                     app:layout_constraintBottom_toBottomOf="@+id/feedbackWrong"
-                    app:layout_constraintEnd_toEndOf="@+id/feedbackWrong"
+                    app:layout_constraintEnd_toStartOf="@id/wrongText2"
                     app:layout_constraintHorizontal_bias="0.057"
                     app:layout_constraintStart_toStartOf="@+id/feedbackWrong"
                     app:layout_constraintTop_toTopOf="@+id/feedbackWrong" />
@@ -161,11 +163,11 @@
                     android:id="@+id/wrongText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:fontFamily="@font/concert_one"
                     android:text="@string/wrongText1"
                     android:textColor="#681717"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/_18ssp"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="@+id/feedbackWrong"
                     app:layout_constraintHorizontal_bias="0.417"
@@ -180,7 +182,7 @@
                     android:fontFamily="@font/concert_one"
                     android:text="@string/wrongText2"
                     android:textColor="#681717"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/_18ssp"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="@+id/feedbackWrong"
                     app:layout_constraintHorizontal_bias="0.518"
@@ -189,8 +191,8 @@
 
                 <ImageView
                     android:id="@+id/baln_img"
-                    android:layout_width="112dp"
-                    android:layout_height="115dp"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:src="@drawable/balloons_img"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/feedbackWrong"
@@ -202,16 +204,15 @@
 
                 <TextView
                     android:id="@+id/correctText1"
-                    android:layout_width="104dp"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="51dp"
-                    android:layout_marginLeft="51dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
                     android:text="@string/correctText1"
                     android:textColor="#681717"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/_18ssp"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="@+id/feedbackWrong"
                     app:layout_constraintHorizontal_bias="0.064"
@@ -220,24 +221,23 @@
 
                 <TextView
                     android:id="@+id/correctText2"
-                    android:layout_width="227dp"
-                    android:layout_height="31dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
                     android:text="@string/correctText2"
                     android:textColor="#681717"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/_18ssp"
                     android:visibility="invisible"
                     app:layout_constraintStart_toEndOf="@+id/baln_img"
                     app:layout_constraintTop_toBottomOf="@+id/correctText1" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/feedbackConstraintLayout"
-                    android:layout_width="362dp"
-                    android:layout_height="214dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -246,8 +246,8 @@
 
                     <ImageView
                         android:id="@+id/feedback_bcg"
-                        android:layout_width="357dp"
-                        android:layout_height="155dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_170sdp"
                         android:layout_marginTop="16dp"
                         android:scaleX="2.4"
                         android:src="@drawable/question_feedback_bcg"
@@ -258,9 +258,9 @@
 
                     <ImageView
                         android:id="@+id/girl_img"
-                        android:layout_width="121dp"
-                        android:layout_height="171dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_170sdp"
+                        android:layout_marginEnd="@dimen/_2sdp"
                         android:rotationY="178"
                         android:scaleX="1.05"
                         android:src="@drawable/girl_child"
@@ -271,15 +271,16 @@
                         android:id="@+id/correctText3"
                         android:layout_width="213dp"
                         android:layout_height="24dp"
-                        android:layout_marginBottom="65dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_58sdp"
                         android:fontFamily="@font/concert_one"
                         android:text="@string/correctText3"
                         android:textColor="#000000"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/_18ssp"
                         app:layout_constraintBottom_toBottomOf="@+id/feedback_bcg"
                         app:layout_constraintEnd_toStartOf="@+id/girl_img"
                         app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintStart_toStartOf="@+id/feedback_bcg"
+                        app:layout_constraintStart_toStartOf="@id/feedback_bcg"
                         app:layout_constraintTop_toTopOf="@+id/feedback_bcg"
                         app:layout_constraintVertical_bias="0.06" />
 
@@ -287,11 +288,11 @@
                         android:id="@+id/correctText4"
                         android:layout_width="216dp"
                         android:layout_height="29dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="@dimen/_8sdp"
                         android:fontFamily="@font/concert_one"
                         android:text="Answer "
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/_14ssp"
                         app:layout_constraintEnd_toEndOf="@+id/correctText3"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/correctText3"
@@ -299,14 +300,14 @@
 
                     <TextView
                         android:id="@+id/infoText"
-                        android:layout_width="258dp"
-                        android:layout_height="63dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_width="@dimen/_180sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/concert_one"
-                        android:text="Explanation"
+                        android:text="Explaination"
                         android:textColor="#000000"
-                        android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="@+id/correctText4"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toEndOf="@id/correctText4"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/correctText4"
                         app:layout_constraintTop_toBottomOf="@+id/correctText4" />
@@ -331,7 +332,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="100dp"
-                    android:layout_marginRight="100dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
                     android:visibility="invisible"
@@ -362,6 +362,7 @@
                     android:layout_marginLeft="24dp"
                     android:background="@drawable/quiz_btn_inactive"
                     android:src="@drawable/quiz_btn_inactive"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q1"
                     app:layout_constraintEnd_toStartOf="@+id/buttonCat3Q3"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -373,14 +374,16 @@
                     android:id="@+id/buttonCat3Q2_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="136dp"
-                    android:layout_marginLeft="136dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
                     android:background="@drawable/quz_button_active"
                     android:src="@drawable/quz_button_active"
                     android:visibility="invisible"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/feedbackConstraintLayout" />
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q1"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q1"
+                    app:layout_constraintVertical_bias="0.0" />
+
 
                 <ImageButton
                     android:id="@+id/buttonCat3Q3"
@@ -397,21 +400,21 @@
                     app:layout_constraintTop_toTopOf="@+id/buttonCat3Q2"
                     app:layout_constraintVertical_bias="0.0" />
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/buttonCat3Q3_active"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="0dp"-->
-<!--                    android:layout_marginLeft="0dp"-->
-<!--                    android:background="@drawable/quz_button_active"-->
-<!--                    android:src="@drawable/quz_button_active"-->
-<!--                    android:visibility="invisible"-->
-<!--                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q2"-->
-<!--                    app:layout_constraintEnd_toStartOf="@+id/buttonCat3Q4"-->
-<!--                    app:layout_constraintHorizontal_bias="0.5"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q2"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q2"-->
-<!--                    app:layout_constraintVertical_bias="0.0" />-->
+                <!--                <ImageButton-->
+                <!--                    android:id="@+id/buttonCat3Q3_active"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="0dp"-->
+                <!--                    android:layout_marginLeft="0dp"-->
+                <!--                    android:background="@drawable/quz_button_active"-->
+                <!--                    android:src="@drawable/quz_button_active"-->
+                <!--                    android:visibility="invisible"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/buttonCat3Q2"-->
+                <!--                    app:layout_constraintEnd_toStartOf="@+id/buttonCat3Q4"-->
+                <!--                    app:layout_constraintHorizontal_bias="0.5"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q2"-->
+                <!--                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q2"-->
+                <!--                    app:layout_constraintVertical_bias="0.0" />-->
 
 
                 <ImageButton
@@ -429,19 +432,19 @@
                     app:layout_constraintTop_toTopOf="@+id/buttonCat3Q3"
                     app:layout_constraintVertical_bias="0.0" />
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/buttonCat3Q4_active"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="24dp"-->
-<!--                    android:layout_marginLeft="24dp"-->
-<!--                    android:background="@drawable/quz_button_active"-->
-<!--                    android:src="@drawable/quz_button_active"-->
-<!--                    android:visibility="invisible"-->
-<!--                    app:layout_constraintHorizontal_bias="0.5"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q3"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q3"-->
-<!--                    app:layout_constraintVertical_bias="0.0" />-->
+                <!--                <ImageButton-->
+                <!--                    android:id="@+id/buttonCat3Q4_active"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="24dp"-->
+                <!--                    android:layout_marginLeft="24dp"-->
+                <!--                    android:background="@drawable/quz_button_active"-->
+                <!--                    android:src="@drawable/quz_button_active"-->
+                <!--                    android:visibility="invisible"-->
+                <!--                    app:layout_constraintHorizontal_bias="0.5"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/buttonCat3Q3"-->
+                <!--                    app:layout_constraintTop_toTopOf="@+id/buttonCat3Q3"-->
+                <!--                    app:layout_constraintVertical_bias="0.0" />-->
 
                 <ImageView
                     android:id="@+id/buttonCat3End"
