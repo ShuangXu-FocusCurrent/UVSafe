@@ -7,12 +7,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 
 import com.e.uvsafeaustralia.R;
@@ -65,17 +62,10 @@ public class MainFunction extends AppCompatActivity {
                 }
             }
         }
-
-
-
-
     }
 
     private void setSp() {
         editor.putString("quiz","null");
         editor.apply();
     }
-
-//
-
 }

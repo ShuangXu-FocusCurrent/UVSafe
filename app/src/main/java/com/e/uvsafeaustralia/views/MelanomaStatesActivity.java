@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.e.uvsafeaustralia.databinding.ActivityMelanomaStatesBinding;
-import com.e.uvsafeaustralia.databinding.ActivityQuizFourBlocksBinding;
 
 public class MelanomaStatesActivity extends AppCompatActivity {
     private ActivityMelanomaStatesBinding binding;

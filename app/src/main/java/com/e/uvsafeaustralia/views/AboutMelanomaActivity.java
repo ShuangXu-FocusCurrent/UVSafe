@@ -10,7 +10,6 @@ import android.widget.MediaController;
 
 import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.databinding.ActivityAboutMelanomaBinding;
-import com.e.uvsafeaustralia.databinding.ActivityQuizFourBlocksBinding;
 
 public class AboutMelanomaActivity extends AppCompatActivity {
 

@@ -78,9 +78,7 @@ public class ReviewRvAdapter extends RecyclerView.Adapter
         }else{
             holder.binding.status.setImageResource(R.drawable.wrong);
         }
-
     }
-
 
     @Override
     public int getItemCount() {

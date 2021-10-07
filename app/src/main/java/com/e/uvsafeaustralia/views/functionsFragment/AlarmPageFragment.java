@@ -162,11 +162,11 @@ public class AlarmPageFragment extends Fragment {
 
             // For Development/testing, send notification every 15 minutes.
             // For production, change 15 minutes to 1 hour!!
-            checkWeather = new PeriodicWorkRequest.Builder(NotificationScheduler.class, 15, TimeUnit.MINUTES)
+            checkWeather = new PeriodicWorkRequest.Builder(NotificationScheduler.class, 1, TimeUnit.HOURS)
                     .setInputData(locationData)
                     .addTag("checkUV")
                     .setConstraints(constraint)
-                    .setInitialDelay(15, TimeUnit.MINUTES)
+                    .setInitialDelay(1, TimeUnit.HOURS)
                     .build();
 
             if (switchNotification.isChecked()) {

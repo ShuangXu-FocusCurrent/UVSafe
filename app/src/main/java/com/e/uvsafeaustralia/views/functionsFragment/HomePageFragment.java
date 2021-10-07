@@ -15,7 +15,6 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,8 +31,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
-
-import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 public class HomePageFragment extends Fragment {
@@ -132,7 +129,6 @@ public class HomePageFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 binding.temperature.setText(s.trim());
-                //Log.e("Weather tResponse",s);
             }
         });
 
@@ -194,7 +190,6 @@ public class HomePageFragment extends Fragment {
                 f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
                 String time = f.format(days);
                 binding.sunRiseTime.setText(time);
-                //Log.e("Weather tResponse",s);
             }
         });
 
@@ -207,7 +202,6 @@ public class HomePageFragment extends Fragment {
                 f.setTimeZone(TimeZone.getTimeZone("Australia/Melbourne"));
                 String time = f.format(days);
                 binding.sunSetTime.setText(time);
-                //Log.e("Weather tResponse",s);
             }
         });
 

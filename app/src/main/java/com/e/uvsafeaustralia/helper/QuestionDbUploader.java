@@ -1,7 +1,6 @@
 package com.e.uvsafeaustralia.helper;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.database.SQLException;
 
 import com.e.uvsafeaustralia.db.DBManager;

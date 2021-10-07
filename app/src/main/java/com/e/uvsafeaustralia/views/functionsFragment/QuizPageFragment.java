@@ -12,7 +12,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,7 +23,6 @@ import com.e.uvsafeaustralia.models.UserModel;
 import com.e.uvsafeaustralia.views.quiz.QuizFourBlocksActivity;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
@@ -56,8 +54,6 @@ public class QuizPageFragment extends Fragment {
         // initiate a new player
         // or clear previously saved player
         player = new UserModel();
-//        binding.nameCallout.setVisibility(View.INVISIBLE);
-//        binding.textUserName.setVisibility(View.INVISIBLE);
         binding.textAddName.clearComposingText();
         binding.spinnerNamesDropdown.setSelection(0);
 
