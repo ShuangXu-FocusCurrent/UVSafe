@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,20 +75,24 @@ public class QuizPageFragment extends Fragment {
             binding.spinnerNamesDropdown.setAdapter(existingPlayers);
         }
 
-        // Add new user
-        binding.editTextInputName.setOnClickListener(new View.OnClickListener() {
+        // remove keyboard when user click Done key on the keyboard
+        binding.editTextInputName.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public void onClick(View v) {
-                nicknameInput = binding.editTextInputName.getText().toString().trim();
-                binding.btnConfirmAddUser.setEnabled(true);
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    nicknameInput = binding.editTextInputName.getText().toString().trim();
+                    binding.btnConfirmAddUser.setEnabled(true);
+                    return true;
+                }
+                return false;
             }
         });
 
         binding.btnConfirmAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 if (nicknameInput.trim().equals("") || Pattern.matches(" ", nicknameInput))
                     Toast.makeText(getActivity(), "Please enter a nickname. It must only be one word.", Toast.LENGTH_LONG).show();
                 if (!nicknameInput.trim().equals("") && !nicknameInput.trim().equals("") && !Pattern.matches(" ", nicknameInput)) {
