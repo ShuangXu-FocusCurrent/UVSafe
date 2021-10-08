@@ -194,8 +194,7 @@ diagnosed with melanoma at age 27"
                 android:layout_gravity="center"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:text="Video Courtesy : Melanoma Institute Australia\n
-https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patient-support-melanoma-matters/"
+                android:text="Video Courtesy : https://www.melanoma.org.au"
                 android:textStyle="italic"
                 android:textSize="10dp" />
 
@@ -238,8 +237,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                 android:layout_gravity="center"
                 android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:text="Video Courtesy : Melanoma Institute Australia
-https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patient-support-melanoma-matters/"
+                android:text="Video Courtesy :https://www.melanoma.org.au"
                 android:textStyle="italic"
                 android:textSize="10dp"/>
 
@@ -294,7 +292,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingLeft="@dimen/_97sdp"
-                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingTop="30.00dp"
                         android:paddingRight="@dimen/_3sdp"
                         android:text="If detected early, Melanoma can be effectively treated.\n\nThe most effective way to prevent melanoma is to practice sun safety at all times. This means avoiding exposure to the sun during the hottest parts of the day\n\nHave a regular skin check at least once every 12 months to maximise the chances of picking up melanoma early."
                         android:textAlignment="textStart"
@@ -303,6 +301,7 @@ https://www.melanoma.org.au/understanding-melanoma/support-patient-stories/patie
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/section1_image1"
+                        app:layout_constraintVertical_bias="0.51"
                         tools:ignore="RtlCompat" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

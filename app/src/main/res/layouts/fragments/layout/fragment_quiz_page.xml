@@ -61,49 +61,27 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
+
             <TextView
                 android:id="@+id/textAddName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/concert_one"
                 android:inputType="text"
                 android:text="Add a nickname"
                 android:textColor="#453F3F"
                 android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textHello"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textHello" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextInputName"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/_115sdp"
-                android:layout_height="@dimen/_27sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/text_input_bcg"
-                android:gravity="center|center_vertical"
-                android:hint="Add a nickname"
-                android:inputType="text"
-                android:soundEffectsEnabled="true"
-                android:textColor="#453F3F"
-                android:textSize="@dimen/_12ssp"
-                android:singleLine="true"
-                android:imeOptions="actionGo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textAddName"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toEndOf="@+id/textHello"
+                app:layout_constraintTop_toTopOf="@+id/textHello"
                 app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/btnConfirmAddUser"
                 android:layout_width="@dimen/_77sdp"
-                android:layout_height="@dimen/_30sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_marginTop="@dimen/_7sdp"
                 android:elevation="4dp"
                 android:enabled="false"
@@ -114,10 +92,10 @@
                 app:cornerRadius="@dimen/_4sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.75"
-                app:layout_constraintStart_toEndOf="@id/editTextInputName"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toStartOf="@+id/bcg_new_user"
                 app:layout_constraintTop_toBottomOf="@id/textAddName"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.45" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -164,16 +142,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/concert_one"
                 android:inputType="text"
-                android:text="Select your nickname"
+                android:text="Select your name"
                 android:textColor="#453F3F"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.922"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textSelectName" />
+                app:layout_constraintTop_toTopOf="@+id/bcg_ext_user" />
 
             <Spinner
                 android:id="@+id/spinnerNamesDropdown"
@@ -189,7 +167,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textAddName2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.325" />
 
             <Button
                 android:id="@+id/btnConfirmSelectUser"
@@ -205,10 +183,10 @@
                 app:cornerRadius="@dimen/_5sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintHorizontal_bias="0.627"
                 app:layout_constraintStart_toEndOf="@id/spinnerNamesDropdown"
                 app:layout_constraintTop_toBottomOf="@id/textAddName2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.418" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -269,6 +247,33 @@
             app:layout_constraintVertical_bias="0.70"
             app:strokeColor="@color/yellow_500"
             app:strokeWidth="@dimen/_2sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/_115sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:hint="Add a Nickname"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayoutNewUser"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutNewUser"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutNewUser"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayoutNewUser"
+            app:layout_constraintVertical_bias="0.65">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextInputName"
+                android:singleLine="true"
+                android:imeOptions="actionGo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

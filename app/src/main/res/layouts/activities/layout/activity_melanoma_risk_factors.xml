@@ -213,8 +213,7 @@
                     android:gravity="fill"
                     android:paddingStart="@dimen/_4sdp"
                     android:paddingEnd="0dp"
-                    android:text="Overexposure to UV radiation:
-    particularly a pattern of short, intense periods of sun exposure and sunburn, such as on weekends and holidays"
+                    android:text="Particularly a pattern of short, intense periods of sun exposure and sunburn, such as on weekends and holidays"
                     android:textColor="#000000"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold"
@@ -223,6 +222,20 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/risk_factors_background_2"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewHeadin1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/concert_one"
+                    android:text="Overexposure to UV radiation"
+                    android:textColor="#2B0404"
+                    app:layout_constraintStart_toEndOf="@+id/risk_factors_background_2"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -270,16 +283,15 @@
 
                 <TextView
                     android:id="@+id/textView5"
-                    android:layout_width="@dimen/_190sdp"
-                    android:layout_height="@dimen/_75sdp"
+                    android:layout_width="248dp"
+                    android:layout_height="73dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
-                    android:gravity="fill"
+                    android:gravity="top"
                     android:paddingStart="@dimen/_4sdp"
                     android:paddingEnd="0dp"
-                    android:text="High Mole count:
-    more than 10 moles above the elbow on the arms and more than 50 on the body, especially if the moles have an irregular shape and uneven colour "
+                    android:text="More than 10 moles above the elbow on the arms and more than 50 on the body, especially if the moles have an irregular shape and uneven colour "
                     android:textColor="#000000"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold"
@@ -287,6 +299,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/risk_factors_background2_1"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewHeadin" />
+
+                <TextView
+                    android:id="@+id/textViewHeadin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/concert_one"
+                    android:text="High Mole Count"
+                    android:textColor="#FF2B0404"
+                    app:layout_constraintStart_toStartOf="@+id/textView5"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -335,16 +358,15 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="@dimen/_190sdp"
-                    android:layout_height="@dimen/_75sdp"
+                    android:layout_width="245dp"
+                    android:layout_height="75dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
-                    android:gravity="fill"
+                    android:gravity="top"
                     android:paddingStart="@dimen/_4sdp"
-                    android:text="A strong family history :
-    Because family members have a similar skin type or a similar pattern of sun exposure in childhood. Only 1-2% of melanomas in Australia involve an inherited faulty gene.
-    "
+                    android:text="Because family members have a similar skin type or a similar pattern of sun exposure in childhood. Only 1-2% of melanomas in Australia involve an inherited faulty gene.     "
                     android:textColor="#000000"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold"
@@ -352,7 +374,20 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/risk_factors_background3_1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewHeadin3" />
+
+                <TextView
+                    android:id="@+id/textViewHeadin3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/concert_one"
+                    android:text="A strong family history"
+                    android:textColor="#FF2B0404"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="@+id/risk_factors_background3" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -399,15 +434,14 @@
 
                 <TextView
                     android:id="@+id/textView7"
-                    android:layout_width="@dimen/_190sdp"
-                    android:layout_height="@dimen/_75sdp"
+                    android:layout_width="247dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
-                    android:gravity="fill"
+                    android:gravity="top"
                     android:paddingStart="@dimen/_4sdp"
-                    android:text="Light-coloured eyes, fair or red hair:
-    Anyone can develop Melanoma. However, risk is higher with people who have light-coloured eys(blue/green) and fair or red hair.
+                    android:text="Anyone can develop Melanoma. However, risk is higher with people who have light-coloured eys(blue/green) and fair or red hair.
     "
                     android:textColor="#000000"
                     android:textSize="@dimen/_10ssp"
@@ -416,6 +450,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/risk_factors_background4_1"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewHeadin4" />
+
+                <TextView
+                    android:id="@+id/textViewHeadin4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/concert_one"
+                    android:text="Light-coloured eyes, fair or red hair"
+                    android:textColor="#FF2B0404"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
