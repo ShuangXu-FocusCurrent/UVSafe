@@ -62,19 +62,19 @@ public class ReportActivity extends AppCompatActivity {
 
         if (userAnswersCategory1.size() == 0) {
             binding.c1Review.setEnabled(false);
-            binding.c1Review.setAlpha(0.25f);
+//            binding.c1Review.setAlpha(0.25f);
         }
         if (userAnswersCategory2.size() == 0) {
             binding.c2Review.setEnabled(false);
-            binding.c2Review.setAlpha(0.25f);
+//            binding.c2Review.setAlpha(0.25f);
         }
         if (userAnswersCategory3.size() == 0) {
             binding.c3Review.setEnabled(false);
-            binding.c3Review.setAlpha(0.25f);
+//            binding.c3Review.setAlpha(0.25f);
         }
         if (userAnswersCategory4.size() == 0) {
             binding.c4Review.setEnabled(false);
-            binding.c4Review.setAlpha(0.25f);
+//            binding.c4Review.setAlpha(0.25f);
         }
 
         binding.c1Review.setOnClickListener(new View.OnClickListener() {

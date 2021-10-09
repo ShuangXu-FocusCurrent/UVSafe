@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/lb_bcg2"
     android:scaleY="1.1"
     android:textAlignment="gravity"
@@ -11,14 +11,18 @@
 
     <ScrollView
         android:id="@+id/scrollView5"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="412dp"
+        android:layout_height="543dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
             <ImageView
@@ -45,61 +49,6 @@
                 app:layout_constraintStart_toStartOf="@+id/report_bcg"
                 app:layout_constraintTop_toTopOf="@+id/report_bcg" />
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c4Review"
-                android:layout_width="133dp"
-                android:layout_height="147dp"
-                android:layout_marginStart="124dp"
-                android:background="@drawable/puzzle2"
-                android:fontFamily="@font/concert_one"
-                android:gravity="center"
-                android:scaleX="1.19"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/c1Review"
-                app:layout_constraintTop_toTopOf="@+id/c1Review" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c1Review"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="86dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/puzzle1"
-                android:fontFamily="@font/concert_one"
-                android:scaleX="1.19"
-                android:textAlignment="center"
-                android:textColor="#FAF9F9"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/instructTextBcg" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c2Review"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="115dp"
-                android:background="@drawable/puzzle3"
-                android:gravity="center"
-                android:scaleX="1.15"
-                android:scaleY="1.15"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/c1Review" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/c3Review"
-                android:layout_width="145dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="118dp"
-                android:layout_marginTop="124dp"
-                android:background="@drawable/puzzle4"
-                android:scaleX="1.05"
-                app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toTopOf="@+id/c4Review" />
 
             <ProgressBar
                 android:id="@+id/progressBarAttempt"
@@ -289,18 +238,16 @@
                 android:id="@+id/backMainQuiz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/concert_one"
                 android:text="Back to main quiz"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/c3Review"
-                app:layout_constraintHorizontal_bias="0.458"
-                app:layout_constraintStart_toStartOf="@+id/c2Review"
-                app:layout_constraintTop_toBottomOf="@+id/c2Review"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toEndOf="@+id/c4Review"
+                app:layout_constraintStart_toStartOf="@+id/c4Review"
+                app:layout_constraintTop_toBottomOf="@+id/c4Review"
+                app:layout_constraintVertical_bias="0.72" />
 
             <ImageView
                 android:id="@+id/instructTextBcg"
@@ -308,7 +255,7 @@
                 android:layout_height="138dp"
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="16dp"
-                android:scaleX="1.5"
+                android:scaleX="1.2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/report_child"
@@ -329,7 +276,7 @@
                 android:layout_width="162dp"
                 android:layout_height="188dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="264dp"
+                android:layout_marginEnd="284dp"
                 android:rotationY="195"
                 android:scaleY="1.3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -363,6 +310,59 @@
                 app:layout_constraintHorizontal_bias="0.422"
                 app:layout_constraintStart_toStartOf="@+id/reportText4"
                 app:layout_constraintTop_toBottomOf="@+id/reportText4" />
+
+            <Button
+                android:id="@+id/c1Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/concert_one"
+                android:text="UV Radiation"
+                android:textSize="27sp"
+                app:backgroundTint="#F44336"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructTextBcg" />
+
+            <Button
+                android:id="@+id/c4Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/concert_one"
+                android:text="About Melanoma"
+                android:textSize="27sp"
+                app:backgroundTint="#FF9800"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/c3Review"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="@+id/c3Review"
+                app:layout_constraintTop_toBottomOf="@+id/c3Review"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/c2Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:text="Sun Protection"
+                android:textSize="27sp"
+                app:backgroundTint="#0075BB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c1Review" />
+
+            <Button
+                android:id="@+id/c3Review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
+                android:text="About Sunscreen"
+                android:textSize="27sp"
+                app:backgroundTint="#8BC34A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c2Review" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
