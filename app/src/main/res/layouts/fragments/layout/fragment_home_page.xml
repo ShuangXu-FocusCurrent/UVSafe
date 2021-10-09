@@ -24,17 +24,18 @@
                 android:layout_height="wrap_content"
                 android:elevation="50dp"
                 android:fontFamily="@font/concert_one"
-                android:text="Info"
+                android:gravity="center_horizontal|center"
+                android:text="Recommended Sun Protection Measures"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/_15ssp"
                 app:backgroundTint="#FE623E"
                 app:cornerRadius="@dimen/_7sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.79"
+                app:layout_constraintHorizontal_bias="0.8"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/uvmeter"
-                app:layout_constraintVertical_bias="0.836"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                app:layout_constraintVertical_bias="0.048"
                 app:strokeColor="#FE623E"
                 app:strokeWidth="@dimen/_3sdp" />
 
@@ -105,7 +106,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/temp_back"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -114,14 +115,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/concert_one"
                 android:text="UV"
-                android:textColor="#FFC403"
+                android:textColor="#FFFFFF"
                 android:textSize="@dimen/_27ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/uvmeter"
                 app:layout_constraintEnd_toEndOf="@+id/uvmeter"
                 app:layout_constraintHorizontal_bias="0.448"
                 app:layout_constraintStart_toStartOf="@+id/uvmeter"
                 app:layout_constraintTop_toTopOf="@+id/uvmeter"
-                app:layout_constraintVertical_bias="0.425" />
+                app:layout_constraintVertical_bias="0.43" />
 
             <TextView
                 android:id="@+id/uvIndex"
@@ -129,14 +130,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/concert_one"
                 android:text="3"
-                android:textColor="#FFC403"
+                android:textColor="@color/yellow_500"
                 android:textSize="@dimen/_35ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/uvmeter"
                 app:layout_constraintEnd_toEndOf="@+id/uvmeter"
-                app:layout_constraintHorizontal_bias="0.541"
+                app:layout_constraintHorizontal_bias="0.58"
                 app:layout_constraintStart_toStartOf="@+id/uvmeter"
                 app:layout_constraintTop_toTopOf="@+id/uvmeter"
-                app:layout_constraintVertical_bias="0.586" />
+                app:layout_constraintVertical_bias="0.59000003" />
 
             <ImageView
                 android:id="@+id/sunset_img"
@@ -146,7 +147,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.698"
                 app:layout_constraintStart_toEndOf="@+id/temp_back"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
 
             <TextView
                 android:id="@+id/sun_rise_time"
@@ -226,7 +227,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address"
+                app:layout_constraintTop_toTopOf="@+id/guideline"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -234,7 +235,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_90sdp"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:fontFamily="@font/roboto"
@@ -244,7 +244,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/temp_back"
                 app:layout_constraintEnd_toEndOf="@+id/temp_back"
                 app:layout_constraintStart_toStartOf="@+id/temp_back"
-                app:layout_constraintTop_toTopOf="@+id/temp_back" />
+                app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
             <TextView
                 android:id="@+id/degree"
@@ -267,7 +267,6 @@
                 android:id="@+id/temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:fontFamily="@font/roboto"
                 android:textColor="#693900"
@@ -276,7 +275,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/temp_back"
                 app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toStartOf="@+id/temp_back"
-                app:layout_constraintTop_toTopOf="@+id/temp_back"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
                 tools:text="23" />
 
             <ImageView
@@ -285,10 +284,11 @@
                 android:layout_height="@dimen/_50sdp"
                 android:src="@drawable/temp_img"
                 app:layout_constraintBottom_toBottomOf="@+id/temp_back"
-                app:layout_constraintEnd_toEndOf="@+id/temp_back"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="@+id/temp_back"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/moon_ic"
@@ -296,10 +296,11 @@
                 android:layout_height="@dimen/_40sdp"
                 android:src="@drawable/moon"
                 app:layout_constraintBottom_toBottomOf="@+id/temp_back"
-                app:layout_constraintEnd_toEndOf="@+id/temp_back"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintHorizontal_bias="0.583"
                 app:layout_constraintStart_toStartOf="@+id/temp_back"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:id="@+id/sunrise_img"
@@ -309,7 +310,42 @@
                 app:layout_constraintEnd_toStartOf="@+id/temp_back"
                 app:layout_constraintHorizontal_bias="0.287"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.12" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="173dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.14" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.73" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

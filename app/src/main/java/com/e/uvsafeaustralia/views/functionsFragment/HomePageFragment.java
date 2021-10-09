@@ -154,7 +154,7 @@ public class HomePageFragment extends Fragment {
                 int sInt = Integer.parseInt(s.trim());
                 // Don't remove line 102-105. They are for testing purposes.
 //                sInt = 0;
-//                 sInt = 6;
+//                sInt = 6;
 //                sInt = 8;
 //                sInt = 11;
                 binding.uvIndex.setText(String.valueOf(sInt));
