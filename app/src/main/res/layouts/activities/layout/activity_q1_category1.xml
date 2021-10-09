@@ -38,7 +38,7 @@
 
                 <ImageView
                     android:id="@+id/angrySun"
-                    android:layout_width="@dimen/_87sdp"
+                    android:layout_width="@dimen/_75sdp"
                     android:layout_height="@dimen/_89sdp"
                     android:contentDescription="ignore"
                     android:src="@drawable/angry_sun"
@@ -52,7 +52,8 @@
                     android:layout_height="@dimen/_113sdp"
                     android:fontFamily="@font/concert_one"
                     android:gravity="center"
-                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_25sdp"
+                    android:paddingEnd="@dimen/_10sdp"
                     android:text="Question"
                     android:textColor="#535151"
                     android:textSize="@dimen/_20ssp"
@@ -483,7 +484,7 @@
 
                 <ImageView
                     android:id="@+id/friendlySun_img"
-                    android:layout_width="@dimen/_87sdp"
+                    android:layout_width="@dimen/_83sdp"
                     android:layout_height="@dimen/_90sdp"
                     android:src="@drawable/friendly_sun"
                     android:visibility="invisible"

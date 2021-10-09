@@ -115,4 +115,20 @@
         app:layout_constraintVertical_bias="0.873"
         app:srcCompat="@drawable/ic_back" />
 
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/concert_one"
+        android:text="Start"
+        android:textColor="#FBBC05"
+        android:textSize="@dimen/_15ssp"
+        android:visibility="invisible"
+        app:backgroundTint="#FFFF"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/getStartedBtn"
+        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
+        app:layout_constraintStart_toStartOf="@id/getStartedBtn"
+        app:layout_constraintTop_toTopOf="@id/getStartedBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

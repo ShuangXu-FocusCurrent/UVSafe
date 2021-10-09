@@ -47,14 +47,22 @@ public class SlideViewPagerAdapter extends PagerAdapter {
         ImageView nextBtn = view.findViewById(R.id.imageViewNextIcn2);
         ImageView backBtn = view.findViewById(R.id.imageViewBackIcn1);
         Button getStartedBtn = view.findViewById(R.id.getStartedBtn);
+        Button start = view.findViewById(R.id.buttonStart);
 
         getStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(context, MainFunction.class);
                 intent.putExtra("slide","slide");
-                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainFunction.class);
+                intent.putExtra("slide","slide");
                 context.startActivity(intent);
             }
         });
@@ -63,7 +71,6 @@ public class SlideViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 SlideActivity.viewPager.setCurrentItem(position+1);
-
             }
         });
 
@@ -73,7 +80,6 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 SlideActivity.viewPager.setCurrentItem(position-1);
             }
         });
-
 
         switch(position){
             case 0:
@@ -129,6 +135,8 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 sliderRadio5.setImageResource(R.drawable.ic_slider_selected);
                 backBtn.setVisibility(View.VISIBLE);
                 nextBtn.setVisibility(View.GONE);
+                getStartedBtn.setVisibility(View.INVISIBLE);
+                start.setVisibility(View.VISIBLE);
                 break;
         }
         container.addView(view);
