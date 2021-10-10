@@ -2,11 +2,14 @@ package com.e.uvsafeaustralia.views;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.e.uvsafeaustralia.R;
@@ -16,7 +19,7 @@ public class AboutSunscreensActivity extends AppCompatActivity {
     private ActivityAboutSunscreensBinding binding;
     private VideoView aboutSunscreenVid;
     private Button aboutSunscreenVidBtn;
-    private MediaController mediaController;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +28,23 @@ public class AboutSunscreensActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         aboutSunscreenVid = (VideoView) findViewById(R.id.about_sunscreen_video_view);
         aboutSunscreenVidBtn = (Button) findViewById(R.id.buttonAboutSunscreenVid);
-        mediaController = new MediaController(this);
 
         aboutSunscreenVidBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 playAboutSunscreenVid();
+            }
+        });
+
+        binding.buttonSunscreenTipsVid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSunscreenTipsVid();
             }
         });
 
@@ -76,10 +88,30 @@ public class AboutSunscreensActivity extends AppCompatActivity {
     }
 
     public void playAboutSunscreenVid() {
+        MediaController mediaController = new MediaController(this);
         Uri uri = Uri.parse("android.resource://com.e.uvsafeaustralia/"+R.raw.aboutsunscreen);
         aboutSunscreenVid.setVideoURI(uri);
         aboutSunscreenVid.setMediaController(mediaController);
         mediaController.setAnchorView(aboutSunscreenVid);
         aboutSunscreenVid.start();
+    }
+
+    public void playSunscreenTipsVid() {
+        MediaController mediaController = new MediaController(this);
+        Uri uri = Uri.parse("android.resource://com.e.uvsafeaustralia/"+R.raw.sunscreentips);
+        binding.sunscreenTipsVideoView.setVideoURI(uri);
+        binding.sunscreenTipsVideoView.setMediaController(mediaController);
+        mediaController.setAnchorView(binding.sunscreenTipsVideoView);
+        binding.sunscreenTipsVideoView.start();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

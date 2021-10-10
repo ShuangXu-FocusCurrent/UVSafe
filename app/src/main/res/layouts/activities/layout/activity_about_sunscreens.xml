@@ -53,6 +53,8 @@
                 app:strokeWidth="3dp"
                 android:layout_marginBottom="10dp"/>
 
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +82,48 @@
                 android:textSize="12sp"
                 android:text="https://www.freepik.com/free-vector/organic-flat-sun-protection-infographic_13906509.html"
                 android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/concert_one"
+                android:text="Sunscreen Tips"
+                android:textColor="#3A9DF4"
+                android:textSize="25dp" />
+
+            <VideoView
+                android:id="@+id/sunscreen_tips_video_view"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/sucreen_tips_video_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/concert_one"
+                android:gravity="center"
+                android:text="@string/SunscreenTips"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/buttonSunscreenTipsVid"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|center_horizontal"
+                android:text="@string/playVideo"
+                android:textColor="#743AB7"
+                app:backgroundTint="#EAFCFF"
+                app:cornerRadius="20dp"
+                app:strokeColor="#673AB7"
+                app:strokeWidth="3dp"
+                android:layout_marginBottom="10dp"/>
+
+
 
             <TextView
                 android:id="@+id/section1_header"

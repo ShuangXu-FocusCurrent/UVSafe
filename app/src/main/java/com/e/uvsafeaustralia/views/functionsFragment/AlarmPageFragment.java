@@ -35,6 +35,7 @@ import com.e.uvsafeaustralia.R;
 import com.e.uvsafeaustralia.viewmodels.SharedViewModel;
 import com.e.uvsafeaustralia.helper.UtilTools;
 import com.e.uvsafeaustralia.databinding.FragmentAlarmPageBinding;
+import com.e.uvsafeaustralia.views.AboutSunscreensActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -67,6 +68,14 @@ public class AlarmPageFragment extends Fragment {
         binding.timeSlection.setAdapter(adapter);
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         switchAlarm = (Switch) root.findViewById(R.id.switchAlarm);
+
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutSunscreensActivity.class);
+                startActivity(intent);
+            }
+        });
 
         if (getActivity().getPreferences(Context.MODE_PRIVATE).contains("alarmState")) {
             Boolean test = sp.getBoolean("alarmState", false);
